@@ -29,37 +29,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `battleground_template`
+-- Table structure for table `creature_linking_template`
 --
 
-DROP TABLE IF EXISTS `battleground_template`;
+DROP TABLE IF EXISTS `creature_linking_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `battleground_template` (
-  `id` mediumint(8) unsigned NOT NULL,
-  `MinPlayersPerTeam` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `MaxPlayersPerTeam` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `MinLvl` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `MaxLvl` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `AllianceStartLoc` mediumint(8) unsigned NOT NULL,
-  `AllianceStartO` float NOT NULL,
-  `HordeStartLoc` mediumint(8) unsigned NOT NULL,
-  `HordeStartO` float NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `creature_linking_template` (
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'creature_template.entry of the slave mob that is linked',
+  `map` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Id of map of the mobs',
+  `master_entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'master to trigger events',
+  `flag` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'flag - describing what should happen when',
+  PRIMARY KEY (`entry`,`map`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature Linking System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `battleground_template`
+-- Dumping data for table `creature_linking_template`
 --
 
-LOCK TABLES `battleground_template` WRITE;
-/*!40000 ALTER TABLE `battleground_template` DISABLE KEYS */;
-INSERT INTO `battleground_template` (`id`, `MinPlayersPerTeam`, `MaxPlayersPerTeam`, `MinLvl`, `MaxLvl`, `AllianceStartLoc`, `AllianceStartO`, `HordeStartLoc`, `HordeStartO`) VALUES
-(1,20,40,51,60,611,2.72532,610,2.27452),
-(2,5,10,10,60,769,3.14159,770,3.14159),
-(3,8,15,20,60,890,3.40156,889,0.263892);
-/*!40000 ALTER TABLE `battleground_template` ENABLE KEYS */;
+LOCK TABLES `creature_linking_template` WRITE;
+/*!40000 ALTER TABLE `creature_linking_template` DISABLE KEYS */;
+/*!40000 ALTER TABLE `creature_linking_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

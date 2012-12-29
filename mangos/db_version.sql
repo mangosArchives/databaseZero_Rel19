@@ -1,6 +1,6 @@
 --
 -- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangos-zero>
+-- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `db_version`;
 CREATE TABLE `db_version` (
   `version` varchar(120) DEFAULT NULL,
   `creature_ai_version` varchar(120) DEFAULT NULL,
-  `required_z1800_s1356_02_mangos_mangos_string` bit(1) DEFAULT NULL
+  `required_z1865_s1456_01_mangos_creature_linking_template` bit(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Used DB version notes';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -48,7 +48,7 @@ CREATE TABLE `db_version` (
 
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_z1800_s1356_02_mangos_mangos_string`) VALUES
+INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_z1865_s1456_01_mangos_creature_linking_template`) VALUES
 ('ZeroDatabase 1.0.0 for MaNGOSZero z1823+ and ScriptDevZero z2616+','MaNGOSZero Artificial Creature Intelligence Database based on ACID 1.0.2',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
