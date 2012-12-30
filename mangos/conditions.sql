@@ -29,28 +29,55 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `db_version`
+-- Table structure for table `conditions`
 --
 
-DROP TABLE IF EXISTS `db_version`;
+DROP TABLE IF EXISTS `conditions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `db_version` (
-  `version` varchar(120) DEFAULT NULL,
-  `creature_ai_version` varchar(120) DEFAULT NULL,
-  `required_z1911_s1552_01_mangos_creature_linking_template` bit(1) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Used DB version notes';
+CREATE TABLE `conditions` (
+  `condition_entry` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
+  `type` tinyint(3) NOT NULL DEFAULT '0' COMMENT 'Type of the condition',
+  `value1` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'data field one for the condition',
+  `value2` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'data field two for the condition',
+  PRIMARY KEY (`condition_entry`),
+  UNIQUE KEY `unique_conditions` (`type`,`value1`,`value2`)
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Condition System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `db_version`
+-- Dumping data for table `conditions`
 --
 
-LOCK TABLES `db_version` WRITE;
-/*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_z1911_s1552_01_mangos_creature_linking_template`) VALUES
-('ZeroDatabase 1.0.0 for MaNGOSZero z1823+ and ScriptDevZero z2616+','MaNGOSZero Artificial Creature Intelligence Database based on ACID 1.0.2',NULL);
-/*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
+LOCK TABLES `conditions` WRITE;
+/*!40000 ALTER TABLE `conditions` DISABLE KEYS */;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+(1,2,11511,1),
+(2,12,35,0),
+(3,12,36,0),
+(4,6,67,0),
+(5,6,469,0),
+(6,7,164,1),
+(7,9,1846,0),
+(8,10,0,0),
+(9,2,13370,1),
+(10,7,171,1),
+(11,8,2240,0),
+(12,8,8460,0),
+(13,7,165,1),
+(14,2,12384,1),
+(15,9,5056,0),
+(16,7,197,1),
+(17,8,8464,0),
+(18,8,4242,0),
+(19,8,5384,0),
+(20,8,5529,0),
+(21,8,5121,0),
+(22,8,5251,0),
+(23,8,6383,0),
+(24,8,7786,0),
+(25,2,19727,1);
+/*!40000 ALTER TABLE `conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

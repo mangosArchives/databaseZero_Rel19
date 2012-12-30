@@ -24,6 +24,7 @@ ALTER TABLE `battleground_events`  ORDER BY `map` ASC;
 ALTER TABLE `battleground_template`  ORDER BY `id` ASC;
 ALTER TABLE `battlemaster_entry`  ORDER BY `entry` ASC;
 ALTER TABLE `command`  ORDER BY `name` ASC;
+ALTER TABLE `conditions` ORDER BY `condition_entry` ASC;
 ALTER TABLE `creature`  ORDER BY `guid` ASC;
 ALTER TABLE `creature_addon`  ORDER BY `guid` ASC;
 ALTER TABLE `creature_ai_scripts`  ORDER BY `id` ASC, `event_type`;

@@ -22,6 +22,7 @@ battleground_events \
 battleground_template \
 battlemaster_entry \
 command \
+conditions \
 creature \
 creature_addon \
 creature_ai_scripts \
@@ -137,7 +138,7 @@ transports \
 world_template \
 ; do
 
-echo "Dumping ${i}/120 ${TABLE}..."
+echo "Dumping ${i}/121 ${TABLE}..."
 
 echo "--
 -- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>

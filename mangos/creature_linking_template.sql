@@ -40,6 +40,7 @@ CREATE TABLE `creature_linking_template` (
   `map` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Id of map of the mobs',
   `master_entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'master to trigger events',
   `flag` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'flag - describing what should happen when',
+  `search_range` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`map`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature Linking System';
 /*!40101 SET character_set_client = @saved_cs_client */;
