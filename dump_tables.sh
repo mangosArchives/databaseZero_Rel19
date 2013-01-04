@@ -32,6 +32,7 @@ creature_battleground \
 creature_equip_template \
 creature_equip_template_raw \
 creature_involvedrelation \
+creature_linking \
 creature_linking_template \
 creature_loot_template \
 creature_model_info \
@@ -138,7 +139,7 @@ transports \
 world_template \
 ; do
 
-echo "Dumping ${i}/121 ${TABLE}..."
+echo "Dumping ${i}/122 ${TABLE}..."
 
 echo "--
 -- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>

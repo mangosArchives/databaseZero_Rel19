@@ -34,6 +34,7 @@ ALTER TABLE `creature_battleground`  ORDER BY `guid` ASC;
 ALTER TABLE `creature_equip_template`  ORDER BY `entry` ASC;
 ALTER TABLE `creature_equip_template_raw`  ORDER BY `entry` ASC;
 ALTER TABLE `creature_involvedrelation`  ORDER BY `quest` ASC;
+ALTER TABLE `creature_linking`  ORDER BY `guid` ASC;
 ALTER TABLE `creature_linking_template` ORDER BY `entry` ASC;
 ALTER TABLE `creature_loot_template`  ORDER BY `entry` ASC;
 ALTER TABLE `creature_model_info`  ORDER BY `modelid` ASC;
