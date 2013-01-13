@@ -86,8 +86,7 @@ INSERT INTO `scripted_areatrigger` (`entry`, `ScriptName`) VALUES
 (4047,'at_temple_ahnqiraj'),
 (4112,'at_naxxramas'),
 (4113,'at_naxxramas'),
-(4156,'at_naxxramas'),
-(4752,'at_nats_landing');
+(4156,'at_naxxramas');
 /*!40000 ALTER TABLE `scripted_areatrigger` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-USERNAME=
-PASSWORD=
+USERNAME=root
+PASSWORD=root
 DDUMPDIR=./mangos
 
 
@@ -22,7 +22,6 @@ battleground_events \
 battleground_template \
 battlemaster_entry \
 command \
-conditions \
 creature \
 creature_addon \
 creature_ai_scripts \
@@ -32,7 +31,6 @@ creature_battleground \
 creature_equip_template \
 creature_equip_template_raw \
 creature_involvedrelation \
-creature_linking \
 creature_linking_template \
 creature_loot_template \
 creature_model_info \
@@ -139,7 +137,7 @@ transports \
 world_template \
 ; do
 
-echo "Dumping ${i}/122 ${TABLE}..."
+echo "Dumping ${i}/120 ${TABLE}..."
 
 echo "--
 -- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
