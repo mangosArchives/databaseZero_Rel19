@@ -1,7 +1,7 @@
 #!/bin/bash
 
-USERNAME=root
-PASSWORD=root
+USERNAME=
+PASSWORD=
 DDUMPDIR=./mangos
 
 
