@@ -41,8 +41,8 @@ CREATE TABLE `creature_movement_scripts` (
   `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `datalong3` int(10) unsigned NOT NULL DEFAULT '0',
-  `datalong4` int(10) unsigned NOT NULL DEFAULT '0',
+  `buddy_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `search_radius` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `dataint` int(11) NOT NULL DEFAULT '0',
   `dataint2` int(11) NOT NULL DEFAULT '0',
@@ -62,18 +62,18 @@ CREATE TABLE `creature_movement_scripts` (
 
 LOCK TABLES `creature_movement_scripts` WRITE;
 /*!40000 ALTER TABLE `creature_movement_scripts` DISABLE KEYS */;
-INSERT INTO `creature_movement_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `datalong4`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+INSERT INTO `creature_movement_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (1,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'despawn self, this script is used by many creatures'),
 (41202,0,0,1,0,0,0,0,2000000161,2000000162,0,0,0,0,0,0,'stitchesyell'),
 (41203,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'stitchesidlemove'),
 (143301,1,0,0,0,0,0,0,2000000141,2000000142,0,0,0,0,0,0,'corbettwp1'),
 (143302,5,0,0,0,0,0,0,2000000143,2000000144,0,0,0,0,0,0,'corbettwp7'),
-(143303,0,0,0,1427,10,0,4,2000000145,2000000146,0,0,0,0,0,0,'corbettatharlan'),
-(143303,5,0,0,1427,10,0,2,2000000147,2000000148,0,0,0,0,0,0,'harlantalk'),
+(143303,0,0,0,0,1427,10,1,2000000145,2000000146,0,0,0,0,0,0,'corbettatharlan'),
+(143303,5,0,0,0,1427,10,4,2000000147,2000000148,0,0,0,0,0,0,'harlantalk'),
 (143303,10,0,0,0,0,0,0,2000000149,2000000150,0,0,0,0,0,0,'corbettleave'),
 (143303,40,0,0,0,0,0,0,2000000151,0,0,0,0,0,0,0,'corbetttocheese'),
 (143304,0,0,0,0,0,0,0,2000000152,2000000153,0,0,0,0,0,0,'corbettatcheese'),
-(143304,5,0,0,483,10,0,2,2000000154,2000000155,0,0,0,0,0,0,'cheeseladyreply'),
+(143304,5,0,0,0,483,10,4,2000000154,2000000155,0,0,0,0,0,0,'cheeseladyreply'),
 (143304,10,0,0,0,0,0,0,2000000156,0,0,0,0,0,0,0,'corbettreply'),
 (143304,15,0,0,0,0,0,0,2000000157,0,0,0,0,0,0,0,'corbettthanks'),
 (143304,40,0,0,0,0,0,0,2000000158,0,0,0,0,0,0,0,'corbettgoeshome'),
@@ -83,10 +83,10 @@ INSERT INTO `creature_movement_scripts` (`id`, `delay`, `command`, `datalong`, `
 (504303,0,16,10837,0,0,0,0,0,0,0,0,0,0,0,0,'DefiasRioter-CloseCellDoorSound'),
 (590101,0,10,11256,30000,0,0,0,0,0,0,0,-1346.59,-4076.39,-1.23,1.6,'Islensummon'),
 (590101,1,1,68,0,0,0,0,0,0,0,0,0,0,0,0,'Islenkneel'),
-(590101,5,0,0,11256,10,0,4,2000000057,0,0,0,0,0,0,0,'Islengreet'),
-(590101,10,0,0,11256,10,0,2,2000000160,0,0,0,0,0,0,0,'Manifestationreply'),
+(590101,5,0,0,0,11256,10,1,2000000057,0,0,0,0,0,0,0,'Islengreet'),
+(590101,10,0,0,0,11256,10,4,2000000160,0,0,0,0,0,0,0,'Manifestationreply'),
 (590101,15,1,26,0,0,0,0,0,0,0,0,0,0,0,0,'Islenstand'),
-(590101,15,0,0,11256,10,0,4,2000000058,0,0,0,0,0,0,0,'Islenthanks'),
+(590101,15,0,0,0,11256,10,1,2000000058,0,0,0,0,0,0,0,'Islenthanks'),
 (590102,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Islenidle'),
 (1258101,4,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 /*!40000 ALTER TABLE `creature_movement_scripts` ENABLE KEYS */;

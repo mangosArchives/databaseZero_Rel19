@@ -41,8 +41,8 @@ CREATE TABLE `gossip_scripts` (
   `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `datalong3` int(10) unsigned NOT NULL DEFAULT '0',
-  `datalong4` int(10) unsigned NOT NULL DEFAULT '0',
+  `buddy_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `search_radius` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `dataint` int(11) NOT NULL DEFAULT '0',
   `dataint2` int(11) NOT NULL DEFAULT '0',
@@ -62,10 +62,10 @@ CREATE TABLE `gossip_scripts` (
 
 LOCK TABLES `gossip_scripts` WRITE;
 /*!40000 ALTER TABLE `gossip_scripts` DISABLE KEYS */;
-INSERT INTO `gossip_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `datalong4`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-(125,1,22,21,0,0,0,5,0,0,0,0,0,0,0,0,'astor change faction'),
+INSERT INTO `gossip_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(125,1,22,21,5,0,0,0,0,0,0,0,0,0,0,0,'astor change faction'),
 (125,2,26,0,0,0,0,0,0,0,0,0,0,0,0,0,'astor attack start'),
-(5750,0,15,25139,2,0,0,0,0,0,0,0,0,0,0,0,'cast teleport molten core');
+(5750,0,15,25139,0,0,0,6,0,0,0,0,0,0,0,0,'cast teleport molten core');
 /*!40000 ALTER TABLE `gossip_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
