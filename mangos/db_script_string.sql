@@ -290,8 +290,6 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 (2000005238,'Citizens and allies of Stormwind, on this day, history has been made. $N has laid waste to that which had attempted to usurp the rule of the kingdom. Gather round and join me in honoring our heroes.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (2000005239,'Behold the might of the Alliance! The dread lady, Onyxia, hangs from the arches! Let the rallying cry of the dragon slayer lift your spirits!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (2000005300,'The Stonewrought Dam has been saved! Three cheers for $N!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(2000005301,'The boss wants all hands on high alert. The rusty anchor sinks tonight.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(2000005302,'Stonemasons. . .errr. . Defias be warned:  The rusty anchor sinks tonight.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (2000005303,'begins to manipulate the Stone of Relu over the two fossils.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (2000005304,'By the stars! A spirit has been summoned!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (2000005305,'Who hath summoned forth Aman?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
