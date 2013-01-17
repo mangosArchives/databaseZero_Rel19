@@ -443,7 +443,8 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
 (28697,1,3976),
 (28732,1,15953),
 (28806,0,181288),
-(28861,1,16592);
+(28861,1,16592),
+(29534,0,181619);
 /*!40000 ALTER TABLE `spell_script_target` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

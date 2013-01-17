@@ -353,7 +353,19 @@ INSERT INTO `event_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, 
 (9527,5,10,15554,3000000,0,0,0,0,0,0,0,5100.93,-5104.51,924.57,2.69,''),
 (9542,0,10,15571,9000000,0,0,0,0,0,0,0,3483,-6692.79,-2.43,0.8,''),
 (9571,0,10,15623,3000000,0,0,0,0,0,0,0,6724.96,-5275.13,778.23,1.82,''),
-(10015,0,10,16387,9000000,0,0,0,0,0,0,0,3644,-3473.77,138.56,4.47,'');
+(10015,0,10,16387,9000000,0,0,0,0,0,0,0,3644,-3473.77,138.56,4.47,''),
+(10691,0,10,17635,0,0,0,8,0,0,0,0,2532.85,-4764.92,103.617,2.35619,'Alliance Eastwall Tower capture - summon Lordaeron Commander'),
+(10691,0,10,17647,0,0,0,8,0,0,0,0,2533.33,-4769.31,104.396,2.37365,'Alliance Eastwall Tower capture - summon Lordaeron Soldier'),
+(10691,0,10,17647,0,0,0,8,0,0,0,0,2537.77,-4765.94,104.432,2.3911,'Alliance Eastwall Tower capture - summon Lordaeron Soldier'),
+(10691,0,10,17647,0,0,0,8,0,0,0,0,2537.34,-4773.92,105.941,2.21657,'Alliance Eastwall Tower capture - summon Lordaeron Soldier'),
+(10691,0,10,17647,0,0,0,8,0,0,0,0,2542.57,-4770.22,106.145,2.42601,'Alliance Eastwall Tower capture - summon Lordaeron Soldier'),
+(10692,0,10,17995,0,0,0,8,0,0,0,0,2532.85,-4764.92,103.617,2.35619,'Horde Eastwall Tower capture - summon Lordaeron Veteran'),
+(10692,0,10,17996,0,0,0,8,0,0,0,0,2533.33,-4769.31,104.396,2.37365,'Horde Eastwall Tower capture - summon Lordaeron Fighter'),
+(10692,0,10,17996,0,0,0,8,0,0,0,0,2537.77,-4765.94,104.432,2.3911,'Horde Eastwall Tower capture - summon Lordaeron Fighter'),
+(10692,0,10,17996,0,0,0,8,0,0,0,0,2537.34,-4773.92,105.941,2.21657,'Horde Eastwall Tower capture - summon Lordaeron Fighter'),
+(10692,0,10,17996,0,0,0,8,0,0,0,0,2542.57,-4770.22,106.145,2.42601,'Horde Eastwall Tower capture - summon Lordaeron Fighter'),
+(10700,0,10,17209,0,0,0,8,0,0,0,0,2987.5,-3049.11,120.126,5.75959,'Horde Plaguewood Tower progress event - summon William Kielar'),
+(10701,0,10,17209,0,0,0,8,0,0,0,0,2987.5,-3049.11,120.126,5.75959,'Alliance Plaguewood Tower progress event - summon William Kielar');
 /*!40000 ALTER TABLE `event_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

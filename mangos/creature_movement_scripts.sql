@@ -88,7 +88,10 @@ INSERT INTO `creature_movement_scripts` (`id`, `delay`, `command`, `datalong`, `
 (590101,15,1,26,0,0,0,0,0,0,0,0,0,0,0,0,'Islenstand'),
 (590101,15,0,0,0,11256,10,1,2000000058,0,0,0,0,0,0,0,'Islenthanks'),
 (590102,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Islenidle'),
-(1258101,4,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+(1258101,4,18,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(1763501,4,24,2410,0,0,0,8,0,0,0,0,0,0,0,0,'Lordaeron Commander - mount'),
+(1763502,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Lordaeron Commander - set movement to idle'),
+(1799501,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Lordaeron Veteran - set movement to idle');
 /*!40000 ALTER TABLE `creature_movement_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
