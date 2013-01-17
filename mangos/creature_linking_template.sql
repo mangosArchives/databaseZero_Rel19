@@ -104,8 +104,8 @@ INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`,
 (16506,533,15953,7,0),
 (16573,533,15956,1034,0),
 (16803,533,16061,7,0),
-(17647,0,17635,515,0),
-(17996,0,17995,515,0);
+(17647,0,17635,515,10),
+(17996,0,17995,515,10);
 /*!40000 ALTER TABLE `creature_linking_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
