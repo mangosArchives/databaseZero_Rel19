@@ -19,4 +19,4 @@ cat <<EOF > full_db.sql
 --
 EOF
 
-for i in ./mangos/*.sql; do tail -n +18 $i >> full_db.sql; done
+for i in ../mangos/*.sql; do tail -n +18 $i >> full_db.sql; done
