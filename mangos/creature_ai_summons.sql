@@ -44,7 +44,7 @@ CREATE TABLE `creature_ai_summons` (
   `spawntimesecs` int(11) unsigned NOT NULL DEFAULT '120',
   `comment` varchar(255) NOT NULL DEFAULT '' COMMENT 'Summon Comment',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='EventAI Summoning Locations';
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='EventAI Summoning Locations';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,8 @@ INSERT INTO `creature_ai_summons` (`id`, `position_x`, `position_y`, `position_z
 (13,1824.58,747.281,21.1486,3.70162,18000000,'8138'),
 (14,1796.56,758.122,14.7124,5.03836,18000000,'8138'),
 (15,1783.9,745.005,16.111,6.03896,18000000,'8138'),
-(16,33.7585,491.548,-23.2803,3.15989,120000,'14566');
+(20,-169.839,-324.961,64.4014,3.12472,300000,'10268'),
+(21,28.067,61.875,-123.405,4.67,600000,'12238');
 /*!40000 ALTER TABLE `creature_ai_summons` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
