@@ -118,8 +118,6 @@ reputation_spillover_template \
 reserved_name \
 scripted_areatrigger \
 scripted_event_id \
-skill_discovery_template \
-skill_extra_item_template \
 skill_fishing_base_level \
 skinning_loot_template \
 spell_affect \
@@ -140,7 +138,7 @@ transports \
 world_template \
 ; do
 
-echo "Dumping ${i}/123 ${TABLE}..."
+echo "Dumping ${i}/121 ${TABLE}..."
 
 echo "--
 -- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
