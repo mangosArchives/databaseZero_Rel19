@@ -78,6 +78,8 @@ INSERT INTO `creature_movement_scripts` (`id`, `delay`, `command`, `datalong`, `
 (143304,15,0,0,0,0,0,0,2000000157,0,0,0,0,0,0,0,'corbettthanks'),
 (143304,40,0,0,0,0,0,0,2000000158,0,0,0,0,0,0,0,'corbettgoeshome'),
 (143305,0,0,0,0,0,0,0,2000000159,0,0,0,0,0,0,0,'corbettisback'),
+(406801,2,0,2,0,0,0,0,2000000214,0,0,0,0,0,0,0,'Serpent Messenger - text emote'),
+(406801,8,0,2,0,3419,10,2,2000000215,0,0,0,0,0,0,0,'Serpent Messenger: Force NPC to text emote'),
 (504301,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'DefiasRioter-SetRunModeOn'),
 (566601,2,0,0,0,0,0,0,2000000208,0,0,0,0,0,0,0,'Visage Say 1'),
 (566601,2,1,2,0,0,0,0,0,0,0,0,0,0,0,0,''),
