@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `db_version`;
 CREATE TABLE `db_version` (
   `version` varchar(120) DEFAULT NULL,
   `creature_ai_version` varchar(120) DEFAULT NULL,
-  `required_z2069_sxxxx_xxxxx_01_mangos_skill_discovery` bit(1) DEFAULT NULL
+  `required_z2102_s1723_12148_01_mangos_areatrigger_teleport` bit(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Used DB version notes';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -48,7 +48,7 @@ CREATE TABLE `db_version` (
 
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_z2069_sxxxx_xxxxx_01_mangos_skill_discovery`) VALUES
+INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_z2102_s1723_12148_01_mangos_areatrigger_teleport`) VALUES
 ('ZeroDatabase 1.0.1 for MaNGOSZero z2065+ and ScriptDevZero z2620+','MaNGOSZero Artificial Creature Intelligence Database 1.0.0',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
