@@ -43,6 +43,7 @@ creature_onkill_reputation \
 creature_questrelation \
 creature_template \
 creature_template_addon \
+creature_template_spells \
 db_script_string \
 db_version \
 disenchant_loot_template \
@@ -138,7 +139,7 @@ transports \
 world_template \
 ; do
 
-echo "Dumping ${i}/121 ${TABLE}..."
+echo "Dumping ${i}/122 ${TABLE}..."
 
 echo "--
 -- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
