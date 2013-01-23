@@ -29,13 +29,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `event_scripts`
+-- Table structure for table `dbscripts_on_event`
 --
 
-DROP TABLE IF EXISTS `event_scripts`;
+DROP TABLE IF EXISTS `dbscripts_on_event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `event_scripts` (
+CREATE TABLE `dbscripts_on_event` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
   `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -57,12 +57,12 @@ CREATE TABLE `event_scripts` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `event_scripts`
+-- Dumping data for table `dbscripts_on_event`
 --
 
-LOCK TABLES `event_scripts` WRITE;
-/*!40000 ALTER TABLE `event_scripts` DISABLE KEYS */;
-INSERT INTO `event_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+LOCK TABLES `dbscripts_on_event` WRITE;
+/*!40000 ALTER TABLE `dbscripts_on_event` DISABLE KEYS */;
+INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (259,2,10,1770,300000,0,0,0,0,0,0,0,881.63,1230.37,47.83,3.1,''),
 (264,3,10,2044,300000,0,0,0,0,0,0,0,-9548.42,-1440.2,62.29,2.19,''),
 (364,5,10,2624,900000,0,0,0,0,0,0,0,-12179.4,644.22,-67.1,5.18,''),
@@ -366,7 +366,7 @@ INSERT INTO `event_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, 
 (10692,0,10,17996,0,0,0,8,0,0,0,0,2542.57,-4770.22,106.145,2.42601,'Horde Eastwall Tower capture - summon Lordaeron Fighter'),
 (10700,0,10,17209,0,0,0,8,0,0,0,0,2987.5,-3049.11,120.126,5.75959,'Horde Plaguewood Tower progress event - summon William Kielar'),
 (10701,0,10,17209,0,0,0,8,0,0,0,0,2987.5,-3049.11,120.126,5.75959,'Alliance Plaguewood Tower progress event - summon William Kielar');
-/*!40000 ALTER TABLE `event_scripts` ENABLE KEYS */;
+/*!40000 ALTER TABLE `dbscripts_on_event` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

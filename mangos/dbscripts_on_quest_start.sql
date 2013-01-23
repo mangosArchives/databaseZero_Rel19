@@ -29,13 +29,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `quest_start_scripts`
+-- Table structure for table `dbscripts_on_quest_start`
 --
 
-DROP TABLE IF EXISTS `quest_start_scripts`;
+DROP TABLE IF EXISTS `dbscripts_on_quest_start`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `quest_start_scripts` (
+CREATE TABLE `dbscripts_on_quest_start` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
   `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -57,12 +57,12 @@ CREATE TABLE `quest_start_scripts` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `quest_start_scripts`
+-- Dumping data for table `dbscripts_on_quest_start`
 --
 
-LOCK TABLES `quest_start_scripts` WRITE;
-/*!40000 ALTER TABLE `quest_start_scripts` DISABLE KEYS */;
-INSERT INTO `quest_start_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+LOCK TABLES `dbscripts_on_quest_start` WRITE;
+/*!40000 ALTER TABLE `dbscripts_on_quest_start` DISABLE KEYS */;
+INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (54,1,15,6245,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (54,2,1,113,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (74,0,10,2044,300000,0,0,0,0,0,0,0,-10953.3,988.509,98.984,5.349,''),
@@ -229,7 +229,7 @@ INSERT INTO `quest_start_scripts` (`id`, `delay`, `command`, `datalong`, `datalo
 (4961,2,15,9097,0,0,0,4,0,0,0,0,0,0,0,0,''),
 (4975,10,7,4975,25,0,0,0,0,0,0,0,0,0,0,0,''),
 (6482,0,11,48166,30,0,0,0,0,0,0,0,0,0,0,0,'');
-/*!40000 ALTER TABLE `quest_start_scripts` ENABLE KEYS */;
+/*!40000 ALTER TABLE `dbscripts_on_quest_start` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

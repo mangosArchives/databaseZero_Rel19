@@ -29,20 +29,20 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `gossip_scripts`
+-- Table structure for table `dbscripts_on_go_template_use`
 --
 
-DROP TABLE IF EXISTS `gossip_scripts`;
+DROP TABLE IF EXISTS `dbscripts_on_go_template_use`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gossip_scripts` (
+CREATE TABLE `dbscripts_on_go_template_use` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
   `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `buddy_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `search_radius` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `buddy_entry` int(10) unsigned NOT NULL DEFAULT '0',
+  `search_radius` int(10) unsigned NOT NULL DEFAULT '0',
   `data_flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `dataint` int(11) NOT NULL DEFAULT '0',
   `dataint2` int(11) NOT NULL DEFAULT '0',
@@ -57,20 +57,12 @@ CREATE TABLE `gossip_scripts` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `gossip_scripts`
+-- Dumping data for table `dbscripts_on_go_template_use`
 --
 
-LOCK TABLES `gossip_scripts` WRITE;
-/*!40000 ALTER TABLE `gossip_scripts` DISABLE KEYS */;
-INSERT INTO `gossip_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-(125,1,22,21,5,0,0,0,0,0,0,0,0,0,0,0,'astor change faction'),
-(125,2,26,0,0,0,0,0,0,0,0,0,0,0,0,0,'astor attack start'),
-(321,0,15,9268,0,0,0,0,0,0,0,0,0,0,0,0,'Teleport to Darnassus'),
-(5750,0,15,25139,0,0,0,6,0,0,0,0,0,0,0,0,'cast teleport molten core'),
-(737901,0,30,494,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Northpass Tower taxi'),
-(737902,0,30,495,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Eastwall Tower taxi'),
-(737903,0,30,496,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Crown Guard Tower taxi');
-/*!40000 ALTER TABLE `gossip_scripts` ENABLE KEYS */;
+LOCK TABLES `dbscripts_on_go_template_use` WRITE;
+/*!40000 ALTER TABLE `dbscripts_on_go_template_use` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbscripts_on_go_template_use` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

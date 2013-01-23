@@ -284,7 +284,7 @@ INSERT INTO `command` (`name`, `security`, `help`) VALUES
 ('reload all_loot',3,'Syntax: .reload all_lootReload all `*_loot_template` tables. This can be slow operation with lags for server run.'),
 ('reload all_npc',3,'Syntax: .reload all_npc\r\n\r\nReload `points_of_interest` and `npc_*` tables if reload support added for these tables and these tables can be _safe_ reloaded.'),
 ('reload all_quest',3,'Syntax: .reload all_questReload all quest related tables if reload support added for this table and this table can be _safe_ reloaded.'),
-('reload all_scripts',3,'Syntax: .reload all_scripts\r\n\r\nReload `*_scripts` tables.'),
+('reload all_scripts',3,'Syntax: .reload all_scripts\r\n\r\nReload `dbscripts_on_*` tables.'),
 ('reload all_spell',3,'Syntax: .reload all_spellReload all `spell_*` tables with reload support added and that can be _safe_ reloaded.'),
 ('reload config',3,'Syntax: .reload configReload config settings (by default stored in mangosd.conf). Not all settings can be change at reload: some new setting values will be ignored until restart, some values will applied with delay or only to new objects/maps, some values will explicitly rejected to change at reload.'),
 ('repairitems',2,'Syntax: .repairitemsRepair all selected player\'s items.'),

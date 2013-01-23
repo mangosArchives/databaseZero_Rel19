@@ -29,13 +29,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `spell_scripts`
+-- Table structure for table `dbscripts_on_creature_movement`
 --
 
-DROP TABLE IF EXISTS `spell_scripts`;
+DROP TABLE IF EXISTS `dbscripts_on_creature_movement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `spell_scripts` (
+CREATE TABLE `dbscripts_on_creature_movement` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
   `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -57,12 +57,45 @@ CREATE TABLE `spell_scripts` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `spell_scripts`
+-- Dumping data for table `dbscripts_on_creature_movement`
 --
 
-LOCK TABLES `spell_scripts` WRITE;
-/*!40000 ALTER TABLE `spell_scripts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `spell_scripts` ENABLE KEYS */;
+LOCK TABLES `dbscripts_on_creature_movement` WRITE;
+/*!40000 ALTER TABLE `dbscripts_on_creature_movement` DISABLE KEYS */;
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(1,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'despawn self, this script is used by many creatures'),
+(41202,0,0,1,0,0,0,0,2000000161,2000000162,0,0,0,0,0,0,'stitchesyell'),
+(41203,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'stitchesidlemove'),
+(143301,1,0,0,0,0,0,0,2000000141,2000000142,0,0,0,0,0,0,'corbettwp1'),
+(143302,5,0,0,0,0,0,0,2000000143,2000000144,0,0,0,0,0,0,'corbettwp7'),
+(143303,0,0,0,0,1427,10,1,2000000145,2000000146,0,0,0,0,0,0,'corbettatharlan'),
+(143303,5,0,0,0,1427,10,4,2000000147,2000000148,0,0,0,0,0,0,'harlantalk'),
+(143303,10,0,0,0,0,0,0,2000000149,2000000150,0,0,0,0,0,0,'corbettleave'),
+(143303,40,0,0,0,0,0,0,2000000151,0,0,0,0,0,0,0,'corbetttocheese'),
+(143304,0,0,0,0,0,0,0,2000000152,2000000153,0,0,0,0,0,0,'corbettatcheese'),
+(143304,5,0,0,0,483,10,4,2000000154,2000000155,0,0,0,0,0,0,'cheeseladyreply'),
+(143304,10,0,0,0,0,0,0,2000000156,0,0,0,0,0,0,0,'corbettreply'),
+(143304,15,0,0,0,0,0,0,2000000157,0,0,0,0,0,0,0,'corbettthanks'),
+(143304,40,0,0,0,0,0,0,2000000158,0,0,0,0,0,0,0,'corbettgoeshome'),
+(143305,0,0,0,0,0,0,0,2000000159,0,0,0,0,0,0,0,'corbettisback'),
+(406801,2,0,2,0,0,0,0,2000000214,0,0,0,0,0,0,0,'Serpent Messenger - text emote'),
+(406801,8,0,2,0,3419,10,2,2000000215,0,0,0,0,0,0,0,'Serpent Messenger: Force NPC to text emote'),
+(504301,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'DefiasRioter-SetRunModeOn'),
+(566601,2,0,0,0,0,0,0,2000000208,0,0,0,0,0,0,0,'Visage Say 1'),
+(566601,2,1,2,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(566601,7,0,0,0,0,0,0,2000000209,0,0,0,0,0,0,0,'Visage Say 2'),
+(590101,0,10,11256,30000,0,0,0,0,0,0,0,-1346.59,-4076.39,-1.23,1.6,'Islensummon'),
+(590101,1,1,68,0,0,0,0,0,0,0,0,0,0,0,0,'Islenkneel'),
+(590101,5,0,0,0,11256,10,1,2000000057,0,0,0,0,0,0,0,'Islengreet'),
+(590101,10,0,0,0,11256,10,4,2000000160,0,0,0,0,0,0,0,'Manifestationreply'),
+(590101,15,1,26,0,0,0,0,0,0,0,0,0,0,0,0,'Islenstand'),
+(590101,15,0,0,0,11256,10,1,2000000058,0,0,0,0,0,0,0,'Islenthanks'),
+(590102,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Islenidle'),
+(1258101,4,18,0,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(1763501,4,24,2410,0,0,0,8,0,0,0,0,0,0,0,0,'Lordaeron Commander - mount'),
+(1763502,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Lordaeron Commander - set movement to idle'),
+(1799501,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Lordaeron Veteran - set movement to idle');
+/*!40000 ALTER TABLE `dbscripts_on_creature_movement` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

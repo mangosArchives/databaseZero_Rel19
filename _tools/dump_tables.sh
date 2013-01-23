@@ -37,7 +37,6 @@ creature_linking_template \
 creature_loot_template \
 creature_model_info \
 creature_movement \
-creature_movement_scripts \
 creature_movement_template \
 creature_onkill_reputation \
 creature_questrelation \
@@ -46,8 +45,15 @@ creature_template_addon \
 creature_template_spells \
 db_script_string \
 db_version \
+dbscripts_on_creature_movement \
+dbscripts_on_event \
+dbscripts_on_go_use \
+dbscripts_on_go_template_use \
+dbscripts_on_gossip \
+dbscripts_on_quest_end \
+dbscripts_on_quest_start \
+dbscripts_on_spell \
 disenchant_loot_template \
-event_scripts \
 exploration_basexp \
 fishing_loot_template \
 game_event \
@@ -64,12 +70,9 @@ gameobject_battleground \
 gameobject_involvedrelation \
 gameobject_loot_template \
 gameobject_questrelation \
-gameobject_scripts \
 gameobject_template \
-gameobject_template_scripts \
 gossip_menu \
 gossip_menu_option \
-gossip_scripts \
 instance_template \
 item_enchantment_template \
 item_loot_template \
@@ -110,8 +113,6 @@ pool_gameobject \
 pool_gameobject_template \
 pool_pool \
 pool_template \
-quest_end_scripts \
-quest_start_scripts \
 quest_template \
 reference_loot_template \
 reputation_reward_rate \
@@ -132,7 +133,6 @@ spell_pet_auras \
 spell_proc_event \
 spell_proc_item_enchant \
 spell_script_target \
-spell_scripts \
 spell_target_position \
 spell_threat \
 transports \
