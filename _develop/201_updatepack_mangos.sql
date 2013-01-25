@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fix Issues #15 NPC have missing gossip_menu_id and he is Vendor and Questgiver
+UPDATE `creature_template` SET gossip_menu_id=1781, npcflag=7 WHERE entry=233;
+
 -- Cleanup
 UPDATE creature SET
 curhealth = (SELECT FLOOR(RAND(1)*(maxhealth - minhealth) + minhealth) FROM creature_template WHERE creature.id = creature_template.entry)
