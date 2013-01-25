@@ -24,7 +24,6 @@ UPDATE `creature_template` SET gossip_menu_id=1781, npcflag=7 WHERE entry=233;
 UPDATE `creature_model_info` SET bounding_radius=8.8, combat_reach=8.8 WHERE modelid=8570;
 
 -- Fix Missing creature_movement for npc 8964 spawn 1
-DELETE FROM `creature` WHERE guid IN (3343, 3344);
 DELETE FROM `creature_movement` WHERE id IN (3343, 3344);
 UPDATE creature SET MovementType=2 WHERE guid IN (3343, 3344);
 
