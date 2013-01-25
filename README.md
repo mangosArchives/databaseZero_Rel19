@@ -7,3 +7,7 @@ License
 The file (`LICENSE.md`) **must** be a part of any redistributable packages
 made from this software.  No licenses should be removed from this software if
 you are making redistributable copies.
+
+How to Install
+-------
+Comming Soon!
