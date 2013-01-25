@@ -16,3 +16,22 @@
 -- along with this program; if not, write to the Free Software
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
+
+-- Cleanup
+UPDATE creature SET
+curhealth = (SELECT FLOOR(RAND(1)*(maxhealth - minhealth) + minhealth) FROM creature_template WHERE creature.id = creature_template.entry)
+WHERE curhealth < (SELECT minhealth FROM creature_template WHERE creature.id = creature_template.entry);
+
+UPDATE creature SET
+curmana = (SELECT FLOOR(RAND(1)*(maxmana - minmana) + minmana) FROM creature_template WHERE creature.id = creature_template.entry)
+WHERE curmana < (SELECT minmana FROM creature_template WHERE creature.id = creature_template.entry);
+
+UPDATE creature SET MovementType = 1 WHERE spawndist != 0 AND MovementType = 0;
+UPDATE creature SET MovementType = 0 WHERE spawndist = 0 AND MovementType != 2;
+UPDATE creature SET MovementType = 2 WHERE guid IN (SELECT DISTINCT id FROM creature_movement);
+DELETE FROM creature_movement WHERE id NOT IN (SELECT guid FROM creature);
+
+DELETE FROM creature_addon WHERE guid NOT IN (SELECT guid FROM creature);
+
+-- Update Database Version
+UPDATE db_version set version = 'ZeroDatabase 2.0.1 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
