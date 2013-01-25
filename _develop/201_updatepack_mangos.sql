@@ -20,6 +20,9 @@
 -- Fix Issues #15 NPC have missing gossip_menu_id and he is Vendor and Questgiver
 UPDATE `creature_template` SET gossip_menu_id=1781, npcflag=7 WHERE entry=233;
 
+-- Fix Onyxia hitbox
+UPDATE `creature_model_info` SET bounding_radius=8.8, combat_reach=8.8 WHERE modelid=8570;
+
 -- Cleanup
 UPDATE creature SET
 curhealth = (SELECT FLOOR(RAND(1)*(maxhealth - minhealth) + minhealth) FROM creature_template WHERE creature.id = creature_template.entry)
