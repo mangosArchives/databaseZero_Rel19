@@ -4333,7 +4333,7 @@ DELETE FROM creature_movement WHERE id NOT IN (SELECT guid FROM creature);
 DELETE FROM creature_addon WHERE guid NOT IN (SELECT guid FROM creature);
 
 --UPDATE Database Version
-UPDATE db_version set version = 'ZeroDatabase 2.0.1 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
+UPDATE db_version set version = 'ZeroDatabase 2.0.1 for MaNGOSZero z2244+ and ScriptDevZero z2633+';
 
 --UPDATE Artificial Creature Intelligence Database Version
 UPDATE db_version SET `creature_ai_version` = 'MaNGOSZero Artificial Creature Intelligence Database';
