@@ -18,7 +18,7 @@
 --
 
 -- Fix Issues #11 quests in Valley of Trials (Durotar) only for horde
-UPDATE `quest_template` SET RequiredRaces=690 WHERE entry IN (6394, 5441, 4402, 804, 790, 789, 788, 787);
+UPDATE `quest_template` SET RequiredRaces=178 WHERE entry IN (6394, 5441, 4402, 804, 790, 789, 788, 787);
 
 -- Fix Issues #15 NPC have missing gossip_menu_id and he is Vendor and Questgiver
 UPDATE `creature_template` SET gossip_menu_id=1781, npcflag=7 WHERE entry=233;
