@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- drop conditions for recipes. each player can get any recipe (without a proper profession)
+DELETE FROM `conditions` WHERE condition_entry IN (6,10,13,16);
+
 -- Cleanup
 UPDATE creature SET
 curhealth = (SELECT FLOOR(RAND(1)*(maxhealth - minhealth) + minhealth) FROM creature_template WHERE creature.id = creature_template.entry)
