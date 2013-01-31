@@ -19,6 +19,7 @@
 
 -- drop conditions for recipes. each player can get any recipe (without a proper profession) Thanks kokeszko
 DELETE FROM `conditions` WHERE condition_entry IN (6,10,13,16);
+UPDATE creature_loot_template SET condition_id=0 WHERE condition_id IN (6,10,13,16);
 
 -- Cleanup
 UPDATE creature SET
