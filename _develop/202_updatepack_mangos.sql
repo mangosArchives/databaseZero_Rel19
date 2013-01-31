@@ -17,7 +17,7 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- drop conditions for recipes. each player can get any recipe (without a proper profession)
+-- drop conditions for recipes. each player can get any recipe (without a proper profession) Thanks kokeszko
 DELETE FROM `conditions` WHERE condition_entry IN (6,10,13,16);
 
 -- Cleanup
