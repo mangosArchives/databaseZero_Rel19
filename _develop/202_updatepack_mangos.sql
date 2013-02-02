@@ -26,6 +26,12 @@ DELETE FROM `game_graveyard_zone` WHERE id=909 AND ghost_zone=3456;
 INSERT INTO `game_graveyard_zone` VALUES
 (909,3456,0);
 
+-- naxxramas creature updates
+-- Heigan the Unclean
+UPDATE `creature` SET position_x=2793.86, position_y=-3707.38, position_z=276.627, orientation=0.593412 WHERE guid=88205;
+-- Noth the Plaguebringer
+UPDATE `creature` SET position_x=2671.65, position_y=-3489.11, position_z=261.337, orientation=3.89492, spawndist=5, MovementType=1 WHERE guid=88100;
+
 -- missing gameobject spawns (naxxramas)
 DELETE FROM `gameobject` WHERE map=533;
 
