@@ -21,6 +21,11 @@
 DELETE FROM `conditions` WHERE condition_entry IN (6,10,13,16);
 UPDATE creature_loot_template SET condition_id=0 WHERE condition_id IN (6,10,13,16);
 
+-- missing graveyard for naxxramas
+DELETE FROM `game_graveyard_zone` WHERE id=909 AND ghost_zone=3456;
+INSERT INTO `game_graveyard_zone` VALUES
+(909,3456,0);
+
 -- missing gameobject spawns (naxxramas)
 DELETE FROM `gameobject` WHERE map=533;
 
