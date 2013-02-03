@@ -202,6 +202,15 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 ('82255','181478','533','3487.32','-2911.38','318.898','3.14159','0','0','-1','0','180','255','0'),
 ('82256','181228','533','3635.36','-5090.29','142.983','-1.77151','0','0','-0.774393','0.632705','180','255','0');
 
+-- Quest 8519
+UPDATE `gameobject_template` SET TYPE=0 WHERE entry IN (176147,176148);
+
+DELETE FROM `dbscripts_on_event` WHERE id IN (9425,9426,9427);
+INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('9425','2','12','66334','76','0','0','0','0','0','0','0','0','0','0','0','Close the AQ gate'),
+('9426','2','12','66335','72','0','0','0','0','0','0','0','0','0','0','0','Close the AQ roots'),
+('9427','2','12','66336','60','0','0','0','0','0','0','0','0','0','0','0','Close the AQ runes');
+
 -- Cleanup
 UPDATE creature SET
 curhealth = (SELECT FLOOR(RAND(1)*(maxhealth - minhealth) + minhealth) FROM creature_template WHERE creature.id = creature_template.entry)
