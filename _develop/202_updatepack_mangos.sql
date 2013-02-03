@@ -17,9 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- coming in next updatepack
 -- drop conditions for recipes. each player can get any recipe (without a proper profession) Thanks kokeszko
-DELETE FROM `conditions` WHERE condition_entry IN (6,10,13,16);
-UPDATE creature_loot_template SET condition_id=0 WHERE condition_id IN (6,10,13,16);
+-- DELETE FROM `conditions` WHERE condition_entry IN (6,10,13,16);
+-- UPDATE creature_loot_template SET condition_id=0 WHERE condition_id IN (6,10,13,16);
 
 -- missing graveyard for naxxramas
 DELETE FROM `game_graveyard_zone` WHERE id=909 AND ghost_zone=3456;
@@ -203,7 +204,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 ('82256','181228','533','3635.36','-5090.29','142.983','-1.77151','0','0','-0.774393','0.632705','180','255','0');
 
 -- missing creature spawns (naxxramas)
-DELETE FROM `creature` WHERE id IN (16194,16215,16216),
+DELETE FROM `creature` WHERE id IN (16194,16215,16216);
 
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
 ('127794','16194','533','0','1725','2707.62','-3244.26','267.682','1.37881','3600','0','0','182462','12000','0','0'),
