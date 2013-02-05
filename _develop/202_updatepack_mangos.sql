@@ -324,6 +324,44 @@ UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3728 AN
 UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3730 AND item=5366;
 UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3879 AND item=5366;
 
+-- Quest 963 end script
+UPDATE `quest_template` SET CompleteScript=963 WHERE entry=963;
+
+DELETE FROM `db_script_string` WHERE entry IN (2000005336,2000005337,2000005338,2000005339,2000005340,2000005341,2000005342,2000005343,2000005344,2000005345);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+(2000005336,'Anaya...? Do my eyes deceive me? Is it really you?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005337,'The ages have been cruel to you and I, my love, but be assured, it is, and at long last we are reunited.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005338,'That the fates should be so cruel as to permit us only this after a thousand years apart...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005339,'Do you hate me, my love? That I was forced to destroy your living form, that your spirit be released from unhappy bondage.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005340,'Let it not trouble your heart, beloved. You have freed me from slavery, and for that I love you all the more.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005341,'Sadly, even this must be cut short... The ties that bind me to this world weaken, and pull me away...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005342,'No! Anaya... Anaya! Don\'t leave me! Please...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005343,'Farewell, Cerellean, until we are joined once again...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005344,'Anaya\'s soft voice trails away into the mists. \"Know that I love you always...\"',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(2000005345,'How, my love? How will I find the strength to face the ages of the world without you by my side...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+DELETE FROM `dbscripts_on_quest_end` WHERE id=963;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES	
+(963,1,10,3843,41000,0,0,0,0,0,0,0,6426.84,603.166,9.46655,4.14031,'Anaya - appears'),
+(963,4,0,0,0,0,0,0,2000005336,0,0,0,0,0,0,0,''),
+(963,4,1,18,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(963,9,0,0,0,3843,10,4,2000005337,0,0,0,0,0,0,0,''),
+(963,9,1,1,0,3843,10,0,0,0,0,0,0,0,0,0,''),
+(963,15,0,0,0,0,0,0,2000005338,0,0,0,0,0,0,0,''),
+(963,15,1,1,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(963,20,0,0,0,0,0,0,2000005339,0,0,0,0,0,0,0,''),
+(963,20,1,6,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(963,25,0,0,0,3843,10,4,2000005340,0,0,0,0,0,0,0,''),
+(963,25,1,1,0,3843,10,0,0,0,0,0,0,0,0,0,''),
+(963,30,0,0,0,3843,10,4,2000005341,0,0,0,0,0,0,0,''),
+(963,30,1,1,0,3843,10,0,0,0,0,0,0,0,0,0,''),
+(963,35,0,0,0,0,0,0,2000005342,0,0,0,0,0,0,0,''),
+(963,35,1,6,0,0,0,0,0,0,0,0,0,0,0,0,''),
+(963,39,0,0,0,3843,10,4,2000005343,0,0,0,0,0,0,0,''),
+(963,42,0,2,0,0,0,0,2000005344,0,0,0,0,0,0,0,'Anaya - disappear'),
+(963,47,0,0,0,0,0,0,2000005345,0,0,0,0,0,0,0,''),
+(963,51,1,18,0,0,0,0,0,0,0,0,0,0,0,0,'');
+
 -- Cleanup
 UPDATE creature SET
 curhealth = (SELECT FLOOR(RAND(1)*(maxhealth - minhealth) + minhealth) FROM creature_template WHERE creature.id = creature_template.entry)
