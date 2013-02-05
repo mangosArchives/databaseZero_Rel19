@@ -317,6 +317,13 @@ INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalon
 ('9426','2','12','66335','72','0','0','0','0','0','0','0','0','0','0','0','Close the AQ roots'),
 ('9427','2','12','66336','60','0','0','0','0','0','0','0','0','0','0','0','Close the AQ runes');
 
+-- Quest 970
+UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3725 AND item=5366;
+UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3727 AND item=5366;
+UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3728 AND item=5366;
+UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3730 AND item=5366;
+UPDATE `creature_loot_template` SET ChanceOrQuestChance=-100 WHERE entry=3879 AND item=5366;
+
 -- Cleanup
 UPDATE creature SET
 curhealth = (SELECT FLOOR(RAND(1)*(maxhealth - minhealth) + minhealth) FROM creature_template WHERE creature.id = creature_template.entry)
