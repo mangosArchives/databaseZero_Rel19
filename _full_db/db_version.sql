@@ -49,7 +49,7 @@ CREATE TABLE `db_version` (
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_z2241_s1878_12344_01_mangos_command`) VALUES
-('ZeroDatabase 2.0.1 for MaNGOSZero z2244+ and ScriptDevZero z2633+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
+('ZeroDatabase 2.0.2 for MaNGOSZero z2244+ and ScriptDevZero z2633+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
