@@ -96,6 +96,29 @@ INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0`, `
 ('4733','Strength of the body is the power and swiftness of action.  You must keep yourself fit at all times, both physically and mentally.  The bear\'s girth highlights its strength, as it is a ferocious foe in combat.  The bear\'s girth, however, belies its lithe agility and sharp mind.  These are surprises you will use to your advantage.$B$BYou must rely on the strength of the bear\'s body in order to master the way of the Claw.','','0','1','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0'),
 ('4735','It remains to be seen if you are ready, young one.  Even the wisest and oldest of druids are never truly ready when their ultimate time of testing comes.$B$BYou have heard my words, and now you must move on.  Heed what I have taught you.  There will be a time when you will have your strength tested.  You must face your foe as the bear would - with strength of body and with strength of heart.  Learn from the fight, young one.  Go... with my blessings.','','0','1','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0');
 
+-- Gossip for npc 12144 fix Quest 6001 and 6002
+UPDATE `creature_template` SET gossip_menu_id=3862 WHERE entry=12144;
+
+DELETE FROM `gossip_menu_option` WHERE menu_id=3862;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('3862','0','0','You have fought well, spirit.  I ask you to grant me the strength of your body and the strength of your heart.','1','1','3863','0','386201','0','0','','230'),
+('3862','1','0','You have fought well, spirit.  I ask you to grant me the strength of your body and the strength of your heart.','1','1','3863','0','386202','0','0','','455');
+
+DELETE FROM `gossip_menu` WHERE entry IN (3862,3863);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('3862','4714','0','0'),
+('3863','4715','0','0');
+
+DELETE FROM `conditions` WHERE condition_entry IN (230,455);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('230','9','6001','1'),
+('455','9','6002','1');
+
+DELETE FROM `dbscripts_on_gossip` WHERE id IN (386201,386202);
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('386201','0','7','6001','6','0','0','0','0','0','0','0','0','0','0','0','Spirit of Lunaclaw - Questcredit (Alliance)'),
+('386202','0','7','6002','6','0','0','0','0','0','0','0','0','0','0','0','Spirit of Lunaclaw - Questcredit (Horde)');
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
