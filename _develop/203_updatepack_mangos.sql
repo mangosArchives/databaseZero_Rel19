@@ -59,8 +59,9 @@ INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0`, `
 -- Fix Gossip for npc 11956
 UPDATE creature_template set gossip_menu_id=3882;
 
-DELETE FROM `gossip_menu` WHERE entry IN (3882,3884,3885);
+DELETE FROM `gossip_menu` WHERE entry IN (3881,3882,3884,3885);
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('3881','4721','0','0'),
 ('3882','4718','0','0'),
 ('3882','4719','0','676'),
 ('3884','4734','0','0'),
@@ -72,20 +73,22 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 ('507','9','5929','0'),
 ('676','-2','507','231');
 
-DELETE FROM `gossip_menu_option` WHERE menu_id=3884;
+DELETE FROM `gossip_menu_option` WHERE menu_id IN (3884,3885);
 INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
 ('3884','0','0','I have heard your words, Great Bear Spirit, and I understand.  I now seek your blessings to fully learn the way of the Claw.','1','1','3885','0','3884','0','0','','507'),
-('3884','1','0','I have heard your words, Great Bear Spirit, and I understand.  I now seek your blessings to fully learn the way of the Claw.','1','1','3885','0','3885','0','0','','231');
+('3884','1','0','I have heard your words, Great Bear Spirit, and I understand.  I now seek your blessings to fully learn the way of the Claw.','1','1','3885','0','3885','0','0','','231'),
+('3882','0','0','What do you represent, spirit?','1','1','3881','0','0','0','0','','676');
 
 DELETE FROM `dbscripts_on_gossip` WHERE id IN (3884,3885);
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('3884','1','7','5929','5','0','0','0','0','0','0','0','0','0','0','0','Quest complete 5929'),
 ('3885','1','7','5930','5','0','0','0','0','0','0','0','0','0','0','0','Quest complete 5930');
 
-DELETE FROM `npc_text` WHERE id IN (4718,4719,4734,4735);
+DELETE FROM `npc_text` WHERE id IN (4718,4719,4721,4734,4735);
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0`, `em0_1`, `em0_2`, `em0_3`, `em0_4`, `em0_5`, `text1_0`, `text1_1`, `lang1`, `prob1`, `em1_0`, `em1_1`, `em1_2`, `em1_3`, `em1_4`, `em1_5`, `text2_0`, `text2_1`, `lang2`, `prob2`, `em2_0`, `em2_1`, `em2_2`, `em2_3`, `em2_4`, `em2_5`, `text3_0`, `text3_1`, `lang3`, `prob3`, `em3_0`, `em3_1`, `em3_2`, `em3_3`, `em3_4`, `em3_5`, `text4_0`, `text4_1`, `lang4`, `prob4`, `em4_0`, `em4_1`, `em4_2`, `em4_3`, `em4_4`, `em4_5`, `text5_0`, `text5_1`, `lang5`, `prob5`, `em5_0`, `em5_1`, `em5_2`, `em5_3`, `em5_4`, `em5_5`, `text6_0`, `text6_1`, `lang6`, `prob6`, `em6_0`, `em6_1`, `em6_2`, `em6_3`, `em6_4`, `em6_5`, `text7_0`, `text7_1`, `lang7`, `prob7`, `em7_0`, `em7_1`, `em7_2`, `em7_3`, `em7_4`, `em7_5`) VALUES
 ('4718','The bear looks at you calmy and patiently, but says nothing.','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0'),
 ('4719','The bear spirit looks upon you with a calm and peaceful gaze.  You hear a voice speak to you as though it was coming from the bear, but the creature makes no indication that it is speaking.$B$B\"Greetings, my young friend.  If you have come to me seeking guidance, then perhaps I can help you find what you seek.\"','','0','1','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0'),
+('4721','I represent the strength which bolsters you as a young druid.  You have come to me to learn this strength, young one, and I will teach this to you.  I will teach you all that is the spirit bear, provided you will listen and understand.$B$BIn order to know what it means to draw upon my spirit, you need to understand the importance of the strength of the body, as well as the strength of the heart.','','0','1','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0'),
 ('4734','Strength of the heart is what gives you the resolve to take action... action that is rooted in intents that are pure and forthright.  To keep the balance is not to be complacent or banal.$B$BYou must show resolve for that which you believe in, and you must be willing to fight for it.  The mother bear shows endless conviction in protecting her young, as does an elder bear protecting his den.  It is this resolve, this strength of heart, which you must come to know if you are to master the way of the Claw.','','0','1','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0'),
 ('4735','It remains to be seen if you are ready, young one.  Even the wisest and oldest of druids are never truly ready when their ultimate time of testing comes.$B$BYou have heard my words, and now you must move on.  Heed what I have taught you.  There will be a time when you will have your strength tested.  You must face your foe as the bear would - with strength of body and with strength of heart.  Learn from the fight, young one.  Go... with my blessings.','','0','1','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0');
 
