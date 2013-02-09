@@ -119,6 +119,9 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 ('386201','0','7','6001','6','0','0','0','0','0','0','0','0','0','0','0','Spirit of Lunaclaw - Questcredit (Alliance)'),
 ('386202','0','7','6002','6','0','0','0','0','0','0','0','0','0','0','0','Spirit of Lunaclaw - Questcredit (Horde)');
 
+-- Added text to creature 5494 Thanks Ghurok (add right gossip_menu_id)
+UPDATE `creature_template` SET gossip_menu_id=685 WHERE entry=5494;
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
