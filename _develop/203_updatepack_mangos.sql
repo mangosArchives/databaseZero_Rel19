@@ -122,6 +122,9 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 -- Added text to creature 5494 Thanks Ghurok (add right gossip_menu_id)
 UPDATE `creature_template` SET gossip_menu_id=685 WHERE entry=5494;
 
+-- Set resistances of multiple Kobold mobs to 0
+UPDATE `creature_template` SET resistance2=0 WHERE entry IN (40,475,476,1236,4111);
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
