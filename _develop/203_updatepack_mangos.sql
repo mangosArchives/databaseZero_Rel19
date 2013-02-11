@@ -125,6 +125,9 @@ UPDATE `creature_template` SET gossip_menu_id=685 WHERE entry=5494;
 -- Set resistances of multiple Kolkar mobs to 0
 UPDATE `creature_template` SET resistance2=0, resistance5=0 WHERE entry IN (3119,3120,3272,3273,3274,3275,3397,4632,4633,4634,4635,4636,4637,9523,9524,12976,12977);
 
+-- Set resistances of multiple Kobold mobs to 0
+UPDATE `creature_template` SET resistance2=0 WHERE entry IN (40,475,476,1236,4111);
+
 -- Remove loot (3939), skinning loots (3939,5766,14865), and make mob non tameable (3939)
 DELETE FROM `creature_loot_template` WHERE entry=3939;
 DELETE FROM `skinning_loot_template` WHERE entry=10105;
