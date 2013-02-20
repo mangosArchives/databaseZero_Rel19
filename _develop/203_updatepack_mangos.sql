@@ -134,7 +134,7 @@ DELETE FROM `skinning_loot_template` WHERE entry=10105;
 UPDATE `creature_template` SET lootid=0, skinloot=0, type_flags=0 WHERE entry IN (3939,5766,14865);
 
 -- Typo in creature name thanks danielsreichenbach
-UPDATE  `creature_template` SET  `name` =  'Might of Kalimdor Mage' WHERE  `creature_template`.`entry` =15842;
+UPDATE `creature_template` SET name='Might of Kalimdor Mage' WHERE entry=15842;
 
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
