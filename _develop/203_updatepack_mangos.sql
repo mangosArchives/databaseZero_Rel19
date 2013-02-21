@@ -152,6 +152,230 @@ DELETE FROM `creature` WHERE guid=88756;
 -- Fix Typo in Quest End Script for Quest 963
 UPDATE `creature_template` SET MovementType=0 WHERE entry=3843;
 
+-- Creature Type ModelID Fixes Thanks danielsreichenbach
+-- Creature fix for 'Dalaran Serpent': correct type
+UPDATE `creature_template` SET `type` =  1 WHERE `entry` = 2540;
+-- Creature fix for 'Ward of Laze': correct type
+UPDATE `creature_template` SET `type` =  11 WHERE `entry` = 2667;
+-- Creature fix for 'Trigore the Lasher': correct type
+UPDATE `creature_template` SET `type` =  1 WHERE `entry` = 3652;
+-- Creature fix for 'Mystlash Flayer': correct type
+UPDATE `creature_template` SET `type` =  1 WHERE `entry` = 3772;
+-- Creature fix for 'Swamp Ooze': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 4391;
+-- Creature fix for 'Corrosive Swamp Ooze': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 4392;
+-- Creature fix for 'Illusionary Nightmare': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 4785;
+-- Creature fix for 'Force of Nature': correct type
+UPDATE `creature_template` SET `type` =  4 WHERE `entry` = 4795;
+-- Creature fix for 'Nightmare Ectoplasm': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 5763;
+-- Creature fix for 'Cloned Ectoplasm': correct type
+UPDATE `creature_template` SET `type` =  4 WHERE `entry` = 5780;
+-- Creature fix for 'Deviate Nightmare': correct type
+UPDATE `creature_template` SET `type` =  1 WHERE `entry` = 5914;
+-- Creature fix for 'Ward of Zanzil': correct type
+UPDATE `creature_template` SET `type` =  11 WHERE `entry` = 6386;
+-- Creature fix for 'Zul'Farrak Dead Hero': correct type
+UPDATE `creature_template` SET `type` =  6 WHERE `entry` = 7276;
+-- Creature fix for 'Elven Wisp': correct type
+UPDATE `creature_template` SET `type` =  8 WHERE `entry` = 7570;
+-- Creature fix for 'Witherbark Bloodling': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 7768;
+-- Creature fix for 'Hazzali Parasite': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 7769;
+-- Creature fix for 'Sul'lithuz Broodling': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 8138;
+-- Creature fix for 'Sul'lithuz Warder': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 8149;
+-- Creature fix for 'Servant of Antu'sul': correct type
+UPDATE `creature_template` SET `type` =  1 WHERE `entry` = 8156;
+-- Creature fix for 'Hakkari Minion': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 8437;
+-- Creature fix for 'Hakkari Bloodkeeper': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 8438;
+-- Creature fix for 'Shade of Hakkar': correct type
+UPDATE `creature_template` SET `type` =  6 WHERE `entry` = 8440;
+-- Creature fix for 'Avatar of Hakkar': correct type
+UPDATE `creature_template` SET `type` =  6 WHERE `entry` = 8443;
+-- Creature fix for 'Idol Oven Fire Target': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 8662;
+-- Creature fix for 'Deathly Usher': correct type
+UPDATE `creature_template` SET `type` =  6 WHERE `entry` = 8816;
+-- Creature fix for 'Pet Bomb': correct type
+UPDATE `creature_template` SET `type` =  9 WHERE `entry` = 8937;
+-- Creature fix for 'Spawn of Bael'Gar': correct type
+UPDATE `creature_template` SET `type` =  4 WHERE `entry` = 9436;
+-- Creature fix for 'Cloned Ooze': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 9477;
+-- Creature fix for 'Gorishi Grub': correct type
+UPDATE `creature_template` SET `type` =  1 WHERE `entry` = 9498;
+-- Creature fix for 'Gargantuan Ooze': correct type
+UPDATE `creature_template` SET `type` =  10 WHERE `entry` = 9621;
+-- Creature fix for 'Gorishi Hive Guard': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 10040;
+-- Creature fix for 'Gorishi Hive Queen': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 10041;
+-- Creature fix for 'Captured Felwood Ooze': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 10290;
+-- Creature fix for 'Bile Slime': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 10697;
+-- Creature fix for 'Rotting Worm': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 10925;
+-- Creature fix for 'Skeletal Black Warhorse': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 11195;
+-- Creature fix for 'Bazzalan': correct type
+UPDATE `creature_template` SET `type` = 3 WHERE `entry` = 11519;
+-- Creature fix for 'Ley Sprite': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 12381;
+-- Creature fix for 'Vorsha the Lasher': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 12940;
+-- Creature fix for 'Hive'Ashi Ambusher': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 13301;
+-- Creature fix for 'PvP Graveyard Credit Marker': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 13756;
+-- Creature fix for 'PvP Tower Credit Marker': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 13778;
+-- Creature fix for 'PvP Mine Credit Marker': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 13796;
+-- Creature fix for 'Demon Portal': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14081;
+-- Creature fix for 'Blue Drakonid': correct type
+UPDATE `creature_template` SET `type` = 2 WHERE `entry` = 14261;
+-- Creature fix for 'Green Drakonid': correct type
+UPDATE `creature_template` SET `type` = 2 WHERE `entry` = 14262;
+-- Creature fix for 'Bronze Drakonid': correct type
+UPDATE `creature_template` SET `type` = 2 WHERE `entry` = 14263;
+-- Creature fix for 'Red Drakonid': correct type
+UPDATE `creature_template` SET `type` = 2 WHERE `entry` = 14264;
+-- Creature fix for 'Black Drakonid': correct type
+UPDATE `creature_template` SET `type` = 2 WHERE `entry` = 14265;
+-- Creature fix for 'Chromatic Drakonid': correct type
+UPDATE `creature_template` SET `type` = 2 WHERE `entry` = 14302;
+-- Creature fix for 'Human Orphan': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 14306;
+-- Creature fix for 'Warpwood Spores': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14366;
+-- Creature fix for 'Alarm-o-Bot': correct type
+UPDATE `creature_template` SET `type` = 9 WHERE `entry` = 14434;
+-- Creature fix for 'Orcish Orphan': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 14444;
+-- Creature fix for 'Alliance Battle Standard': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14465;
+-- Creature fix for 'Horde Battle Standard': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14466;
+-- Creature fix for 'High Priestess Arlokk': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 14515;
+-- Creature fix for 'Vartrus the Ancient': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14524;
+-- Creature fix for 'Stoma the Ancient': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14525;
+-- Creature fix for 'Hastat the Ancient': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14526;
+-- Creature fix for 'Emissary Roman'khan': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 14862;
+-- Creature fix for 'PvP A-Mid Credit Marker': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15001;
+-- Creature fix for 'PvP Mid Credit Marker': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15002;
+-- Creature fix for 'PvP ALT-S Credit Marker': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15004;
+-- Creature fix for 'PvP ALT-N Credit Marker': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15005;
+-- Creature fix for 'Arathi Farmer': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15045;
+-- Creature fix for 'Forsaken Farmer': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 15046;
+-- Creature fix for 'Arathi Lumberjack': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15062;
+-- Creature fix for 'Arathi Blacksmith': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15063;
+-- Creature fix for 'Forsaken Blacksmith': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 15064;
+-- Creature fix for 'Arathi Miner': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15074;
+-- Creature fix for 'Forsaken Miner': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 15075;
+-- Creature fix for 'Arathi Stablehand': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15086;
+-- Creature fix for 'Forsaken Stablehand': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 15087;
+-- Creature fix for 'Forsaken Lumberjack': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 15089;
+-- Creature fix for 'Swift Zulian Tiger': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 15104;
+-- Creature fix for 'Arathi Horse': correct type and modelid
+UPDATE `creature_template` SET `type` = 1, `modelid_1` = 229 WHERE `entry` = 15107;
+-- Creature fix for 'Forsaken Horse': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 15108;
+-- Creature fix for 'Pat's Splash Guy': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15140;
+-- Creature fix for 'The Banshee Queen': correct type and modelid
+UPDATE `creature_template` SET `type` = 7, `modelid_1` = 11657 WHERE `entry` = 15193;
+-- Creature fix for 'Hoary Templar': correct type
+UPDATE `creature_template` SET `type` = 4 WHERE `entry` = 15212;
+-- Creature fix for 'Xil'xix': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 15286;
+-- Creature fix for 'Aluntir': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 15288;
+-- Creature fix for 'Arakis': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 15290;
+-- Creature fix for 'Qiraji Swarmguard': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15343;
+-- Creature fix for 'Swarmguard Needler': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15344;
+-- Creature fix for 'Colonel Zerran': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15385;
+-- Creature fix for 'Major Yeggeth': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15386;
+-- Creature fix for 'Qiraji Warrior': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15387;
+-- Creature fix for 'Major Pakkon': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15388;
+-- Creature fix for 'Captain Drenn': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15389;
+-- Creature fix for 'Captain Xurrem': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15390;
+-- Creature fix for 'Captain Qeez': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15391;
+-- Creature fix for 'Captain Tuubid': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15392;
+-- Creature fix for 'Disgusting Oozeling': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15429;
+-- Creature fix for 'Lieutnant General Andorov': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15471;
+-- Creature fix for 'Kaldorei Elite': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15473;
+-- Creature fix for 'Glob of Viscidus': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15667;
+-- Creature fix for 'Father Winter's Helper': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15698;
+-- Creature fix for 'Winter's Little Helper': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15705;
+-- Creature fix for 'Winter Reindeer': correct type
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 15706;
+-- Creature fix for 'Eye Tentacle': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15726;
+-- Creature fix for 'Colossal Anubisath Warbringer': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15743;
+-- Creature fix for 'Imperial Qiraji Destroyer': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 15744;
+-- Creature fix for 'Flesh Tentacle': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15802;
+-- Creature fix for 'Lieutenant General Nokhor': correct type, and modelid
+UPDATE `creature_template` SET `type` = 7, `modelid_1` = 15738 WHERE `entry` = 15818;
+-- Creature fix for 'Lord Valthalak': correct type
+UPDATE `creature_template` SET `type` = 2 WHERE `entry` = 16042;
+-- Creature fix for 'Peddlefeet': correct type
+UPDATE `creature_template` SET `type` = 7 WHERE `entry` = 16085;
+-- Creature fix for 'Shadow of Doom': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 16143;
+-- Creature fix for 'Plagued Gargoyle': correct type
+UPDATE `creature_template` SET `type` = 6 WHERE `entry` = 16446;
+-- Creature fix for 'Stormpike Battle Standard': correct type
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 19045;
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
