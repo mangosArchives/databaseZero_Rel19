@@ -133,8 +133,21 @@ DELETE FROM `creature_loot_template` WHERE entry=3939;
 DELETE FROM `skinning_loot_template` WHERE entry=10105;
 UPDATE `creature_template` SET lootid=0, skinloot=0, type_flags=0 WHERE entry IN (3939,5766,14865);
 
--- Typo in creature name thanks danielsreichenbach
+-- Typo in creature (15842) name thanks danielsreichenbach
 UPDATE `creature_template` SET name='Might of Kalimdor Mage' WHERE entry=15842;
+
+-- Fix Sapphiron Blizzlike Spawn Event
+DELETE FROM `dbscripts_on_event` WHERE id=10211;
+INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('10211','0','10','15989','0','0','0','0','0','0','0','0','3521.3','-5237.56','137.72','4.51','Sapphiron Spawn Event');
+
+DELETE FROM `gameobject` WHERE guid=960;
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+('960','181356','533','3522.57','-5236.76','137.63','-1.8','0','0','-0.783327','0.62161','604800','100','1');
+
+UPDATE `gameobject_template` SET `data3`=29250, `data10`=1 WHERE `entry`=181356;
+
+DELETE FROM `creature` WHERE guid=88756;
 
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
