@@ -378,5 +378,5 @@ DELETE FROM creature_movement WHERE id NOT IN (SELECT guid FROM creature);
 
 DELETE FROM creature_addon WHERE guid NOT IN (SELECT guid FROM creature);
 
---UPDATE Database Version
+-- UPDATE Database Version
 UPDATE db_version set version = 'ZeroDatabase 2.0.2 for MaNGOSZero z2244+ and ScriptDevZero z2633+';

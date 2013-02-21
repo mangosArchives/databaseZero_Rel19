@@ -149,6 +149,9 @@ UPDATE `gameobject_template` SET `data3`=29250, `data10`=1 WHERE `entry`=181356;
 
 DELETE FROM `creature` WHERE guid=88756;
 
+-- Fix Typo in Quest End Script for Quest 963
+UPDATE `creature_template` SET MovementType=0 WHERE entry=3843;
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
@@ -192,5 +195,5 @@ DELETE FROM creature_questrelation WHERE id NOT IN (SELECT entry FROM creature_t
 DELETE FROM creature_onkill_reputation WHERE creature_id NOT IN (SELECT entry FROM creature_template);
 UPDATE creature_template SET npcflag=npcflag|2 WHERE entry IN (SELECT id FROM creature_questrelation UNION SELECT id FROM creature_involvedrelation);
 
---UPDATE Database Version
+-- UPDATE Database Version
 UPDATE db_version set version = 'ZeroDatabase 2.0.3 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
