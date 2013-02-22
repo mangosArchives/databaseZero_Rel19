@@ -47,6 +47,7 @@ ALTER TABLE `creature_template_addon`  ORDER BY `entry` ASC;
 ALTER TABLE `creature_template_spells`  ORDER BY `entry` ASC;
 ALTER TABLE `db_script_string`  ORDER BY `entry` ASC;
 ALTER TABLE `db_version`  ORDER BY `version` ASC;
+ALTER TABLE `dbscripts_on_creature_death`  ORDER BY `id` ASC, `delay` ASC;
 ALTER TABLE `dbscripts_on_creature_movement`  ORDER BY `id` ASC, `delay` ASC;
 ALTER TABLE `dbscripts_on_event`  ORDER BY `id` ASC, `delay` ASC;
 ALTER TABLE `dbscripts_on_go_use`  ORDER BY `id` ASC, `delay` ASC;

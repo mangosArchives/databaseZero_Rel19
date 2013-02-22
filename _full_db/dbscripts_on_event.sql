@@ -357,6 +357,7 @@ INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalon
 (9542,0,10,15571,9000000,0,0,0,0,0,0,0,3483,-6692.79,-2.43,0.8,''),
 (9571,0,10,15623,3000000,0,0,0,0,0,0,0,6724.96,-5275.13,778.23,1.82,''),
 (10015,0,10,16387,9000000,0,0,0,0,0,0,0,3644,-3473.77,138.56,4.47,''),
+(10211,0,10,15989,0,0,0,0,0,0,0,0,3521.3,-5237.56,137.72,4.51,'Sapphiron Spawn Event'),
 (10691,0,10,17635,0,0,0,8,0,0,0,0,2532.85,-4764.92,103.617,2.35619,'Alliance Eastwall Tower capture - summon Lordaeron Commander'),
 (10691,0,10,17647,0,0,0,8,0,0,0,0,2533.33,-4769.31,104.396,2.37365,'Alliance Eastwall Tower capture - summon Lordaeron Soldier'),
 (10691,0,10,17647,0,0,0,8,0,0,0,0,2537.77,-4765.94,104.432,2.3911,'Alliance Eastwall Tower capture - summon Lordaeron Soldier'),
