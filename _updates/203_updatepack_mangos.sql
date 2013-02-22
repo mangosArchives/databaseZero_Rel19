@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Startup Error Fixes
+UPDATE `creature_template` SET minlevel=18, maxlevel=19 WHERE entry=3989;
+UPDATE `creature_template` SET minlevel=60, maxlevel=60 WHERE entry=14302;
+
 -- drop conditions for recipes. each player can get any recipe (without a proper profession) Thanks kokeszko
 DELETE FROM `conditions` WHERE condition_entry IN (6,10,13,16);
 UPDATE creature_loot_template SET condition_id=0 WHERE condition_id IN (6,10,13,16);
@@ -57,7 +61,7 @@ INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `prob0`, `em0_0`, `
 ('1955','As you can see, I am but one man with a lumbering oaf of a squire. The might of the Dark Iron dwarves and the beasts held in the grip of Ragnaros would surely overwhelm me alone, but I have the utmost confidence that such a brave and ambitious adventurer such as you would have no problem handling the denizens of the cauldron. Should you choose to assist me, I shall reward you with riches and wealth beyond your wildest dreams.','','0','1','0','1','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0','','','0','0','0','0','0','0','0','0');
 
 -- Fix Gossip for npc 11956
-UPDATE creature_template set gossip_menu_id=3882;
+UPDATE creature_template set gossip_menu_id=3882 WHERE entry=11956;
 
 DELETE FROM `gossip_menu` WHERE entry IN (3881,3882,3883,3884,3885);
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
@@ -420,4 +424,4 @@ DELETE FROM creature_onkill_reputation WHERE creature_id NOT IN (SELECT entry FR
 UPDATE creature_template SET npcflag=npcflag|2 WHERE entry IN (SELECT id FROM creature_questrelation UNION SELECT id FROM creature_involvedrelation);
 
 -- UPDATE Database Version
-UPDATE db_version set version = 'ZeroDatabase 2.0.3 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
+UPDATE db_version set version = 'ZeroDatabase 2.0.3 for MaNGOSZero z2269+ and ScriptDevZero z2634+';
