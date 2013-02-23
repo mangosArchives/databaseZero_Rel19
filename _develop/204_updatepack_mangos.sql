@@ -17,6 +17,27 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fix npc gossip (15609) this fix quest 8738 close #36
+UPDATE `creature_template` SET gossip_menu_id=6692 WHERE entry=15609;
+
+DELETE FROM `gossip_menu_option` WHERE menu_id=6692;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('6692','0','0','May I have your report?','1','1','-1','0','6692','0','0',NULL,'1777');
+
+DELETE FROM `gossip_menu` WHERE entry=6692;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('6692','8065','0','0');
+
+DELETE FROM `conditions` WHERE condition_entry IN (1771,1774,1777);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('1771','9','8738','0'),
+('1774','24','21160','1'),
+('1777','-1','1771','1774');
+
+DELETE FROM `dbscripts_on_gossip` WHERE id=6692;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('6692','0','15','25847','0','0','0','0','0','0','0','0','0','0','0','0','Create Hive\'Regal Scout Report');
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
