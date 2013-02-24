@@ -80,6 +80,67 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 ('520','-1','5','102'),
 ('677','-2','158','159');
 
+-- Fix NPC Gossip (15171,15170) This fix Quest 8304 close #41
+UPDATE `creature_template` SET gossip_menu_id=6533 WHERE entry=15171;
+UPDATE `creature_template` SET gossip_menu_id=6534 WHERE entry=15170;
+
+DELETE FROM `gossip_menu_option` WHERE menu_id IN (6533,6552,6553,6554,6555,6556,6557,6558);
+INSERT `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('6533','0','0','Hello, Frankal. I\'ve heard that you might have some information as to the whereabouts of Mistress Natalia Mar\'alith.','1','1','6558','0','0','0','0',NULL,'512'),
+('6552','0','0','Thanks for the information, Frankal.','1','1','-1','0','6552','0','0',NULL,'0'),
+('6553','0','0','What a story! So she went into Hive\'Regal and that was the last you saw of her?','1','1','6552','0','0','0','0',NULL,'0'),
+('6554','0','0','Then what?','1','1','6553','0','0','0','0',NULL,'0'),
+('6555','0','0','I\'ve been meaning to ask out about that monkey.','1','1','6554','0','0','0','0',NULL,'0'),
+('6556','0','0','You couldn\'t handle a lone night elf priestess?','1','1','6555','0','0','0','0',NULL,'0'),
+('6557','0','0','That\'s odd.','1','1','6556','0','0','0','0',NULL,'0'),
+('6558','0','0','That\'s what I like to hear.','1','1','6557','0','0','0','0',NULL,'0');
+
+DELETE FROM `gossip_menu_option` WHERE menu_id IN (6534,6545,6546,6547,6548,6549,6550,6551);
+INSERT `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('6534','0','0','Hello, Rutgar. The Commander has sent me here to gather some information about his missing wife.','1','1','6551','0','0','0','0',NULL,'512'),
+('6545','0','0','I\'ll be back once I straighten this mess out.','1','1','-1','0','6545','0','0',NULL,'0'),
+('6546','0','0','Possessed by what?','1','1','6545','0','0','0','0',NULL,'0'),
+('6547','0','0','Lost it? What do you mean?','1','1','6546','0','0','0','0',NULL,'0'),
+('6548','0','0','What demands?','1','1','6547','0','0','0','0',NULL,'0'),
+('6549','0','0','Natalia?','1','1','6548','0','0','0','0',NULL,'0'),
+('6550','0','0','What happened to her after that?','1','1','6549','0','0','0','0',NULL,'0'),
+('6551','0','0','That sounds dangerous.','1','1','6550','0','0','0','0',NULL,'0');
+
+DELETE FROM `gossip_menu` WHERE entry IN (6533,6552,6553,6554,6555,6556,6557,6558);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('6533','7735','0','0'),
+('6552','7768','0','0'),
+('6553','7767','0','0'),
+('6554','7766','0','0'),
+('6555','7765','0','0'),
+('6556','7764','0','0'),
+('6557','7763','0','0'),
+('6558','7762','0','0');
+
+DELETE FROM `gossip_menu` WHERE entry IN (6534,6545,6546,6547,6548,6549,6550,6551);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('6534','7736','0','0'),
+('6545','7761','0','0'),
+('6546','7760','0','0'),
+('6547','7759','0','0'),
+('6548','7758','0','0'),
+('6549','7757','0','0'),
+('6550','7756','0','0'),
+('6551','7755','0','0');
+
+DELETE FROM `conditions` WHERE condition_entry=512;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('512','9','8304','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE id=6552;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('6552','0','8','15221','0','0','0','0','0','0','0','0','0','0','0','0','cast killcredit 15221');
+
+DELETE FROM `dbscripts_on_gossip` WHERE id=6545;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('6545','0','8','15222','0','0','0','0','0','0','0','0','0','0','0','0','cast killcredit 15222');
+
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
