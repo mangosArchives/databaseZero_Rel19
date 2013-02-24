@@ -41,6 +41,45 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 -- Small Update for Quest 5561 Thanks Ghurok
 UPDATE `quest_template` SET ReqSpellCast1=0 WHERE entry=5561;
 
+-- Fix Gossip of NPC (11800) and (11798) close #38
+UPDATE `creature_template` SET gossip_menu_id=4041 WHERE entry=11800;
+UPDATE `creature_template` SET gossip_menu_id=4042 WHERE entry=11798;
+
+DELETE FROM `gossip_menu_option` WHERE menu_id IN (4041,4042);
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('4041','0','0','I\'d like to fly to Rut\'theran Village.','1','1','-1','0','4041','0','0',NULL,'520'),
+('4041','1','0','Do you know where I can find Half Pendant of Aquatic Agility?','1','1','20009','0','0','0','0',NULL,'677'),
+('4042','0','0','I\'d like to fly to Thunder Bluff.','1','1','-1','0','4042','0','0',NULL,'519'),
+('4042','1','0','Do you know where I can find Half Pendant of Aquatic Endurance?','1','1','20010','0','0','0','0',NULL,'677');
+
+DELETE FROM `gossip_menu` WHERE entry IN (4041,4042,20009,20010);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('4041','4913','0','75'),
+('4041','4914','0','520'),
+('4041','4915','0','519'),
+('4042','4916','0','75'),
+('4042','4917','0','520'),
+('4042','4918','0','519'),
+('20009','5375','0','159'),
+('20009','5376','0','158'),
+('20010','5373','0','159'),
+('20010','5374','0','158');
+
+DELETE FROM `dbscripts_on_gossip` WHERE id IN (4041,4042);
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('4041','0','30','315','0','0','0','0','0','0','0','0','0','0','0','0','fly to Rut\'theran Village'),
+('4042','0','30','316','0','0','0','0','0','0','0','0','0','0','0','0','fly to Thunder Bluff');
+
+DELETE FROM `conditions` WHERE condition_entry IN (75,102,158,159,519,520,677);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('75','14','0','511'),
+('102','14','0','1024'),
+('158','9','30','0'),
+('159','9','272','0'),
+('519','-1','4','102'),
+('520','-1','5','102'),
+('677','-2','158','159');
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
