@@ -140,6 +140,8 @@ DELETE FROM `dbscripts_on_gossip` WHERE id=6545;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('6545','0','8','15222','0','0','0','0','0','0','0','0','0','0','0','0','cast killcredit 15222');
 
+-- Fix MinLevel of Quest (8725)
+UPDATE quest_template SET MinLevel=1 WHERE entry=8725;
 
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
