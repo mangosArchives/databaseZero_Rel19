@@ -143,6 +143,9 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 -- Fix MinLevel of Quest (8725)
 UPDATE quest_template SET MinLevel=1 WHERE entry=8725;
 
+-- Delete duplicate mailbox in Ironforge - Military Ward
+DELETE FROM `gameobject` WHERE `guid` = 7875 AND `id` = 171556;
+
 -- Cleanup
 UPDATE gameobject SET state = 0 WHERE id IN (SELECT entry FROM gameobject_template WHERE type = 0 AND data0 = 1);
 UPDATE creature_template SET unit_flags=unit_flags&~2048 WHERE unit_flags&2048=2048;
