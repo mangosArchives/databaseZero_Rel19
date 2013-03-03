@@ -146,6 +146,10 @@ UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 8725;
 -- Delete duplicate mailbox in Ironforge - Military Ward
 DELETE FROM `gameobject` WHERE `guid` = 7875 AND `id` = 171556;
 
+-- Remove TBC and WotLK game objects
+DELETE FROM `gameobject_template` WHERE `entry` IN(181626, 183342, 183343, 185317, 185318, 185319, 186622, 186623, 187080, 210068, 300029);
+DELETE FROM `gameobject` WHERE `id` IN(181626, 183342, 183343, 185317, 185318, 185319, 186622, 186623, 187080, 210068, 300029);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
