@@ -150,6 +150,9 @@ DELETE FROM `gameobject` WHERE `guid` = 7875 AND `id` = 171556;
 DELETE FROM `gameobject_template` WHERE `entry` IN(181626, 183342, 183343, 185317, 185318, 185319, 186622, 186623, 187080, 210068, 300029);
 DELETE FROM `gameobject` WHERE `id` IN(181626, 183342, 183343, 185317, 185318, 185319, 186622, 186623, 187080, 210068, 300029);
 
+-- Set Spawners/Triggers to use the infamous infernal model, and make them invisible
+UPDATE `creature_template` SET `modelid_1` = 1126, `modelid_2` = 0, `type` = 10,`flags_extra` = `flags_extra` | 128 WHERE `entry` IN (7898,8611,11179,11494,12758,12999,13477,13876,14026,14027,14028,14029,14030,14031,14307,14309,14310,14311,14312,14422,14443,14449,14495,14606,14646,14758,15091,15164,15218,15221,15222,15384,15426,15454,15590,15695,15717,15800,15922,15957,15964,16006,16044,16045,16046,16047,16048,16079,16082,16100,16137,16306,16336,16338,16430,16606);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
