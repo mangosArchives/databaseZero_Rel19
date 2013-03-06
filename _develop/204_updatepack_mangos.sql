@@ -169,6 +169,32 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 ('1405','0','8','8612','0','0','0','0','0','0','0','0','0','0','0','0','give killcredit - Screecher Spirit'),
 ('1405','2','29','1','2','8612','5','0','0','0','0','0','0','0','0','0','');
 
+-- Fix Quest (5742)
+UPDATE `creature_template` SET `gossip_menu_id` = 3502  WHERE `entry` = 1855;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` IN (3502, 3681, 3682, 3683);
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('3502','0','0','I am ready to hear your tale, Tirion.','1','1','3683','0','0','0','0',NULL,'139'),
+('3681','0','0','I will, Tirion.','1','1','-1','0','3681','0','0',NULL,'0'),
+('3682','0','0','That is terrible.','1','1','3681','0','0','0','0',NULL,'0'),
+('3683','0','0','Thank you, Tirion. What of your identity?','1','1','3682','0','0','0','0',NULL,'0');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 139;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('139','9','5742','0');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (3502, 3681, 3682, 3683);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('3502','4254','0','0'),
+('3502','4673','0','139'),
+('3681','4495','0','0'),
+('3682','4494','0','0'),
+('3683','4493','0','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3681;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('3681','0','7','5742','0','0','0','0','0','0','0','0','0','0','0','0','complete quest');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
