@@ -255,6 +255,9 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2179;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('2179','0','7','4288','0','0','0','0','0','0','0','0','0','0','0','0','explore western pylon');
 
+-- Make Gameobject (176361) Untargetable
+UPDATE `gameobject_template` SET `flags` = 4 WHERE `entry` = 176361;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
