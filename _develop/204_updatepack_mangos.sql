@@ -195,6 +195,66 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3681;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('3681','0','7','5742','0','0','0','0','0','0','0','0','0','0','0','0','complete quest');
 
+-- Fix Quests (4285), (4287), (4288)
+-- Quest (4285)
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 2177;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('2177','0','0','I want to examine this pylon.','1','1','2181','0','2177','0','0','','316');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 2177;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('2177','2810','0','123'),
+('2177','2933','0','124'),
+('2181','2812','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (123, 124, 316);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('123','22','4321','0'),
+('124','8','4321','0'),
+('316','9','4285','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2177;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('2177','0','7','4285','0','0','0','0','0','0','0','0','0','0','0','0','explore northern pylon');
+
+-- Quest (4287)
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 2178;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('2178','0','0','I want to examine this pylon.','1','1','2180','0','2178','0','0','','317');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 2178;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('2178','2810','0','123'),
+('2178','2933','0','124'),
+('2180','2811','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 317;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('317','9','4287','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2178;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('2178','0','7','4287','0','0','0','0','0','0','0','0','0','0','0','0','explore eastern pylon');
+
+-- Quest (4288)
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 2179;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('2179','0','0','I want to examine this pylon.','1','1','2182','0','2179','0','0','','318');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 2179;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('2179','2810','0','123'),
+('2179','2933','0','124'),
+('2182','2813','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 318;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('318','9','4288','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2179;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('2179','0','7','4288','0','0','0','0','0','0','0','0','0','0','0','0','explore western pylon');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
