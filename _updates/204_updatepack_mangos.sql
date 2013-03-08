@@ -1214,4 +1214,4 @@ DELETE FROM `creature_onkill_reputation` WHERE `creature_id` NOT IN (SELECT `ent
 UPDATE `creature_template` SET `npcflag` = `npcflag` | 2 WHERE `entry` IN (SELECT `id` FROM `creature_questrelation` UNION SELECT `id` FROM `creature_involvedrelation`);
 
 -- UPDATE Database Version
-UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.4 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
+UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.4 for MaNGOSZero z2293+ and ScriptDevZero z2639+';
