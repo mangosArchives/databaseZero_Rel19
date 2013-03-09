@@ -116,6 +116,28 @@ DELETE FROM `db_script_string` WHERE `entry` = 2000000237;
 INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
 ('2000000237','Thank again, $n.  Now I\'ll just wait here until it\'s safe to leave.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Add gossip_menu for npc (4968)
+UPDATE `creature_template` SET `gossip_menu_id` = 2465 WHERE `entry` = 4968;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 2465;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('2465','0','0','Lady Jaina, this may sound like an odd request... but I have a young ward who is quite shy. You are a hero to him, and he asked me to get your autograph.','1','1','5850','0','2465','0','0','','562');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (2465, 5850);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('2465','3158','0','0'),
+('5850','7012','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (562, 323, 322);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('322','16','18642','1'),
+('323','9','558','0'),
+('562','-1','323','322');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2465;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('2465','0','15','23122','0','0','0','0','0','0','0','0','0','0','0','0','Create Jaina\'s Autograph');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
