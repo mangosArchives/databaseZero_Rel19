@@ -290,6 +290,23 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 ('3141','0','8','11064','1','0','0','0','0','0','0','0','0','0','0','0',''),
 ('3141','2','29','1','2','11064','5','0','0','0','0','0','0','0','0','0','');
 
+-- Add gossip_menu for npc (7564)
+UPDATE `creature_template` SET `gossip_menu_id` = 922, `npcflag` = `npcflag` | 131 WHERE `entry` = 7564;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 922;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('922','0','1','Yes! I want more of that fabulous Noggenfogger Elixir!','3','128','0','0','0','0','0','','221'),
+('922','1','0','Seen any strange things in the desert lately?','1','1','1423','0','0','0','0','','0');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (922, 1423);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('922','1493','0','0'),
+('1423','2055','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 221;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('221','8','2662','0');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
