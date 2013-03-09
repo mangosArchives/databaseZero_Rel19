@@ -27,6 +27,9 @@ UPDATE `quest_template` SET `ZoneOrSort` = 10 WHERE `entry` = 236;
 -- Add gossip_menu for npc (197)
 UPDATE `creature_template` SET `gossip_menu_id` = 4048 WHERE `entry` = 197;
 
+-- Add gossip_menu for npc (17804)
+UPDATE `creature_template` SET `gossip_menu_id` = 7480 WHERE `entry` = 17804;
+
 -- Add gossip_menu for npc (10307)
 UPDATE `creature_template` SET `gossip_menu_id` = 2703 WHERE `entry` = 10307;
 
