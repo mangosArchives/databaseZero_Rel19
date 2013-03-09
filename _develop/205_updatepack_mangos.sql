@@ -213,6 +213,22 @@ DELETE FROM `conditions` WHERE `condition_entry` = 157;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 ('157','9','3909','0');
 
+-- Add gossip_menu for npc (3052)
+UPDATE `creature_template` SET `gossip_menu_id` = 24 WHERE `entry` = 3052;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 24;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('24','0','0','Tell me a story, Skorn.','1','1','23','0','0','0','0','','188');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (23, 24);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('23','523','0','0'),
+('24','522','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 188;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('188','22','770','0');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
