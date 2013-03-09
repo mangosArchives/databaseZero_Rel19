@@ -197,6 +197,22 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 1563;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('1563','0','7','3702','0','0','0','0','0','0','0','0','0','0','0','0','give questcredit - The Smoldering Ruins of Thaurissan');
 
+-- Add gossip_menu for npc (7775)
+UPDATE `creature_template` SET `gossip_menu_id` = 1802, `npcflag` = `npcflag` | 131 WHERE `entry` = 7775;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 1802;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('1802','0','1','Buy somethin\', will ya?','3','128','0','0','0','0','0',NULL,'157');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 1802;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('1802','2433','0','0'),
+('1802','2434','0','157');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 157;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('157','9','3909','0');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
