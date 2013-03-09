@@ -391,6 +391,10 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 ('476302','0','7','6627','5','0','0','0','0','0','0','0','0','0','0','0','Quest complete 6627'),
 ('476301','0','15','6766','0','0','0','0','0','0','0','0','0','0','0','0','cast Test of Lore');
 
+-- Fix quest (6129 and 6124) close #39
+UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 12297 WHERE `entry` = 6129;
+UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 12299 WHERE `entry` = 6124;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
