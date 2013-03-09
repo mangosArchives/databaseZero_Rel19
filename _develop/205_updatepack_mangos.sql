@@ -169,6 +169,34 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3223;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('3223','0','15','17529','0','0','0','0','0','0','0','0','0','0','0','0','cast Vitreous Focuser');
 
+-- Add gossip_menu for npc (8879)
+UPDATE `creature_template` SET `gossip_menu_id` = 1561 WHERE `entry` = 8879;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` IN (1561, 1565, 1564, 1562, 1563);
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('1561','0','0','I am ready, Historian Archesonus.','1','1','1565','0','0','0','0','','122'),
+('1562','0','0','Unbelievable! How dare they??','1','1','1563','0','0','0','0','','0'),
+('1563','0','0','Of course I will help!','1','1','-1','0','1563','0','0','','0'),
+('1564','0','0','Interesting, continue please.','1','1','1562','0','0','0','0','','0'),
+('1565','0','0','That is tragic. How did this happen?','1','1','1564','0','0','0','0','','0');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (1561, 1565, 1564, 1562, 1563);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('1561','2234','0','0'),
+('1561','2235','0','122'),
+('1562','2238','0','0'),
+('1563','2239','0','0'),
+('1564','2237','0','0'),
+('1565','2236','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 122;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('122','9','3702','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 1563;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1563','0','7','3702','0','0','0','0','0','0','0','0','0','0','0','0','give questcredit - The Smoldering Ruins of Thaurissan');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
