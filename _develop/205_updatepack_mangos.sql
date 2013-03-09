@@ -82,6 +82,40 @@ DELETE FROM `conditions` WHERE `condition_entry` = 141;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 ('141','8','6164','0');
 
+-- Add gossip_menu for npc (8696)
+UPDATE `creature_template` SET `gossip_menu_id` = 1443 WHERE `entry` = 8696;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 1443;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('1443','0','0','You can cook?  So can I!  Is there a recipe you can teach me?','1','1','1501','0','144300','0','0','','539'),
+('1443','1','0','You\'re an alchemist?  So am I.  Perhaps you can teach me what you know...','1','1','1442','0','144301','0','0','','597');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (1443, 1501, 1442);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('1442','2115','0','0'),
+('1443','2113','0','0'),
+('1501','2173','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (539, 597, 227, 226, 419, 418);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('226','17','13028','1'),
+('227','7','185','175'),
+('418','17','3451','1'),
+('419','7','171','180'),
+('539','-1','227','226'),
+('597','-1','419','418');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` IN (144300, 144301);
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('144301','1','15','13030','0','0','0','0','0','0','0','0','0','0','0','0','learn Major Troll\'s Blood Elixir'),
+('144301','0','0','0','0','0','0','0','2000000237','0','0','0','0','0','0','0','say 2'),
+('144300','1','15','13029','0','0','0','0','0','0','0','0','0','0','0','0','learn Goldthorn Tea'),
+('144300','0','0','0','0','0','0','0','2000000237','0','0','0','0','0','0','0','say 1');
+
+DELETE FROM `db_script_string` WHERE `entry` = 2000000237;
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000237','Thank again, $n.  Now I\'ll just wait here until it\'s safe to leave.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
