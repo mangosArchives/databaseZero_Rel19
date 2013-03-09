@@ -66,6 +66,22 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 1286;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('1286','0','7','3377','5','0','0','0','0','0','0','0','0','0','0','0','Zamael Lunthistle - Questcredit (3377)');
 
+-- Add gossip_menu for npc (12384)
+UPDATE `creature_template` SET `gossip_menu_id` = 4085, `npcflag` = `npcflag` | 131 WHERE `entry` = 12384;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 4085;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('4085','0','1','Yes, Augustus.  I would like to do business.','3','128','0','0','0','0','0','','141');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 4085;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('4085','4979','0','0'),
+('4085','4980','0','141');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 141;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('141','8','6164','0');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
