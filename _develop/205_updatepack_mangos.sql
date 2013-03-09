@@ -307,6 +307,34 @@ DELETE FROM `conditions` WHERE `condition_entry` = 221;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 ('221','8','2662','0');
 
+-- Add gossip_menu for npc (9529)
+UPDATE `creature_template` SET `gossip_menu_id` = 20022 WHERE `entry` = 9529;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 20022;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('20022','0','0','I need a Cenarion beacon.','1','1','-1','0','2208','0','0',NULL,'628');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 20022;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('20022','2842','0','0'),
+('20022','2843','0','5'),
+('20022','2849','0','161');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (628, 161, 228);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('161','8','4102','0'),
+('228','24','11511','1'),
+('628','-1','161','228');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2208;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('2208','0','15','15120','0','0','0','0','0','0','0','0','0','0','0','0','cast Cenarion Beacon'),
+('2208','0','0','0','0','0','0','0','2000000318','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` = 2000000318;
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000318','Here\'s a beacon, $N. Keep it to yourself, if you\'re gonna find mutilated things that we need.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
