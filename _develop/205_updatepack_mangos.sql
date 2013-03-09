@@ -30,6 +30,9 @@ UPDATE `creature_template` SET `gossip_menu_id` = 4048 WHERE `entry` = 197;
 -- Add gossip_menu for npc (17804)
 UPDATE `creature_template` SET `gossip_menu_id` = 7480 WHERE `entry` = 17804;
 
+-- Add gossip_menu for npc (17249)
+UPDATE `creature_template` SET `gossip_menu_id` = 7394 WHERE `entry` = 17249;
+
 -- Add gossip_menu for npc (10307)
 UPDATE `creature_template` SET `gossip_menu_id` = 2703 WHERE `entry` = 10307;
 
