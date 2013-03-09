@@ -251,6 +251,33 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 5851;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('5851','0','15','23123','0','0','0','0','0','0','0','0','0','0','0','0','get - Cairne\'s Hoofprint');
 
+-- Add gossip_menu for npc (12944)
+UPDATE `creature_template` SET `gossip_menu_id` = 4781, `npcflag` = `npcflag` | 131 WHERE `entry` = 12944;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 4781;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('4781','0','1','Show me what I have access to, Lokhtos.','3','128','0','0','0','0','0','','81'),
+('4781','1','0','Hmm, I listen. Also that you offer?','1','1','-1','0','4781','0','0',NULL,'683');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 4781;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('4781','3673','0','0'),
+('4781','5834','0','81');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (81, 683, 680, 682, 681, 678, 679);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('81','5','59','4'),
+('678','2','17203','1'),
+('679','24','18628','1'),
+('680','-1','678','679'),
+('681','8','7604','0'),
+('682','-3','681','0'),
+('683','-1','680','682');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 4781;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('4781','0','15','23059','0','0','0','0','0','0','0','0','0','0','0','0','cast Create Thorium Brotherhood Contract');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
