@@ -229,6 +229,28 @@ DELETE FROM `conditions` WHERE `condition_entry` = 188;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 ('188','22','770','0');
 
+-- Add gossip_menu for npc (3057)
+UPDATE `creature_template` SET `gossip_menu_id` = 5851 WHERE `entry` = 3057;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 5851;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('5851','0','0','I know this is rather silly but a young ward who is a bit shy would like your hoofprint.','1','1','20021','0','5851','0','0',NULL,'623');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (5851, 20021);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('5851','7013','0','0'),
+('20021','7014','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (623, 500, 501);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('500','24','18643','1'),
+('501','9','925','0'),
+('623','-1','501','500');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 5851;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('5851','0','15','23123','0','0','0','0','0','0','0','0','0','0','0','0','get - Cairne\'s Hoofprint');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
