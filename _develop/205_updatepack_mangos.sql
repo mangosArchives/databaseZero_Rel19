@@ -278,6 +278,18 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 4781;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('4781','0','15','23059','0','0','0','0','0','0','0','0','0','0','0','0','cast Create Thorium Brotherhood Contract');
 
+-- Add gossip_menu for npc (11064)
+UPDATE `creature_template` SET `gossip_menu_id` = 3141 WHERE `entry` = 11064;
+
+DELETE FROM `gossip_menu` WHERE `entry` = 3141;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('3141','3873','3141','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3141;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('3141','0','8','11064','1','0','0','0','0','0','0','0','0','0','0','0',''),
+('3141','2','29','1','2','11064','5','0','0','0','0','0','0','0','0','0','');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
