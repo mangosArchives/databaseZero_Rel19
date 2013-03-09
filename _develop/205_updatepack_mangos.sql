@@ -21,6 +21,28 @@
 UPDATE `creature` SET `curmana` = 0 WHERE `id` = 3296;
 UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` = 3296;
 
+-- Add gossip_menu for npc (10307)
+UPDATE `creature_template` SET `gossip_menu_id` = 2703 WHERE `entry` = 10307;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 2703;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('2703','0','0','How do I use the Cache of Mau\'ari?','1','1','-1','0','2703','0','0','','229'),
+('2703','1','0','What is E\'ko?','1','1','0','0','0','0','0','','0');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 2703;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('2703','3375','0','0'),
+('2703','3377','0','114');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (114, 229);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('114','8','975','0'),
+('229','24','12384','1');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2703;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('2703','0','15','16351','0','0','0','0','0','0','0','0','0','0','0','0','Create Cache of Mau\'ari');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
