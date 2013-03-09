@@ -43,6 +43,29 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2703;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('2703','0','15','16351','0','0','0','0','0','0','0','0','0','0','0','0','Create Cache of Mau\'ari');
 
+-- Add gossip_menu for npc (8436)
+UPDATE `creature_template` SET `gossip_menu_id` = 1285 WHERE `entry` = 8436;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` IN (1285, 1287, 1286);
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('1285','0','0','I wish to hear your tale.','1','1','1287','0','0','0','0','','222'),
+('1286','0','0','Let me think about it, Zamael.','1','1','-1','0','1286','0','0','','0'),
+('1287','0','0','Please continue, Zamael.','1','1','1286','0','0','0','0','','0');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (1285, 1287, 1286);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('1285','1920','0','0'),
+('1286','1922','0','0'),
+('1287','1921','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 222;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('222','9','3377','1');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 1286;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1286','0','7','3377','5','0','0','0','0','0','0','0','0','0','0','0','Zamael Lunthistle - Questcredit (3377)');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
