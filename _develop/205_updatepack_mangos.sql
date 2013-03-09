@@ -354,6 +354,31 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 ('113','8','4101','0'),
 ('540','-1','113','228');
 
+-- Add gossip_menu for npc (4489)
+UPDATE `creature_template` SET `gossip_menu_id` = 4763 WHERE `entry` = 4489;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 4763;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('4763','0','0','My answer - Ysera.','1','1','-1','0','476301','0','0',NULL,'160'),
+('4763','1','0','My answer - Neltharion.','1','1','-1','0','476302','0','0',NULL,'160'),
+('4763','2','0','My answer - Nozdormu.','1','1','-1','0','476301','0','0',NULL,'160'),
+('4763','3','0','My answer - Alexstrasza.','1','1','-1','0','476301','0','0',NULL,'160'),
+('4763','4','0','My answer - Malygos.','1','1','-1','0','476301','0','0',NULL,'160');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 4763;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('4763','5819','0','0'),
+('4763','5820','0','160');
+
+DELETE FROM `conditions` WHERE `condition_entry` = 160;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('160','9','6627','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` IN (476301, 476302);
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('476302','0','7','6627','5','0','0','0','0','0','0','0','0','0','0','0','Quest complete 6627'),
+('476301','0','15','6766','0','0','0','0','0','0','0','0','0','0','0','0','cast Test of Lore');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
