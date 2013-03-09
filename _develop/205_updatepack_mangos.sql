@@ -24,6 +24,9 @@ UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` = 3296
 -- Add gossip_menu for npc (10307)
 UPDATE `creature_template` SET `gossip_menu_id` = 2703 WHERE `entry` = 10307;
 
+-- Fix header info from quest (236) this quest is delete in tbc close #43
+UPDATE `quest_template` SET `ZoneOrSort` = 10 WHERE `entry` = 236;
+
 DELETE FROM `gossip_menu_option` WHERE `menu_id` = 2703;
 INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
 ('2703','0','0','How do I use the Cache of Mau\'ari?','1','1','-1','0','2703','0','0','','229'),
