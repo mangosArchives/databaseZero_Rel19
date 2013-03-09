@@ -138,6 +138,37 @@ DELETE FROM `dbscripts_on_gossip` WHERE `id` = 2465;
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 ('2465','0','15','23122','0','0','0','0','0','0','0','0','0','0','0','0','Create Jaina\'s Autograph');
 
+-- Add gossip_menu for npc (11056)
+UPDATE `creature_template` SET `gossip_menu_id` = 3228, `npcflag` = `npcflag` | 131 WHERE `entry` = 11056;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 3228;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('3228','0','0','I need a vitreous focuser.','1','1','-1','0','3223','0','0',NULL,'621'),
+('3228','1','1','I wish to purchase arcane quickener from you.','3','128','0','0','0','0','0',NULL,'76'),
+('3228','2','1','What does the Felstone Field Cauldron need?','1','1','3224','0','0','0','0',NULL,'76'),
+('3228','3','1','What does the Dalson\'s Tears Cauldron need?','1','1','3225','0','0','0','0',NULL,'76'),
+('3228','4','1','What does the Writhing Haunt Cauldron need?','1','1','3226','0','0','0','0',NULL,'76'),
+('3228','5','1','What does the Gahrron\'s Withering Cauldron need?','1','1','3227','0','0','0','0',NULL,'76');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (3228, 3224, 3225, 3226, 3227);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('3224','3980','0','0'),
+('3225','3981','0','0'),
+('3226','3982','0','0'),
+('3227','3983','0','0'),
+('3228','3984','0','0'),
+('3228','3985','0','76');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (76, 621, 495);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('76','8','5238','0'),
+('495','24','13370','1'),
+('621','-1','76','495');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3223;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('3223','0','15','17529','0','0','0','0','0','0','0','0','0','0','0','0','cast Vitreous Focuser');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
