@@ -335,6 +335,25 @@ DELETE FROM `db_script_string` WHERE `entry` = 2000000318;
 INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
 ('2000000318','Here\'s a beacon, $N. Keep it to yourself, if you\'re gonna find mutilated things that we need.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Add gossip_menu for npc (9528)
+UPDATE `creature_template` SET `gossip_menu_id` = 2208 WHERE `entry` = 9528;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 2208;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('2208','0','0','I need a Cenarion beacon.','1','1','-1','0','2208','0','0','','540'),
+('2208','1','0','What plants are in Felwood that might be corrupted?','1','1','0','0','0','0','0','','0');
+
+DELETE FROM `gossip_menu` WHERE `entry` = 2208;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('2208','2844','0','0'),
+('2208','2845','0','4'),
+('2208','2848','0','113');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (540, 113);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('113','8','4101','0'),
+('540','-1','113','228');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
