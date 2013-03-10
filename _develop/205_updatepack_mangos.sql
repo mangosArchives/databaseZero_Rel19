@@ -938,6 +938,18 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000002','Honor your heroes! On this day, they have dealt a great blow against one of our most hated enemies! The false Warchief, Rend Blackhand, has fallen! ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000003','Be bathed in my power! Drink in my might! Battle for the glory of the Horde!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (5341)
+UPDATE `quest_template` SET `CompleteScript` = 5341 WHERE `entry` = 5341;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 5341;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('5341','1','0','1','0','0','0','0','2000000001','0','0','0','0','0','0','0',''),
+('5341','1','1','1','0','0','0','0','0','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` = 2000000001;
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000001','The deeds are mine, brother! Soon you shall be out of my way for good!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
