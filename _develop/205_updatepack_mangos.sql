@@ -534,6 +534,19 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000132','%s tries opening Maury\'s Clubbed Foot...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000133','Bah! $N, this foot won\'t budge!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (621)
+UPDATE `quest_template` SET `CompleteScript` = 621 WHERE `entry` = 621;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 621;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('621','2','0','0','0','0','0','0','2000000130','0','0','0','0','0','0','0',''),
+('621','4','0','0','0','0','0','0','2000000131','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000130, 2000000131);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000130','Thank you, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000131','I\'m sure I can find a use for this mixture...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
