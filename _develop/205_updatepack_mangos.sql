@@ -818,6 +818,17 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000124','%s begins to cast a spell over the hearts and tongues.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000125','The brood of Onyxia!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (1176)
+UPDATE `quest_template` SET `CompleteScript` = 1176 WHERE `entry` = 1176;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1176;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1176','2','0','0','0','0','0','0','2000000114','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` = 2000000114;
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000114','Okay, crew. Get to work on getting these bones installed.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
