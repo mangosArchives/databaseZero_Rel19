@@ -750,6 +750,26 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000112','%s fills a container with the toxin.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000113','The toxin is ready, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (1112)
+UPDATE `quest_template` SET `CompleteScript` = 1112 WHERE `entry` = 1112;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1112;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1112','1','0','2','0','0','0','0','2000005080','0','0','0','0','0','0','0',''),
+('1112','2','9','93887','10','0','0','0','0','0','0','0','0','0','0','0','resp gobject'),
+('1112','4','0','2','0','0','0','0','2000005081','0','0','0','0','0','0','0',''),
+('1112','8','0','0','0','0','0','0','2000005082','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000005080, 2000005081, 2000005082);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000005080','%s places the crate of parts on the ground.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005081','%s grabs a part and puts it in his pocket...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005082','There, that should do it...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+DELETE FROM `gameobject` WHERE `guid` = 93887;
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+('93887','19878','1','-6232.08','-3855.08','-58.75','4.04244','0','0','0.900263','-0.435347','-10','255','1');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
