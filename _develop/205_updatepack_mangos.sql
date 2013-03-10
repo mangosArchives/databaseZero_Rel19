@@ -890,6 +890,38 @@ DELETE FROM `db_script_string` WHERE `entry` = 2000000138;
 INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
 ('2000000138','I hereby destroy these instruments of evil! For the Horde!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (3908)
+UPDATE `quest_template` SET `CompleteScript` = 3908 WHERE `entry` = 3908;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 3908;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('3908','42','3','0','0','0','0','0','0','0','0','0','6395.57','-2536.75','541.548','5.66753',''),
+('3908','34','3','0','0','0','0','0','0','0','0','0','6385.99','-2529.26','539.03','5.66753',''),
+('3908','31','3','0','0','0','0','0','0','0','0','0','6370.3','-2524.19','532.27','6.26836',''),
+('3908','30','0','0','0','0','0','0','2000005021','0','0','0','0','0','0','0',''),
+('3908','27','1','16','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('3908','26','0','0','0','0','0','0','2000005022','0','0','0','0','0','0','0',''),
+('3908','23','3','0','0','0','0','0','0','0','0','0','6364.25','-2524','527.058','2.9265',''),
+('3908','21','0','2','0','0','0','0','2000005023','0','0','0','0','0','0','0',''),
+('3908','20','1','61','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('3908','15','0','0','0','0','0','0','2000005024','0','0','0','0','0','0','0',''),
+('3908','8','3','0','0','0','0','0','0','0','0','0','6370.12','-2525.52','532.268','2.82283',''),
+('3908','2','3','0','0','0','0','0','0','0','0','0','6384.54','-2527.25','538.736','2.52438',''),
+('3908','1','29','3','2','9298','10','0','0','0','0','0','0','0','0','0','9298 - npc_flag removed'),
+('3908','1','0','0','0','0','0','0','2000005025','0','0','0','0','0','0','0',''),
+('3908','47','3','0','0','0','0','0','0','0','0','0','0','0','0','2.86475',''),
+('3908','48','0','0','0','0','0','0','2000005026','0','0','0','0','0','0','0',''),
+('3908','49','29','3','1','9298','10','0','0','0','0','0','0','0','0','0','9298 - npc_flag added');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000005021, 2000005022, 2000005023, 2000005024, 2000005025, 2000005026);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000005025','Please, follow me.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005024','I haven\'t really figured out what it is, but there\'s something strange about the hot springs...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005023','%s tosses the sword into the shallow pool.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005022','I\'ve found that when I throw something into this water, it has improved incredibly when I retrieve it.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005021','Well, whatever it is, it works quite well!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005026','And I am determined to find out more... So if you need my help again, you know where I\'ll be.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
