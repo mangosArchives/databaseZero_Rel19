@@ -878,6 +878,18 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000122','%s writhes in pain.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000123','AAAAAAAAAAAAAAAARGH!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (1445)
+UPDATE `quest_template` SET `CompleteScript` = 1445 WHERE `entry` = 1445;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1445;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1445','0','0','0','0','0','0','0','2000000138','0','0','0','0','0','0','0',''),
+('1445','3','15','7437','0','0','0','4','0','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` = 2000000138;
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000138','I hereby destroy these instruments of evil! For the Horde!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
