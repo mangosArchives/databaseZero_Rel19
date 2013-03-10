@@ -465,6 +465,17 @@ DELETE FROM `db_script_string` WHERE `entry` = 2000000027;
 INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
 ('2000000027','Greatmother Hawkwind gestures to the pitcher of water sitting on the edge of the well.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest StartScript for Quest (790)
+UPDATE `quest_template` SET `StartScript` = 790 WHERE `entry` = 790;
+
+DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 790;
+INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('790','1','0','0','0','0','0','0','2000005017','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` = 2000005017;
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000005017','Go swiftly $N. My fate is in your hands.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
