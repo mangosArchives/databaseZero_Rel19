@@ -850,6 +850,34 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000136','Almost done...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000137','At last, the serum is complete, $N. Now, come closer. We must talk.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (1391)
+UPDATE `quest_template` SET `CompleteScript` = 1391 WHERE `entry` = 1391;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1391;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1391','20','3','0','0','0','0','0','0','0','0','0','-10424.4','-3239.73','20.1786','3.8633',''),
+('1391','19','3','0','0','0','0','0','0','0','0','0','-10422.1','-3237.58','20.1786','3.80072',''),
+('1391','17','3','0','0','0','0','0','0','0','0','0','-10420.6','-3240.03','20.1786','2.11212',''),
+('1391','16','3','0','0','0','0','0','0','0','0','0','-10423.5','-3240.63','20.1786','4.68979',''),
+('1391','15','1','0','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('1391','14','0','0','0','0','0','0','2000000123','0','0','0','0','0','0','0',''),
+('1391','14','15','7293','0','0','0','4','0','0','0','0','0','0','0','0',''),
+('1391','13','0','2','0','0','0','0','2000000122','0','0','0','0','0','0','0',''),
+('1391','8','1','64','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('1391','7','0','0','0','0','0','0','2000000121','0','0','0','0','0','0','0',''),
+('1391','2','0','0','0','0','0','0','2000000120','0','0','0','0','0','0','0',''),
+('1391','0','0','2','0','0','0','0','2000000119','0','0','0','0','0','0','0',''),
+('1391','22','3','0','0','0','0','0','0','0','0','0','-10422.4','-3238.96','20.1786','0.236333',''),
+('1391','26','15','5','0','0','0','4','0','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000123, 2000000122, 2000000121, 2000000120, 2000000119);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000119','%s takes big swig of ale.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000120','That was refreshing. Now there\'s information that needs to be told...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000121','I believe the Forsaken are misleading the allies of the Horde... wait... I feel so... dizzy...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000122','%s writhes in pain.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000123','AAAAAAAAAAAAAAAARGH!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
