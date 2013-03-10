@@ -922,6 +922,22 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000005021','Well, whatever it is, it works quite well!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000005026','And I am determined to find out more... So if you need my help again, you know where I\'ll be.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (4974)
+UPDATE `quest_template` SET `CompleteScript` = 4974 WHERE `entry` = 4974;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 4974;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('4974','1','0','6','0','0','0','0','2000000002','0','0','0','0','0','0','0',''),
+('4974','1','1','5','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('4974','5','15','16609','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('4974','6','0','6','0','0','0','0','2000000003','0','0','0','0','0','0','0',''),
+('4974','6','1','1','0','0','0','0','0','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000002, 2000000003);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000002','Honor your heroes! On this day, they have dealt a great blow against one of our most hated enemies! The false Warchief, Rend Blackhand, has fallen! ',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000003','Be bathed in my power! Drink in my might! Battle for the glory of the Horde!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
