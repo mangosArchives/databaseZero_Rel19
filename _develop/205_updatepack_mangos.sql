@@ -391,6 +391,30 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 ('476302','0','7','6627','5','0','0','0','0','0','0','0','0','0','0','0','Quest complete 6627'),
 ('476301','0','15','6766','0','0','0','0','0','0','0','0','0','0','0','0','cast Test of Lore');
 
+-- Add gossip_menu for npc (3442) close #10
+UPDATE `creature_template` SET `gossip_menu_id` = 21 WHERE `entry` = 3442;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 21;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('21','0','0','Than I can help?','1','1','22','0','0','0','0',NULL,'0'),
+('21','1','0','Can you tell me about this shard?','1','1','20024','0','21','0','0',NULL,'513');
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (21, 22, 20024);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('21','518','0','163'),
+('21','519','0','0'),
+('22','520','0','0'),
+('20024','2013','0','0');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (513, 163);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('163','8','1094','0'),
+('513','9','6981','0');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 21;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('21','0','7','6981','0','0','0','0','0','0','0','0','0','0','0','0','quest complete 6981');
+
 -- Fix quest (6129 and 6124) close #39
 UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 12297 WHERE `entry` = 6129;
 UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 12299 WHERE `entry` = 6124;
