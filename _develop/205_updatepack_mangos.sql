@@ -755,16 +755,16 @@ UPDATE `quest_template` SET `CompleteScript` = 1112 WHERE `entry` = 1112;
 
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1112;
 INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-('1112','1','0','2','0','0','0','0','2000005080','0','0','0','0','0','0','0',''),
+('1112','1','0','2','0','0','0','0','2000000176','0','0','0','0','0','0','0',''),
 ('1112','2','9','93887','10','0','0','0','0','0','0','0','0','0','0','0','resp gobject'),
-('1112','4','0','2','0','0','0','0','2000005081','0','0','0','0','0','0','0',''),
-('1112','8','0','0','0','0','0','0','2000005082','0','0','0','0','0','0','0','');
+('1112','4','0','2','0','0','0','0','2000000177','0','0','0','0','0','0','0',''),
+('1112','8','0','0','0','0','0','0','2000000178','0','0','0','0','0','0','0','');
 
-DELETE FROM `db_script_string` WHERE `entry` IN (2000005080, 2000005081, 2000005082);
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000176, 2000000177, 2000000178);
 INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
-('2000005080','%s places the crate of parts on the ground.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-('2000005081','%s grabs a part and puts it in his pocket...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-('2000005082','There, that should do it...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+('2000000176','%s places the crate of parts on the ground.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000177','%s grabs a part and puts it in his pocket...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000178','There, that should do it...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 DELETE FROM `gameobject` WHERE `guid` = 93887;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
