@@ -656,6 +656,48 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000091','Onu is struck by unleashed magic!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000092','Hmm...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (985)
+UPDATE `quest_template` SET `CompleteScript` = 985 WHERE `entry` = 985;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 985;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('985','0','10','3695','56000','0','0','0','0','0','0','0','6408.39','400.412','12.0573','6.09157',''),
+('985','2','3','0','700','3695','50','4','0','0','0','0','6428.33','397.389','11.092','5.17761','force buddy to move'),
+('985','4','0','0','0','0','0','0','2000005384','0','0','0','0','0','0','0',''),
+('985','5','3','0','700','3695','50','4','0','0','0','0','6437.47','365.101','13.9416','5.17761','force buddy to move'),
+('985','10','3','0','0','3695','50','4','0','0','0','0','0','0','0','3.95241','force buddy to move'),
+('985','16','0','2','0','0','0','0','2000005385','0','0','0','0','0','0','0',''),
+('985','20','0','0','0','0','0','0','2000005386','0','0','0','0','0','0','0',''),
+('985','20','1','6','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('985','24','0','2','0','0','0','0','2000005387','0','0','0','0','0','0','0',''),
+('985','29','0','0','0','0','0','0','2000005388','0','0','0','0','0','0','0',''),
+('985','29','1','1','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('985','35','0','2','0','0','0','0','2000005389','0','0','0','0','0','0','0',''),
+('985','35','15','6238','0','0','0','4','0','0','0','0','0','0','0','0',''),
+('985','40','0','0','0','0','0','0','2000005390','0','0','0','0','0','0','0',''),
+('985','40','1','1','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('985','43','0','2','0','0','0','0','2000005391','0','0','0','0','0','0','0',''),
+('985','46','0','0','0','0','0','0','2000005392','0','0','0','0','0','0','0',''),
+('985','46','1','1','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('985','50','0','2','0','0','0','0','2000005393','0','0','0','0','0','0','0',''),
+('985','52','3','0','700','3695','50','4','0','0','0','0','6428.33','397.389','11.092','5.17761','force buddy to move'),
+('985','55','0','0','0','0','0','0','2000005394','0','0','0','0','0','0','0',''),
+('985','55','1','1','0','0','0','0','0','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000005384, 2000005385, 2000005386, 2000005387, 2000005388, 2000005389, 2000005390, 2000005391, 2000005392, 2000005393, 2000005394);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000005384','What was that noise? It sounded like a roar.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005385','Grimclaw roars at Terenthis to get his attention.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005386','Grimclaw?! Easy there, my friend... where is your master Volcor?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005387','Grimclaw begins to moan and roar at Terenthis while stomping his paws on the ground.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005388','Whoa, whoa there, my friend. One moment...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005389','Terenthis begins to cast a spell on Grimclaw.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005390','There... that should help. Now, tell me what\'s happened, Grimclaw.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005391','Grimclaw roars at Terenthis more, but this time the druid seems to understand the bear.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005392','I understand, my friend. I shall find someone to help your master. Go back to him now, or at least stay close.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005393','Grimclaw roars in acknowledgement at Terenthis.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005394','If you have the time, Grimclaw and his master Volcor could use your help. If you\'re interested, speak with me further...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
