@@ -770,6 +770,25 @@ DELETE FROM `gameobject` WHERE `guid` = 93887;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
 ('93887','19878','1','-6232.08','-3855.08','-58.75','4.04244','0','0','0.900263','-0.435347','-10','255','1');
 
+-- Quest CompleteScript for Quest (1116)
+UPDATE `quest_template` SET `CompleteScript` = 1116 WHERE `entry` = 1116;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1116;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1116','0','0','2','0','0','0','0','2000000126','0','0','0','0','0','0','0',''),
+('1116','1','0','2','0','0','0','0','2000000127','0','0','0','0','0','0','0',''),
+('1116','1','15','6903','0','0','0','4','0','0','0','0','0','0','0','0',''),
+('1116','4','0','0','0','0','0','0','2000000128','0','0','0','0','0','0','0',''),
+('1116','7','0','0','0','0','0','0','2000000128','0','0','0','0','0','0','0',''),
+('1116','9','0','0','0','0','0','0','2000000129','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000126, 2000000127, 2000000128, 2000000129);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000126','%s snorts a speck of dream dust up his nose...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000127','%s is dazed...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000128','ACHOO!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000129','Wow! $N, that dream dust is powerful stuff!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
