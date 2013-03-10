@@ -789,6 +789,21 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000128','ACHOO!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000129','Wow! $N, that dream dust is powerful stuff!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (1117)
+UPDATE `quest_template` SET `CompleteScript` = 1117 WHERE `entry` = 1117;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1117;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('1117','1','0','2','0','0','0','0','2000005019','0','0','0','0','0','0','0',''),
+('1117','2','1','94','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('1117','7','1','0','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('1117','8','0','0','0','0','0','0','2000005020','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000005019, 2000005020);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000005019','%s begins to dance.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000005020','Hahah! $N, you make quite a partner!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
