@@ -51,8 +51,8 @@ CREATE TABLE `gossip_menu` (
 LOCK TABLES `gossip_menu` WRITE;
 /*!40000 ALTER TABLE `gossip_menu` DISABLE KEYS */;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
-(21,519,0,0),
 (21,518,0,163),
+(21,519,0,0),
 (22,520,0,0),
 (23,523,0,0),
 (24,522,0,0),
@@ -159,8 +159,8 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (1481,2154,0,0),
 (1482,2153,0,0),
 (1501,2173,0,0),
-(1561,2235,0,122),
 (1561,2234,0,0),
+(1561,2235,0,122),
 (1562,2238,0,0),
 (1563,2239,0,0),
 (1564,2237,0,0),
@@ -367,8 +367,8 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (3225,3981,0,0),
 (3226,3982,0,0),
 (3227,3983,0,0),
-(3228,3985,0,76),
 (3228,3984,0,0),
+(3228,3985,0,76),
 (3241,3999,0,0),
 (3261,4013,0,0),
 (3262,4014,0,0),
