@@ -599,6 +599,20 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000116','What is this power that flows through me? Is this the power of shamanism that Tor\'gan spoke of...?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000117','Amazing! I feel... renewed. My strength returns!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (748)
+UPDATE `quest_template` SET `CompleteScript` = 748 WHERE `entry` = 748;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 748;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('748','0','15','4983','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('748','0','0','2','0','0','0','0','2000000170','0','0','0','0','0','0','0',''),
+('748','8','0','0','3','0','0','0','2000000171','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000170, 2000000171);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000170','%s begins a rite of creation...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000171','I have created the totem. You, $N, must cleanse the well.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
