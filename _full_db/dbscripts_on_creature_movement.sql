@@ -78,6 +78,8 @@ INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalon
 (143304,15,0,0,0,0,0,0,2000000157,0,0,0,0,0,0,0,'corbettthanks'),
 (143304,40,0,0,0,0,0,0,2000000158,0,0,0,0,0,0,0,'corbettgoeshome'),
 (143305,0,0,0,0,0,0,0,2000000159,0,0,0,0,0,0,0,'corbettisback'),
+(153301,0,20,1,0,1533,5,0,0,0,0,0,0,0,0,0,'movement chenged to 1:random'),
+(153301,175,20,2,0,1533,5,0,0,0,0,0,0,0,0,0,'movement chenged to 2:waypoint'),
 (406801,2,0,2,0,0,0,0,2000000214,0,0,0,0,0,0,0,'Serpent Messenger - text emote'),
 (406801,8,0,2,0,3419,10,2,2000000215,0,0,0,0,0,0,0,'Serpent Messenger: Force NPC to text emote'),
 (504301,0,25,1,0,0,0,0,0,0,0,0,0,0,0,0,'DefiasRioter-SetRunModeOn'),
