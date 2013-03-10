@@ -419,6 +419,27 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 12297 WHERE `entry` = 6129;
 UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 12299 WHERE `entry` = 6124;
 
+-- Fix Quest (5902) close #26
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 4362;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+('4362','0','0','Place Termite Barrel on the crate.','1','1','0','0','4362','0','0','','716');
+
+DELETE FROM `conditions` WHERE `condition_entry` IN (716, 712, 715, 713, 714);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+('712','2','15044','1'),
+('713','9','5902','0'),
+('714','9','5904','0'),
+('715','-2','713','714'),
+('716','-1','712','715');
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 4362;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('4362','0','9','0','60','177491','5','0','0','0','0','0','0','0','0','0','Respawn Termite Barrel');
+
+DELETE FROM `gameobject` WHERE `guid` = 82668;
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+('82668','177491','0','2449.43','-1662.39','104.37','2.18166','0','0','0.88701','0.461749','-120','255','1');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
