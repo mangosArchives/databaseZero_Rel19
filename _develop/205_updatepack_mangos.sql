@@ -627,6 +627,20 @@ INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `con
 ('2000000172','%s creates a new totem...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 ('2000000173','The totem is made, $N.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
+-- Quest CompleteScript for Quest (759)
+UPDATE `quest_template` SET `CompleteScript` = 759 WHERE `entry` = 759;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 759;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+('759','0','0','2','0','0','0','0','2000000174','0','0','0','0','0','0','0',''),
+('759','0','15','4983','0','0','0','0','0','0','0','0','0','0','0','0',''),
+('759','8','0','0','3','0','0','0','2000000175','0','0','0','0','0','0','0','');
+
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000174, 2000000175);
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) VALUES
+('2000000174','%s transforms the items $N gave him into a totem of cleansing...',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+('2000000175','The totem is made. The well may now be cleansed.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
