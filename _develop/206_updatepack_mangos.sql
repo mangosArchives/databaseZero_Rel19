@@ -53,6 +53,12 @@ UPDATE `quest_template` SET `RequestItemsText` = "<Nipsy puts his index finger t
 -- Corrects one of Marshal McBride texts (quote) Thanks Ghurok
 UPDATE `db_script_string` SET `content_default` = "You are dismissed, $N." WHERE `entry` = 2000000059;
 
+-- Wrong spells were specified for these causing Fire Nova Totem Rank 1-4 to explode instantly. Thanks ProjectSilverpine
+UPDATE `creature_template_spells` SET `spell1` = 8443 WHERE `entry` = 5879;
+UPDATE `creature_template_spells` SET `spell1` = 8504 WHERE `entry` = 6110;
+UPDATE `creature_template_spells` SET `spell1` = 8505 WHERE `entry` = 6111;
+UPDATE `creature_template_spells` SET `spell1` = 11310 WHERE `entry` = 7844;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
