@@ -38,6 +38,21 @@ DELETE FROM `gameobject_loot_template` WHERE `entry` IN (2265, 2276, 2277, 2279,
 -- The Dragonmaw Shinbones will now drop if you have the quest. Thanks Ghurok
 UPDATE `quest_template` SET `ReqSourceId1` = 7131 WHERE `entry` = 1846;
 
+-- Corrects the completion text for the quest (5441) Thanks Ghurok
+UPDATE `quest_template` SET `OfferRewardText` = "Good, good. Maybe they'll think twice before slacking next time! Thanks for the help!" WHERE `entry` = 5441;
+
+-- Corrects the completion text for the quest (5482) Thanks Ghurok
+UPDATE `quest_template` SET `OfferRewardText` = "Ah, my doom weed. Excellent!$B$B<Junior Apothecary Holland rubs his hands together greedily.>$B$BThese will come in quite handy. You\'ve done me, uh, the Lady, a fine service today $N. As promised here is the reward that you deserve." WHERE `entry` = 5482;
+
+-- Corrects the completion text for the quest (6064) Thanks Ghurok
+UPDATE `quest_template` SET `RequestItemsText` = "Don\'t worry, $Glad:lass;! You\'ll get ta try a few before you\'ll need to decide on just one." WHERE `entry` = 6064;
+
+-- Corrects the completion text for the quest (6662) Thanks Ghurok
+UPDATE `quest_template` SET `RequestItemsText` = "<Nipsy puts his index finger through one of the air holes in the carton.>$B$BAlive and kicking... and just in time!" WHERE `entry` = 6662;
+
+-- Corrects one of Marshal McBride texts (quote) Thanks Ghurok
+UPDATE `db_script_string` SET `content_default` = "You are dismissed, $N." WHERE `entry` = 2000000059;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
