@@ -22,6 +22,11 @@ DELETE FROM `gossip_menu` WHERE `entry` = 5004;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 ('5004','6062','0','0');
 
+-- Add gossip_menu for gameobject (178526) Thanks Ghurok
+DELETE FROM `gossip_menu` WHERE `entry` = 5062;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+('5062','6104','0','0');
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
