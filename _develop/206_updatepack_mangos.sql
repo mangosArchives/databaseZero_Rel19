@@ -29,6 +29,15 @@ DELETE FROM `gossip_menu` WHERE `entry` = 5062;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 ('5062','6104','0','0');
 
+-- Removes Unlit Poor Torch (6183) from vendors. It's not supposed to be available to players at all. Thanks Ghurok
+DELETE FROM `npc_vendor` WHERE `entry` IN (791, 1250, 1448, 1452) AND `item` = 6183;
+
+-- Removes Mood Ring (7338) from dropping. It is only supposed to be available through purchase. Thanks Ghurok
+DELETE FROM `gameobject_loot_template` WHERE `entry` IN (2265, 2276, 2277, 2279, 2280, 2281) AND `item` = 7338;
+
+-- The Dragonmaw Shinbones will now drop if you have the quest. Thanks Ghurok
+UPDATE `quest_template` SET `ReqSourceId1` = 7131 WHERE `entry` = 1846;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
