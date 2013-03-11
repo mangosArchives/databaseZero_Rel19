@@ -17,10 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- Add gossip_menu for gameobject (20923) Thanks Ghurok (about the text i must check first)
+-- Add gossip_menu for gameobject (20923) Thanks Ghurok
 DELETE FROM `gossip_menu` WHERE `entry` = 5004;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
 ('5004','6062','0','0');
+
+UPDATE `npc_text` SET `text0_0` = "This monument is dedicated to all those who have fallen in the protection of Stormwind.$B$BOur people have weathered unbelievable hardships to retain their freedoms and to control their own destinies. It is here we remember every sacrifice our citizens have made during the first war that riddled our people." WHERE `ID` = 6062;
 
 -- Add gossip_menu for gameobject (178526) Thanks Ghurok
 DELETE FROM `gossip_menu` WHERE `entry` = 5062;
