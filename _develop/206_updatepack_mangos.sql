@@ -59,6 +59,9 @@ UPDATE `creature_template_spells` SET `spell1` = 8504 WHERE `entry` = 6110;
 UPDATE `creature_template_spells` SET `spell1` = 8505 WHERE `entry` = 6111;
 UPDATE `creature_template_spells` SET `spell1` = 11310 WHERE `entry` = 7844;
 
+-- Fix Eternal Flame (Gameobject 148418, 148419, 148420, 148421)
+UPDATE `gameobject_template` SET `flags` = 16 WHERE `entry` IN  (148418, 148419, 148420, 148421);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
