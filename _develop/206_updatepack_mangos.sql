@@ -73,6 +73,10 @@ UPDATE `quest_template` SET `OfferRewardText` = "We survived the attack!$B$BWe c
 -- Corrects the spell used by creature (15304) which fixes item (20503)
 UPDATE `creature_template_spells` SET `spell1` = 24853 WHERE `entry` = 15304;
 
+-- Add spell (6276) to Healing Ward IV creature (3844). It will heal now.
+DELETE FROM `creature_template_spells` WHERE `entry`=3844;
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (3844, 6276, 0, 0, 0);
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
