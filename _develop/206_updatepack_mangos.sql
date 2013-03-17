@@ -70,6 +70,9 @@ INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `gr
 -- Corrects the completion text for the quest (667)
 UPDATE `quest_template` SET `OfferRewardText` = "We survived the attack!$B$BWe could not have done it without you, $N.$B$BWe\'ll be heading out as soon as the tide rises. If you weren\'t such a promising hero I\'d offer you a place on my crew. But I can tell you have bigger fish to fry.$B$BEven if you are a puny $r...." WHERE `entry` = 667;
 
+-- Corrects the spell used by creature (15304) which fixes item (20503)
+UPDATE `creature_template_spells` SET `spell1` = 24853 WHERE `entry` = 15304;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
