@@ -77,6 +77,9 @@ UPDATE `creature_template_spells` SET `spell1` = 24853 WHERE `entry` = 15304;
 DELETE FROM `creature_template_spells` WHERE `entry`=3844;
 INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (3844, 6276, 0, 0, 0);
 
+-- Learning spell Journeyman Blacksmith (2021) from trainers now requires 50 minimum blacksmith skill
+UPDATE `npc_trainer` SET `reqskill` = 164 WHERE `spell` = 2021;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
