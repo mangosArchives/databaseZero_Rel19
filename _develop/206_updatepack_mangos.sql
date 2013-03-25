@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Questlevel for Quest 670 Sunken Treasure
+UPDATE `quest_template` SET `MinLevel` = 36 WHERE `entry`=670;
+
 -- Add gossip_menu for gameobject (20923) Thanks Ghurok
 DELETE FROM `gossip_menu` WHERE `entry` = 5004;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
