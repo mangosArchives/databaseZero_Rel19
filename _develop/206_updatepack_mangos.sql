@@ -42,7 +42,7 @@ UPDATE `quest_template` SET `Details` = "I have a package for an old customer of
 UPDATE `quest_template` SET `Objectives` = "Take Kravel's Crate to Hemet Nesingwary in Stranglethorn." WHERE `entry` = 5762;
 
 -- fixing Quest 208 Questtext (Hemet jr.)
-UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to bring him the head of King Bangalash, the great white tiger.' WHERE `entry`=208;
+UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to bring him the head of King Bangalash, the great white tiger.' WHERE `entry` = 208;
 
 -- Adding 30 minutes (real time) duration to Fresh Zhevra Carcass
 UPDATE `item_template` SET `duration` = 1800 WHERE `entry` = 10338;
@@ -113,7 +113,8 @@ UPDATE `creature_template_spells` SET `spell1` = 24853 WHERE `entry` = 15304;
 
 -- Add spell (6276) to Healing Ward IV creature (3844). It will heal now.
 DELETE FROM `creature_template_spells` WHERE `entry`=3844;
-INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (3844, 6276, 0, 0, 0);
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES
+(3844, 6276, 0, 0, 0);
 
 -- Learning spell Journeyman Blacksmith (2021) from trainers now requires 50 minimum blacksmith skill
 UPDATE `npc_trainer` SET `reqskill` = 164 WHERE `spell` = 2021;
