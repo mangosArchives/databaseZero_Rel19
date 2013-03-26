@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 3741 allways has been a crossfaction quest
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 3741;
+
 -- fixing Quest 197 Questtext (Hemet jr.)
 UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to kill Tethis, an elusive, dangerous raptor in Stranglethorn.' WHERE `entry` = 197;
 
