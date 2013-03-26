@@ -93,6 +93,26 @@ INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `
 INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14751, 23576, 0, 0, 0);
 INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14752, 23574, 0, 0, 0);
 
+-- Implement script for spell 21050 Thanks Xfurry
+UPDATE `quest_template` SET `ReqSpellCast1` = 0 WHERE `entry` = 6661;
+
+DELETE FROM `spell_script_target` WHERE `entry` = 21052;
+INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
+('21052','1','13017');
+
+UPDATE `quest_template` SET `CompleteScript` = 6661 WHERE `entry` = 6661;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 6661;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `comments`) VALUES
+('6661','1','15','21052','Cast Monty Bashes Rats (DND)');
+
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 21052;
+INSERT INTO `dbscripts_on_spell` (`id`, `command`, `datalong`, `data_flags`, `comments`) VALUES
+('21052','15','8329','6','Enthralled Deeprun Rat - Cast Suicide');
+
+-- ScriptDev2
+UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
+
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
 UPDATE `creature_template` SET `unit_flags` = `unit_flags` &~ 2048 WHERE `unit_flags` & 2048 = 2048;
