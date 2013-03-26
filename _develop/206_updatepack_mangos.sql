@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Adding 30 minutes (real time) duration to Fresh Zhevra Carcass
+UPDATE `item_template` SET `duration` = 1800 WHERE `entry` = 10338;
+UPDATE `item_template` SET `ExtraFlags` = 2 WHERE `entry` = 10338;
+
 -- Adding 30 minutes duration (real time) to Fresh Carcass
 UPDATE `item_template` SET `duration` = 1800 WHERE `entry` = 5810;
 UPDATE `item_template` SET `ExtraFlags` = 2 WHERE `entry` = 5810;
