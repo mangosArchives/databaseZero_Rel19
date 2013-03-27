@@ -17,6 +17,44 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 3741 allways has been a crossfaction quest
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 3741;
+
+-- fixing Quest 197 Questtext (Hemet jr.)
+UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to kill Tethis, an elusive, dangerous raptor in Stranglethorn.' WHERE `entry` = 197;
+
+-- fixing Quest 196 Questtext (Hemet jr.)
+UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to kill 10 Jungle Stalkers.' WHERE `entry` = 196;
+
+-- fixing Quest 195 Questtext (Hemet jr.)
+UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to kill 10 Lashtail Raptors.' WHERE `entry` = 195;
+
+-- fixing Quest 194 Questtext (Hemet jr.)
+UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to kill 10 Stranglethorn Raptors.' WHERE `entry` = 194;
+UPDATE `quest_template` SET `RequestItemsText` = 'I never met a hunter who got any kills by standing around the campfire. Were you planning on killing those Stranglethorn Raptors or were you hoping they would die of old age?' WHERE `entry` = 194;
+
+-- fixing Quest 5763 Questtext (Hemet jr.)
+UPDATE `quest_template` SET `Details` = "Long ago, a dwarf came to this land.  His name was Hemet and he wished to hunt great beasts.  His skills with the rifle were uncanny, and we spent many days hunting together.  Even the enmity between our peoples was forgotten.$B$BWhen he left Desolace for Stranglethorn, I vowed to one day welcome him back so that we may hunt again.  Now is that time.$B$BTake this kodo horn as a gift to Hemet.  He will know it is from me.  You will find him in Stranglethorn, north of the Grom'gol Base camp." WHERE `entry` = 5763;
+UPDATE `quest_template` SET `Objectives` = "Bring Roon's Kodo Horn to Hemet Nesingwary in Stranglethorn." WHERE `entry` =5763;
+
+-- fixing Quest 5762 Questtext (Hemet jr.)
+UPDATE `quest_template` SET `Details` = "I have a package for an old customer of mine, a dwarf named Hemet Nesingwary.  The package took weeks to arrive, and Hemet's long gone by now.  He said he was going to Stranglethorn to hunt the beasts there, but he left me some money to send his delivery when I could.  $B$BHemet's a rich dwarf and it's a good idea to keep up relations with the rich ones, yeah?  So... you want to deliver the package for me?$B$BI heard Hemet has a camp in Stranglethorn, north of Grom'gol." WHERE `entry` = 5762;
+UPDATE `quest_template` SET `Objectives` = "Take Kravel's Crate to Hemet Nesingwary in Stranglethorn." WHERE `entry` = 5762;
+
+-- fixing Quest 208 Questtext (Hemet jr.)
+UPDATE `quest_template` SET `Objectives` = 'Hemet Nesingwary wants you to bring him the head of King Bangalash, the great white tiger.' WHERE `entry` = 208;
+
+-- Adding 30 minutes (real time) duration to Fresh Zhevra Carcass
+UPDATE `item_template` SET `duration` = 1800 WHERE `entry` = 10338;
+UPDATE `item_template` SET `ExtraFlags` = 2 WHERE `entry` = 10338;
+
+-- Adding 30 minutes duration (real time) to Fresh Carcass
+UPDATE `item_template` SET `duration` = 1800 WHERE `entry` = 5810;
+UPDATE `item_template` SET `ExtraFlags` = 2 WHERE `entry` = 5810;
+
+-- Correct Questlevel for Quest 670 Sunken Treasure
+UPDATE `quest_template` SET `MinLevel` = 36 WHERE `entry`=670;
+
 -- Add gossip_menu for gameobject (20923) Thanks Ghurok
 DELETE FROM `gossip_menu` WHERE `entry` = 5004;
 INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
@@ -75,7 +113,44 @@ UPDATE `creature_template_spells` SET `spell1` = 24853 WHERE `entry` = 15304;
 
 -- Add spell (6276) to Healing Ward IV creature (3844). It will heal now.
 DELETE FROM `creature_template_spells` WHERE `entry`=3844;
-INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (3844, 6276, 0, 0, 0);
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES
+(3844, 6276, 0, 0, 0);
+
+-- Learning spell Journeyman Blacksmith (2021) from trainers now requires 50 minimum blacksmith skill
+UPDATE `npc_trainer` SET `reqskill` = 164 WHERE `spell` = 2021;
+
+-- Move all Stormwind Battlemasters from the War Room to the same room as the King of Stormwind
+UPDATE `creature` SET `position_x` = '-8424.55', `position_y` = '342.807', `position_z` = '120.886', `orientation` = '3.80942' WHERE `guid` = 42893 AND `id` = 7410;
+UPDATE `creature` SET `position_x` = '-8454.6', `position_y` = '318.918', `position_z` = '120.886', `orientation` = '0.65759' WHERE `guid` = 54614 AND `id` = 14981;
+UPDATE `creature` SET `position_x` = '-8420.48', `position_y` = '328.711', `position_z` = '120.886', `orientation` = '3.06638' WHERE `guid` = 54625 AND `id`= 15008;
+UPDATE `creature` SET `position_x` = '-8441.82', `position_y` = '311.616', `position_z` = '120.886', `orientation` = '1.45789' WHERE `guid` = 14740 AND `id` = 15351;
+
+-- Add spells to all PvP Battle Standard creatures (14465, 14466, 14751, 14752)
+DELETE FROM `creature_template_spells` WHERE `entry` IN (14465, 14466, 14751, 14752);
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14465, 23033, 0, 0, 0);
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14466, 23036, 0, 0, 0);
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14751, 23576, 0, 0, 0);
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14752, 23574, 0, 0, 0);
+
+-- Implement script for spell 21050 Thanks Xfurry
+UPDATE `quest_template` SET `ReqSpellCast1` = 0 WHERE `entry` = 6661;
+
+DELETE FROM `spell_script_target` WHERE `entry` = 21052;
+INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
+('21052','1','13017');
+
+UPDATE `quest_template` SET `CompleteScript` = 6661 WHERE `entry` = 6661;
+
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 6661;
+INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `comments`) VALUES
+('6661','1','15','21052','Cast Monty Bashes Rats (DND)');
+
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 21052;
+INSERT INTO `dbscripts_on_spell` (`id`, `command`, `datalong`, `data_flags`, `comments`) VALUES
+('21052','15','8329','6','Enthralled Deeprun Rat - Cast Suicide');
+
+-- ScriptDev2
+UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
 
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
