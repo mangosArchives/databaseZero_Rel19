@@ -17,7 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- fixing Quest 3741 allways has been a crossfaction quest
+-- Adding bleed immunity to Elemental and Undead creatures
+UPDATE `creature_template` SET `mechanic_immune_mask` = `mechanic_immune_mask` + 16384 WHERE `type` IN (4, 6);
+
+-- fixing Quest 3741 has always been a crossfaction quest
 UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 3741;
 
 -- fixing Quest 197 Questtext (Hemet jr.)
