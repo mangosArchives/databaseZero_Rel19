@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Update the following GameObject's respawn timer:
+UPDATE `gameobject` SET `spawntimesecs` = 1800 WHERE `id` = 271;
+UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `id` IN (104564, 104569, 104574);
+
 -- Add roaming to the following NPCs:
 UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` IN (2511, 2515, 2528, 2506, 2516, 2526, 2512, 2507);
 
