@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Add fear resistance to Cultists in Durotar
+UPDATE `creature_template` SET `mechanic_immune_mask` = 16 WHERE `entry` IN (3199, 11322);
+
 -- Add bleed immunity to Elemental and Undead creatures
 UPDATE `creature_template` SET `mechanic_immune_mask` = `mechanic_immune_mask` + 16384 WHERE `type` IN (4, 6);
 
