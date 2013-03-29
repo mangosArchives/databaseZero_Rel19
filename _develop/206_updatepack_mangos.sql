@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Flag Malgin Barleybrew <Bael'dun Morale Officer> as friendly to Alliance players
+UPDATE `creature_template` SET `faction_A` = 55 WHERE `entry` = 5848;
+
 -- Flag Ghost Saber as tameable
 UPDATE `creature_template` SET `type_flags` = 1 WHERE `entry` = 3619;
 
