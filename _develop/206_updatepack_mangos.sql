@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Dramatically reduce the drop rate for Quest Item: Cats Eye Emerald
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 20 WHERE `entry` = 5097;
+
 -- Correct the Min. Level requirement for the following Quests:
 UPDATE `quest_template` SET `MinLevel` = 2 WHERE `entry` IN (380, 381, 382, 383, 3902);
 UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 3901;
