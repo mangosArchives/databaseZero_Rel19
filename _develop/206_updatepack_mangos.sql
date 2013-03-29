@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the Min/Max Level of the following creatures: 
+UPDATE `creature_template` SET `minlevel` = 60 WHERE `entry` IN (10506, 16097);
+UPDATE `creature_template` SET `minlevel` = 1, `maxlevel` = 1 WHERE `entry` = 2442;
+UPDATE `creature_template` SET `minlevel` = 5, `maxlevel` = 5 WHERE `entry` = 385;
+UPDATE `creature_template` SET `minlevel` = 19 WHERE entry = 3619;
+
 -- Add Civilian flag to the following NPCs
 UPDATE `creature_template` SET `Civilian` = 1 WHERE `entry` IN (1139, 2363, 2366, 2381, 2380, 3541);
 
