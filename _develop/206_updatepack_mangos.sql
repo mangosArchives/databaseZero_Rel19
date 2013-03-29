@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the Min. Level requirement for the Quest: Reassignment
+UPDATE `quest_template` SET `minlevel` = 25 WHERE `entry` = 563;
+
 -- Correct the Min. Level requirement for Quests: A Visit to Gregan and Haze of Evil
 UPDATE `quest_template` SET `minlevel` = 47 WHERE `entry` IN (4142, 4143);
 
