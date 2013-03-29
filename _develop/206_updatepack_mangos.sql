@@ -17,8 +17,14 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- Correct the Min/Max Health Points of the following creatures:
+-- The following creatures are now restricted to ground-only:
+UPDATE `creature_template` SET `InhabitType` = 1 WHERE `entry` IN (1161, 1162, 1163, 1164, 1165, 1166, 1167, 1197, 1205, 1206, 1207, 1393, 1398, 1399);
 
+-- The following NPCs are now restricted to ground-only:
+UPDATE `creature_template` SET `InhabitType` = 1 WHERE `entry` IN (1092, 2527, 2525, 2511, 1276, 1089, 2509, 1338, 2105, 1280, 2515, 1279, 1277, 1091, 1337, 2528, 2524, 1334, 2506, 2513, 1340, 1283, 2516, 2511, 3317, 1331, 2514, 2526,
+1332, 1329, 2510, 3836, 1342, 2512, 1278, 1343, 2518, 1330, 1282, 1090, 2508, 1335, 1281, 1336, 8055);
+
+-- Correct the Min/Max Health Points of the following creatures:
 UPDATE `creature` SET `curhealth` = 312 WHERE `id` IN (3155, 5887, 9796);
 UPDATE `creature` SET `curhealth` = 396 WHERE `id` IN (3157, 3158, 3161);
 UPDATE `creature` SET `curhealth` = 142 WHERE `id` IN (3101, 3102, 3124);
