@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Remove Mana Points from the following creatures:
+UPDATE `creature` SET `curmana` = 0 WHERE `id` IN (385, 6021);
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` IN (385, 6021);
+
 -- Add Mana Points to NPC Kirtonos the Herald
 UPDATE `creature` SET `curmana` = 7302 WHERE `id` = 10506;
 UPDATE `creature_template` SET `minmana` = 7302, `maxmana` = 7302 WHERE `entry` = 10506;
