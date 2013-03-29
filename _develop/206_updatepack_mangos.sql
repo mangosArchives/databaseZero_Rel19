@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the Min. Level requirement for the following Quests:
+UPDATE `quest_template` SET `MinLevel` = 2 WHERE `entry` IN (380, 381, 382, 383, 3902);
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 3901;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 120;
+
 -- Correct the Min/Max Level of the following creatures: 
 UPDATE `creature_template` SET `minlevel` = 60 WHERE `entry` IN (10506, 16097);
 UPDATE `creature_template` SET `minlevel` = 1, `maxlevel` = 1 WHERE `entry` = 2442;
