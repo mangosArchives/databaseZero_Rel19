@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Flag Ghost Saber as tameable
+UPDATE `creature_template` SET `type_flags` = 1 WHERE `entry` = 3619;
+
 -- Correct the OfferRewardText for the Quest: Everything Counts In Large Amounts
 UPDATE `quest_template` SET `OfferRewardText` = 'You truly disgust me, $r. A grown man drooling over a pile of junk? Pitiful! Take your reward and get out of my sight.' WHERE `entry` = 3501;
 
