@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Restrict Quest Item: Crag Coyote Fang to 10 per stack
+UPDATE `item_template` SET `stackable` = 10 WHERE `entry` = 7846;
+
 -- Update the following GameObject's respawn timer:
 UPDATE `gameobject` SET `spawntimesecs` = 1800 WHERE `id` = 271;
 UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `id` IN (104564, 104569, 104574);
