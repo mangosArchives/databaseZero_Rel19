@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Add Civilian flag to the following NPCs
+UPDATE `creature_template` SET `Civilian` = 1 WHERE `entry` IN (1139, 2363, 2366, 2381, 2380, 3541);
+
 -- Add snare resistance to Warpwood Crusher
 UPDATE `creature_template` SET `mechanic_immune_mask` = 50176 WHERE `entry` = 13021;
 
