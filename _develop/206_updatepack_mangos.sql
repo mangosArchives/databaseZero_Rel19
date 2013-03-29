@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Change NPC Anvilrage Reservist's respawn timer to 20 seconds
+UPDATE `creature`  SET `spawntimesecs` = 20 WHERE `id` = 8901;
+
 -- Dramatically lower the drop rate of Item: Shimmering Amice, from Agam'ar
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 2 WHERE `entry` = 4511 AND `item` = 6566;
 
