@@ -15,9 +15,10 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program; if not, write to the Free Software
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---
+--  
 
 -- Correct Arch Druid Fandral Staghelm's Mana Points
+UPDATE `creature` SET `curmana` = 170320 WHERE `id` = 3516;
 UPDATE `creature_template` SET `minmana` = 170320, `maxmana` = 170320 WHERE `entry` = 3516;
 
 -- Correct the Min. Level requirement for the Quest: Reassignment
