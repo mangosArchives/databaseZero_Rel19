@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Arch Druid Fandral Staghelm's Mana Points
+UPDATE `creature_template` SET `minmana` = 170320, `maxmana` = 170320 WHERE `entry` = 3516;
+
 -- Correct the Min. Level requirement for the Quest: Reassignment
 UPDATE `quest_template` SET `minlevel` = 25 WHERE `entry` = 563;
 
