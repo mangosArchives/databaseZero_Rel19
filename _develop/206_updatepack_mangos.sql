@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Add Mana Points to NPC Kirtonos the Herald
+UPDATE `creature` SET `curmana` = 7302 WHERE `id` = 10506;
+UPDATE `creature_template` SET `minmana` = 7302, `maxmana` = 7302 WHERE `entry` = 10506;
+
 -- Correct the Buy/Sell Price of the following Items:
 UPDATE `item_template` SET `BuyPrice` = 36, `SellPrice` = 7 WHERE `entry` = 17183;
 UPDATE `item_template` SET `BuyPrice` = 61 WHERE `entry` = 209;
