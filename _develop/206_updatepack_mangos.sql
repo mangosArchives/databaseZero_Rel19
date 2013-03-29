@@ -17,6 +17,26 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the Buy/Sell Price of the following Items:
+UPDATE `item_template` SET `BuyPrice` = 36, `SellPrice` = 7 WHERE `entry` = 17183;
+UPDATE `item_template` SET `BuyPrice` = 61 WHERE `entry` = 209;
+UPDATE `item_template` SET `BuyPrice` = 63 WHERE `entry` = 85;
+UPDATE `item_template` SET `BuyPrice` = 39 WHERE `entry` IN (2387, 2390, 2391);
+UPDATE `item_template` SET `BuyPrice` = 78 WHERE `entry` IN (2386, 2388);
+UPDATE `item_template` SET `BuyPrice` = 24 WHERE `entry` IN (3595, 3596); 
+UPDATE `item_template` SET `BuyPrice` = 37 WHERE `entry` = 195;
+UPDATE `item_template` SET `BuyPrice` = 26 WHERE `entry` = 711;
+UPDATE `item_template` SET `BuyPrice` = 49 WHERE `entry` = 193;
+UPDATE `item_template` SET `BuyPrice` = 1327 WHERE `entry` = 849;
+UPDATE `item_template` SET `BuyPrice` = 881 WHERE `entry` = 1846;
+UPDATE `item_template` SET `BuyPrice` = 285, `SellPrice` = 57 WHERE `entry` = 2492;
+UPDATE `item_template` SET `BuyPrice` = 2860 WHERE `entry` = 237;
+UPDATE `item_template` SET `BuyPrice` = 2878 WHERE `entry` = 4765;
+UPDATE `item_template` SET `BuyPrice` = 2667 WHERE `entry` = 1197;
+UPDATE `item_template` SET `BuyPrice` = 7351 WHERE `entry` = 4778;
+UPDATE `item_template` SET `BuyPrice` = 4159 WHERE `entry` = 4790;
+UPDATE `item_template` SET `BuyPrice` = 3280, `SellPrice` = 656 WHERE `entry` = 4792;
+
 -- Improve a few command strings
 UPDATE `mangos_string` SET `content_default` = 'You must select a character or a creature.' WHERE `entry` = 1;
 UPDATE `mangos_string` SET `content_default` = 'You must select a creature.' WHERE `entry` = 2;
