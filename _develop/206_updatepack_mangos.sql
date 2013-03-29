@@ -149,6 +149,21 @@ DELETE FROM `dbscripts_on_spell` WHERE `id` = 21052;
 INSERT INTO `dbscripts_on_spell` (`id`, `command`, `datalong`, `data_flags`, `comments`) VALUES
 ('21052','15','8329','6','Enthralled Deeprun Rat - Cast Suicide');
 
+-- Add gossip to creature 11872 for quest 5862
+UPDATE `creature_template` SET `gossip_menu_id` = 3801 WHERE `entry` = 11872;
+
+DELETE FROM `gossip_menu` WHERE `entry` = 3801;
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (3801, 4633, 0, 0);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (3801, 4773, 0, 90);
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3801;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (3801, 0, 15, 17961, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cast Scarlet Illusion (17961)');
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 3801;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES (3801, 0, 0, 'I am ready for the illusion, Myranda.', 1, 1, 0, 0, 3801, 0, 0, '', 90);
+
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES (90, 9, 5862, 0);
+
 -- ScriptDev2
 UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
 
