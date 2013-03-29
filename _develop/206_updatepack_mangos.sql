@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Change one of Witch Doctor Zum'rah's AI Texts to universal language
+UPDATE `creature_ai_texts` SET `language` = 0 WHERE `entry` = -320;
+
 -- Reduce the drop rate of Quest Item: Vial of Hatefury Blood
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (4670, 4671, 4672, 4673, 4674, 4675, 14225) AND `item` = 6989;
 
