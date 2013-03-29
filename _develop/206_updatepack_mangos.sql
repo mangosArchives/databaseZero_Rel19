@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --  
 
+-- Remove the Quest Item: Broken Tears from Gelkis Windchaser, Gelkis Earthcaller and Gelkis Rumbler
+DELETE FROM `creature_loot_template` WHERE `entry` IN (4649, 4651, 4661) AND `item` = 6083;
+
 -- Add Quest Item: Tumbled Crystal to Venture Co. Shredder's loot table
 DELETE FROM `creature_loot_template` WHERE `entry` = 4260 AND `item` = 4106;
 INSERT INTO `creature_loot_template` VALUES
