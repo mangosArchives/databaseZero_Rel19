@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --  
 
+-- The Item: Immature Venom Sac will now rot (disappear) after 1 hour (real time)
+UPDATE `item_template` SET `duration` = 3600 WHERE `entry` = 12586;
+
 -- Correct Arch Druid Fandral Staghelm's Mana Points
 UPDATE `creature` SET `curmana` = 170320 WHERE `id` = 3516;
 UPDATE `creature_template` SET `minmana` = 170320, `maxmana` = 170320 WHERE `entry` = 3516;
