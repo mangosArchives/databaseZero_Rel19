@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the Min. Level requirement for the Quest: Andron's Payment to Jediga
+UPDATE `quest_template` SET `MinLevel` = 45 WHERE entry = 3564;
+
 -- Correct the drop rate for Sida's Bag
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` IN (1031, 1032, 1033);
 
