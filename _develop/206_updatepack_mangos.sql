@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Corrected Sprok <Away Team>'s Faction
+UPDATE `creature_template` SET `faction_A` = 120, `faction_H` = 120 WHERE `entry` = 8320;
+
 -- Flag Malgin Barleybrew <Bael'dun Morale Officer> as friendly to Alliance players
 UPDATE `creature_template` SET `faction_A` = 55 WHERE `entry` = 5848;
 
