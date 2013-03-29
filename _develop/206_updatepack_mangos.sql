@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Reduce the drop rate for Quest Item: Sigil of Strom
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 5 WHERE `entry` IN (2590, 2588, 2591) and `item` = 4440;
+
 -- Correct the following Items:
 UPDATE `item_template` SET `dmg_min1` = 91, `dmg_max1` = 137, `dmg_min2` = 13, `dmg_max2` = 19 WHERE `entry` = 13040;
 UPDATE `item_template` SET `dmg_min2` = 18, `dmg_max2` = 26 WHERE `entry` = 16004;
