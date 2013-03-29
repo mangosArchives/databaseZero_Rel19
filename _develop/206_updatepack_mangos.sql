@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Allow Warlocks to accept the Quest: Armaments of War
+UPDATE `quest_template` SET `RequiredClasses` = 384 WHERE `entry` = 8381;
+
 -- Remove Elite status from NPCs Wailing Death and Hungering Wraith
 UPDATE `creature_template` SET `rank` = 0 WHERE `entry` IN (1802, 1804);
 
