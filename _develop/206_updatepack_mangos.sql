@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --  
 
+-- Add Quest Item: Tumbled Crystal to Venture Co. Shredder's loot table
+DELETE FROM `creature_loot_template` WHERE `entry` = 4260 AND `item` = 4106;
+INSERT INTO `creature_loot_template` VALUES
+(4260, 4106, 32, 0, 1, 1, 0);
+
 -- The Item: Immature Venom Sac will now rot (disappear) after 1 hour (real time)
 UPDATE `item_template` SET `duration` = 3600 WHERE `entry` = 12586;
 
