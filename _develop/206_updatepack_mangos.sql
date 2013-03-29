@@ -345,10 +345,11 @@ UPDATE `creature` SET `position_x` = '-8441.82', `position_y` = '311.616', `posi
 
 -- Add spells to all PvP Battle Standard creatures (14465, 14466, 14751, 14752)
 DELETE FROM `creature_template_spells` WHERE `entry` IN (14465, 14466, 14751, 14752);
-INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14465, 23033, 0, 0, 0);
-INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14466, 23036, 0, 0, 0);
-INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14751, 23576, 0, 0, 0);
-INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES (14752, 23574, 0, 0, 0);
+INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES
+(14465, 23033, 0, 0, 0),
+(14466, 23036, 0, 0, 0),
+(14751, 23576, 0, 0, 0),
+(14752, 23574, 0, 0, 0);
 
 -- Implement script for spell 21050 Thanks Xfurry
 UPDATE `quest_template` SET `ReqSpellCast1` = 0 WHERE `entry` = 6661;
@@ -371,16 +372,20 @@ INSERT INTO `dbscripts_on_spell` (`id`, `command`, `datalong`, `data_flags`, `co
 UPDATE `creature_template` SET `gossip_menu_id` = 3801 WHERE `entry` = 11872;
 
 DELETE FROM `gossip_menu` WHERE `entry` = 3801;
-INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (3801, 4633, 0, 0);
-INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES (3801, 4773, 0, 90);
+INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+(3801, 4633, 0, 0),
+(3801, 4773, 0, 90);
 
 DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3801;
-INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (3801, 0, 15, 17961, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cast Scarlet Illusion (17961)');
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(3801, 0, 15, 17961, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Cast Scarlet Illusion (17961)');
 
 DELETE FROM `gossip_menu_option` WHERE `menu_id` = 3801;
-INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES (3801, 0, 0, 'I am ready for the illusion, Myranda.', 1, 1, 0, 0, 3801, 0, 0, '', 90);
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+(3801, 0, 0, 'I am ready for the illusion, Myranda.', 1, 1, 0, 0, 3801, 0, 0, '', 90);
 
-INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES (90, 9, 5862, 0);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+(90, 9, 5862, 0);
 
 -- ScriptDev2
 UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
