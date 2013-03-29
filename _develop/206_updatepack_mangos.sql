@@ -17,11 +17,14 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- Reduce the drop rate for Quest Item: Bloodstone Amulet
+-- Reduce the drop rate of Quest Item: Vial of Hatefury Blood
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (4670, 4671, 4672, 4673, 4674, 4675, 14225) AND `item` = 6989;
+
+-- Reduce the drop rate of Quest Item: Bloodstone Amulet
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 38 WHERE `entry` IN (2589, 2587) AND `item` = 4495;
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 28 WHERE `entry` = 2586 AND `item` = 4495;
 
--- Reduce the drop rate for Quest Item: Sigil of Strom
+-- Reduce the drop rate of Quest Item: Sigil of Strom
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 5 WHERE `entry` IN (2590, 2588, 2591) and `item` = 4440;
 
 -- Correct the following Items:
