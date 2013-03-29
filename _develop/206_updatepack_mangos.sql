@@ -17,6 +17,18 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the following Items:
+UPDATE `item_template` SET `dmg_min1` = 91, `dmg_max1` = 137, `dmg_min2` = 13, `dmg_max2` = 19 WHERE `entry` = 13040;
+UPDATE `item_template` SET `dmg_min2` = 18, `dmg_max2` = 26 WHERE `entry` = 16004;
+UPDATE `item_template` SET `dmg_min1` = 58, `dmg_max1` = 109, `dmg_min2` = 18, `dmg_max2` = 26 WHERE `entry` = 2825;
+UPDATE `item_template` SET `dmg_min2` = 12, `dmg_max2` = 18 WHERE `entry` = 9412;
+UPDATE `item_template` SET `dmg_min1` = 49, `dmg_max1` = 93, `dmg_min2` = 66, `dmg_max2` = 98 WHERE `entry` = 10567;
+UPDATE `item_template` SET `dmg_min1` = 61, `dmg_max1` = 114, `dmg_min2` = 18, `dmg_max2` = 26 WHERE `entry` = 13146;
+UPDATE `item_template` SET `dmg_min2` = 31, `dmg_max2` = 45 WHERE `entry` = 6469;
+UPDATE `item_template` SET `dmg_min1` = 68,  `dmg_max1` = 127, `dmg_min2` = 15, `dmg_min2` = 21 WHERE `entry` = 17753;
+UPDATE `item_template` SET `BuyCount` = 0, `BuyPrice` = 0 WHERE `entry` = 15419;
+UPDATE `item_template` SET `dmg_min2` = 33, `dmg_max2` = 49 WHERE `entry` = 2099;
+
 -- Rename Snake Bloom Firework to Snake Burst Firework
 UPDATE `item_template` SET `name` = 'Snake Burst Firework' WHERE `entry` = 19026;
 
