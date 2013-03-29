@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Add roaming to the following NPCs:
+UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` IN (2511, 2515, 2528, 2506, 2516, 2526, 2512, 2507);
+
 -- The following creatures are now restricted to ground-only:
 UPDATE `creature_template` SET `InhabitType` = 1 WHERE `entry` IN (1161, 1162, 1163, 1164, 1165, 1166, 1167, 1197, 1205, 1206, 1207, 1393, 1398, 1399);
 
