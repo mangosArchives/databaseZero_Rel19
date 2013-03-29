@@ -17,6 +17,8 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct completion text for Blood Tinged Skies 5543
+UPDATE `quest_template` SET `OfferRewardText` = 'You are a shining example of decency, $r! It has been long since I have felt the blood of heroes pump through my veins. Your acts of bravery are uplifting!' WHERE `entry` = 5543
 
 -- Correct the drop rate of the following Quest Items:
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 35 WHERE `entry` = 768 AND `item` = 6080;
