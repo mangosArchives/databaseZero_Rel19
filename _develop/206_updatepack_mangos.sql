@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Dramatically lower the drop rate of Item: Shimmering Amice, from Agam'ar
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 2 WHERE `entry` = 4511 AND `item` = 6566;
+
 -- Allow Warlocks to accept the Quest: Armaments of War
 UPDATE `quest_template` SET `RequiredClasses` = 384 WHERE `entry` = 8381;
 
