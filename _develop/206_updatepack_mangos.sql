@@ -15,7 +15,10 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program; if not, write to the Free Software
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
---  
+--
+
+-- Remove the Quest Item: Dinosaur Bone from Bloodpetal Trapper and Frenzied Pterrordax
+DELETE FROM `creature_loot_template` WHERE `entry` IN (6512, 9167) AND `item` = 11114;
 
 -- Remove the Quest Item: Broken Tears from Gelkis Windchaser, Gelkis Earthcaller and Gelkis Rumbler
 DELETE FROM `creature_loot_template` WHERE `entry` IN (4649, 4651, 4661) AND `item` = 6083;
