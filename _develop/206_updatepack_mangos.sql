@@ -195,20 +195,6 @@ UPDATE `item_template` SET `BuyPrice` = 7351 WHERE `entry` = 4778;
 UPDATE `item_template` SET `BuyPrice` = 4159 WHERE `entry` = 4790;
 UPDATE `item_template` SET `BuyPrice` = 3280, `SellPrice` = 656 WHERE `entry` = 4792;
 
--- Improve a few command strings
-UPDATE `mangos_string` SET `content_default` = 'You must select a character or a creature.' WHERE `entry` = 1;
-UPDATE `mangos_string` SET `content_default` = 'You must select a creature.' WHERE `entry` = 2;
-UPDATE `mangos_string` SET `content_default` = 'The old password is incorrect.' WHERE `entry` = 27;
-UPDATE `mangos_string` SET `content_default` = 'Current Message of the Day: %s' WHERE `entry` = 56;
-UPDATE `mangos_string` SET `content_default` = 'Not accepting whispers' WHERE `entry` = 64;
-UPDATE `mangos_string` SET `content_default` = 'No Game Masters' WHERE `entry` = 599;
-UPDATE `mangos_string` SET `content_default` = 'Current Game Masters:' WHERE `entry` = 597;
-UPDATE `mangos_string` SET `content_default` = 'Player %s (GUID: %u) Account %s (ID: %u) deleted.' WHERE `entry` = 1009;
-UPDATE `mangos_string` SET `content_default` = 'Invalid character GUID!' WHERE `entry` = 1116;
-UPDATE `mangos_string` SET `content_default` = 'Character GUID %u in use!' WHERE `entry` = 1117;
-UPDATE `mangos_string` SET `content_default` = '%d - Guild: %s (GUID: %u) %s' WHERE `entry` = 1118;
-UPDATE `mangos_string` SET `content_default` = 'Accepting whispers' WHERE `entry` = 63;
-
 -- Dramatically reduce the drop rate for Quest Item: Cats Eye Emerald
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 20 WHERE `entry` = 5097;
 
