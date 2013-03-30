@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct faction for multiple quests
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (817, 818, 823, 2161);
+
 -- Correct the drop rate for Shaman Voodoo Charm
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` = 2009 AND `item` = 8363;
 
