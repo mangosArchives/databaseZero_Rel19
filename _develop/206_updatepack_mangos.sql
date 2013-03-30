@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Set Grubthor's rank to Rare
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14477;
+
 -- Set Deathmaw's rank to Rare
 UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10077;
 
