@@ -17,11 +17,14 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the drop rate for Shaman Voodoo Charm
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` = 2009 AND `item` = 8363;
+
 -- Correct the Min. Level requirement for the Quest: Andron's Payment to Jediga
 UPDATE `quest_template` SET `MinLevel` = 45 WHERE entry = 3564;
 
 -- Correct the drop rate for Sida's Bag
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` IN (1031, 1032, 1033);
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` IN (1031, 1032, 1033) AND `item` = 3349;
 
 -- Correct completion text for Blood Tinged Skies 5543
 UPDATE `quest_template` SET `OfferRewardText` = 'You are a shining example of decency, $r! It has been long since I have felt the blood of heroes pump through my veins. Your acts of bravery are uplifting!' WHERE `entry` = 5543;
