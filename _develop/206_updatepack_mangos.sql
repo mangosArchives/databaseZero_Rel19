@@ -17,8 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- Set Grubthor's rank to Rare
-UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14477;
+-- Set Rohh the Silent's rank to Rare
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 947;
+
+-- Set Grubthor's rank to Rare and modify Health Point values
+UPDATE `creature` SET `curhealth` = 8097 WHERE `id` = 14477;
+UPDATE `creature_template` SET `minhealth` = 8097, `maxhealth` = 8097, `rank` = 4 WHERE `entry` = 14477;
 
 -- Set Deathmaw's rank to Rare
 UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10077;
