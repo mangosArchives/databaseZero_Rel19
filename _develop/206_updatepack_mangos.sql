@@ -17,9 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct the Min. Level requirement and QuestLevel
+UPDATE `quest_template` SET `MinLevel` = 1, `QuestLevel` = 60 WHERE `entry` = 8744;
+
 -- Correct a issues wth the Stolen Winter Veil Treats quest chain
-UPDATE quest_template SET QuestLevel = 35 WHERE entry = 7042;
-UPDATE quest_template SET MinLevel = 30 WHERE entry IN (6983, 7042);
+UPDATE `quest_template` SET `QuestLevel` = 35 WHERE `entry` = 7042;
+UPDATE `quest_template` SET `MinLevel` = 30 WHERE `entry` IN (6983, 7042);
 
 -- More corrections to Quest drop rates
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` = 8761 AND `item` = 20027;
