@@ -486,6 +486,9 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (90, 9, 5862, 0);
 
+-- Correct required creature (13017) for quest (6661)
+UPDATE `quest_template` SET `ReqCreatureorGOId1` = 13017 WHERE `entry` = 6661;
+
 -- ScriptDev2
 UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
 
