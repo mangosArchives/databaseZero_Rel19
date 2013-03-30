@@ -490,7 +490,10 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 UPDATE `quest_template` SET `ReqCreatureorGOId1` = 13017 WHERE `entry` = 6661;
 
 -- ScriptDev2
+-- z2647
 UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
+-- z2649
+UPDATE gameobject_template SET ScriptName='go_father_flame' WHERE entry=175245;
 
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
