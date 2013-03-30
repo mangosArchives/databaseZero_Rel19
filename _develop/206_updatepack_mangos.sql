@@ -17,7 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- Correct the Min. Level requirement and QuestLevel
+-- Correct drop rate of Quest Item: Blackrock Medallion
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -45 WHERE `entry` IN (7025, 7026, 7027, 7028, 7029, 7055, 9690, 9697, 10097) AND `item` = 11467;
+
+-- Correct the Min. Level requirement and QuestLevel for Quest: A Carefully Wrapped Present
 UPDATE `quest_template` SET `MinLevel` = 1, `QuestLevel` = 60 WHERE `entry` = 8744;
 
 -- Correct a issues wth the Stolen Winter Veil Treats quest chain
