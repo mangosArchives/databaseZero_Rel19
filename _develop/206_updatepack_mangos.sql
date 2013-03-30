@@ -17,6 +17,32 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- More corrections to Quest drop rates
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` = 8761 AND `item` = 20027;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` = 3121 AND `item` = 4892;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` = 5481 AND `item` = 8428;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -60 WHERE `entry` IN (1134, 1135, 1137, 1271, 1388) AND `item` = 2671;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -5 WHERE `entry` IN (14267, 1181, 1179, 1183, 1180, 1178) AND `item` = 2607;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (1693, 2476) AND `item` = 2939;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (1184, 1185, 1195, 14266) AND `item` = 2606;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` IN (1161, 1162, 1163, 1164, 1165, 1166, 1167, 1197, 1393) AND `item` = 2536;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` IN (1172, 1173, 1174, 1175, 1176, 1177, 1202) AND `item` = 3110;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` = 2735 AND `item` = 4626;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (7459, 7460) AND `item` = 12367;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -55 WHERE `entry` IN (4844, 4845, 4846, 4847, 4848, 4849, 7030, 7081, 7290) AND `item` = 8009;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -55 WHERE `entry` IN (5331, 5332, 5333, 5334, 5335, 5336, 5337, 5343, 8136) AND `item` = 9247;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` IN (2829, 2830, 2831) AND `item` = 7847;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` IN (92, 2735, 2736, 2745, 2752, 2791, 2919, 8278) AND `item` = 7848;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` IN (7032, 7039, 8981) AND `item` = 11266;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` IN (2701, 2715, 2716, 2717, 2718, 2719, 2720, 2906, 2907) AND `item` = 4630;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` = 2555 AND `item` = 4522;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` IN (2552, 2553, 2554, 2555, 2556, 2557, 2558, 2605) AND `item` = 4503;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` = 2561 AND `item` = 4513;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` IN (2572, 2573, 2574) AND `item` = 4435;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -5 WHERE `entry` IN (2588, 2590, 2591) AND `item` = 4440;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` IN (2586, 2587, 2589) AND `item` = 4495;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -33 WHERE `entry` IN (2559, 2560) AND `item` = 4512;
+
 -- Correct faction for multiple quests
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (817, 818, 823, 2161);
 
@@ -33,84 +59,84 @@ UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` IN
 UPDATE `quest_template` SET `OfferRewardText` = 'You are a shining example of decency, $r! It has been long since I have felt the blood of heroes pump through my veins. Your acts of bravery are uplifting!' WHERE `entry` = 5543;
 
 -- Correct the drop rate of the following Quest Items:
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 35 WHERE `entry` = 768 AND `item` = 6080;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 55 WHERE `entry` = 1081 AND `item` = 6081;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 15 WHERE `entry` IN (2384, 2385, 2406, 2407) AND `item` = 3496;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (7430, 7431, 7432, 7433, 7434, 7443, 7444, 7445, 7446) AND `item` = 21928;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` = 1907 AND `item` = 4029;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 17 WHERE `entry` IN (587, 588, 595, 597, 660, 671, 694, 697, 699, 701, 702) AND `item` = 3915;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 32 WHERE `entry` = 2635 AND `item` = 4105;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 52 WHERE `entry` = 1096 AND `item` = 4106;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 37 WHERE `entry` IN (587, 588, 595, 597, 660, 671, 694, 697, 699, 701, 702) AND `item` = 3901;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 15 WHERE `entry` = 772 AND `item` = 3839;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `entry` = 1557 AND `item` = 3862;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 25 WHERE `entry` = 687 AND `item` = 3863;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` = 1557 AND `item` = 3919;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 21 WHERE `entry`  IN (667, 669, 670, 672, 696, 780, 781, 782, 783, 784, 1059, 1061, 1062) AND `item` = 1524;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 41 WHERE `entry` = 1152 AND `item` = 4104;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `entry` IN (667, 669, 670, 672, 696, 780, 781, 782, 783, 784, 1059) AND `item` = 3916;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 34 WHERE `entry` = 1150 AND `item` = 4053;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 15 WHERE `entry` IN (740, 741, 742, 743, 744, 745, 746, 14445) AND `item` = 5803;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 7 WHERE `entry` = 1088 AND `item` = 6184;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (1082, 1087) AND `item` = 6169;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `entry` = 2686 AND `item` = 9322;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 50 WHERE `entry` IN (4011, 4012, 4013, 4014, 4015, 6141) AND `item` = 5808;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `entry` IN (3737, 3739, 3740, 3742) AND `item` = 5463;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 5 WHERE `entry` IN (6195, 6196, 7885, 7886) AND `item` = 13815;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 48 WHERE `entry` IN (2189, 2190) AND `item` = 5336;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 36 WHERE `entry` = 2212 AND `item` = 5338;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 45 WHERE `entry` IN (2071, 2237) AND `item` = 5386;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 50 WHERE `entry` IN (2185, 2187) AND `item` = 5412;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 45 WHERE `entry` IN (2176, 2177, 2178) AND `item` = 5360;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (2233, 2235) AND `item` = 12237;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 20 WHERE `entry` IN (2069, 2070, 2071, 2175, 2237) AND `item` = 5413;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 50 WHERE `entry` = 2336 AND `item` = 5348;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (2165, 6788) AND `item` = 5414;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (4632, 4633, 4634, 4635, 4636, 4637, 12976, 12977) AND `item` = 6079;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 60 WHERE `entry` IN (3106, 3107, 3108, 3228) AND `item` = 4888;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 60 WHERE `entry` IN (3103, 3104, 3105, 3141, 6020) AND `item` = 4887;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (3119, 3120, 3128, 3129, 3192, 5808, 5809) AND `item` = 4870;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 23 WHERE `entry` IN (7105, 7106, 7107, 7108, 7109, 7110, 7111) AND `item` = 11674;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 19 WHERE `entry` IN (5278, 7997) AND `item` = 9369;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 60 WHERE `entry` IN (5249, 5251, 5253, 5254, 5255, 5258) AND `item` = 9237;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 50 WHERE `entry` IN (2955, 2956, 2957, 3068, 3244, 3245, 3246) AND `item` = 4759;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (2958, 2959, 2960) AND `item` = 4758;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 70 wHERE `entry` IN (2969, 2970, 2971) AND `item` = 4769;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 41 WHERE `entry` = 3566 AND `item` = 5203;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 44 WHERE `entry` = 3035 AND `item` = 4802;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 44 WHERE `entry` = 2959 AND `item` = 4801;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 36 WHERE `entry` = 2960 AND `item` = 4803;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (11735, 11736, 11737, 11738, 11739) AND `item` = 22381;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 20 WHERE `entry` IN (6505, 6506, 6507, 6508, 6581, 9683, 9684) AND `item` = 11477;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 36 WHERE `entry` IN (4036, 4037, 4038) AND `item` = 5659;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 45 WHERE `entry` IN (4041, 4042, 4044, 4147) AND `item` = 5675;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `entry` IN (6551, 6552, 6553, 6554, 6555, 10040) AND `item` = 11837;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 65 WHERE `entry` IN (5455, 5456, 5457, 5458, 5459, 5460) AND `item` = 8587;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 20 WHERE `entry` IN (7855, 7856, 7857, 7858, 7883, 8203, 15685) AND `item` = 20519;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 36 WHERE `entry` IN (2015, 2017, 2018, 2019, 2020, 2021, 14431) AND `item` = 5204;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 37 WHERE `entry` = 2030 AND `item` = 5168;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 25 WHERE `entry` IN (2022, 2025, 2027, 2029, 2166) AND `item` = 5168;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 41 WHERE `entry` IN (2027, 2029, 2030) AND `item` = 5170;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 27 WHERE `entry` IN (1998, 1999, 2000, 2001) AND `item` = 3412;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 21 WHERE `entry` IN (2033, 2034, 2042, 2043, 14430) AND `item` = 3409;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 35 WHERE `entry` IN (1995, 1996, 1997) AND `item` = 3411;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 20 WHERE `entry` IN (4113, 4116, 14427) AND `item` = 5842;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 50 WHERE `entry` = 3238 AND `item` = 4898;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 39 WHERE `entry` IN (3276, 3277, 3278, 3279, 3280, 3452) AND `item` = 5064;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (4142, 4143, 4144) AND `item` = 5795;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 60 WHERE `entry` IN (2892, 2893, 2894, 4851, 4856, 6733) AND `item` = 5797;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (4130, 4131, 4132, 4133) AND `item` = 5855;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `entry` IN (4139, 4140, 5937) AND `item` = 5794;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 28 WHERE `entry` IN (6503, 6501, 6502, 9164, 6504) AND `item` = 11114;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 2 WHERE `entry` IN (9162, 9163) AND `item` = 11114;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 54 WHERE `entry` = 9167 AND `item` = 11831;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 41 WHERE `entry` = 9165 AND `item` = 11831;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 35 WHERE `entry` = 9166 AND `item` = 11831;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 30 WHERE `entry` IN (9162, 9163, 9164) AND `item` = 11830;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `entry` IN (7447, 7448, 7449) AND `item` = 12444;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (7443, 7444, 7445, 7446) AND `item` = 12622;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (7447, 7448, 7449)  AND `item` = 12623;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 2 WHERE `entry` IN (7428, 7429) AND `item` = 12334;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -35 WHERE `entry` = 768 AND `item` = 6080;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -55 WHERE `entry` = 1081 AND `item` = 6081;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` IN (2384, 2385, 2406, 2407) AND `item` = 3496;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (7430, 7431, 7432, 7433, 7434, 7443, 7444, 7445, 7446) AND `item` = 21928;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` = 1907 AND `item` = 4029;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -17 WHERE `entry` IN (587, 588, 595, 597, 660, 671, 694, 697, 699, 701, 702) AND `item` = 3915;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -32 WHERE `entry` = 2635 AND `item` = 4105;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -52 WHERE `entry` = 1096 AND `item` = 4106;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -37 WHERE `entry` IN (587, 588, 595, 597, 660, 671, 694, 697, 699, 701, 702) AND `item` = 3901;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` = 772 AND `item` = 3839;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` = 1557 AND `item` = 3862;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -25 WHERE `entry` = 687 AND `item` = 3863;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` = 1557 AND `item` = 3919;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -21 WHERE `entry`  IN (667, 669, 670, 672, 696, 780, 781, 782, 783, 784, 1059, 1061, 1062) AND `item` = 1524;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -41 WHERE `entry` = 1152 AND `item` = 4104;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (667, 669, 670, 672, 696, 780, 781, 782, 783, 784, 1059) AND `item` = 3916;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -34 WHERE `entry` = 1150 AND `item` = 4053;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -15 WHERE `entry` IN (740, 741, 742, 743, 744, 745, 746, 14445) AND `item` = 5803;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -7 WHERE `entry` = 1088 AND `item` = 6184;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (1082, 1087) AND `item` = 6169;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` = 2686 AND `item` = 9322;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` IN (4011, 4012, 4013, 4014, 4015, 6141) AND `item` = 5808;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (3737, 3739, 3740, 3742) AND `item` = 5463;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -5 WHERE `entry` IN (6195, 6196, 7885, 7886) AND `item` = 13815;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -48 WHERE `entry` IN (2189, 2190) AND `item` = 5336;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -36 WHERE `entry` = 2212 AND `item` = 5338;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -45 WHERE `entry` IN (2071, 2237) AND `item` = 5386;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` IN (2185, 2187) AND `item` = 5412;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -45 WHERE `entry` IN (2176, 2177, 2178) AND `item` = 5360;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` IN (2233, 2235) AND `item` = 12237;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -20 WHERE `entry` IN (2069, 2070, 2071, 2175, 2237) AND `item` = 5413;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` = 2336 AND `item` = 5348;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` IN (2165, 6788) AND `item` = 5414;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (4632, 4633, 4634, 4635, 4636, 4637, 12976, 12977) AND `item` = 6079;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -60 WHERE `entry` IN (3106, 3107, 3108, 3228) AND `item` = 4888;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -60 WHERE `entry` IN (3103, 3104, 3105, 3141, 6020) AND `item` = 4887;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (3119, 3120, 3128, 3129, 3192, 5808, 5809) AND `item` = 4870;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -23 WHERE `entry` IN (7105, 7106, 7107, 7108, 7109, 7110, 7111) AND `item` = 11674;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -19 WHERE `entry` IN (5278, 7997) AND `item` = 9369;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -60 WHERE `entry` IN (5249, 5251, 5253, 5254, 5255, 5258) AND `item` = 9237;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` IN (2955, 2956, 2957, 3068, 3244, 3245, 3246) AND `item` = 4759;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` IN (2958, 2959, 2960) AND `item` = 4758;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -70 wHERE `entry` IN (2969, 2970, 2971) AND `item` = 4769;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -41 WHERE `entry` = 3566 AND `item` = 5203;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -44 WHERE `entry` = 3035 AND `item` = 4802;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -44 WHERE `entry` = 2959 AND `item` = 4801;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -36 WHERE `entry` = 2960 AND `item` = 4803;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (11735, 11736, 11737, 11738, 11739) AND `item` = 22381;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -20 WHERE `entry` IN (6505, 6506, 6507, 6508, 6581, 9683, 9684) AND `item` = 11477;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -36 WHERE `entry` IN (4036, 4037, 4038) AND `item` = 5659;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -45 WHERE `entry` IN (4041, 4042, 4044, 4147) AND `item` = 5675;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (6551, 6552, 6553, 6554, 6555, 10040) AND `item` = 11837;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -65 WHERE `entry` IN (5455, 5456, 5457, 5458, 5459, 5460) AND `item` = 8587;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -20 WHERE `entry` IN (7855, 7856, 7857, 7858, 7883, 8203, 15685) AND `item` = 20519;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -36 WHERE `entry` IN (2015, 2017, 2018, 2019, 2020, 2021, 14431) AND `item` = 5204;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -37 WHERE `entry` = 2030 AND `item` = 5168;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -25 WHERE `entry` IN (2022, 2025, 2027, 2029, 2166) AND `item` = 5168;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -41 WHERE `entry` IN (2027, 2029, 2030) AND `item` = 5170;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -27 WHERE `entry` IN (1998, 1999, 2000, 2001) AND `item` = 3412;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -21 WHERE `entry` IN (2033, 2034, 2042, 2043, 14430) AND `item` = 3409;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -35 WHERE `entry` IN (1995, 1996, 1997) AND `item` = 3411;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -20 WHERE `entry` IN (4113, 4116, 14427) AND `item` = 5842;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -50 WHERE `entry` = 3238 AND `item` = 4898;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -39 WHERE `entry` IN (3276, 3277, 3278, 3279, 3280, 3452) AND `item` = 5064;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (4142, 4143, 4144) AND `item` = 5795;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -60 WHERE `entry` IN (2892, 2893, 2894, 4851, 4856, 6733) AND `item` = 5797;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (4130, 4131, 4132, 4133) AND `item` = 5855;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (4139, 4140, 5937) AND `item` = 5794;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -28 WHERE `entry` IN (6503, 6501, 6502, 9164, 6504) AND `item` = 11114;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -2 WHERE `entry` IN (9162, 9163) AND `item` = 11114;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -54 WHERE `entry` = 9167 AND `item` = 11831;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -41 WHERE `entry` = 9165 AND `item` = 11831;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -35 WHERE `entry` = 9166 AND `item` = 11831;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -30 WHERE `entry` IN (9162, 9163, 9164) AND `item` = 11830;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -10 WHERE `entry` IN (7447, 7448, 7449) AND `item` = 12444;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` IN (7443, 7444, 7445, 7446) AND `item` = 12622;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` IN (7447, 7448, 7449)  AND `item` = 12623;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -2 WHERE `entry` IN (7428, 7429) AND `item` = 12334;
 
 -- Remove the Quest Item: Dinosaur Bone from Bloodpetal Trapper and Frenzied Pterrordax
 DELETE FROM `creature_loot_template` WHERE `entry` IN (6512, 9167) AND `item` = 11114;
@@ -140,7 +166,7 @@ UPDATE `quest_template` SET `minlevel` = 47 WHERE `entry` IN (4142, 4143);
 UPDATE `creature`  SET `spawntimesecs` = 20 WHERE `id` = 8901;
 
 -- Dramatically lower the drop rate of Item: Shimmering Amice, from Agam'ar
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 2 WHERE `entry` = 4511 AND `item` = 6566;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -2 WHERE `entry` = 4511 AND `item` = 6566;
 
 -- Allow Warlocks to accept the Quest: Armaments of War
 UPDATE `quest_template` SET `RequiredClasses` = 384 WHERE `entry` = 8381;
@@ -152,14 +178,14 @@ UPDATE `creature_template` SET `rank` = 0 WHERE `entry` IN (1802, 1804);
 UPDATE `creature_ai_texts` SET `language` = 0 WHERE `entry` = -320;
 
 -- Reduce the drop rate of Quest Item: Vial of Hatefury Blood
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 40 WHERE `entry` IN (4670, 4671, 4672, 4673, 4674, 4675, 14225) AND `item` = 6989;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -40 WHERE `entry` IN (4670, 4671, 4672, 4673, 4674, 4675, 14225) AND `item` = 6989;
 
 -- Reduce the drop rate of Quest Item: Bloodstone Amulet
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 38 WHERE `entry` IN (2589, 2587) AND `item` = 4495;
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 28 WHERE `entry` = 2586 AND `item` = 4495;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -38 WHERE `entry` IN (2589, 2587) AND `item` = 4495;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -28 WHERE `entry` = 2586 AND `item` = 4495;
 
 -- Reduce the drop rate of Quest Item: Sigil of Strom
-UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 5 WHERE `entry` IN (2590, 2588, 2591) and `item` = 4440;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -5 WHERE `entry` IN (2590, 2588, 2591) and `item` = 4440;
 
 -- Correct the following Items:
 UPDATE `item_template` SET `dmg_min1` = 91, `dmg_max1` = 137, `dmg_min2` = 13, `dmg_max2` = 19 WHERE `entry` = 13040;
