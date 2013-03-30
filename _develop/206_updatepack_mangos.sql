@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- add spell_proc_event for Nefarian Priest Classcall // Corrupted Healing
+INSERT INTO `spell_proc_event` VALUES
+(23401, 0, 6, 269824, 0, 0, 16384, 0, 0, 0, 0);
+
 -- Correct faction for multiple quests
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (817, 818, 823, 2161);
 
