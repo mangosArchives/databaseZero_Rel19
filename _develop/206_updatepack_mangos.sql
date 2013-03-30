@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Set Deathmaw's rank to Rare
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10077;
+
 -- Correct drop rate of Quest Item: Blackrock Medallion
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -45 WHERE `entry` IN (7025, 7026, 7027, 7028, 7029, 7055, 9690, 9697, 10097) AND `item` = 11467;
 
