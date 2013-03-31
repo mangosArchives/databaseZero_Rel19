@@ -1,5 +1,4 @@
-Here developers can create an SQL file named after their GitHub account username. For example "Name.sql".
-==========
+###### Here developers can create an SQL file named after their GitHub account username. For example "Name.sql".
 
 
 Why?
@@ -19,17 +18,12 @@ I'll show you an example:
 Add spells to all PvP Battle Standard creatures (14465, 14466, 14751, 14752)
 Sources: the spell names fit and the spells make the Standards function as they should
 
-`DELETE FROM creature_template_spells WHERE entry IN (14465, 14466, 14751, 14752);`
-
-`INSERT INTO creature_template_spells entry, spell1, spell2, spell3, spell4) VALUES`
-
-`(14465, 23033, 0, 0, 0),`
-
-`(14466, 23036, 0, 0, 0),`
-
-`(14751, 23576, 0, 0, 0),`
-
-`(14752, 23574, 0, 0, 0);`
+`DELETE FROM creature_template_spells WHERE entry IN (14465, 14466, 14751, 14752);` 
+`INSERT INTO creature_template_spells entry, spell1, spell2, spell3, spell4) VALUES`  
+`(14465, 23033, 0, 0, 0),`  
+`(14466, 23036, 0, 0, 0),`  
+`(14751, 23576, 0, 0, 0),`  
+`(14752, 23574, 0, 0, 0);` 
 
 
 Learning spell Journeyman Blacksmith (2021) from trainers now requires 50 minimum blacksmith skill
