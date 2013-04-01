@@ -214,7 +214,6 @@ UPDATE `item_template` SET `dmg_min1` = 49, `dmg_max1` = 93, `dmg_min2` = 66, `d
 UPDATE `item_template` SET `dmg_min1` = 61, `dmg_max1` = 114, `dmg_min2` = 18, `dmg_max2` = 26 WHERE `entry` = 13146;
 UPDATE `item_template` SET `dmg_min2` = 31, `dmg_max2` = 45 WHERE `entry` = 6469;
 UPDATE `item_template` SET `dmg_min1` = 68,  `dmg_max1` = 127, `dmg_min2` = 15, `dmg_min2` = 21 WHERE `entry` = 17753;
-UPDATE `item_template` SET `BuyCount` = 0, `BuyPrice` = 0 WHERE `entry` = 15419;
 UPDATE `item_template` SET `dmg_min2` = 33, `dmg_max2` = 49 WHERE `entry` = 2099;
 
 -- Rename Snake Bloom Firework to Snake Burst Firework
@@ -234,11 +233,6 @@ UPDATE `quest_template` SET `OfferRewardText` = 'You truly disgust me, $r. A gro
 
 -- Restrict Quest Item: Crag Coyote Fang to 10 per stack
 UPDATE `item_template` SET `stackable` = 10 WHERE `entry` = 7846;
-
--- not sure about this need to check
--- Update the following GameObject's respawn timer:
--- UPDATE `gameobject` SET `spawntimesecs` = 1800 WHERE `id` = 271;
--- UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `id` IN (104564, 104569, 104574);
 
 -- Add roaming to the following NPCs:
 UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` IN (2511, 2515, 2528, 2506, 2516, 2526, 2512, 2507);
@@ -492,8 +486,8 @@ INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `
 (14751, 23576, 0, 0, 0),
 (14752, 23574, 0, 0, 0);
 
--- Implement script for spell 21050 Thanks Xfurry
-UPDATE `quest_template` SET `ReqSpellCast1` = 0 WHERE `entry` = 6661;
+-- Implement script for spell 21050 Quest (6661) Thanks Xfurry
+UPDATE `quest_template` SET `ReqSpellCast1` = 0, `ReqCreatureorGOId1` = 13017 WHERE `entry` = 6661;
 
 DELETE FROM `spell_script_target` WHERE `entry` = 21052;
 INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
@@ -501,7 +495,7 @@ INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
 
 UPDATE `quest_template` SET `CompleteScript` = 6661 WHERE `entry` = 6661;
 
-DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 6661;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 6661 AND `command` = 15;
 INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `comments`) VALUES
 ('6661','1','15','21052','Cast Monty Bashes Rats (DND)');
 
@@ -527,9 +521,6 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (90, 9, 5862, 0);
-
--- Correct required creature (13017) for quest (6661)
-UPDATE `quest_template` SET `ReqCreatureorGOId1` = 13017 WHERE `entry` = 6661;
 
 -- ScriptDev2
 -- z2647
