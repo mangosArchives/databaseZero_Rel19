@@ -330,7 +330,7 @@ UPDATE `item_template` SET `BuyPrice` = 61 WHERE `entry` = 209;
 UPDATE `item_template` SET `BuyPrice` = 63 WHERE `entry` = 85;
 UPDATE `item_template` SET `BuyPrice` = 39 WHERE `entry` IN (2387, 2390, 2391);
 UPDATE `item_template` SET `BuyPrice` = 78 WHERE `entry` IN (2386, 2388);
-UPDATE `item_template` SET `BuyPrice` = 24 WHERE `entry` IN (3595, 3596); 
+UPDATE `item_template` SET `BuyPrice` = 24 WHERE `entry` IN (3595, 3596);
 UPDATE `item_template` SET `BuyPrice` = 37 WHERE `entry` = 195;
 UPDATE `item_template` SET `BuyPrice` = 26 WHERE `entry` = 711;
 UPDATE `item_template` SET `BuyPrice` = 49 WHERE `entry` = 193;
@@ -352,7 +352,7 @@ UPDATE `quest_template` SET `MinLevel` = 2 WHERE `entry` IN (380, 381, 382, 383,
 UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 3901;
 UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 120;
 
--- Correct the Min/Max Level of the following creatures: 
+-- Correct the Min/Max Level of the following creatures:
 UPDATE `creature_template` SET `minlevel` = 60 WHERE `entry` IN (10506, 16097);
 UPDATE `creature_template` SET `minlevel` = 1, `maxlevel` = 1 WHERE `entry` = 2442;
 UPDATE `creature_template` SET `minlevel` = 5, `maxlevel` = 5 WHERE `entry` = 385;
@@ -519,6 +519,7 @@ DELETE FROM `gossip_menu_option` WHERE `menu_id` = 3801;
 INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
 (3801, 0, 0, 'I am ready for the illusion, Myranda.', 1, 1, 0, 0, 3801, 0, 0, '', 90);
 
+DELETE FROM `conditions` WHERE `type` = 9 AND `value1` = 5862;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (90, 9, 5862, 0);
 
