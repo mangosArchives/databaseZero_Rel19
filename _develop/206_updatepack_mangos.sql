@@ -523,6 +523,11 @@ DELETE FROM `conditions` WHERE `type` = 9 AND `value1` = 5862;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (90, 9, 5862, 0);
 
+-- ACID
+-- Drop script for Spirit Shade - handled in SD2
+DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15261;
+UPDATE `creature_template` SET AIName='EventAI' WHERE `entry` = 15261;
+
 -- ScriptDev2
 -- z2647
 UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
