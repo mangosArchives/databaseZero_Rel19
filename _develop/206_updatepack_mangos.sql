@@ -526,27 +526,27 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 -- ACID
 -- Drop script for Spirit Shade - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15261;
-UPDATE `creature_template` SET AIName='EventAI' WHERE `entry` = 15261;
+UPDATE `creature_template` SET AIName = '' WHERE `entry` = 15261;
 
 -- Drop script for Willix the Importer - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 4508;
-UPDATE `creature_template` SET AIName='EventAI' WHERE `entry` = 4508;
+UPDATE `creature_template` SET AIName = '' WHERE `entry` = 4508;
 
 -- Drop script for Gurubashi Bat Rider - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 14750;
-UPDATE `creature_template` SET AIName='EventAI' WHERE `entry` = 14750;
+UPDATE `creature_template` SET AIName = '' WHERE `entry` = 14750;
 
 -- Drop script for Ossirian the Unscarred - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_texts` WHERE `entry` IN (-698, -699, -700);
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 14750;
-UPDATE `creature_template` SET AIName='EventAI' WHERE `entry` = 14750;
+UPDATE `creature_template` SET AIName = '' WHERE `entry` = 14750;
 
 -- Drop script for Stalagg and Feugen - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15929;
-UPDATE `creature_template` SET AIName='EventAI' WHERE `entry` = 15929;
+UPDATE `creature_template` SET AIName = '' WHERE `entry` = 15929;
 
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15930;
-UPDATE `creature_template` SET AIName='EventAI' WHERE `entry` = 15930;
+UPDATE `creature_template` SET AIName = '' WHERE `entry` = 15930;
 
 -- ScriptDev2
 -- z2647
