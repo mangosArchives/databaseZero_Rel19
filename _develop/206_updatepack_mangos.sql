@@ -17,15 +17,13 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
--- Set Rohh the Silent's rank to Rare
-UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 947;
+-- Set Rohh the Silent's rank to Rare (947)
+-- Set Deathmaw's rank to Rare (10077)
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` IN (947, 10077);
 
 -- Set Grubthor's rank to Rare and modify Health Point values
 UPDATE `creature` SET `curhealth` = 8097 WHERE `id` = 14477;
 UPDATE `creature_template` SET `minhealth` = 8097, `maxhealth` = 8097, `rank` = 4 WHERE `entry` = 14477;
-
--- Set Deathmaw's rank to Rare
-UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10077;
 
 -- Correct drop rate of Quest Item: Blackrock Medallion
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -45 WHERE `entry` IN (7025, 7026, 7027, 7028, 7029, 7055, 9690, 9697, 10097) AND `item` = 11467;
@@ -237,18 +235,16 @@ UPDATE `quest_template` SET `OfferRewardText` = 'You truly disgust me, $r. A gro
 -- Restrict Quest Item: Crag Coyote Fang to 10 per stack
 UPDATE `item_template` SET `stackable` = 10 WHERE `entry` = 7846;
 
+-- not sure about this need to check
 -- Update the following GameObject's respawn timer:
-UPDATE `gameobject` SET `spawntimesecs` = 1800 WHERE `id` = 271;
-UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `id` IN (104564, 104569, 104574);
+-- UPDATE `gameobject` SET `spawntimesecs` = 1800 WHERE `id` = 271;
+-- UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `id` IN (104564, 104569, 104574);
 
 -- Add roaming to the following NPCs:
 UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` IN (2511, 2515, 2528, 2506, 2516, 2526, 2512, 2507);
 
--- The following creatures are now restricted to ground-only:
-UPDATE `creature_template` SET `InhabitType` = 1 WHERE `entry` IN (1161, 1162, 1163, 1164, 1165, 1166, 1167, 1197, 1205, 1206, 1207, 1393, 1398, 1399);
-
 -- The following NPCs are now restricted to ground-only:
-UPDATE `creature_template` SET `InhabitType` = 1 WHERE `entry` IN (1092, 2527, 2525, 2511, 1276, 1089, 2509, 1338, 2105, 1280, 2515, 1279, 1277, 1091, 1337, 2528, 2524, 1334, 2506, 2513, 1340, 1283, 2516, 2511, 3317, 1331, 2514, 2526,
+UPDATE `creature_template` SET `InhabitType` = 1 WHERE `entry` IN (1161, 1162, 1163, 1164, 1165, 1166, 1167, 1197, 1205, 1206, 1207, 1393, 1398, 1399, 1092, 2527, 2525, 2511, 1276, 1089, 2509, 1338, 2105, 1280, 2515, 1279, 1277, 1091, 1337, 2528, 2524, 1334, 2506, 2513, 1340, 1283, 2516, 2511, 3317, 1331, 2514, 2526,
 1332, 1329, 2510, 3836, 1342, 2512, 1278, 1343, 2518, 1330, 1282, 1090, 2508, 1335, 1281, 1336, 8055);
 
 -- Correct the Min/Max Health Points of the following creatures:
