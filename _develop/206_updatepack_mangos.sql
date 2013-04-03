@@ -533,6 +533,11 @@ UPDATE `creature_template` SET AIName = '' WHERE `entry` = 4508;
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 14750;
 UPDATE `creature_template` SET AIName = '' WHERE `entry` = 14750;
 
+-- Allow Ossirian to use the Sand Vortex ScriptDev2 Commit z2654 Thanks Xfurry
+DELETE FROM `creature_linking_template` WHERE `entry` = 15428;
+INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+(15428, 509, 15339, 4112, 0);
+
 -- ScriptDev2
 -- z2647
 UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
