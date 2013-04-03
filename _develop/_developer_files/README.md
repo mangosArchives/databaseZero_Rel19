@@ -16,7 +16,7 @@ I'll show you an example:
 `-- Add spells to all PvP Battle Standard creatures (14465, 14466, 14751, 14752)`<br />
 `-- Sources: the spell names fit and the spells make the Standards function as they should`<br />
 `DELETE FROM creature_template_spells WHERE entry IN (14465, 14466, 14751, 14752);`<br />
-`INSERT INTO creature_template_spells entry, spell1, spell2, spell3, spell4) VALUES`<br />
+`INSERT INTO creature_template_spells (entry, spell1, spell2, spell3, spell4) VALUES`<br />
 `(14465, 23033, 0, 0, 0),`<br />
 `(14466, 23036, 0, 0, 0),`<br />
 `(14751, 23576, 0, 0, 0),`<br />
