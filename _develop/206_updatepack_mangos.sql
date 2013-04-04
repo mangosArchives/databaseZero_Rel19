@@ -520,6 +520,10 @@ DELETE FROM `conditions` WHERE `type` = 9 AND `value1` = 5862;
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (90, 9, 5862, 0);
 
+-- missing Temple of Ahn'Qiraj graveyard
+INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
+('913','3428','0');
+
 -- ACID
 -- Drop script for Spirit Shade - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15261;
