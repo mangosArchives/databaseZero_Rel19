@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Set Booty Bay Bruiser's rank to Normal
+   Source: http://www.youtube.com/watch?v=2zXG8WgEXjQ
+*/
+UPDATE `creature_template` SET `rank` = 0 WHERE `entry` = 4624;
+
 /* Changes to NPC Spirit Healer:
   - Change npcflag to allow intended interaction
 	- Change MovementType to idle
