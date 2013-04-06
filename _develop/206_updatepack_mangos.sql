@@ -20,6 +20,7 @@
 /* Spawn Fizzles creature (1419)
    Source: The data is taken from UDB and http://www.wowpedia.org/File:Charys_Yserian.jpg?c=1 (you can see Fizzles, post date is 2006)
 */
+DELETE FROM `creature` WHERE `guid` = 90184;
 INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
 (90184, 1419, 0, 0, 0, -8994.19, 947.069, 118.348, 4.29351, 180, 0, 0, 8, 0, 0, 0);
 
@@ -29,10 +30,10 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 UPDATE `creature_template` SET `rank` = 0 WHERE `entry` = 4624;
 
 /* Changes to NPC Spirit Healer:
-  - Change npcflag to allow intended interaction
-	- Change MovementType to idle
+   Change npcflag to allow intended interaction
+   Change MovementType to idle
 
-	Source: http://www.wowwiki.com/Spirit_Healer
+   Source: http://www.wowwiki.com/Spirit_Healer
 */
 UPDATE `npc_text` SET `text0_0` = 'It is not yet your time. I shall aid your journey back to the realm of the living... for a price.', `text0_1` = '' WHERE `id` = 580;
 UPDATE `creature_template` SET `npcflag` = 33, `MovementType` = 0 WHERE `entry` = 6491;
