@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Spawn Fizzles creature (1419)
+   Source: The data is taken from UDB and http://www.wowpedia.org/File:Charys_Yserian.jpg?c=1 (you can see Fizzles, post date is 2006)
+*/
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(90184, 1419, 0, 0, 0, -8994.19, 947.069, 118.348, 4.29351, 180, 0, 0, 8, 0, 0, 0);
+
 /* Set Booty Bay Bruiser's rank to Normal
    Source: http://www.youtube.com/watch?v=2zXG8WgEXjQ
 */
