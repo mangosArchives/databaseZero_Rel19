@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correcting to high XP on Quests 8460, 8464, 8485 (Timbermaw Hold)
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 3780 WHERE `entry` = 8460;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 5400 WHERE `entry` = 8464;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 8580 WHERE `entry` = 8485;
+
 -- fixing the "you learn spell" from quest windows, from 6 Quest of Dalar Dawnweaver, adding quest end scripts so dalar dawnweaver cast spell on Player, fixing the not enough mana bug.
 UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 99;
 UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 421;
