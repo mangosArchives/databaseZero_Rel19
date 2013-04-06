@@ -17,6 +17,15 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Changes to NPC Spirit Healer:
+  - Change npcflag to allow intended interaction
+	- Change MovementType to idle
+
+	Source: http://www.wowwiki.com/Spirit_Healer
+*/
+UPDATE `npc_text` SET `text0_0` = 'It is not yet your time. I shall aid your journey back to the realm of the living... for a price.', `text0_1` = '' WHERE `id` = 580;
+UPDATE `creature_template` SET `npcflag` = 33, `MovementType` = 0 WHERE `entry` = 6491;
+
 -- Set Rohh the Silent's rank to Rare (947)
 -- Set Deathmaw's rank to Rare (10077)
 UPDATE `creature_template` SET `rank` = 4 WHERE `entry` IN (947, 10077);
