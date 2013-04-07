@@ -17,7 +17,18 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
-/* Removed Mana Points from all Warriors Trainers
+/* Linked correct npc text to Nessa Shadowsong
+   Added gossip flag
+   Sources: http://www.youtube.com/watch?v=XPCmIWXUQmY&t=1m12s
+            MaNGOSZero Database
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 46561 AND `textid` = 5475;
+INSERT INTO `npc_gossip` VALUES
+(46561, 5475);
+
+UPDATE `creature_template` SET `npcflag` = 7 WHERE `entry` = 10118;
+
+/* Removed Mana Points from all Warrior Trainers
    Sources: Example: http://www.wowhead.com/npc=5114/bilban-tosslespanner
             http://www.youtube.com/watch?v=nUwedP9Uoz4&t=2m48s
 */
@@ -26,8 +37,8 @@ UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `subname` = 'W
 
 /* Linked correct npc text to Laird
    Added gossip flag
-   Source: http://www.youtube.com/watch?v=DYTHaE2XyJ4&t=9m31s
-           MaNGOSZero Database
+   Sources: http://www.youtube.com/watch?v=DYTHaE2XyJ4&t=9m31s
+            MaNGOSZero Database
 
    Structure of `npc_gossip`:
    (`npc_guid`, `textid`)
@@ -36,7 +47,7 @@ DELETE FROM `npc_gossip` WHERE `npc_guid` = 37088 AND `textid` = 5476;
 INSERT INTO `npc_gossip` VALUES
 (37088, 5476);
 
-UPDATE `creature_template` SET `npcflag` = 7 WHERE `entry` = 4200
+UPDATE `creature_template` SET `npcflag` = 7 WHERE `entry` = 4200;
 
 /* Linked correct npc text to Doctor Gustaf VanHowzen
    Removed Mana Points
