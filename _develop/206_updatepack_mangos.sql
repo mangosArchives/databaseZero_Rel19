@@ -17,6 +17,21 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Linked correct npc text to Doctor Gustaf VanHowzen
+   Removed Mana Points
+   Sources: http://www.youtube.com/watch?v=-JFEBqv8Rts&t=5m52s
+            MaNGOSZero Database
+
+   Structure of `npc_gossip`:
+   (`npc_guid`, `textid`)
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 33780 AND `textid` = 6415;
+INSERT INTO `npc_gossip` VALUES
+(33780, 6415);
+
+UPDATE `creature` SET `curmana` = 0 WHERE `id` = 12939;
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` = 12939;
+
 /* Changes to the Quest: Identifying the Brood (1169):
    Added this Quest to it's proper chain
    Dropped the Min. Level requirement for all Quests in this chain to 38, down from 39
