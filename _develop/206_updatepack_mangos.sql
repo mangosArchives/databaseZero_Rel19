@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Required Races for Quest 5156 Verifying the Corruption
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 5156;
+
 -- Correcting to high XP on Quests 8460, 8464, 8485 (Timbermaw Hold)
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 3780 WHERE `entry` = 8460;
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 5400 WHERE `entry` = 8464;
