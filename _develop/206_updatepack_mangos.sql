@@ -17,6 +17,13 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Removed Mana Points from all Warriors Trainers
+   Sources: Example: http://www.wowhead.com/npc=5114/bilban-tosslespanner
+            http://www.youtube.com/watch?v=nUwedP9Uoz4&t=2m48s
+*/
+UPDATE `creature` SET `curmana` = 0 WHERE `id` IN (911, 912, 913, 914, 985, 1229, 1901, 2119, 2131, 3041, 3042, 3043, 3059, 3063, 3153, 3169, 3353, 3354, 3408, 3593, 3598, 4087, 4089, 4593, 4594, 4595, 5113, 5114, 5479, 5480, 7315, 8141);
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `subname` = 'Warrior Trainer';
+
 /* Linked correct npc text to Laird
    Added gossip flag
    Source: http://www.youtube.com/watch?v=DYTHaE2XyJ4&t=9m31s
