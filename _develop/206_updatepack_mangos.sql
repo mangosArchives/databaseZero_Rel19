@@ -17,6 +17,14 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Linked correct npc text to Deliana
+   Sources: http://www.wowhead.com/npc=16013#comments:id=315234
+            MaNGOSZero Database
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 2026 AND `textid` = 8333;
+INSERT INTO `npc_gossip` VALUES
+(2026, 8333);
+
 -- Flesh Eating worms should have 1 Health Point
 UPDATE `creature_template` SET `minhealth` = 1, `maxhealth` = 1 WHERE `entry` = 2462;
 
