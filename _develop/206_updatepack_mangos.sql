@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Removed a duplicate Cooking Table in Razor Hill
+DELETE FROM `gameobject` WHERE `guid` = 99805;
+
 -- Removed a duplicate 'The Park' sign in Stormwind
 DELETE FROM `gameobject` WHERE `guid` = 42860;
 
