@@ -17,6 +17,13 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Set Min. Level for quest "Sunken Treasure (670)" to 35
+   Sources: http://www.wowhead.com/quest=670
+            http://www.wowwiki.com/Quest:Sunken_Treasure
+            Evildead666
+*/
+UPDATE `quest_template` SET `MinLevel` = 35 WHERE `entry` = 670;
+
 /* Linked correct npc text to Deliana
    Sources: http://www.wowhead.com/npc=16013#comments:id=315234
             MaNGOSZero Database
