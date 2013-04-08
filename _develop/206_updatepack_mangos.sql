@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Set The Molten Core -> BRD areatrigger to level 48
+UPDATE `areatrigger_teleport` SET `required_level` = 48 WHERE `id` = 2890;
+
 -- Removed a duplicate Cooking Table in Razor Hill
 DELETE FROM `gameobject` WHERE `guid` = 99805;
 
