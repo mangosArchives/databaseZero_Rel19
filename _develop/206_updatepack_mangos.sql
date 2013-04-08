@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Flesh Eating worms should have 1 Health Point
+UPDATE `creature_template` SET `minhealth` = 1, `maxhealth` = 1 WHERE `entry` = 2462;
+
 -- Set The Molten Core -> BRD areatrigger to level 48
 UPDATE `areatrigger_teleport` SET `required_level` = 48 WHERE `id` = 2890;
 
