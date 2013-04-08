@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Removed a duplicate 'The Park' sign in Stormwind
+DELETE FROM `gameobject` WHERE `guid` = 42860;
+
 /* Linked correct npc text to Nessa Shadowsong
    Added gossip flag
    Sources: http://www.youtube.com/watch?v=XPCmIWXUQmY&t=1m12s
