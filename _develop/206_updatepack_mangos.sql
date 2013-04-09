@@ -17,6 +17,39 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Changes to NPC Argent Sentry, Argent Rider, Argent Defender and Cenarion Hold Infantry:
+   Minimum Level and Maximum Level changed to 60 (Argent Sentry, Argent Rider)
+	 Rank changed to Elite (Argent Sentry, Argent Rider)
+	 Health Points are increased to 8100 for the Argent Rider and 12150 for the Argent Sentry
+	 unit_flags set to not be passive (for Argent Sentry, Argent Defender and Cenarion Hold Infantry. Argent Riders are only aggravated when hit by AoE spells(requires additional information) or unless you have the weapon: Corrupted Ashbringer equipped)
+	 Changed MovementType of Argent Rider to Waypoint
+   Changed the affiliation of Argent Defender to <The Argent Dawn>
+   Removed the quest giver flag from Argent Defenders
+   Increased the damage output of Argent Sentries and Argent Riders by a fairly large margin
+*/
+UPDATE `creature` SET `curhealth` = 8100 WHERE `id` = 11102;
+UPDATE `creature` SET `curhealth` = 12150 WHERE `id` = 16378;
+UPDATE `creature_template` SET `minhealth` = 12150, `maxhealth` = 12150 WHERE `entry` = 16378;
+UPDATE `creature_template` SET `minhealth` = 8100, `maxhealth` = 8100 WHERE `entry` = 11102;
+UPDATE `creature_template` SET `minlevel` = 60, `maxlevel` = 60, `rank` = 1 WHERE `entry` IN (11102, 16378);
+UPDATE `creature_template` SET `npcflag` = 0, `unit_flags` = 32768 WHERE `entry` IN (11194, 15184, 16378);
+UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 11102;
+UPDATE `creature_template` SET `faction_A` = 1625, `faction_H` = 1625 WHERE `entry` = 11194;
+UPDATE `creature_template` SET `mindmg` = 925, `maxdmg` = 1025, `attackpower` = 6825 WHERE `entry` IN (11102, 16378);
+
+/* NOTE: These NPCs may require further improvements and adjustments, such as damage values and possibly Health Points.
+         Additionally, according to the videos below, Argent Sentries are either calling for help or are linked with one another.
+         These are the most powerful guards in the game.
+	       See http://project-silverpine.com/devwiki/index.php?title=Creature_template#attackpower
+
+Sources: http://www.youtube.com/watch?v=31rO2OCTNPo
+         http://www.youtube.com/watch?v=cihEAa6jQNo
+         http://www.youtube.com/watch?v=YDCpZ5mFKII
+	       http://old.wowhead.com/npc=16378#comments:id=820794
+	       http://old.wowhead.com/npc=11102#comments:id=765721
+         http://www.wowhead.com/npc=11194#comments:id=1313446
+*/
+
 /* Set the correct Min. Level requirement for the quest "Bring The Light" to 39
    Sources: http://www.youtube.com/watch?v=mHJe2HpX3g4 "Show more"
             http://www.wowwiki.com/Quest:Bring_the_Light?oldid=1109968
