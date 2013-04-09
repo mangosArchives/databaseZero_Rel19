@@ -17,8 +17,14 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Set the correct Min. Level requirement for the quest "Bring The Light" to 39
+   Sources: http://www.youtube.com/watch?v=mHJe2HpX3g4 "Show more"
+            http://www.wowwiki.com/Quest:Bring_the_Light?oldid=1109968
+*/
+UPDATE `quest_template` SET `MinLevel` = 39 WHERE `entry` = 3636;
+
 /* Linked correct npc text to Gadgetzan Bruisers
-   Add 100% probability
+   Added 100% probability
    Sources: http://www.wowhead.com/npc=9460/gadgetzan-bruiser#comments:id=545193
    MaNGOSZero Database
 */
