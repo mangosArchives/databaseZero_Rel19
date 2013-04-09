@@ -105,12 +105,14 @@ INSERT INTO `npc_gossip` VALUES
 
 UPDATE `npc_text` SET `prob0` = 1 WHERE `ID` = 9774;
 
-/* Set Min. Level for quest "Sunken Treasure (670)" to 35
-   Sources: http://www.wowhead.com/quest=670
-            http://www.wowwiki.com/Quest:Sunken_Treasure
-            Evildead666
+/* Set Min. Level req. for quests "Sunken Treasure (665, 666, 668, 669, 670)" to 36
+   Sources: http://www.wowpedia.org/index.php?title=Quest:Sunken_Treasure_%281%29&oldid=323144
+            http://www.wowpedia.org/index.php?title=Quest:Sunken_Treasure_%282%29&oldid=323166
+            http://www.wowpedia.org/index.php?title=Quest:Sunken_Treasure_%283%29&oldid=323172
+            http://www.wowpedia.org/index.php?title=Quest:Sunken_Treasure_%284%29&oldid=323189
+            http://www.wowpedia.org/index.php?title=Quest:Sunken_Treasure_%285%29&oldid=323191
 */
-UPDATE `quest_template` SET `MinLevel` = 35 WHERE `entry` = 670;
+UPDATE `quest_template` SET `MinLevel` = 36 WHERE `entry` IN (665, 666, 668, 669, 670);
 
 /* Linked correct npc text to Deliana
    Sources: http://www.wowhead.com/npc=16013#comments:id=315234
