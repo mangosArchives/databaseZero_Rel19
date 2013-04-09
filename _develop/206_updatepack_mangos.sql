@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Correct a minor typo in Edwin VanCleef's script text
+   Sources: http://www.wowwiki.com/Edwin_VanCleef_%28tactics%29
+            http://github.com/scriptdev2/acid/issues/24
+*/
+UPDATE `creature_ai_texts` SET `content_default` = 'The Brotherhood shall prevail!', `comment` = 'Edwin VanCleef Yell' WHERE `entry` = -173;
+
 /* Changes to NPC Argent Sentry, Argent Rider, Argent Defender and Cenarion Hold Infantry:
    Minimum Level and Maximum Level changed to 60 (Argent Sentry, Argent Rider)
 	 Rank changed to Elite (Argent Sentry, Argent Rider)
