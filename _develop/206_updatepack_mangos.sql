@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Removed Mana Points from Poisonous Skitterer
+   Source: http://www.youtube.com/watch?v=whsUTnSoPto&t=1m1s
+*/
+UPDATE `creature` SET `curmana` = 0 WHERE `id` = 15977;
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` = 15977;
+
 /* Correct a minor typo in Edwin VanCleef's script text
    Sources: http://www.wowwiki.com/Edwin_VanCleef_%28tactics%29
             http://github.com/scriptdev2/acid/issues/24
