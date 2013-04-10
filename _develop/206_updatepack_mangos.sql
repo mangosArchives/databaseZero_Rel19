@@ -17,6 +17,18 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Added missing npc text for Marshal Dughan
+   Sources: http://www.youtube.com/watch?v=oLy8hMW-e48&t=9m48s
+            YTDB
+*/
+DELETE FROM `npc_text` WHERE `ID` = 16211;
+INSERT INTO `npc_text` VALUES
+(16211,'Ach, it\'s hard enough keeping order around here without all these new troubles popping up!  I hope you have good news, $N...','',0,1,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0,'','',0,0,0,0,0,0,0,0);
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 80334 AND `textid` = 16211;
+INSERT INTO `npc_gossip` (`npc_guid`, `textid`) VALUES
+(80334, 16211);
+
 /* Removed Mana Points from Poisonous Skitterer
    Source: http://www.youtube.com/watch?v=whsUTnSoPto&t=1m1s
 */
