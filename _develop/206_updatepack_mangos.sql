@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Adjusted the Z axis of Mountaineer Cragg
+UPDATE `creature` SET `position_z` = 349.380 WHERE id = 2509;
+
 /* The quest "Vile Familiars (792)" is no longer offered to Warlocks
    Sources: http://www.wowhead.com/quest=792#comments:id=165729
             http://www.wowhead.com/quest=1485
