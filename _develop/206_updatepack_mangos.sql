@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Added Invisibility and Stealth Detection aura to some Neutral guards
+   Source: http://www.wow-europe.com/en/patchnotes/patch-1120.html See "World Environment"
+*/
+UPDATE `creature_addon` SET `auras` = 18950 WHERE `guid` IN (19470, 19487, 19488, 19489, 19490, 19503, 19504, 19505, 19506, 76, 77, 160, 161, 162, 163, 164, 165, 178, 182, 589, 590, 591, 592, 593, 594, 596, 597, 598, 599, 649, 650, 651, 652, 653, 654, 655, 656, 657, 679, 680, 681, 682, 683, 686, 687, 688, 689, 692, 693, 694, 695, 696, 697, 698, 699, 700, 715, 716, 717, 718, 719, 2164, 2167, 23560, 23561, 23562, 23563, 23564, 23565, 23566, 23567, 23568, 23569, 23570, 23571, 23572, 23573, 23574, 23575, 23576, 23577, 23578, 23579, 23580, 23581, 23582, 23583, 23584, 23585, 23586, 23587, 23588, 23589, 23590, 23591, 23592, 23593, 23594, 23595, 23596, 24664, 24665, 42278, 42279, 42280, 42281, 42282, 42283, 42284, 42285, 42286, 42287, 42288, 42289, 42290, 42291, 42292, 42293, 42294, 42295);
+UPDATE `creature_template_addon` SET `auras` = 18950 WHERE `entry` IN (3502, 4624, 9460, 11190);
+
 /* Improved the zoning coordinates into Blackwing Lair
    Source: http://www.youtube.com/watch?v=AWE1tHKjguk&t=4m25s
 */
