@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Improved the zoning coordinates into Blackwing Lair
+   Source: http://www.youtube.com/watch?v=AWE1tHKjguk&t=4m25s
+*/
+UPDATE `areatrigger_teleport` SET `target_position_x` = -7666.23, `target_position_y` = -1102.79, `target_position_z` = 399.68, `target_orientation` = 0.601256 WHERE `id` = 3726;  
+
 /* Added missing npc text for Marshal Dughan
    Sources: http://www.youtube.com/watch?v=oLy8hMW-e48&t=9m48s
             YTDB
