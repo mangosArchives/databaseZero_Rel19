@@ -477,8 +477,20 @@ UPDATE `quest_template` SET `OfferRewardText` = 'You truly disgust me, $r. A gro
 -- Restrict Quest Item: Crag Coyote Fang to 10 per stack
 UPDATE `item_template` SET `stackable` = 10 WHERE `entry` = 7846;
 
--- Add roaming to the following NPCs:
-UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` IN (2511, 2515, 2528, 2506, 2516, 2526, 2512, 2507);
+/* Added randomized movement for the following NPCs:
+Mountaineer Bludd
+Mountaineer Fazgard
+Mountaineer Haggil
+Mountaineer Harn
+Mountaineer Kamdar
+Mountaineer Morlic
+Mountaineer Roghan
+Mountaineer Uthan
+Mountaineer Cragg
+Mountaineer Swarth
+*/
+UPDATE `creature` SET `MovementType` = 1, `spawndist` = 5 WHERE `id` IN (2511, 2518, 2509, 2515, 2528, 2506, 2516, 2526, 2512, 2507);
+UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` IN (2511, 2518, 2509, 2515, 2528, 2506, 2516, 2526, 2512, 2507);
 
 -- The following NPCs are now restricted to ground-only:
 UPDATE `creature_template` SET `InhabitType` = 1 WHERE `entry` IN (1161, 1162, 1163, 1164, 1165, 1166, 1167, 1197, 1205, 1206, 1207, 1393, 1398, 1399, 1092, 2527, 2525, 2511, 1276, 1089, 2509, 1338, 2105, 1280, 2515, 1279, 1277, 1091, 1337, 2528, 2524, 1334, 2506, 2513, 1340, 1283, 2516, 2511, 3317, 1331, 2514, 2526,
