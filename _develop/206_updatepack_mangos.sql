@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* The quest "Vile Familiars (792)" is no longer offered to Warlocks
+   Sources: http://www.wowhead.com/quest=792#comments:id=165729
+            http://www.wowhead.com/quest=1485
+*/
+UPDATE `quest_template` SET `RequiredClasses` = 1245 WHERE `entry` = 792;
+
 /* Added Invisibility and Stealth Detection aura to some Neutral guards
    Source: http://www.wow-europe.com/en/patchnotes/patch-1120.html See "World Environment"
 */
