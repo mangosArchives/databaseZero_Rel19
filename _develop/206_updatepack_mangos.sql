@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Mountaineer Boombellow is now passive towards players, unless attacked
+UPDATE `creature_template` SET `unit_flags` = 512 WHERE `entry` = 13797;
+
 /* The following Commanders and Lieutenants are now properly mounted:
 Commander Mortimer
 Lieutenant Spencer
