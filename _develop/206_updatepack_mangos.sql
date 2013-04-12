@@ -932,6 +932,10 @@ DELETE FROM `creature_linking_template` WHERE `entry` = 15428;
 INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
 (15428, 509, 15339, 4112, 0);
 
+-- Add more improvements to Uldaman
+-- Remove auras - handled in eventAI thanks xfurry
+UPDATE creature_template_addon SET auras='' WHERE entry  IN (7309, 7077, 7076, 10120, 4857);
+
 -- ScriptDev2
 -- z2647
 UPDATE `creature_template` SET ScriptName='spell_dummy_npc' WHERE `entry` = 13016;
