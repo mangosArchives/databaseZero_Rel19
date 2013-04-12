@@ -17,10 +17,18 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Linked missing npc text to Mupsi Shacklefridd
+   Sources: MaNGOSZero Database
+            Memory
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 13551 AND `textid` = 8537;
+INSERT INTO `npc_gossip` VALUES
+(13551, 8537);
+
 /* Linked missing npc text to Decedra Willham
    Source: http://www.wowpedia.org/Decedra_Willham
 */
-DELETE FROM `npc_gossip` WHERE `npc_guid` = 8464;
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 8464 AND `textid` = 5579;
 INSERT INTO `npc_gossip` VALUES
 (8464, 5579);
 
