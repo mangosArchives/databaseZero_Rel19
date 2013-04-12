@@ -894,6 +894,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 -- drop dbscripts_on_quest_start for quest 945 fix coming in SD2
 UPDATE `quest_template` SET `StartScript` = 0 WHERE `entry` = 945;
 DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 945;
+DELETE FROM `db_script_string` WHERE `entry` IN (2000000017, 2000000018);
 
 -- some Razorgore updates thanks xfurry
 -- Link Grethok to Razorgore
