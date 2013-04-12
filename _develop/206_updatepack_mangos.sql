@@ -17,6 +17,13 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Linked missing npc text to Decedra Willham
+   Source: http://www.wowpedia.org/Decedra_Willham
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 8464;
+INSERT INTO `npc_gossip` VALUES
+(8464, 5579);
+
 /* Linked missing npc text to Theramore Guards
    Unsure if extra text and/or additional id should be added since it wasn't in the DB
    Sources: http://www.wowpedia.org/Theramore_Guard_%28NPC%29
