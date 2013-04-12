@@ -17,6 +17,14 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Corrected the Min. Level of all 'Barov Family Fortune' quests
+   Set 'The Last Barov (5342)' to be Horde-only
+   Source: http://www.wowpedia.org
+*/
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 5342;
+UPDATE `quest_template` SET `MinLevel` = 58 WHERE `entry` IN (5342, 5344);
+UPDATE `quest_template` SET `MinLevel` = 52 WHERE `entry` = 5343;
+
 /* Changed Monstrous Crawler's InhabitType to permit combat in the water
    Source: http://old.wowhead.com/npc=1088/monstrous-crawler#comments
 */
