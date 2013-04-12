@@ -895,6 +895,24 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 UPDATE `quest_template` SET `StartScript` = 0 WHERE `entry` = 945;
 DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 945;
 
+-- some Razorgore updates thanks xfurry
+-- Link Grethok to Razorgore
+UPDATE `creature_linking_template` SET `flag` = 135 WHERE `entry` = 12557 AND `map` = 469;
+
+DELETE FROM `spell_script_target` WHERE `entry` = 20037;
+INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
+(20037, 1, 16604);
+
+-- Orb of Domination event
+DELETE FROM `dbscripts_on_event` WHERE `id` = 8302;
+INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `buddy_entry`, `search_radius`, `data_flags`, `comments`) VALUES
+(8302, 0, 15, 23014, 14449, 10, 7, 'Blackwing Orb Trigger - Cast Possess visual'),
+(8302, 90, 14, 23014, 12435, 100, 7, 'Razorgore - Remove Possess visual'),
+(8302, 90, 15, 23958, 0, 0, 4, 'Cast Mind Exhaustion on player');
+
+-- Increase Eggs spawntime
+UPDATE `gameobject` SET `spawntimesecs` = 604800 WHERE `id` = 177807;
+
 -- ACID
 -- Drop script for Spirit Shade - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15261;
