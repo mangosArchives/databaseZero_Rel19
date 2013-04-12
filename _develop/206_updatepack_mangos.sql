@@ -22,7 +22,7 @@
    Source: http://www.wowwiki.com/Lieutenant_Doren?oldid=317495
            http://old.wowhead.com/npc=469#comments:id=114255
 */
-UPDATE `creature_template` SET `unit_flags` = 36864;
+UPDATE `creature_template` SET `unit_flags` = 36864 WHERE `entry` = 469;
 UPDATE `creature_template_addon` SET `mount` = 0 WHERE `entry` = 469;
 
 /* Corrected the Min. Level of all 'Barov Family Fortune' quests
