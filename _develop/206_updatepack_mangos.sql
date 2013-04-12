@@ -17,6 +17,33 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* The following Commanders and Lieutenants are now properly mounted:
+Commander Mortimer
+Lieutenant Spencer
+Lieutenant Stouthandle
+Lieutenant Mancuso
+Lieutenant Stronghoof
+Lieutenant Rugba
+Lieutenant Greywand
+Lieutenant Largent
+Commander Malgor
+Lieutenant Vol'talar
+Lieutenant Lewis
+*/
+DELETE FROM `creature_template_addon` WHERE `entry` IN (13318, 13138, 13297, 13300, 13143, 13137, 13298, 13296, 13152, 13144, 13147);
+INSERT INTO `creature_template_addon` VALUES
+(13318, 14577, 0, 0, 0, 0, 0, 0),
+(13138, 14337, 0, 0, 0, 0, 0, 0),
+(13297, 14577, 0, 0, 0, 0, 0, 0),
+(13300, 14337, 0, 0, 0, 0, 0, 0),
+(13143, 14348, 0, 0, 0, 0, 0, 0),
+(13137, 14334, 0, 0, 0, 0, 0, 0),
+(13298, 14372, 0, 0, 0, 0, 0, 0),
+(13296, 14337, 0, 0, 0, 0, 0, 0),
+(13152, 14334, 0, 0, 0, 0, 0, 0),
+(13144, 14388, 0, 0, 0, 0, 0, 0),
+(13147, 10671, 0, 0, 0, 0, 0, 0);
+
 -- Adjusted the Z axis of Mountaineer Swarth
 UPDATE `creature` SET `position_z` = 349.883 WHERE `id` = 2518;
 
