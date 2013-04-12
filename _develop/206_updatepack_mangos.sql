@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Removed Lieutenant Doren's mount
+   Source: http://www.wowwiki.com/Lieutenant_Doren?oldid=317495
+*/
+UPDATE `creature_template_addon` SET `mount` = 0 WHERE `entry` = 469;
+
 /* Corrected the Min. Level of all 'Barov Family Fortune' quests
    Set 'The Last Barov (5342)' to be Horde-only
    Source: http://www.wowpedia.org
