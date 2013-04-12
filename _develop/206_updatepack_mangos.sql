@@ -921,6 +921,12 @@ UPDATE gameobject_template SET ScriptName='go_father_flame' WHERE entry=175245;
 -- z2652
 UPDATE creature_template SET ScriptName='' WHERE entry=15302;
 UPDATE creature_template SET ScriptName='' WHERE entry=15260;
+-- z2660
+UPDATE gameobject_template SET ScriptName='go_black_dragon_egg' WHERE entry=177807;
+-- z2671
+UPDATE creature_template SET ScriptName='npc_snufflenose_gopher' WHERE entry=4781;
+-- r2672
+UPDATE creature_template SET ScriptName='npc_therylune' WHERE entry=3584;
 
 -- Cleanup
 UPDATE `gameobject` SET `state` = 0 WHERE `id` IN (SELECT `entry` FROM `gameobject_template` WHERE `type` = 0 AND `data0` = 1);
