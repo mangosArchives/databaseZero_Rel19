@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Changed Monstrous Crawler's InhabitType to permit combat in the water
+   Source: http://old.wowhead.com/npc=1088/monstrous-crawler#comments
+*/
+UPDATE `creature_template` SET `InhabitType` = 3 WHERE `entry` = 1088;
+
 /* Linked missing npc text to Mupsi Shacklefridd
    Sources: MaNGOSZero Database
             Memory
