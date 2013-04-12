@@ -941,6 +941,9 @@ UPDATE creature_template SET ScriptName='' WHERE entry=15302;
 UPDATE creature_template SET ScriptName='' WHERE entry=15260;
 -- z2660
 UPDATE gameobject_template SET ScriptName='go_black_dragon_egg' WHERE entry=177807;
+-- z2664
+UPDATE creature_template SET ScriptName='' WHERE entry=14822;
+UPDATE creature_template SET ScriptName='' WHERE entry IN (384,1261,1460,2357,3362,3685,4730,4731,4885,7952,7955);
 -- z2671
 UPDATE creature_template SET ScriptName='npc_snufflenose_gopher' WHERE entry=4781;
 -- r2672
