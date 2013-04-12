@@ -870,6 +870,10 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 ('913','3428','0');
 
+-- drop dbscripts_on_quest_start for quest 945 fix coming in SD2
+UPDATE `quest_template` SET `StartScript` = 0 WHERE `entry` = 945;
+DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 945;
+
 -- ACID
 -- Drop script for Spirit Shade - handled in SD2 Thanks Xfurry
 DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15261;
