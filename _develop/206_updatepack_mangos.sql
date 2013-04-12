@@ -17,6 +17,45 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+/* Linked missing npc text to Theramore Guards
+   Unsure if extra text and/or additional id should be added since it wasn't in the DB
+   Sources: http://www.wowpedia.org/Theramore_Guard_%28NPC%29
+            MaNGOSZero Database
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` IN (8481, 8486, 8487, 25147, 25153, 30454, 30459, 30482, 30486, 30487, 30488, 30510, 30521, 30522, 30525, 30631, 30632, 30633, 30634, 30635, 30637, 30638, 30639, 30641, 30643, 30644, 30646, 30656, 30724, 30725, 30726) AND `textid` = 11406;
+INSERT INTO `npc_gossip` VALUES
+(8481, 11406),
+(8486, 11406),
+(8487, 11406),
+(25147, 11406),
+(25153, 11406),
+(30454, 11406),
+(30459, 11406),
+(30482, 11406),
+(30486, 11406),
+(30487, 11406),
+(30488, 11406),
+(30510, 11406),
+(30521, 11406),
+(30522, 11406),
+(30525, 11406),
+(30631, 11406),
+(30632, 11406),
+(30633, 11406),
+(30634, 11406),
+(30635, 11406),
+(30637, 11406),
+(30638, 11406),
+(30639, 11406),
+(30641, 11406),
+(30643, 11406),
+(30644, 11406),
+(30646, 11406),
+(30656, 11406),
+(30724, 11406),
+(30725, 11406),
+(30726, 11406);
+
 /* The Zeppelin Master, Hin Denburg, is not classified as Elite 
    Source: http://old.wowhead.com/npc=3150
 */
