@@ -3,6 +3,7 @@
 - Significantly reduced the amount of Webwood Spiders in the Shadowthread Cave.
 - Added randomized movement to a few Webwood Spiders and to Githyiss the Vile.
 - Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
+- Removed Mana Points from all Auctioneers.
 */
 
 -- creature
@@ -20,6 +21,12 @@ UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `subname` = 'R
 DELETE FROM `creature` WHERE `guid` IN (47013, 47061, 47015, 47016, 47017,  47262, 47263, 46996, 47004, 47005, 47007, 47030, 47031);
 DELETE FROM `creature_addon` WHERE `guid` IN (47013, 47061, 47015, 47016, 47017,  47262, 47263, 46996, 47004, 47005, 47007, 47030, 47031);
 UPDATE `creature` SET `MovementType` = 1, `spawndist` = 5 WHERE `guid` IN (47058, 47018, 47029, 47056, 47057, 47059, 47006, 47350);
+
+/* Removed Mana Points from all Auctioneers.
+   Source: http://www.youtube.com/watch?v=mHm-1tAsWuo
+*/
+UPDATE `creature` SET `curmana` = 0 WHERE `id` IN (8661, 8669, 8670, 8671, 8672, 8673, 8674, 8719, 8720, 8721, 8722, 8723, 8724, 9856, 9857, 9859, 15659, 15675, 15676, 15678, 15679, 15682, 15683, 15684, 15686);
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` IN (8661, 8669, 8670, 8671, 8672, 8673, 8674, 8719, 8720, 8721, 8722, 8723, 8724, 9856, 9857, 9859, 15659, 15675, 15676, 15678, 15679, 15682, 15683, 15684, 15686);
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
