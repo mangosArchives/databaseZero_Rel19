@@ -56,6 +56,7 @@ LOCK TABLES `fishing_loot_template` WRITE;
 INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
 (1,11000,100,1,-11000,1,0),
 (8,11006,100,1,-11006,1,0),
+(10,11004,100,1,-11004,1,0),
 (11,11004,100,1,-11004,1,0),
 (12,11000,100,1,-11000,1,0),
 (14,11001,100,1,-11001,1,0),
