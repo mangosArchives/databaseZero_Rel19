@@ -10,6 +10,7 @@
 - Added proper gossip to Azuregos. Not 100% yet.
 - Spirit of Azuregos is now flagged as a Boss.
 - Changed the Min. Level of the quest 'The Scepter of Celebras' to 41, down from 43.
+- Removed Mana Points from Cenarion Outrider.
 */
 
 -- creature
@@ -64,6 +65,12 @@ UPDATE `creature_template` SET `rank` = 3 WHERE `entry` = 15481;
 DELETE FROM `npc_gossip` WHERE `npc_guid` = 52349 AND `textid` = 7880;
 INSERT INTO `npc_gossip` VALUES
 (52349, 7880);
+
+/* Removed Mana Points from Cenarion Outrider
+   Source: http://www.wowpedia.org/Cenarion_Outrider
+*/
+UPDATE `creature` SET `curmana` = 0 WHERE `id` = 15545;
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` = 15545;
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
