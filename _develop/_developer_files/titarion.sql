@@ -5,6 +5,7 @@
 - Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
 - Removed Mana Points from all Auctioneers.
 - Changed the gender of Crimson Courier to female.
+- Repositioned Anduin Wrynn, Lady Katrana Prestor and Highlord Bolvar Fordragon.
 */
 
 -- creature
@@ -34,9 +35,16 @@ UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` IN (86
 */
 DELETE FROM `creature_model_info` WHERE `modelid` = 10502;
 INSERT INTO `creature_model_info` VALUES
-(10502, 0.208, 1.5, 2, 10500, 0);
+(10502, 0.208, 1.5, 1, 10500, 0);
 
 UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 12337;
+
+/* Repositioned Anduin Wrynn, Lady Katrana Prestor and Highlord Bolvar Fordragon.
+   Source: http://www.youtube.com/watch?v=vAR71soxX5w
+*/
+UPDATE `creature` SET `position_x` = -8439.589844, `position_y` = 330.842 WHERE `id` = 1747;
+UPDATE `creature` SET `position_x` = -8439.808594, `position_y` = 329.350 WHERE `id` = 1748;
+UPDATE `creature` SET `position_x` = -8438.000000, `position_y` = 330.794 WHERE `id` = 1749;
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
