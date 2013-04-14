@@ -4,6 +4,7 @@
 - Added randomized movement to a few Webwood Spiders and to Githyiss the Vile.
 - Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
 - Removed Mana Points from all Auctioneers.
+- Changed the gender of Crimson Courier to female.
 */
 
 -- creature
@@ -27,6 +28,15 @@ UPDATE `creature` SET `MovementType` = 1, `spawndist` = 5 WHERE `guid` IN (47058
 */
 UPDATE `creature` SET `curmana` = 0 WHERE `id` IN (8661, 8669, 8670, 8671, 8672, 8673, 8674, 8719, 8720, 8721, 8722, 8723, 8724, 9856, 9857, 9859, 15659, 15675, 15676, 15678, 15679, 15682, 15683, 15684, 15686);
 UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` IN (8661, 8669, 8670, 8671, 8672, 8673, 8674, 8719, 8720, 8721, 8722, 8723, 8724, 9856, 9857, 9859, 15659, 15675, 15676, 15678, 15679, 15682, 15683, 15684, 15686);
+
+/* Changed the gender of Crimson Courier to female.
+   Source: http://www.wowpedia.org/Crimson_Courier
+*/
+DELETE FROM `creature_model_info` WHERE `modelid` = 10502;
+INSERT INTO `creature_model_info` VALUES
+(10502, 0.208, 1.5, 2, 10500, 0);
+
+UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 12337;
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
