@@ -9,6 +9,7 @@
 - Removed Mana Points from Azuregos.
 - Added proper gossip to Azuregos. Not 100% yet.
 - Spirit of Azuregos is now flagged as a Boss.
+- Changed the Min. Level of the quest 'The Scepter of Celebras' to 41, down from 43.
 */
 
 -- creature
@@ -76,3 +77,7 @@ INSERT INTO `gameobject` VALUES
 -- items
 
 -- quests
+/* Changed the Min. Level of the quest 'The Scepter of Celebras' to 41, down from 43.
+   Source: http://www.wowpedia.org/index.php?title=Quest:The_Scepter_of_Celebras&oldid=677982
+*/
+UPDATE `quest_template` SET `MinLevel` = 41 WHERE `entry` = 7046;
