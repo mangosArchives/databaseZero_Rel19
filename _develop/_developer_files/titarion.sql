@@ -6,6 +6,9 @@
 - Removed Mana Points from all Auctioneers.
 - Changed the gender of Crimson Courier to female.
 - Repositioned Anduin Wrynn, Lady Katrana Prestor and Highlord Bolvar Fordragon.
+- Removed Mana Points from Azuregos.
+- Added proper gossip to Azuregos. Not 100% yet.
+- Spirit of Azuregos is now flagged as a Boss.
 */
 
 -- creature
@@ -45,6 +48,21 @@ UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 12337;
 UPDATE `creature` SET `position_x` = -8439.589844, `position_y` = 330.842 WHERE `id` = 1747;
 UPDATE `creature` SET `position_x` = -8439.808594, `position_y` = 329.350 WHERE `id` = 1748;
 UPDATE `creature` SET `position_x` = -8438.000000, `position_y` = 330.794 WHERE `id` = 1749;
+
+/* Removed Mana Points from Azuregos.
+   Added proper gossip to Azuregos. Not 100% yet.
+   Spirit of Azuregos is now flagged as a Boss.
+   TODO: Add proper gossip_menu_option and initiate combat once confirmed.
+   Sources: http://project-zero.eu/images/gallery/WoWScrnShot_082106_152516.jpg
+            http://project-zero.eu/images/gallery/WoWScrnShot_082106_153220.jpg
+            MaNGOSZero Database
+*/
+UPDATE `creature` SET `curmana` = 0 WHERE `id` = 6109;
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0, `npcflag` = 1 WHERE `entry` = 6109;
+UPDATE `creature_template` SET `rank` = 3 WHERE `entry` = 15481;
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 52349 AND `textid` = 7880;
+INSERT INTO `npc_gossip` VALUES
+(52349, 7880);
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
