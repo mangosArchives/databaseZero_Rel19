@@ -16,6 +16,7 @@
    - Removed the quest giver flag.
    - Dramatically lowered the amount of damage that is dealt.
    - Slight increase in Health Points.
+- Added npc gossip to Tal <Wind Rider Master>.
 */
 
 -- creature
@@ -95,6 +96,13 @@ UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0, `minhealth` = 3048,
 DELETE FROM `gameobject` WHERE `id` = 181056;
 INSERT INTO `gameobject` VALUES
 (45843, 181056, 0, 3157.28, -3743.47, 236.951, 2.76712, 0, 0, 0.982523, 0.186143, 25, 100, 1);
+
+/* Added npc gossip to Tal <Wind Rider Master>.
+   Source: http://www.wowpedia.org/Tal
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 26615 AND `textid` = 5500;
+INSERT INTO `npc_gossip` VALUES
+(26615, 5500);
 
 -- items
 
