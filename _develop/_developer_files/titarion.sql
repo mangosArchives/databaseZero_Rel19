@@ -18,6 +18,7 @@
    - Slight increase in Health Points.
 - Added npc gossip to Tal <Wind Rider Master>.
 - Added npc gossip to Old Ironbark.
+- Added npc gossip to Aurora Skycaller.
 */
 
 -- creature
@@ -96,6 +97,13 @@ UPDATE `creature_template` SET `npcflag` = 1 WHERE `entry` = 11491;
 DELETE FROM `npc_gossip` WHERE `npc_guid` = 138118 AND `textid` = 6694;
 INSERT INTO `npc_gossip` VALUES
 (138118, 6694);
+
+/* Added npc gossip to Aurora Skycaller.
+   Source: http://project-zero.eu/images/gallery/WoWScrnShot_082806_174934.jpg
+*/
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 53739 AND `textid` = 5795 ;
+INSERT INTO `npc_gossip` VALUES
+(53739, 5795);
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
