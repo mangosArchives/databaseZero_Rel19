@@ -17,6 +17,7 @@
    - Dramatically lowered the amount of damage that is dealt.
    - Slight increase in Health Points.
 - Added npc gossip to Tal <Wind Rider Master>.
+- Added npc gossip to Old Ironbark.
 */
 
 -- creature
@@ -87,6 +88,14 @@ UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` = 1554
 */
 UPDATE `creature` SET `curmana` = 0, `curhealth` = 3048 WHERE `id` = 7489;
 UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0, `minhealth` = 3048, `maxhealth` = 3048, `mindmg` = 355, `maxdmg` = 390, `attackpower` = 172, `npcflag` = 0 WHERE `entry` = 7489;
+
+/* Added npc gossip to Old Ironbark.
+   Source: http://project-zero.eu/images/gallery/WoWScrnShot_082806_202601.jpg
+*/
+UPDATE `creature_template` SET `npcflag` = 1 WHERE `entry` = 11491;
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 138118 AND `textid` = 6694;
+INSERT INTO `npc_gossip` VALUES
+(138118, 6694);
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
