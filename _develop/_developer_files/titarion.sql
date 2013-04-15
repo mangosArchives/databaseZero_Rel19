@@ -11,6 +11,11 @@
 - Spirit of Azuregos is now flagged as a Boss.
 - Changed the Min. Level of the quest 'The Scepter of Celebras' to 41, down from 43.
 - Removed Mana Points from Cenarion Outrider.
+- Changes to Silverpine Deathguard:
+   - Removed Mana Points.
+   - Removed the quest giver flag.
+   - Dramatically lowered the amount of damage that is dealt.
+   - Slight increase in Health Points.
 */
 
 -- creature
@@ -71,6 +76,16 @@ INSERT INTO `npc_gossip` VALUES
 */
 UPDATE `creature` SET `curmana` = 0 WHERE `id` = 15545;
 UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0 WHERE `entry` = 15545;
+
+/* Changes to Silverpine Deathguard:
+   Removed Mana Points.
+   Removed the quest giver flag.
+   Dramatically lowered the amount of damage that is dealt.
+   Slight increase in Health Points.
+   Source: http://www.wowpedia.org/Silverpine_Deathguard
+*/
+UPDATE `creature` SET `curmana` = 0, `curhealth` = 3048 WHERE `id` = 7489;
+UPDATE `creature_template` SET `minmana` = 0, `maxmana` = 0, `minhealth` = 3048, `maxhealth` = 3048, `mindmg` = 355, `maxdmg` = 390, `attackpower` = 172, `npcflag` = 0 WHERE `entry` = 7489;
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
