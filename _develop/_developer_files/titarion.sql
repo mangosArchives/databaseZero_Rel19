@@ -21,6 +21,10 @@
 - Added npc gossip to Aurora Skycaller.
 - Added npc gossip to Smith Regzar.
 - Removed randomized movement from William Kielar <Spectral Gryphon Master>.
+- Changes to Corporal Teeka Bloodsnarl:
+   - Changed level to 56 - 57, up from 54.
+   - Changed rank to Elite.
+   - Increased Health Points.
 */
 
 -- creature
@@ -119,6 +123,15 @@ INSERT INTO `npc_gossip` VALUES
    Source: http://project-zero.eu/images/gallery/WoWScrnShot_082606_183604.jpg
 */
 UPDATE `creature_template` SET `MovementType` = 0 WHERE `entry` = 17209;
+
+/* Changes to Corporal Teeka Bloodsnarl:
+   Changed level to 56 - 57, up from 54.
+   Changed rank to Elite.
+   Increased Health Points.
+   Sources: http://www.wowwiki.com/Teeka_Bloodsnarl
+            http://project-zero.eu/images/gallery/WoWScrnShot_082506_190115.jpg
+*/
+UPDATE `creature_template` SET `minlevel` = 56, `maxlevel` = 57, `rank` = 1, `minhealth` = 8097, `maxhealth` = 8352 WHERE `entry` = 13776;
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
