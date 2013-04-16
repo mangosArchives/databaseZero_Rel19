@@ -19,6 +19,7 @@
 - Added npc gossip to Tal <Wind Rider Master>.
 - Added npc gossip to Old Ironbark.
 - Added npc gossip to Aurora Skycaller.
+- Added npc gossip to Smith Regzar.
 */
 
 -- creature
@@ -104,6 +105,14 @@ INSERT INTO `npc_gossip` VALUES
 DELETE FROM `npc_gossip` WHERE `npc_guid` = 53739 AND `textid` = 5795 ;
 INSERT INTO `npc_gossip` VALUES
 (53739, 5795);
+
+/* Added npc gossip to Smith Regzar.
+   Source: http://project-zero.eu/images/gallery/WoWScrnShot_082506_183826.jpg
+*/
+UPDATE `creature_template` SET `npcflag` = 3 WHERE `entry` = 13176;
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 150102 AND `textid` = 6066;
+INSERT INTO `npc_gossip` VALUES
+(150102, 6066);
 
 -- gameobject
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
