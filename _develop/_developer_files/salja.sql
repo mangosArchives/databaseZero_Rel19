@@ -16,6 +16,11 @@ DELETE FROM gameobject WHERE guid = 94154;
 INSERT INTO gameobject (guid, id, map, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state) VALUES
 (94154, 141979, 70, 153.39, 289.091, -52.2262, 2.68781, 0, 0, 0, 0, -14400, 255, 1);
 
+-- Naxxramas UDB 406
+DELETE FROM gameobject WHERE id = 181356;
+INSERT INTO gameobject (guid, id, map, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state) VALUES
+(94144, 181356, 533, 3522.57, -5236.76, 137.63, -1.8, 0, 0, -0.783327, 0.62161, 604800, 100, 1);
+
 -- items
 
 -- quests
