@@ -28,6 +28,7 @@
 */
 
 -- creature
+
 /* Removed Mana Points from all Rogue Trainers.
    Sources: http://www.youtube.com/watch?v=ZFuaZVM_5Ik
             http://www.wowpedia.org/index.php?title=Rogue_trainers&oldid=410531
@@ -134,6 +135,7 @@ UPDATE `creature_template` SET `MovementType` = 0 WHERE `entry` = 17209;
 UPDATE `creature_template` SET `minlevel` = 56, `maxlevel` = 57, `rank` = 1, `minhealth` = 8097, `maxhealth` = 8352 WHERE `entry` = 13776;
 
 -- gameobject
+
 /* Added the GameObject 'Naxxramas'. It can now be seen floating above Plaguewood.
    Sources: http://www.wowwiki.com/File:Naxxramas-1.jpg
             Turtleswin
@@ -152,6 +154,7 @@ INSERT INTO `npc_gossip` VALUES
 -- items
 
 -- quests
+
 /* Changed the Min. Level of the quest 'The Scepter of Celebras' to 41, down from 43.
    Source: http://www.wowpedia.org/index.php?title=Quest:The_Scepter_of_Celebras&oldid=677982
 */
