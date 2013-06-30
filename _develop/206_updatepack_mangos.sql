@@ -17,6 +17,21 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- rescripted the quest end event for quest 411 The prodigal lich returns. NEEDS SCRIPT COMMAND 35 "TURN_TO"
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 411;
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 566601;
+DELETE FROM `creature_movement_template` WHERE `entry` = 5666;
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,2,15,7673,0,0,0,4,0,0,0,0,0,0,0,0,'Bethor - Cast 7673');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,7,10,5666,23000,0,0,0,0,0,0,0,1768.58,55.4891,-46.3198,2.28248,'Summon Visage');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,10,3,0,0,5666,20,0,0,0,0,0,1766.39,65.0166,-46.3214,1.51672,'Visage move to Bethor');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,15,0,0,0,5666,20,0,2000000208,0,0,0,0,0,0,0,'Visage say 1');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,15,1,2,0,5666,20,0,0,0,0,0,0,0,0,0,'Visage Bow');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,18,0,0,0,5666,20,0,2000000209,0,0,0,0,0,0,0,'Visage say 2');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,22,35,0,0,5666,20,0,0,0,0,0,0,0,0,0,'Visage turn to player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,23,0,0,0,5666,10,0,2000000210,0,0,0,0,0,0,0,'Visage Say 3');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,23,1,2,0,5666,10,0,0,0,0,0,0,0,0,0,'Visage Bow');
+INSERT INTO `dbscripts_on_quest_end` VALUES (411,30,0,0,0,0,0,0,2000000211,0,0,0,0,0,0,0,'Bethor Say');
+
 -- Correct Required Races for Quest 5156 Verifying the Corruption
 UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 5156;
 
