@@ -17,6 +17,77 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 3567 this is removing the "You learn spell" from complete quest window and spell gets casted by Marli now, not by the player
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 3567;
+UPDATE `quest_template` SET `RewSpell` = 0 WHERE `entry` = 3567;
+UPDATE `quest_template` SET `CompleteScript` = 3567 WHERE `entry` = 3567;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 3567;
+INSERT INTO `dbscripts_on_quest_end` VALUES (3567,0,15,12242,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell 12242 on Player');
+
+-- Added Spellspcripts for Spells 11885, 11886, 1887, 11888, 11889 Despawning the corpse after use of the vessel
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 11885;
+INSERT INTO `dbscripts_on_spell` VALUES (11885,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn treant corpse');
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 11886;
+INSERT INTO `dbscripts_on_spell` VALUES (11886,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn wildkin corpse');
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 11887;
+INSERT INTO `dbscripts_on_spell` VALUES (11887,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn hyppogryph corpse');
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 11888;
+INSERT INTO `dbscripts_on_spell` VALUES (11888,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn faerie dragon corpse');
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 11889;
+INSERT INTO `dbscripts_on_spell` VALUES (11889,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn mountain giant corpse');
+
+-- Correct Required Races for Quest 5156 Verifying the Corruption
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 5156;
+
+-- correct minLevel for quest 8 a rogues deal and made it horde quest
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 8;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 8;
+
+-- Added spawn and attack script for Thenan when completing quest 652 Breaking the keystone
+UPDATE `quest_template` SET `CompleteScript` = 652 WHERE `entry` = 652;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 652;
+INSERT INTO `dbscripts_on_quest_end` VALUES (652,1,10,2763,180000,0,0,0,0,0,0,0,-1539.12,-2172.93,17.29,0.56,'Summon Thenan');
+INSERT INTO `dbscripts_on_quest_end` VALUES (652,3,26,0,0,2763,50,0,0,0,0,0,0,0,0,0,'Start Attack');
+
+-- Correct Minimum Questlevel for Quest 670 Sunken Treasure
+UPDATE `quest_template` SET `MinLevel` = 35 WHERE `entry`=670;
+
+-- backport: fixing Quest 1383 Questtext. deleting deepstrider tumor from dreaming whelps. Adding deepstrider tumor questdrop to deepstrider sea giants. Correcting questtext.
+UPDATE quest_template SET Details="I have just the right serum in mind. It will deal with the truth in precisely the way the truth should be dealt with.$B$BFor this concoction I will need several Shadow Panther hearts from the Swamp. I also require the enchanted fungus off of the Mire Lord who resides there. I am sure one as able as you, $n, can persuade him to part with some.$B$BNow the hard part will be locating a Deepstrider tumor from far-off Desolace. Very rarely the giants there become ill and a tumor forms.$B$BNow, off you go!" WHERE entry=1383;
+UPDATE quest_template SET Objectives="Apothecary Faustin at Beggar's Haunt needs 5 Shadow Panther Hearts, Mire Lord Fungus and a Deep Strider Tumor." WHERE entry=1383;
+DELETE FROM `creature_loot_template` WHERE `item` = 6082;
+INSERT INTO `creature_loot_template` VALUES (4686,6082,-100,0,1,1,0);
+INSERT INTO `creature_loot_template` VALUES (4687,6082,-100,0,1,1,0);
+
+-- fixing Quest 1388 previous questid, because quest where available before completing the first two quest of this questline.
+UPDATE `quest_template` SET `PrevQuestId` = 1383 WHERE `entry` = 1388;
+
+-- fixing the "you learn spell" from quest windows, from 6 Quest of Dalar Dawnweaver (Quest 99, 421, 422, 423, 424 1014) adding quest end scripts so dalar dawnweaver cast spell on Player, fixing the not enough mana bug.
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 99;
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 421;
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 422;
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 423;
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 424;
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 1014;
+UPDATE `quest_template` SET `CompleteScript` = 99 WHERE `entry` = 99;
+UPDATE `quest_template` SET `CompleteScript` = 421 WHERE `entry` = 421;
+UPDATE `quest_template` SET `CompleteScript` = 422 WHERE `entry` = 422;
+UPDATE `quest_template` SET `CompleteScript` = 423 WHERE `entry` = 423;
+UPDATE `quest_template` SET `CompleteScript` = 424 WHERE `entry` = 424;
+UPDATE `quest_template` SET `CompleteScript` = 1014 WHERE `entry` = 1014;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 99;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 421;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 422;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 423;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 424;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1014;
+INSERT INTO `dbscripts_on_quest_end` VALUES (99,0,15,8097,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (421,0,15,8097,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (422,0,15,8097,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (423,0,15,8097,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (424,0,15,8097,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (1014,0,15,8097,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+
 -- ACID
 
 -- ScriptDev2
