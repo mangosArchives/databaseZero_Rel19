@@ -17,6 +17,42 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct Required Races for Quests all of them are horde Quests 354, 355, 356, 362, 364, 365, 366, 370, 371, 372,
+-- 374, 376, 380, 381, 382, 383, 398, 404, 405, 407, 408, 409, 410, 411, 426, 427, 431, 445, 590, 3901, 3902, 5481, 5482
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 354;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 355;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 356;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 362;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 364;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 365;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 366;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 370;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 371;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 372;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 374;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 376;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 380;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 381;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 382;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 383;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 398;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 404;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 405;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 407;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 408;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 409;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 410;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 411;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 426;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 427;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 431;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 445;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 590;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3901;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3902;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 5481;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 5482;
+
 -- rescripted the quest end script for quest 411 The prodigal lich returns. NEEDS COMMAND 35 TURN TO
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 411;
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 566601;
