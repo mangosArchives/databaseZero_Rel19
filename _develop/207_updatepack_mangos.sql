@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for quest 355 Speak with Sevren
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 355;
+
 -- correct Required Races for Quests all of them are horde Quests 354, 355, 356, 362, 364, 365, 366, 370, 371, 372,
 -- 374, 376, 380, 381, 382, 383, 398, 404, 405, 407, 408, 409, 410, 411, 426, 427, 431, 445, 590, 3901, 3902, 5481, 5482
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 354;
