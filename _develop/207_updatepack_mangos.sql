@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for quest 361 A Letter Undelivered
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 361;
+
 -- correct minLevel for quest 355 Speak with Sevren
 UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 355;
 
