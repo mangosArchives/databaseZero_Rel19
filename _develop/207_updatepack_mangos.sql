@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fix Rot Hide Gnoll cast Curse of thule as selfcast
+UPDATE `creature_ai_scripts` SET `action1_param2` = 1 WHERE `id` = 167402;
+UPDATE `creature_ai_scripts` SET `action1_param3` = 0 WHERE `id` = 167402;
+
 -- correct minLevel for quest 5902 A Plague Upon Thee
 UPDATE `quest_template` SET `MinLevel` = 49 WHERE `entry` = 5902;
 
