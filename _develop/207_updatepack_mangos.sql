@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for quest 5902 A Plague Upon Thee
+UPDATE `quest_template` SET `MinLevel` = 49 WHERE `entry` = 5902;
+
 -- Correcting to high XP for Quests 5901, 5902, A Plague Upon Thee
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 3450 WHERE `entry` = 5901;
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1680 WHERE `entry` = 5902;
