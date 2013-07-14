@@ -17,6 +17,28 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correcting to high XP for Quests 5901, 5902, A Plague Upon Thee
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 3450 WHERE `entry` = 5901;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1680 WHERE `entry` = 5902;
+
+-- correct minLevel for quest 398 Wanted Maggot Eye
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 398;
+
+-- correct minLevel for quest 374 Proof of Demise
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 374;
+
+-- correct minLevel for quest 431 Candles Of Beckoning
+UPDATE `quest_template` SET `MinLevel` = 8 WHERE `entry` = 431;
+
+-- correct minLevel for quest 372 At War With The Scarlett Crusade
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 372;
+
+-- correct minLevel for quest 371 At War With The Scarlett Crusade
+UPDATE `quest_template` SET `MinLevel` = 6 WHERE `entry` = 371;
+
+-- correct minLevel for quest 370 At War With The Scarlett Crusade
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 370;
+
 -- correct minLevel for quest 361 A Letter Undelivered
 UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 361;
 
