@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for quest 382 The Red Messenger
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 382;
+
 -- Changed quest requirements for quest 590 a Rogues Deal, so that the quest can be completed also update minLevel
 UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 590;
 UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 0 WHERE `entry` = 590;
