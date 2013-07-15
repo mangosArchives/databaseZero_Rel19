@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for quest 383 Vital Intelligence
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 383;
+
 -- correct minLevel for quest 382 The Red Messenger
 UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 382;
 
