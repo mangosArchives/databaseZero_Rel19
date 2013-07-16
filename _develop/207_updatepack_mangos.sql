@@ -17,6 +17,17 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for quest 383 Vital Intelligence
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 383;
+
+-- correct minLevel for quest 382 The Red Messenger
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 382;
+
+-- Changed quest requirements for quest 590 a Rogues Deal, so that the quest can be completed also update minLevel
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 590;
+UPDATE `quest_template` SET `ReqCreatureOrGOId1` = 0 WHERE `entry` = 590;
+UPDATE `quest_template` SET `ReqCreatureOrGOCount1` = 0 WHERE `entry` = 590;
+
 -- fix Rot Hide Gnoll cast Curse of thule as selfcast
 UPDATE `creature_ai_scripts` SET `action1_param2` = 1 WHERE `id` = 167402;
 UPDATE `creature_ai_scripts` SET `action1_param3` = 0 WHERE `id` = 167402;
