@@ -17,6 +17,20 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Updatet values for deathstalker Faerleia from comments and db, mainly wowpedia she is lvl 18 instead of lvl 16, from comments she seems able to finish the quest nearly without any help.
+-- DMG and ARMOR values are guessed by testing, no definite proof of this, but more correct than original values, HP is correct.
+UPDATE `creature_template` SET `minlevel` = 18 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `maxlevel` = 18 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `minhealth` = 1251 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `maxhealth` = 1251 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `armor` = 1050 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `faction_A` = 71 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `faction_H` = 71 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `mindmg` = 90 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `maxdmg` = 99 WHERE `entry` = 2058;
+UPDATE `creature_template` SET `attackpower` = 30 WHERE `entry` = 2058;
+UPDATE `creature` SET `curhealth` = 1251 WHERE `guid` = 18352;
+
 -- correct minLevel for quest 383 Vital Intelligence
 UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 383;
 
