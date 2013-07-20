@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Required Races for Quest 656 Summoning the Princess
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 656;
+
 -- Quest end script for Quest 524 Elixir Of Agony
 UPDATE `creature` SET `spawntimesecs` = 180 WHERE `id` = 2284;
 UPDATE `gameobject` SET `spawntimesecs` = -10 WHERE `guid` = 30031;
