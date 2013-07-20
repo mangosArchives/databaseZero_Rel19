@@ -17,6 +17,45 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct all reputation values for tirisfal
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 354;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 356;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 358;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 360;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 361;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 362;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 363;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 364;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 365;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 366;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 367;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 368;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 370;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 371;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 372;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 374;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 375;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 376;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 380;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 381;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 382;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 383;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 398;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 404;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 408;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 409;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 411;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 426;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 427;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 445;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 492;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 590;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 3901;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 3902;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 5481;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 5482;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6395;
+
 -- fixing Quest 5151 Hypercapacitor Gizmo
 UPDATE `creature_template` SET `unit_flags` = 832 WHERE `entry` = 10992;
 UPDATE `creature_template` SET `flags_extra` = 0 WHERE `entry` = 10992;
