@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fixed item GUID 32686 fathom stone should not disspawn when looted
+UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `guid` = 32686;
+
 -- Correct Required Races for Quest 656 Summoning the Princess
 UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 656;
 
