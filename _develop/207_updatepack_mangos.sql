@@ -17,6 +17,13 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Questlevel for Quest Welcome! all factions
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5841;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5842;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5843;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5844;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5847;
+
 -- Correct Required Races for Quest 1049 Compendium of the fallen. Not available to undead
 UPDATE `quest_template` SET `RequiredRaces` = 162 WHERE `entry` = 1049;
 
