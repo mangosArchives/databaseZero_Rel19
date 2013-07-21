@@ -17,6 +17,84 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Questlevel for Quest Welcome! all factions
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5841;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5842;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5843;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5844;
+UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5847;
+
+-- Correct Required Races for Quest 1049 Compendium of the fallen. Not available to undead
+UPDATE `quest_template` SET `RequiredRaces` = 162 WHERE `entry` = 1049;
+
+-- Fixed item GUID 32686 fathom stone should not disspawn when looted
+UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `guid` = 32686;
+
+-- Correct Required Races for Quest 656 Summoning the Princess
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 656;
+
+-- Quest end script for Quest 524 Elixir Of Agony
+UPDATE `creature` SET `spawntimesecs` = 180 WHERE `id` = 2284;
+UPDATE `gameobject` SET `spawntimesecs` = -10 WHERE `guid` = 30031;
+DELETE FROM `gameobject` WHERE `guid` = 55530;
+INSERT INTO `gameobject` VALUES (55530,1730,0,0.437117,-942.794,61.9384,-2.54818,0,0,0,0,-10,100,1);
+UPDATE `quest_template` SET `CompleteScript` = 524 WHERE `entry` = 524;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 524;
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,1,9,30031,30,0,0,0,0,0,0,0,0,0,0,0,'Spawn Keg');
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,2,9,55530,30,0,0,0,0,0,0,0,0,0,0,0,'Spawn Keg Smoke');
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,4,3,0,0,2284,15891,16,0,0,0,0,0.524,-944.41,61.93,1.66,'Move first');
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,4,3,0,0,2284,15893,16,0,0,0,0,0.439,-940.84,61.93,4.94,'Move second');
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,4,3,0,0,2284,15892,16,0,0,0,0,-1.632,-942.43,61.93,6.14,'Move third');
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,7,15,5,0,2284,15891,17,0,0,0,0,0,0,0,0,'Kill first');
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,8,15,5,0,2284,15893,17,0,0,0,0,0,0,0,0,'Kill second');
+INSERT INTO `dbscripts_on_quest_end` VALUES (524,9,15,5,0,2284,15892,17,0,0,0,0,0,0,0,0,'Kill third');
+
+-- correct all reputation values for tirisfal
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 354;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 356;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 358;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 360;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 361;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 362;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 363;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 364;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 365;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 366;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 367;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 368;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 370;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 371;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 372;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 374;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 375;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 376;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 380;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 381;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 382;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 383;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 398;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 404;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 408;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 409;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 411;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 426;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 427;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 445;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 492;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 590;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 3901;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 3902;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 5481;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 5482;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6395;
+
+-- fixing Quest 5151 Hypercapacitor Gizmo
+UPDATE `creature_template` SET `unit_flags` = 832 WHERE `entry` = 10992;
+UPDATE `creature_template` SET `flags_extra` = 0 WHERE `entry` = 10992;
+DELETE FROM `dbscripts_on_go_use` WHERE `id` = 16775;
+INSERT INTO `dbscripts_on_go_use` VALUES (16775,1,3,0,0,10992,20,0,0,0,0,0,-4680.1,-1439.24,-50.49,5.77704,'Panther Move');
+INSERT INTO `dbscripts_on_go_use` VALUES (16775,2,22,16,49,10992,20,0,0,0,0,0,0,0,0,0,'Panther set faction');
+
 -- Updatet values for deathstalker Faerleia from comments and db, mainly wowpedia she is lvl 18 instead of lvl 16, from comments she seems able to finish the quest nearly without any help.
 -- DMG and ARMOR values are guessed by testing, no definite proof of this, but more correct than original values, HP is correct.
 UPDATE `creature_template` SET `minlevel` = 18 WHERE `entry` = 2058;
