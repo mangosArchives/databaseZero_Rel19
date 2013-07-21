@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Vile Familiars Questline Warlock and no Warlock Questline
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 792;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 350 WHERE `entry` = 1485;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 1499;
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 1499;
+
 -- correct all reputation values for durotar
 UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 784;
 UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 784;
