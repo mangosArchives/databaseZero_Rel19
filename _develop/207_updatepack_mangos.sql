@@ -17,6 +17,19 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel and Level for Durotar
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 806;
+UPDATE `quest_template` SET `MinLevel` = 8 WHERE `entry` = 809;
+UPDATE `quest_template` SET `QuestLevel` = 13 WHERE `entry` = 809;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 812;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 813;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 825;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 827;
+UPDATE `quest_template` SET `MinLevel` = 6 WHERE `entry` = 828;
+UPDATE `quest_template` SET `QuestLevel` = 12 WHERE `entry` = 828;
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 831;
+UPDATE `quest_template` SET `MinLevel` = 8 WHERE `entry` = 924;
+
 -- correct Required Races for Quests in Durotar which are horde only. Quest 784, 786, 791, 794, 805, 806, 808,
 -- 809, 812, 813, 815, 816, 825, 826, 827, 828, 829, 830, 831, 832, 837, 840, 842, 924, 926
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (784,786,791,794,805,806,808,809,812,813,815,816,825,826,827,828,829,830,831,832,837,840,842,924,926);
