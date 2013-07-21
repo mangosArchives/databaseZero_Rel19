@@ -17,6 +17,22 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Add condition to Love is in the Air vendor items
+SET @CONDITION_ENTRY                         = 717;
+SET @CONDITION_ACTIVE_EVENT                  = 12;
+SET @LOVE_IS_IN_THE_AIR                      = 8;
+SET @LOVE_TOKEN                              = 21815;
+SET @PERFUME_BOTTLE                          = 21829;
+SET @COLOGNE_BOTTLE                          = 21833;
+
+DELETE FROM `conditions`
+WHERE `condition_entry`=@CONDITION_ENTRY;
+
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`) VALUES (@CONDITION_ENTRY, @CONDITION_ACTIVE_EVENT, @LOVE_IS_IN_THE_AIR);
+
+UPDATE `npc_vendor` SET `condition_id`=@CONDITION_ENTRY
+WHERE `item` IN (@LOVE_TOKEN, @PERFUME_BOTTLE, @COLOGNE_BOTTLE);
+
 -- Correct Questlevel for Quest Welcome! all factions
 UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5841;
 UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5842;
