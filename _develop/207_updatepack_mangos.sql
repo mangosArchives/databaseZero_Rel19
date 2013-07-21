@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- adding Quest 787 The New Horde completion questtext
+UPDATE `quest_template` SET `OfferRewardText` = "Another one of Eitrigg's recruits, hm?$B$BA sorry state of affairs we find ourselves in if this is the best the Horde can produce. No matter. By the time we think you're ready to leave the Valley, you'll be a proud warrior of the Horde." WHERE `entry` = 787;
+
 -- Correct Questlevel for Quest Welcome! all factions
 UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5841;
 UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5842;
