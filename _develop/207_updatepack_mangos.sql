@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Correct Required Races for Quest 1049 Compendium of the fallen. Not available to undead
+UPDATE `quest_template` SET `RequiredRaces` = 162 WHERE `entry` = 1049;
+
 -- Fixed item GUID 32686 fathom stone should not disspawn when looted
 UPDATE `gameobject` SET `spawntimesecs` = 0 WHERE `guid` = 32686;
 
