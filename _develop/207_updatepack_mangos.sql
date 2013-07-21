@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct Required Races for Quests in Durotar which are horde only. Quest 784, 786, 791, 794, 805, 806, 808,
+-- 809, 812, 813, 815, 816, 825, 826, 827, 828, 829, 830, 831, 832, 837, 840, 842, 924, 926
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (784,786,791,794,805,806,808,809,812,813,815,816,825,826,827,828,829,830,831,832,837,840,842,924,926);
+
 -- adding Quest 787 The New Horde completion questtext
 UPDATE `quest_template` SET `OfferRewardText` = "Another one of Eitrigg's recruits, hm?$B$BA sorry state of affairs we find ourselves in if this is the best the Horde can produce. No matter. By the time we think you're ready to leave the Valley, you'll be a proud warrior of the Horde." WHERE `entry` = 787;
 
