@@ -363,5 +363,65 @@ DELETE FROM `creature_questrelation` WHERE `id` NOT IN (SELECT `entry` FROM `cre
 DELETE FROM `creature_onkill_reputation` WHERE `creature_id` NOT IN (SELECT `entry` FROM `creature_template`);
 UPDATE `creature_template` SET `npcflag` = `npcflag` | 2 WHERE `entry` IN (SELECT `id` FROM `creature_questrelation` UNION SELECT `id` FROM `creature_involvedrelation`);
 
+--Correct loot for Ragnaros
+--Clear the groups we are going to use
+DELETE FROM `reference_loot_template` WHERE `entry`='34016';
+DELETE FROM `reference_loot_template` WHERE `entry`='34017';
+DELETE FROM `reference_loot_template` WHERE `entry`='34018';
+--Create groups for the drops
+INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES 
+--Tier 2 pants reference 34016
+('34016', '16901', '0', '1', '1', '1', '0'),
+('34016', '16909', '0', '1', '1', '1', '0'),
+('34016', '16915', '0', '1', '1', '1', '0'),
+('34016', '16922', '0', '1', '1', '1', '0'),
+('34016', '16930', '0', '1', '1', '1', '0'),
+('34016', '16938', '0', '1', '1', '1', '0'),
+('34016', '16946', '0', '1', '1', '1', '0'),
+('34016', '16954', '0', '1', '1', '1', '0'),
+('34016', '16962', '0', '1', '1', '1', '0'),
+--Random epics reference 34017
+('34017', '17063', '0', '1', '1', '1', '0'),
+('34017', '17082', '0', '1', '1', '1', '0'),
+('34017', '17102', '0', '1', '1', '1', '0'),
+('34017', '17106', '0', '1', '1', '1', '0'),
+('34017', '17107', '0', '1', '1', '1', '0'),
+('34017', '18814', '0', '1', '1', '1', '0'),
+('34017', '18815', '0', '1', '1', '1', '0'),
+('34017', '18817', '0', '1', '1', '1', '0'),
+('34017', '19137', '0', '1', '1', '1', '0'),
+('34017', '19138', '0', '1', '1', '1', '0'),
+--epic weapons reference 34018
+('34018', '17076', '0', '1', '1', '1', '0'),
+('34018', '17104', '0', '1', '1', '1', '0'),
+('34018', '18816', '0', '1', '1', '1', '0');
+
+--Remove current loot from ragnaros
+DELETE FROM `creature_loot_template`
+WHERE `entry`='11502';
+
+--Add new loot table
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES 
+--Essence of fire
+('11502', '7078', '40', '0', '1', '9', '0'),
+--Eye of sulfuras
+('11502', '17204', '3', '0', '1', '1', '0'),
+--Essence of the firelord
+('11502', '19017', '-100', '0', '1', '1', '0'),
+--Narain's Scrying Goggles
+('11502', '20951', '-5', '0', '1', '1', '0'),
+--Draconic for Dummies
+('11502', '21110', '3.4853', '0', '1', '1', '0'),
+--Random blues
+('11502', '34002', '100', '1', '-34002', '3', '0'),
+--Drop 2 tier 2 pants
+('11502', '34016', '100', '1', '-34016', '2', '0'),
+--random epic
+('11502', '34017', '100', '1', '-34017', '1', '0'),
+--50% chance of dropping an epic weapon.
+('11502', '34018', '50', '1', '-34018', '1', '0');
+
+
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.7 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
