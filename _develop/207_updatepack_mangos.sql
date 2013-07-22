@@ -17,6 +17,47 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Add gossip to npc (3144) for quest (4941)
+SET @CONDITION_ENTRY                          = 718;
+SET @CONDITION_QUESTTAKEN                     = 9;
+SET @QUEST_EITRIGGS_WISDOM                    = 4941;
+SET @NPC_EITRIGG                              = 3144;
+SET @GOSSIP_MENU_ID                           = 2901;
+
+UPDATE `creature_template` SET `gossip_menu_id`=@GOSSIP_MENU_ID WHERE `entry`=@NPC_EITRIGG;
+
+DELETE FROM `conditions` WHERE `condition_entry`=@CONDITION_ENTRY;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`)
+VALUES (@CONDITION_ENTRY, @CONDITION_QUESTTAKEN, @QUEST_EITRIGGS_WISDOM);
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id`
+BETWEEN @GOSSIP_MENU_ID AND @GOSSIP_MENU_ID+7;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_script_id`,`condition_id`) VALUES
+(@GOSSIP_MENU_ID, 0, 0, 'Hello, Eitrigg. I bring news from Blackrock Spire.', 1, 1, @GOSSIP_MENU_ID+1, 0, @CONDITION_ENTRY),
+(@GOSSIP_MENU_ID+1, 0, 0, 'There is only one Warchief, Eitrigg!', 1, 1, @GOSSIP_MENU_ID+2, 0, 0),
+(@GOSSIP_MENU_ID+2, 0, 0, 'What do you mean?', 1, 1, @GOSSIP_MENU_ID+3, 0, 0),
+(@GOSSIP_MENU_ID+3, 0, 0, 'Hearthglen? But...', 1, 1, @GOSSIP_MENU_ID+4, 0, 0),
+(@GOSSIP_MENU_ID+4, 0, 0, 'I will take you up on that offer, Eitrigg.', 1, 1, @GOSSIP_MENU_ID+5, 0, 0),
+(@GOSSIP_MENU_ID+5, 0, 0, 'Ah, so that is how they pushed the Dark Iron to the lower parts of the Spire.', 1, 1, @GOSSIP_MENU_ID+6, 0, 0),
+(@GOSSIP_MENU_ID+6, 0, 0, 'Perhaps there exists a way?', 1, 1, @GOSSIP_MENU_ID+7, 0, 0),
+(@GOSSIP_MENU_ID+7, 0, 0, 'As you wish, Eitrigg.', 1, 1, -1, @GOSSIP_MENU_ID+7, 0);
+
+DELETE FROM `gossip_menu` WHERE `entry`
+IN (@GOSSIP_MENU_ID, @GOSSIP_MENU_ID+1, @GOSSIP_MENU_ID+2, @GOSSIP_MENU_ID+3, @GOSSIP_MENU_ID+4, @GOSSIP_MENU_ID+5, @GOSSIP_MENU_ID+6, @GOSSIP_MENU_ID+7);
+INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES
+(@GOSSIP_MENU_ID, 3573),
+(@GOSSIP_MENU_ID+1, 3574),
+(@GOSSIP_MENU_ID+2, 3575),
+(@GOSSIP_MENU_ID+3, 3576),
+(@GOSSIP_MENU_ID+4, 3577),
+(@GOSSIP_MENU_ID+5, 3578),
+(@GOSSIP_MENU_ID+6, 3579),
+(@GOSSIP_MENU_ID+7, 3580);
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id`=@GOSSIP_MENU_ID+7;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`)
+VALUES (@GOSSIP_MENU_ID+7, 0, 7, 4941, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Quest complete 4941');
+
 -- Add condition to Love is in the Air vendor items
 SET @CONDITION_ENTRY                         = 717;
 SET @CONDITION_ACTIVE_EVENT                  = 12;
