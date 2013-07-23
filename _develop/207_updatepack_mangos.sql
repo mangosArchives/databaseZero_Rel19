@@ -540,6 +540,105 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`) VALUES (@CONDITIO
 UPDATE `npc_vendor` SET `condition_id`=@CONDITION_ENTRY
 WHERE `item` IN (@LOVE_TOKEN, @PERFUME_BOTTLE, @COLOGNE_BOTTLE);
 
+-- Correct Vile Familiars Questline Warlock and no Warlock Questline
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 792;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 350 WHERE `entry` = 1485;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 1499;
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 1499;
+
+-- correct all reputation values for durotar
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 784;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 784;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 786;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 786;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 788;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 788;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 789;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 789;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 790;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 790;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 791;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 791;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 792;
+UPDATE `quest_template` SET `RewRepValue2` = 150 WHERE `entry` = 792;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 794;
+UPDATE `quest_template` SET `RewRepValue2` = 200 WHERE `entry` = 794;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 805;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 805;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 806;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 806;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 808;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 808;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 809;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 809;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 812;
+UPDATE `quest_template` SET `RewRepValue2` = 150 WHERE `entry` = 812;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 815;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 815;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 816;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 816;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 817;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 817;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 818;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 818;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 823;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 823;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 825;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 825;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 826;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 826;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 827;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 827;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 829;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 829;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 830;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 830;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 831;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 831;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 832;
+UPDATE `quest_template` SET `RewRepValue2` = 75 WHERE `entry` = 832;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 834;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 834;
+UPDATE `quest_template` SET `RewRepValue3` = 100 WHERE `entry` = 834;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 835;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 835;
+UPDATE `quest_template` SET `RewRepValue3` = 100 WHERE `entry` = 835;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 837;
+UPDATE `quest_template` SET `RewRepValue2` = 75 WHERE `entry` = 837;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 840;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 840;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 842;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 842;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 924;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 4402;
+UPDATE `quest_template` SET `RewRepValue2` = 200 WHERE `entry` = 4402;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 4641;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 4641;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 5441;
+UPDATE `quest_template` SET `RewRepValue2` = 150 WHERE `entry` = 5441;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 6394;
+UPDATE `quest_template` SET `RewRepValue2` = 150 WHERE `entry` = 6394;
+
+-- correct minLevel and Level for Durotar
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 806;
+UPDATE `quest_template` SET `MinLevel` = 8 WHERE `entry` = 809;
+UPDATE `quest_template` SET `QuestLevel` = 13 WHERE `entry` = 809;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 812;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 813;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 825;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 827;
+UPDATE `quest_template` SET `MinLevel` = 6 WHERE `entry` = 828;
+UPDATE `quest_template` SET `QuestLevel` = 12 WHERE `entry` = 828;
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 831;
+UPDATE `quest_template` SET `MinLevel` = 8 WHERE `entry` = 924;
+
+-- correct Required Races for Quests in Durotar which are horde only. Quest 784, 786, 791, 794, 805, 806, 808,
+-- 809, 812, 813, 815, 816, 825, 826, 827, 828, 829, 830, 831, 832, 837, 840, 842, 924, 926
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (784,786,791,794,805,806,808,809,812,813,815,816,825,826,827,828,829,830,831,832,837,840,842,924,926);
+
+-- adding Quest 787 The New Horde completion questtext
+UPDATE `quest_template` SET `OfferRewardText` = "Another one of Eitrigg's recruits, hm?$B$BA sorry state of affairs we find ourselves in if this is the best the Horde can produce. No matter. By the time we think you're ready to leave the Valley, you'll be a proud warrior of the Horde." WHERE `entry` = 787;
+
 -- Correct Questlevel for Quest Welcome! all factions
 UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5841;
 UPDATE `quest_template` SET `QuestLevel` = 1 WHERE `entry` = 5842;
