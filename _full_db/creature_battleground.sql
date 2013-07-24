@@ -49,7 +49,7 @@ CREATE TABLE `creature_battleground` (
 
 LOCK TABLES `creature_battleground` WRITE;
 /*!40000 ALTER TABLE `creature_battleground` DISABLE KEYS */;
-INSERT INTO `creature_battleground` (`guid`, `event1`, `event2`) VALUES
+INSERT INTO `creature_battleground` VALUES
 (150000,2,0),
 (150001,2,0),
 (150002,0,3),
@@ -962,3 +962,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

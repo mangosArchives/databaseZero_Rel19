@@ -59,7 +59,7 @@ CREATE TABLE `game_weather` (
 
 LOCK TABLES `game_weather` WRITE;
 /*!40000 ALTER TABLE `game_weather` DISABLE KEYS */;
-INSERT INTO `game_weather` (`zone`, `spring_rain_chance`, `spring_snow_chance`, `spring_storm_chance`, `summer_rain_chance`, `summer_snow_chance`, `summer_storm_chance`, `fall_rain_chance`, `fall_snow_chance`, `fall_storm_chance`, `winter_rain_chance`, `winter_snow_chance`, `winter_storm_chance`) VALUES
+INSERT INTO `game_weather` VALUES
 (1,0,25,0,0,15,0,0,25,0,0,25,0),
 (3,0,0,20,0,0,20,0,0,20,0,0,15),
 (10,15,0,0,15,0,0,20,0,0,15,0,0),
@@ -105,3 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

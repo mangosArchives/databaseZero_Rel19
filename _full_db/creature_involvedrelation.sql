@@ -48,7 +48,7 @@ CREATE TABLE `creature_involvedrelation` (
 
 LOCK TABLES `creature_involvedrelation` WRITE;
 /*!40000 ALTER TABLE `creature_involvedrelation` DISABLE KEYS */;
-INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES
+INSERT INTO `creature_involvedrelation` VALUES
 (196,33),
 (196,5261),
 (197,7),
@@ -4010,3 +4010,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

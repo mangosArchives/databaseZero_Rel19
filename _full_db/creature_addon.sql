@@ -54,7 +54,7 @@ CREATE TABLE `creature_addon` (
 
 LOCK TABLES `creature_addon` WRITE;
 /*!40000 ALTER TABLE `creature_addon` DISABLE KEYS */;
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES
+INSERT INTO `creature_addon` VALUES
 (1,0,0,1,16,0,0,NULL),
 (2,0,0,1,16,0,0,NULL),
 (3,0,0,1,16,0,0,NULL),
@@ -38824,11 +38824,11 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (45187,0,0,1,16,0,0,NULL),
 (45188,0,0,1,16,0,0,NULL),
 (45189,0,0,1,16,0,0,NULL),
-(45190,0,0,1,16,0,0,NULL);
-INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES
+(45190,0,0,1,16,0,0,NULL),
 (45191,0,0,1,16,0,0,NULL),
 (45192,0,0,1,16,0,0,NULL),
-(45193,0,0,1,16,0,0,NULL),
+(45193,0,0,1,16,0,0,NULL);
+INSERT INTO `creature_addon` VALUES
 (45194,0,0,1,16,0,0,NULL),
 (45195,0,0,1,16,0,0,NULL),
 (45196,0,0,1,16,0,0,NULL),
@@ -40457,7 +40457,6 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (46993,0,0,1,16,0,0,NULL),
 (46994,0,0,1,16,0,0,NULL),
 (46995,0,0,1,16,0,0,'10255'),
-(46996,0,0,1,16,0,0,NULL),
 (46997,0,0,1,16,0,0,NULL),
 (46998,0,0,1,16,0,0,NULL),
 (46999,0,0,1,16,0,0,NULL),
@@ -40465,20 +40464,16 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (47001,0,0,1,16,0,0,NULL),
 (47002,0,0,1,16,0,0,NULL),
 (47003,0,0,1,16,0,0,NULL),
-(47004,0,0,1,16,0,0,NULL),
-(47005,0,0,1,16,0,0,NULL),
 (47006,0,0,1,16,0,0,NULL),
-(47007,0,0,1,16,0,0,NULL),
 (47008,0,0,1,16,0,0,NULL),
 (47009,0,0,1,16,0,0,NULL),
 (47010,0,0,1,16,0,0,NULL),
 (47011,0,0,1,16,0,0,NULL),
 (47012,0,0,1,16,0,0,NULL),
-(47013,0,0,1,16,0,0,NULL),
 (47014,0,0,1,16,0,0,NULL),
-(47015,0,0,1,16,0,0,NULL),
-(47016,0,0,1,16,0,0,NULL),
-(47017,0,0,1,16,0,0,NULL),
+(88409,0,0,1,0,173,0,NULL),
+(88408,0,0,1,0,173,0,NULL),
+(88099,0,9,1,0,0,0,NULL),
 (47018,0,0,1,16,0,0,NULL),
 (47019,0,0,1,16,0,0,NULL),
 (47020,0,0,1,16,0,0,NULL),
@@ -40490,8 +40485,8 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (47026,0,0,1,16,0,0,NULL),
 (47027,0,0,1,16,0,0,NULL),
 (47029,0,0,1,16,0,0,NULL),
-(47030,0,0,1,16,0,0,NULL),
-(47031,0,0,1,16,0,0,NULL),
+(88098,0,9,1,0,0,0,NULL),
+(88097,0,9,1,0,0,0,NULL),
 (47032,0,0,1,16,0,0,NULL),
 (47033,0,0,1,16,0,0,NULL),
 (47034,0,0,1,16,0,0,NULL),
@@ -40520,7 +40515,7 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (47058,0,0,1,16,0,0,NULL),
 (47059,0,0,1,16,0,0,NULL),
 (47060,0,0,1,16,0,0,NULL),
-(47061,0,0,1,16,0,0,NULL),
+(88096,0,9,1,0,0,0,NULL),
 (47062,0,0,1,16,0,0,NULL),
 (47063,0,0,1,16,0,0,NULL),
 (47064,0,0,1,16,0,0,NULL),
@@ -40717,8 +40712,8 @@ INSERT INTO `creature_addon` (`guid`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_fl
 (47259,0,0,1,16,0,0,NULL),
 (47260,0,0,1,16,0,0,NULL),
 (47261,0,0,1,16,0,0,NULL),
-(47262,0,0,1,16,0,0,NULL),
-(47263,0,0,1,16,0,0,NULL),
+(88093,0,9,1,0,0,0,NULL),
+(88092,0,9,1,0,0,0,NULL),
 (47264,0,0,1,16,0,0,NULL),
 (47266,0,0,1,16,0,0,NULL),
 (47267,0,0,1,16,0,0,NULL),
@@ -51087,3 +51082,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

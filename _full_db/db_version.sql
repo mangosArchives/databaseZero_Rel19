@@ -48,8 +48,8 @@ CREATE TABLE `db_version` (
 
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
-INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_r2420_01_mangos_spell_linked`) VALUES
-('ZeroDatabase 2.0.6 for MaNGOSZero z2380+ and ScriptDevZero z2673+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
+INSERT INTO `db_version` VALUES
+('ZeroDatabase 2.0.7 for MaNGOSZero z2426+ and ScriptDevZero z2676+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,3 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -52,7 +52,7 @@ CREATE TABLE `creature_model_info` (
 
 LOCK TABLES `creature_model_info` WRITE;
 /*!40000 ALTER TABLE `creature_model_info` DISABLE KEYS */;
-INSERT INTO `creature_model_info` (`modelid`, `bounding_radius`, `combat_reach`, `gender`, `modelid_other_gender`, `modelid_other_team`) VALUES
+INSERT INTO `creature_model_info` VALUES
 (4,2,3,2,0,0),
 (13,0,0,2,0,0),
 (14,0,0,2,0,0),
@@ -10599,3 +10599,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

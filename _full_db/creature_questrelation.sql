@@ -48,7 +48,7 @@ CREATE TABLE `creature_questrelation` (
 
 LOCK TABLES `creature_questrelation` WRITE;
 /*!40000 ALTER TABLE `creature_questrelation` DISABLE KEYS */;
-INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES
+INSERT INTO `creature_questrelation` VALUES
 (196,33),
 (197,7),
 (197,15),
@@ -3852,3 +3852,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

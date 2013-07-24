@@ -1029,4 +1029,4 @@ INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `g
 
 
 -- UPDATE Database Version
-UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.7 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
+UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.7 for MaNGOSZero z2426+ and ScriptDevZero z2676+';

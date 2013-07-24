@@ -48,7 +48,7 @@ CREATE TABLE `scripted_event_id` (
 
 LOCK TABLES `scripted_event_id` WRITE;
 /*!40000 ALTER TABLE `scripted_event_id` DISABLE KEYS */;
-INSERT INTO `scripted_event_id` (`id`, `ScriptName`) VALUES
+INSERT INTO `scripted_event_id` VALUES
 (2228,'event_spell_altar_boss_aggro'),
 (2268,'event_spell_altar_boss_aggro'),
 (2488,'event_go_zulfarrak_gong'),
@@ -79,3 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

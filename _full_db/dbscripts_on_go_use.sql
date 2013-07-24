@@ -62,7 +62,7 @@ CREATE TABLE `dbscripts_on_go_use` (
 
 LOCK TABLES `dbscripts_on_go_use` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_go_use` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+INSERT INTO `dbscripts_on_go_use` VALUES
 (4523,2,10,9136,300000,0,0,0,0,0,0,0,-7916.54,-2613.33,221.13,1.89747,''),
 (11881,0,11,11875,20,0,0,0,0,0,0,0,0,0,0,0,''),
 (11894,0,11,11876,300,0,0,0,0,0,0,0,0,0,0,0,''),
@@ -129,7 +129,9 @@ INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalo
 (49958,0,11,49943,5,0,0,0,0,0,0,0,0,0,0,0,''),
 (49960,0,11,49945,5,0,0,0,0,0,0,0,0,0,0,0,''),
 (49962,0,11,49948,5,0,0,0,0,0,0,0,0,0,0,0,''),
-(49967,0,11,49956,5,0,0,0,0,0,0,0,0,0,0,0,'');
+(49967,0,11,49956,5,0,0,0,0,0,0,0,0,0,0,0,''),
+(16775,1,3,0,0,10992,20,0,0,0,0,0,-4680.1,-1439.24,-50.49,5.77704,'Panther Move'),
+(16775,2,22,16,49,10992,20,0,0,0,0,0,0,0,0,0,'Panther set faction');
 /*!40000 ALTER TABLE `dbscripts_on_go_use` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -142,3 +144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

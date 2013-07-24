@@ -54,7 +54,7 @@ CREATE TABLE `creature_template_addon` (
 
 LOCK TABLES `creature_template_addon` WRITE;
 /*!40000 ALTER TABLE `creature_template_addon` DISABLE KEYS */;
-INSERT INTO `creature_template_addon` (`entry`, `mount`, `bytes1`, `b2_0_sheath`, `b2_1_flags`, `emote`, `moveflags`, `auras`) VALUES
+INSERT INTO `creature_template_addon` VALUES
 (3,0,0,1,16,0,0,NULL),
 (6,0,0,1,16,0,0,NULL),
 (30,0,0,1,16,0,0,NULL),
@@ -6544,3 +6544,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

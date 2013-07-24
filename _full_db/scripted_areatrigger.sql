@@ -48,7 +48,7 @@ CREATE TABLE `scripted_areatrigger` (
 
 LOCK TABLES `scripted_areatrigger` WRITE;
 /*!40000 ALTER TABLE `scripted_areatrigger` DISABLE KEYS */;
-INSERT INTO `scripted_areatrigger` (`entry`, `ScriptName`) VALUES
+INSERT INTO `scripted_areatrigger` VALUES
 (522,'at_twiggy_flathead'),
 (1447,'at_zulfarrak'),
 (1526,'at_ring_of_law'),
@@ -99,3 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

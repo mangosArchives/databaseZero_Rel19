@@ -49,7 +49,7 @@ CREATE TABLE `pool_template` (
 
 LOCK TABLES `pool_template` WRITE;
 /*!40000 ALTER TABLE `pool_template` DISABLE KEYS */;
-INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
+INSERT INTO `pool_template` VALUES
 (1000,1,'RARE Fedfennel - 472'),
 (1001,1,'RARE Gruff Swiftbite - 100'),
 (1002,1,'RARE Thuros Lightfingers - 61'),
@@ -134,3 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

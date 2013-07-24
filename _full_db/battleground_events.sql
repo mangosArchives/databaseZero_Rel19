@@ -50,7 +50,7 @@ CREATE TABLE `battleground_events` (
 
 LOCK TABLES `battleground_events` WRITE;
 /*!40000 ALTER TABLE `battleground_events` DISABLE KEYS */;
-INSERT INTO `battleground_events` (`map`, `event1`, `event2`, `description`) VALUES
+INSERT INTO `battleground_events` VALUES
 (30,0,0,'Firstaid Station - Alliance Assaulted'),
 (30,0,1,'Firstaid Station - Alliance Control'),
 (30,0,2,'Firstaid Station - Horde Assaulted'),
@@ -230,3 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

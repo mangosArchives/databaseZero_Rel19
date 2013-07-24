@@ -48,7 +48,7 @@ CREATE TABLE `skill_fishing_base_level` (
 
 LOCK TABLES `skill_fishing_base_level` WRITE;
 /*!40000 ALTER TABLE `skill_fishing_base_level` DISABLE KEYS */;
-INSERT INTO `skill_fishing_base_level` (`entry`, `skill`) VALUES
+INSERT INTO `skill_fishing_base_level` VALUES
 (1,-70),
 (8,130),
 (10,55),
@@ -118,3 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

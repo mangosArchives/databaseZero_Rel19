@@ -51,7 +51,7 @@ CREATE TABLE `pool_creature_template` (
 
 LOCK TABLES `pool_creature_template` WRITE;
 /*!40000 ALTER TABLE `pool_creature_template` DISABLE KEYS */;
-INSERT INTO `pool_creature_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+INSERT INTO `pool_creature_template` VALUES
 (61,1002,0,'RARE Thuros Lightfingers - 61'),
 (100,1001,0,'RARE Gruff Swiftbite - 100'),
 (462,1005,0,'RARE Vultros - 462'),
@@ -136,3 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

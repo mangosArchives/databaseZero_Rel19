@@ -49,7 +49,7 @@ CREATE TABLE `spell_learn_spell` (
 
 LOCK TABLES `spell_learn_spell` WRITE;
 /*!40000 ALTER TABLE `spell_learn_spell` DISABLE KEYS */;
-INSERT INTO `spell_learn_spell` (`entry`, `SpellID`, `Active`) VALUES
+INSERT INTO `spell_learn_spell` VALUES
 (2842,8681,1),
 (5149,1853,1),
 (5149,14922,1),
@@ -71,3 +71,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

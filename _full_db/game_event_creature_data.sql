@@ -53,7 +53,7 @@ CREATE TABLE `game_event_creature_data` (
 
 LOCK TABLES `game_event_creature_data` WRITE;
 /*!40000 ALTER TABLE `game_event_creature_data` DISABLE KEYS */;
-INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES
+INSERT INTO `game_event_creature_data` VALUES
 (12088,0,0,504,0,0,27),
 (12093,0,0,504,0,0,27),
 (12095,0,0,504,0,0,27),
@@ -76,3 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

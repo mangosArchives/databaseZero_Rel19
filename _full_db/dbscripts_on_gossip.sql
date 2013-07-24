@@ -62,7 +62,7 @@ CREATE TABLE `dbscripts_on_gossip` (
 
 LOCK TABLES `dbscripts_on_gossip` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_gossip` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+INSERT INTO `dbscripts_on_gossip` VALUES
 (21,0,7,6981,0,0,0,0,0,0,0,0,0,0,0,0,'quest complete 6981'),
 (125,1,22,21,5,0,0,0,0,0,0,0,0,0,0,0,'astor change faction'),
 (125,2,26,0,0,0,0,0,0,0,0,0,0,0,0,0,'astor attack start'),
@@ -106,7 +106,28 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (476302,0,7,6627,5,0,0,0,0,0,0,0,0,0,0,0,'Quest complete 6627'),
 (737901,0,30,494,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Northpass Tower taxi'),
 (737902,0,30,495,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Eastwall Tower taxi'),
-(737903,0,30,496,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Crown Guard Tower taxi');
+(737903,0,30,496,0,0,0,0,0,0,0,0,0,0,0,0,'William Kielar - Send Crown Guard Tower taxi'),
+(570901,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'UNPAUSE'),
+(570901,0,29,3,2,0,0,0,0,0,0,0,0,0,0,0,'npc_flag removed'),
+(570901,1,0,0,0,0,0,0,2000005460,0,0,0,0,0,0,0,''),
+(570902,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'UNPAUSE'),
+(570902,0,29,3,2,0,0,0,0,0,0,0,0,0,0,0,'npc_flag removed'),
+(570902,1,0,0,0,0,0,0,2000005461,0,0,0,0,0,0,0,''),
+(570903,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'UNPAUSE'),
+(570903,0,29,3,2,0,0,0,0,0,0,0,0,0,0,0,'npc_flag removed'),
+(570903,1,0,0,0,0,0,0,2000005462,0,0,0,0,0,0,0,''),
+(570904,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,'UNPAUSE'),
+(570904,0,29,3,2,0,0,0,0,0,0,0,0,0,0,0,'npc_flag removed'),
+(570904,1,0,0,0,0,0,0,2000005463,0,0,0,0,0,0,0,''),
+(570905,0,29,3,2,0,0,0,0,0,0,0,0,0,0,0,'npc_flag removed'),
+(570905,1,0,0,0,0,0,0,2000005464,0,0,0,0,0,0,0,''),
+(570905,3,10,13276,120000,0,0,0,0,0,0,0,14.7965,-696.322,-12.6426,4.4823,'summon - Wildspawn Imp'),
+(570905,3,10,13276,120000,0,0,0,0,0,0,0,18.8891,-697.389,-12.6426,4.35271,'summon - Wildspawn Imp'),
+(570905,3,10,13276,120000,0,0,0,0,0,0,0,21.4274,-700.227,-12.6426,4.06997,'summon - Wildspawn Imp'),
+(570905,3,10,13276,120000,0,0,0,0,0,0,0,22.2017,-705.459,-12.6426,3.48092,'summon - Wildspawn Imp'),
+(570905,4,15,22735,0,0,0,0,0,0,0,0,0,0,0,0,'TRANSFORM'),
+(570905,4,22,90,1,0,0,0,0,0,0,0,0,0,0,0,'set DemonFaction'),
+(2908,0,7,4941,0,0,0,0,0,0,0,0,0,0,0,0,'Quest complete 4941');
 /*!40000 ALTER TABLE `dbscripts_on_gossip` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -119,3 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -50,7 +50,7 @@ CREATE TABLE `player_classlevelstats` (
 
 LOCK TABLES `player_classlevelstats` WRITE;
 /*!40000 ALTER TABLE `player_classlevelstats` DISABLE KEYS */;
-INSERT INTO `player_classlevelstats` (`class`, `level`, `basehp`, `basemana`) VALUES
+INSERT INTO `player_classlevelstats` VALUES
 (1,1,20,0),
 (1,2,29,0),
 (1,3,38,0),
@@ -603,3 +603,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

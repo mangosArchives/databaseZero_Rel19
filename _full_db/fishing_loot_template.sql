@@ -53,7 +53,7 @@ CREATE TABLE `fishing_loot_template` (
 
 LOCK TABLES `fishing_loot_template` WRITE;
 /*!40000 ALTER TABLE `fishing_loot_template` DISABLE KEYS */;
-INSERT INTO `fishing_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+INSERT INTO `fishing_loot_template` VALUES
 (1,11000,100,1,-11000,1,0),
 (8,11006,100,1,-11006,1,0),
 (10,11004,100,1,-11004,1,0),
@@ -153,3 +153,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

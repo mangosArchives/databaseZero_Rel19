@@ -52,7 +52,7 @@ CREATE TABLE `spell_bonus_data` (
 
 LOCK TABLES `spell_bonus_data` WRITE;
 /*!40000 ALTER TABLE `spell_bonus_data` DISABLE KEYS */;
-INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `dot_bonus`, `ap_bonus`, `ap_dot_bonus`, `comments`) VALUES
+INSERT INTO `spell_bonus_data` VALUES
 (116,0.8143,0,0,0,'Mage - Frost Bolt'),
 (120,0.1357,0,0,0,'Mage - Cone of Cold'),
 (133,1,0,0,0,'Mage - Fire Ball'),
@@ -170,3 +170,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

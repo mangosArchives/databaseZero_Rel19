@@ -49,7 +49,7 @@ CREATE TABLE `transports` (
 
 LOCK TABLES `transports` WRITE;
 /*!40000 ALTER TABLE `transports` DISABLE KEYS */;
-INSERT INTO `transports` (`entry`, `name`, `period`) VALUES
+INSERT INTO `transports` VALUES
 (20808,'Ratchet and Booty Bay',350818),
 (164871,'Orgrimmar and Undercity',356284),
 (175080,'Grom\'Gol Base Camp and Orgrimmar',303463),
@@ -70,3 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

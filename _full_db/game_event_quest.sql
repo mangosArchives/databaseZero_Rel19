@@ -48,7 +48,7 @@ CREATE TABLE `game_event_quest` (
 
 LOCK TABLES `game_event_quest` WRITE;
 /*!40000 ALTER TABLE `game_event_quest` DISABLE KEYS */;
-INSERT INTO `game_event_quest` (`quest`, `event`) VALUES
+INSERT INTO `game_event_quest` VALUES
 (172,10),
 (1468,10),
 (6961,2),
@@ -113,3 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

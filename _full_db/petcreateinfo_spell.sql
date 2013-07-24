@@ -51,7 +51,7 @@ CREATE TABLE `petcreateinfo_spell` (
 
 LOCK TABLES `petcreateinfo_spell` WRITE;
 /*!40000 ALTER TABLE `petcreateinfo_spell` DISABLE KEYS */;
-INSERT INTO `petcreateinfo_spell` (`entry`, `Spell1`, `Spell2`, `Spell3`, `Spell4`) VALUES
+INSERT INTO `petcreateinfo_spell` VALUES
 (416,3110,0,0,0),
 (417,19505,0,0,0),
 (510,6873,9672,0,0),
@@ -71,3 +71,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -49,7 +49,7 @@ CREATE TABLE `item_enchantment_template` (
 
 LOCK TABLES `item_enchantment_template` WRITE;
 /*!40000 ALTER TABLE `item_enchantment_template` DISABLE KEYS */;
-INSERT INTO `item_enchantment_template` (`entry`, `ench`, `chance`) VALUES
+INSERT INTO `item_enchantment_template` VALUES
 (454,5,4.53),
 (454,15,3.32),
 (454,16,4.17),
@@ -27954,3 +27954,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

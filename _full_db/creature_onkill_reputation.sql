@@ -56,7 +56,7 @@ CREATE TABLE `creature_onkill_reputation` (
 
 LOCK TABLES `creature_onkill_reputation` WRITE;
 /*!40000 ALTER TABLE `creature_onkill_reputation` DISABLE KEYS */;
-INSERT INTO `creature_onkill_reputation` (`creature_id`, `RewOnKillRepFaction1`, `RewOnKillRepFaction2`, `MaxStanding1`, `IsTeamAward1`, `RewOnKillRepValue1`, `MaxStanding2`, `IsTeamAward2`, `RewOnKillRepValue2`, `TeamDependent`) VALUES
+INSERT INTO `creature_onkill_reputation` VALUES
 (674,21,0,5,0,25,0,0,0,0),
 (675,21,0,5,0,25,0,0,0,0),
 (677,21,0,5,0,25,0,0,0,0),
@@ -492,3 +492,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

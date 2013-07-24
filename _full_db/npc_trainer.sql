@@ -52,7 +52,7 @@ CREATE TABLE `npc_trainer` (
 
 LOCK TABLES `npc_trainer` WRITE;
 /*!40000 ALTER TABLE `npc_trainer` DISABLE KEYS */;
-INSERT INTO `npc_trainer` (`entry`, `spell`, `spellcost`, `reqskill`, `reqskillvalue`, `reqlevel`) VALUES
+INSERT INTO `npc_trainer` VALUES
 (198,1142,100,0,0,4),
 (198,1173,100,0,0,6),
 (198,1249,100,0,0,6),
@@ -27341,3 +27341,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

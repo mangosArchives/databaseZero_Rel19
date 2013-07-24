@@ -53,7 +53,7 @@ CREATE TABLE `points_of_interest` (
 
 LOCK TABLES `points_of_interest` WRITE;
 /*!40000 ALTER TABLE `points_of_interest` DISABLE KEYS */;
-INSERT INTO `points_of_interest` (`entry`, `x`, `y`, `icon`, `flags`, `data`, `icon_name`) VALUES
+INSERT INTO `points_of_interest` VALUES
 (1,-9459,42.0805,6,99,0,'Lion\'s Pride Inn'),
 (2,-9471,33.4441,6,99,0,'Zaldimar Wefhellt'),
 (3,-9469,108.053,6,99,0,'Brother Wilhelm'),
@@ -310,3 +310,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -53,7 +53,7 @@ CREATE TABLE `gameobject_loot_template` (
 
 LOCK TABLES `gameobject_loot_template` WRITE;
 /*!40000 ALTER TABLE `gameobject_loot_template` DISABLE KEYS */;
-INSERT INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+INSERT INTO `gameobject_loot_template` VALUES
 (2,11470,-100,0,1,1,0),
 (167,1349,-100,0,1,1,0),
 (404,1179,0,4,1,1,0),
@@ -16545,3 +16545,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

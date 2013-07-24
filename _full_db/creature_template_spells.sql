@@ -51,7 +51,7 @@ CREATE TABLE `creature_template_spells` (
 
 LOCK TABLES `creature_template_spells` WRITE;
 /*!40000 ALTER TABLE `creature_template_spells` DISABLE KEYS */;
-INSERT INTO `creature_template_spells` (`entry`, `spell1`, `spell2`, `spell3`, `spell4`) VALUES
+INSERT INTO `creature_template_spells` VALUES
 (30,744,0,0,0),
 (40,6016,0,0,0),
 (43,744,0,0,0),
@@ -2493,3 +2493,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -48,7 +48,7 @@ CREATE TABLE `gameobject_involvedrelation` (
 
 LOCK TABLES `gameobject_involvedrelation` WRITE;
 /*!40000 ALTER TABLE `gameobject_involvedrelation` DISABLE KEYS */;
-INSERT INTO `gameobject_involvedrelation` (`id`, `quest`) VALUES
+INSERT INTO `gameobject_involvedrelation` VALUES
 (31,94),
 (33,140),
 (34,139),
@@ -265,3 +265,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

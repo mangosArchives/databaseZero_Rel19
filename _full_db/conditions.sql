@@ -51,7 +51,7 @@ CREATE TABLE `conditions` (
 
 LOCK TABLES `conditions` WRITE;
 /*!40000 ALTER TABLE `conditions` DISABLE KEYS */;
-INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+INSERT INTO `conditions` VALUES
 (1,2,11511,1),
 (2,12,35,0),
 (3,12,36,0),
@@ -142,7 +142,14 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (716,-1,712,715),
 (1771,9,8738,0),
 (1774,24,21160,1),
-(1777,-1,1771,1774);
+(1777,-1,1771,1774),
+(719,33,1,0),
+(720,33,3,0),
+(721,33,10,0),
+(722,33,22,0),
+(723,33,28,0),
+(718,9,4941,0),
+(717,12,8,0);
 /*!40000 ALTER TABLE `conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -155,3 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -69,7 +69,7 @@ CREATE TABLE `creature_ai_scripts` (
 
 LOCK TABLES `creature_ai_scripts` WRITE;
 /*!40000 ALTER TABLE `creature_ai_scripts` DISABLE KEYS */;
-INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES
+INSERT INTO `creature_ai_scripts` VALUES
 (601,6,4,0,30,0,0,0,0,0,1,-7,-8,0,0,0,0,0,0,0,0,0,'Kobold Vermin - Random Say on Aggro'),
 (3001,30,11,0,100,0,0,0,0,0,11,11959,0,1,0,0,0,0,0,0,0,0,'Forest Spider - Cast Poison Proc on Spawn'),
 (3801,38,4,0,30,0,0,0,0,0,1,-2,-3,-4,0,0,0,0,0,0,0,0,'Defias Thug - Random Say on Aggro'),
@@ -1728,7 +1728,7 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (166604,1666,2,0,100,2,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Kam Deepfury - Flee at 15% HP'),
 (166701,1667,4,0,100,0,0,0,0,0,1,-1030,-1031,-1032,0,0,0,0,0,0,0,0,'Meven Korgal - Random Say on Aggro'),
 (167401,1674,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Gnoll - Random Say on Aggro'),
-(167402,1674,0,0,100,1,7000,21000,30000,45000,11,3237,0,1,0,0,0,0,0,0,0,0,'Rot Hide Gnoll - Cast Curse of Thule'),
+(167402,1674,0,0,100,1,7000,21000,30000,45000,11,3237,1,0,0,0,0,0,0,0,0,0,'Rot Hide Gnoll - Cast Curse of Thule'),
 (167403,1674,2,0,100,0,15,0,0,0,25,0,0,0,1,-47,0,0,0,0,0,0,'Rot Hide Gnoll - Flee at 15% HP'),
 (167501,1675,4,0,15,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Rot Hide Mongrel - Random Say on Aggro'),
 (167502,1675,0,0,100,0,7000,14000,30000,45000,11,3237,4,33,0,0,0,0,0,0,0,0,'Rot Hide Mongrel - Cast Curse of Thule'),
@@ -8823,11 +8823,11 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (838108,8381,3,3,100,1,100,15,100,100,23,-1,0,0,0,0,0,0,0,0,0,0,'Lindros - Set Phase 1 when Mana is above 15% (Phase 2)'),
 (838109,8381,9,0,100,1,0,8,13000,16000,11,11975,0,1,0,0,0,0,0,0,0,0,'Lindros - Cast Arcane Explosion'),
 (838110,8381,7,0,100,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,'Lindros - Set Phase to 0 on Evade'),
-(838201,8382,11,0,100,0,0,0,0,0,11,1032,0,0,0,0,0,0,0,0,0,0,'Patrick Mills - Cast Devotion Aura on Spawn');
-INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES
+(838201,8382,11,0,100,0,0,0,0,0,11,1032,0,0,0,0,0,0,0,0,0,0,'Patrick Mills - Cast Devotion Aura on Spawn'),
 (838202,8382,9,0,100,1,0,5,9000,12000,11,17143,1,0,0,0,0,0,0,0,0,0,'Patrick Mills - Cast Holy Strike'),
 (838301,8383,10,0,100,0,0,15,0,0,12,68,1,600000,0,0,0,0,0,0,0,0,'Master Wood - Summon Stormwind City Guard on Hostile LOS'),
-(838401,8384,0,0,100,3,6300,15800,10800,24200,11,5568,0,0,0,0,0,0,0,0,0,0,'Deep Lurker - Cast Trample'),
+(838401,8384,0,0,100,3,6300,15800,10800,24200,11,5568,0,0,0,0,0,0,0,0,0,0,'Deep Lurker - Cast Trample');
+INSERT INTO `creature_ai_scripts` VALUES
 (838501,8385,10,0,100,0,0,15,0,0,12,15138,1,600000,0,0,0,0,0,0,0,0,'Mura Runetotem - Summon Silverpine Elite on Hostile LOS'),
 (838601,8386,1,0,100,0,0,0,0,0,21,0,0,0,20,0,0,0,23,1,0,0,'Horizon Scout Crewman - Prevent Combat Movement and Prevent Melee and Set Phase 1 on Spawn'),
 (838602,8386,9,5,100,1,5,30,2300,3900,11,6660,1,0,40,2,0,0,0,0,0,0,'Horizon Scout Crewman - Cast Shoot and Set Ranged Weapon Model (Phase 1)'),
@@ -13302,3 +13302,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

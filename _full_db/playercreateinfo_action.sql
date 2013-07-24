@@ -52,7 +52,7 @@ CREATE TABLE `playercreateinfo_action` (
 
 LOCK TABLES `playercreateinfo_action` WRITE;
 /*!40000 ALTER TABLE `playercreateinfo_action` DISABLE KEYS */;
-INSERT INTO `playercreateinfo_action` (`race`, `class`, `button`, `action`, `type`) VALUES
+INSERT INTO `playercreateinfo_action` VALUES
 (1,1,72,6603,0),
 (1,1,73,78,0),
 (1,1,83,117,128),
@@ -280,3 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

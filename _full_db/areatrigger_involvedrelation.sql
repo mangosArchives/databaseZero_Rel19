@@ -48,7 +48,7 @@ CREATE TABLE `areatrigger_involvedrelation` (
 
 LOCK TABLES `areatrigger_involvedrelation` WRITE;
 /*!40000 ALTER TABLE `areatrigger_involvedrelation` DISABLE KEYS */;
-INSERT INTO `areatrigger_involvedrelation` (`id`, `quest`) VALUES
+INSERT INTO `areatrigger_involvedrelation` VALUES
 (78,155),
 (87,76),
 (88,62),
@@ -88,3 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

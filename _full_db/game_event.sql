@@ -53,7 +53,7 @@ CREATE TABLE `game_event` (
 
 LOCK TABLES `game_event` WRITE;
 /*!40000 ALTER TABLE `game_event` DISABLE KEYS */;
-INSERT INTO `game_event` (`entry`, `start_time`, `end_time`, `occurence`, `length`, `holiday`, `description`) VALUES
+INSERT INTO `game_event` VALUES
 (1,'2007-06-20 20:00:00','2020-12-31 22:59:59',525600,20160,341,'Midsummer Fire Festival'),
 (2,'2006-12-14 23:00:00','2020-12-31 22:59:59',525600,27360,141,'Feast of Winter Veil'),
 (4,'2006-02-08 23:00:00','2020-12-31 22:59:59',96480,10080,374,'Darkmoon Faire (Elwynn)'),
@@ -96,3 +96,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

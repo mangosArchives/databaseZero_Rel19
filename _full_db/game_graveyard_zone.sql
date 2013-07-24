@@ -49,7 +49,7 @@ CREATE TABLE `game_graveyard_zone` (
 
 LOCK TABLES `game_graveyard_zone` WRITE;
 /*!40000 ALTER TABLE `game_graveyard_zone` DISABLE KEYS */;
-INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
+INSERT INTO `game_graveyard_zone` VALUES
 (3,10,469),
 (4,40,0),
 (4,1581,0),
@@ -157,10 +157,10 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES
 (631,15,67),
 (631,2159,67),
 (632,46,0),
-(632,1583,0),
-(632,1584,0),
-(632,2677,0),
-(632,2717,0),
+(636,2677,0),
+(636,2717,0),
+(636,1583,0),
+(636,25,0),
 (633,493,0),
 (634,139,0),
 (635,361,0),
@@ -230,3 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

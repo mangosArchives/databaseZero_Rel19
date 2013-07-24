@@ -53,7 +53,7 @@ CREATE TABLE `skinning_loot_template` (
 
 LOCK TABLES `skinning_loot_template` WRITE;
 /*!40000 ALTER TABLE `skinning_loot_template` DISABLE KEYS */;
-INSERT INTO `skinning_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+INSERT INTO `skinning_loot_template` VALUES
 (113,2318,39.2962,1,1,1,0),
 (113,2934,60.7038,1,1,1,0),
 (118,2318,39.9457,1,1,1,0),
@@ -2872,3 +2872,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

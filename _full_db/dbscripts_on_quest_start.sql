@@ -62,7 +62,7 @@ CREATE TABLE `dbscripts_on_quest_start` (
 
 LOCK TABLES `dbscripts_on_quest_start` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_quest_start` DISABLE KEYS */;
-INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+INSERT INTO `dbscripts_on_quest_start` VALUES
 (54,1,15,6245,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (54,2,1,113,0,0,0,0,0,0,0,0,0,0,0,0,''),
 (74,0,10,2044,300000,0,0,0,0,0,0,0,-10953.3,988.509,98.984,5.349,''),
@@ -233,3 +233,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -53,7 +53,7 @@ CREATE TABLE `mail_loot_template` (
 
 LOCK TABLES `mail_loot_template` WRITE;
 /*!40000 ALTER TABLE `mail_loot_template` DISABLE KEYS */;
-INSERT INTO `mail_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+INSERT INTO `mail_loot_template` VALUES
 (84,21746,100,0,1,1,0),
 (85,21746,100,0,1,1,0),
 (86,21746,100,0,1,1,0),
@@ -126,3 +126,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

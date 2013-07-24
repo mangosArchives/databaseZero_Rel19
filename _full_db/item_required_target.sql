@@ -49,7 +49,7 @@ CREATE TABLE `item_required_target` (
 
 LOCK TABLES `item_required_target` WRITE;
 /*!40000 ALTER TABLE `item_required_target` DISABLE KEYS */;
-INSERT INTO `item_required_target` (`entry`, `type`, `targetEntry`) VALUES
+INSERT INTO `item_required_target` VALUES
 (3912,1,2530),
 (4479,1,2762),
 (4480,1,2761),
@@ -103,3 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -59,7 +59,7 @@ CREATE TABLE `gossip_menu_option` (
 
 LOCK TABLES `gossip_menu_option` WRITE;
 /*!40000 ALTER TABLE `gossip_menu_option` DISABLE KEYS */;
-INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+INSERT INTO `gossip_menu_option` VALUES
 (0,0,0,'GOSSIP_OPTION_QUESTGIVER',2,2,0,0,0,0,0,NULL,0),
 (0,1,1,'I want to browse your goods.',3,4,0,0,0,0,0,NULL,0),
 (0,2,2,'I need a ride.',4,8,0,0,0,0,0,NULL,0),
@@ -665,7 +665,20 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (10265,8,0,'Battlemaster',1,1,8221,97,0,0,0,'',0),
 (10265,9,0,'Class Trainer',1,1,2343,0,0,0,0,'',0),
 (10265,10,0,'Profession Trainer',1,1,2351,0,0,0,0,'',0),
-(20022,0,0,'I need a Cenarion beacon.',1,1,-1,0,2208,0,0,NULL,628);
+(20022,0,0,'I need a Cenarion beacon.',1,1,-1,0,2208,0,0,NULL,628),
+(5709,0,0,'Game? Are you crazy?',1,1,-1,0,570901,0,0,NULL,719),
+(5709,1,0,'Why you little...',1,1,-1,0,570902,0,0,NULL,720),
+(5709,2,0,'Mark my words, I will catch you, imp. And when I do!',1,1,-1,0,570903,0,0,NULL,721),
+(5709,3,0,'DIE!',1,1,-1,0,570904,0,0,NULL,722),
+(5709,4,0,'Prepare to meet your maker.',1,1,-1,0,570905,0,0,NULL,723),
+(2901,0,0,'Hello, Eitrigg. I bring news from Blackrock Spire.',1,1,2902,0,0,0,0,NULL,718),
+(2902,0,0,'There is only one Warchief, Eitrigg!',1,1,2903,0,0,0,0,NULL,0),
+(2903,0,0,'What do you mean?',1,1,2904,0,0,0,0,NULL,0),
+(2904,0,0,'Hearthglen? But...',1,1,2905,0,0,0,0,NULL,0),
+(2905,0,0,'I will take you up on that offer, Eitrigg.',1,1,2906,0,0,0,0,NULL,0),
+(2906,0,0,'Ah, so that is how they pushed the Dark Iron to the lower parts of the Spire.',1,1,2907,0,0,0,0,NULL,0),
+(2907,0,0,'Perhaps there exists a way?',1,1,2908,0,0,0,0,NULL,0),
+(2908,0,0,'As you wish, Eitrigg.',1,1,-1,0,2908,0,0,NULL,0);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -678,3 +691,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -53,7 +53,7 @@ CREATE TABLE `reference_loot_template` (
 
 LOCK TABLES `reference_loot_template` WRITE;
 /*!40000 ALTER TABLE `reference_loot_template` DISABLE KEYS */;
-INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `groupid`, `mincountOrRef`, `maxcount`, `condition_id`) VALUES
+INSERT INTO `reference_loot_template` VALUES
 (5759,1973,0.2,0,1,1,0),
 (5759,4500,5.9,0,1,1,0),
 (5759,7527,0.1,0,1,1,0),
@@ -4625,7 +4625,29 @@ INSERT INTO `reference_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `
 (35032,17111,0,1,1,1,0),
 (35032,17112,0,1,1,1,0),
 (35032,17113,0,1,1,1,0),
-(35032,18543,0,1,1,1,0);
+(35032,18543,0,1,1,1,0),
+(34016,16901,0,1,1,1,0),
+(34016,16909,0,1,1,1,0),
+(34016,16915,0,1,1,1,0),
+(34016,16922,0,1,1,1,0),
+(34016,16930,0,1,1,1,0),
+(34016,16938,0,1,1,1,0),
+(34016,16946,0,1,1,1,0),
+(34016,16954,0,1,1,1,0),
+(34016,16962,0,1,1,1,0),
+(34017,17063,0,1,1,1,0),
+(34017,17082,0,1,1,1,0),
+(34017,17102,0,1,1,1,0),
+(34017,17106,0,1,1,1,0),
+(34017,17107,0,1,1,1,0),
+(34017,18814,0,1,1,1,0),
+(34017,18815,0,1,1,1,0),
+(34017,18817,0,1,1,1,0),
+(34017,19137,0,1,1,1,0),
+(34017,19138,0,1,1,1,0),
+(34018,17076,0,1,1,1,0),
+(34018,17104,0,1,1,1,0),
+(34018,18816,0,1,1,1,0);
 /*!40000 ALTER TABLE `reference_loot_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -4638,3 +4660,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

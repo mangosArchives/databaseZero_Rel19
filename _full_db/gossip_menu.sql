@@ -50,7 +50,7 @@ CREATE TABLE `gossip_menu` (
 
 LOCK TABLES `gossip_menu` WRITE;
 /*!40000 ALTER TABLE `gossip_menu` DISABLE KEYS */;
-INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALUES
+INSERT INTO `gossip_menu` VALUES
 (21,518,0,163),
 (21,519,0,0),
 (22,520,0,0),
@@ -878,7 +878,20 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (20022,2842,0,0),
 (20022,2843,0,5),
 (20022,2849,0,161),
-(20024,2013,0,0);
+(20024,2013,0,0),
+(5709,6877,0,719),
+(5709,6878,0,720),
+(5709,6879,0,721),
+(5709,6880,0,722),
+(5709,6881,0,723),
+(2901,3573,0,0),
+(2902,3574,0,0),
+(2903,3575,0,0),
+(2904,3576,0,0),
+(2905,3577,0,0),
+(2906,3578,0,0),
+(2907,3579,0,0),
+(2908,3580,0,0);
 /*!40000 ALTER TABLE `gossip_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -891,3 +904,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

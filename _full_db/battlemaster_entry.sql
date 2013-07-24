@@ -48,7 +48,7 @@ CREATE TABLE `battlemaster_entry` (
 
 LOCK TABLES `battlemaster_entry` WRITE;
 /*!40000 ALTER TABLE `battlemaster_entry` DISABLE KEYS */;
-INSERT INTO `battlemaster_entry` (`entry`, `bg_template`) VALUES
+INSERT INTO `battlemaster_entry` VALUES
 (347,1),
 (857,3),
 (907,3),
@@ -85,3 +85,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

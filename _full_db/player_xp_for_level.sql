@@ -48,7 +48,7 @@ CREATE TABLE `player_xp_for_level` (
 
 LOCK TABLES `player_xp_for_level` WRITE;
 /*!40000 ALTER TABLE `player_xp_for_level` DISABLE KEYS */;
-INSERT INTO `player_xp_for_level` (`lvl`, `xp_for_next_level`) VALUES
+INSERT INTO `player_xp_for_level` VALUES
 (1,400),
 (2,900),
 (3,1400),
@@ -120,3 +120,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

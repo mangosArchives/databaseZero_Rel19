@@ -50,7 +50,7 @@ CREATE TABLE `spell_script_target` (
 
 LOCK TABLES `spell_script_target` WRITE;
 /*!40000 ALTER TABLE `spell_script_target` DISABLE KEYS */;
-INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`, `inverseEffectMask`) VALUES
+INSERT INTO `spell_script_target` VALUES
 (802,1,15316,0),
 (802,1,15317,0),
 (804,1,15316,0),
@@ -459,3 +459,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

@@ -52,7 +52,7 @@ CREATE TABLE `spell_target_position` (
 
 LOCK TABLES `spell_target_position` WRITE;
 /*!40000 ALTER TABLE `spell_target_position` DISABLE KEYS */;
-INSERT INTO `spell_target_position` (`id`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`) VALUES
+INSERT INTO `spell_target_position` VALUES
 (31,0,-9464,62,56,0),
 (33,0,-10643,1052,34,0),
 (34,0,-10368,-422,66,0),
@@ -332,3 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

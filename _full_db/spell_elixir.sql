@@ -48,7 +48,7 @@ CREATE TABLE `spell_elixir` (
 
 LOCK TABLES `spell_elixir` WRITE;
 /*!40000 ALTER TABLE `spell_elixir` DISABLE KEYS */;
-INSERT INTO `spell_elixir` (`entry`, `mask`) VALUES
+INSERT INTO `spell_elixir` VALUES
 (673,0),
 (2367,0),
 (2374,0),
@@ -121,3 +121,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed

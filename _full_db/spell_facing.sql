@@ -48,7 +48,7 @@ CREATE TABLE `spell_facing` (
 
 LOCK TABLES `spell_facing` WRITE;
 /*!40000 ALTER TABLE `spell_facing` DISABLE KEYS */;
-INSERT INTO `spell_facing` (`entry`, `facingcasterflag`) VALUES
+INSERT INTO `spell_facing` VALUES
 (53,1),
 (72,1),
 (75,1),
@@ -1032,3 +1032,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed
