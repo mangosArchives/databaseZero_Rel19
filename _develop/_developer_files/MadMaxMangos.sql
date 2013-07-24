@@ -1,4 +1,4 @@
--- hennors
+-- MaxMaxMangos
 
 -- creature
 
