@@ -17,6 +17,16 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Added Quest start script for quest 804 Sarkoth and removed wrong start script from quest 790 sarkoth part 1
+UPDATE `quest_template` SET `CompleteEmote` = 0 WHERE `entry` = 790;
+UPDATE `quest_template` SET `StartScript` = 0 WHERE `entry` = 790;
+UPDATE `quest_template` SET `StartScript` = 804 WHERE `entry` = 804;
+DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 790;
+DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 804;
+INSERT INTO `dbscripts_on_quest_start` VALUES (804,2,28,8,0,0,0,0,0,0,0,0,0,0,0,0,'Hana zua Kneel');
+INSERT INTO `dbscripts_on_quest_start` VALUES (804,3,0,0,0,0,0,0,2000005017,0,0,0,0,0,0,0,'Hana zua say');
+INSERT INTO `dbscripts_on_quest_start` VALUES (804,7,28,7,0,0,0,0,0,0,0,0,0,0,0,0,'Hana zua death state');
+
 -- scripted the quest end script for quest 808 Minshinas Skull
 UPDATE `creature_template` SET `MovementType` = 0 WHERE `entry` = 3289;
 UPDATE `quest_template` SET `CompleteScript` = 808 WHERE `entry` = 808;
