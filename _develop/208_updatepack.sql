@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Quest 809 Ak Zeloth removing wrong objective text
+UPDATE `quest_template` SET `EndText` = "" WHERE `entry` = 809;
+UPDATE `quest_template` SET `ObjectiveText1` = "" WHERE `entry` = 809;
 
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
