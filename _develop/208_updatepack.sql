@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Quest 842 Crossroads Conscription Offer Reward text fixed. removing $ sign
+UPDATE `quest_template` SET `OfferRewardText` = "Alright, $n. You want to earn your keep with the Horde? Well there's plenty to do here, so listen close and do what you're told.$B$B$GI see that look in your eyes, do not think I will tolerate any insolence. Thrall himself has declared the Hordes females to be on equal footing with you men. Disrespect me in the slightest, and you will know true pain.:I'm happy to have met you. Thrall will be glad to know that more females like you and I are taking the initiative to push forward in the Barrens.;" WHERE `entry` = 842;
+
 -- Quest 809 Ak Zeloth removing wrong objective text
 UPDATE `quest_template` SET `EndText` = "" WHERE `entry` = 809;
 UPDATE `quest_template` SET `ObjectiveText1` = "" WHERE `entry` = 809;
