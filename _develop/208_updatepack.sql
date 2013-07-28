@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fixing Quest 747 The Hunt begins Questtext
+UPDATE `quest_template` SET `OfferRewardText` = "The tauren of Narache thank you, $N. You show much promise." WHERE `entry` = 747;
+
 -- correct all reputation values for Mulgore
 UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 743;
 UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 745;
