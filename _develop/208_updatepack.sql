@@ -17,6 +17,24 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for Mulgore
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 750;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 751;
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 754;
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 755;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 756;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 758;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 759;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 760;
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 763;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 765;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 766;
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 772;
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 773;
+UPDATE `quest_template` SET `MinLevel` = 6 WHERE `entry` = 775;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 776;
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 781;
+
 -- correct Required Races for Quests in Mulgore which are horde only. Quest 743, 745, 746, 749, 750, 751,
 -- 752, 753, 755, 757, 761, 763, 764, 765, 766, 767, 770, 771, 772, 773, 775, 776, 780, 781, 833, 861, 1656, 3376
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (743,745,746,749,750,751,752,753,755,757,761,763,764,765,766,767,770,771,772,773,775,776,780,781,833,861,1656,3376);
