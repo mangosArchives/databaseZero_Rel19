@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct Required Races for Quests in Mulgore which are horde only. Quest 743, 745, 746, 749, 750, 751,
+-- 752, 753, 755, 757, 761, 763, 764, 765, 766, 767, 770, 771, 772, 773, 775, 776, 780, 781, 833, 861, 1656, 3376
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (743,745,746,749,750,751,752,753,755,757,761,763,764,765,766,767,770,771,772,773,775,776,780,781,833,861,1656,3376);
+
 -- Added Quest start script for quest 804 Sarkoth and removed wrong start script from quest 790 sarkoth part 1
 UPDATE `quest_template` SET `CompleteEmote` = 0 WHERE `entry` = 790;
 UPDATE `quest_template` SET `StartScript` = 0 WHERE `entry` = 790;
