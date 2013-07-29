@@ -17,6 +17,69 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fixing Quest 750 The Hunt continues Questtext
+UPDATE `quest_template` SET `OfferRewardText` = "The tauren of Narache thank you for these provisions, $N. With your skill in the ways of the hunt you will surely be revered in Thunder Bluff someday." WHERE `entry` = 750;
+
+-- Fixing Quest 747 The Hunt begins Questtext
+UPDATE `quest_template` SET `OfferRewardText` = "The tauren of Narache thank you, $N. You show much promise." WHERE `entry` = 747;
+
+-- correct all reputation values for Mulgore
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 743;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 745;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 746;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 747;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 748;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 749;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 750;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 751;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 752;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 753;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 754;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 755;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 756;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 757;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 758;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 759;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 760;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 761;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 763;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 764;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 765;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 766;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 770;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 771;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 772;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 773;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 775;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 776;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 780;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 781;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 833;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 861;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 3376;
+
+-- correct minLevel for Mulgore
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 750;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 751;
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 754;
+UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` = 755;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 756;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 758;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 759;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 760;
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 763;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 765;
+UPDATE `quest_template` SET `MinLevel` = 5 WHERE `entry` = 766;
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 772;
+UPDATE `quest_template` SET `MinLevel` = 4 WHERE `entry` = 773;
+UPDATE `quest_template` SET `MinLevel` = 6 WHERE `entry` = 775;
+UPDATE `quest_template` SET `MinLevel` = 7 WHERE `entry` = 776;
+UPDATE `quest_template` SET `MinLevel` = 3 WHERE `entry` = 781;
+
+-- correct Required Races for Quests in Mulgore which are horde only. Quest 743, 745, 746, 749, 750, 751,
+-- 752, 753, 755, 757, 761, 763, 764, 765, 766, 767, 770, 771, 772, 773, 775, 776, 780, 781, 833, 861, 1656, 3376
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (743,745,746,749,750,751,752,753,755,757,761,763,764,765,766,767,770,771,772,773,775,776,780,781,833,861,1656,3376);
+
 -- Added Quest start script for quest 804 Sarkoth and removed wrong start script from quest 790 sarkoth part 1
 UPDATE `quest_template` SET `CompleteEmote` = 0 WHERE `entry` = 790;
 UPDATE `quest_template` SET `StartScript` = 0 WHERE `entry` = 790;
