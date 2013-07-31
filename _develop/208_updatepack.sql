@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing the "you learn spell" from quest window, fixing the not enough mana bug, for quest 755 Rites of the Earthmother
+UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 755;
+UPDATE `quest_template` SET `CompleteScript` = 755 WHERE `entry` = 755;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 755;
+INSERT INTO `dbscripts_on_quest_end` VALUES (755,0,15,1126,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Motw on Player');
+
 -- Fixing Quest 750 The Hunt continues Questtext
 UPDATE `quest_template` SET `OfferRewardText` = "The tauren of Narache thank you for these provisions, $N. With your skill in the ways of the hunt you will surely be revered in Thunder Bluff someday." WHERE `entry` = 750;
 
