@@ -136,9 +136,6 @@ DELETE FROM `gameobject` WHERE `id`=186241;
 -- Add mount to a specific Warsong Outrider (12864). Thanks Ghurok.
 UPDATE `creature_addon` SET `mount`=2326 WHERE `guid`=52348;
 
--- Add gossip_menu for object James' Journal (178526). Thanks Ghurok.
-INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES (5062, 6104);
-
 -- Remove RequestItemsText from quest Speak with Gramma (111). Thanks Therilith.
 UPDATE `quest_template` SET `RequestItemsText`="" WHERE `entry`=111;
 
