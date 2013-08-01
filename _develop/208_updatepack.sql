@@ -447,6 +447,80 @@ UPDATE `creature_model_info` SET `modelid_other_gender`=0 WHERE `modelid`=1855;
 -- Remove ReqSpellCast1 from quest Kodo Roundup. Should be handled in a script. Thanks Ghurok.
 UPDATE `quest_template` SET `ReqSpellCast1`=0 WHERE `entry`=5561;
 
+-- Spawn Sergeant Ba'sha (12799) and add vendor items
+SET @GUID                      = 160017;
+
+DELETE FROM `creature` WHERE `guid`=@GUID;
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID, 12799, 1, 12681, 1632.38, -4262.25, 48.978973, 3.991370, 430, 0, 4108, 0, 0, 0);
+
+DELETE FROM `npc_vendor` WHERE `entry`=12799;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES
+(12799, 18675, 0, 0),
+(12799, 16497, 0, 0),
+(12799, 18435, 0, 0),
+(12799, 16486, 0, 0),
+(12799, 18437, 0, 0),
+(12799, 16532, 0, 0),
+(12799, 18432, 0, 0),
+(12799, 18434, 0, 0),
+(12799, 18436, 0, 0),
+(12799, 18429, 0, 0),
+(12799, 18430, 0, 0),
+(12799, 16335, 0, 0),
+(12799, 18428, 0, 0),
+(12799, 15200, 0, 0),
+(12799, 18461, 0, 0),
+(12799, 16341, 0, 0),
+(12799, 18427, 0, 0),
+(12799, 29592, 0, 0),
+(12799, 18853, 0, 0),
+(12799, 18852, 0, 0),
+(12799, 18851, 0, 0),
+(12799, 18850, 0, 0),
+(12799, 18849, 0, 0),
+(12799, 18846, 0, 0),
+(12799, 18845, 0, 0),
+(12799, 18834, 0, 0),
+(12799, 15197, 0, 0);
+
+-- Spawn Officer Areyn (12805) and add vendor items
+SET @GUID                      = 160018;
+
+DELETE FROM `creature` WHERE `guid`=@GUID;
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID, 12805, 0, 12923, -8759.208008, 389.119598, 101.056503, 0.645159, 430, 0, 4108, 0, 0, 0);
+
+DELETE FROM `npc_vendor` WHERE `entry`=12805;
+INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES
+(12805, 18664, 0, 0),
+(12805, 18448, 0, 0),
+(12805, 18449, 0, 0),
+(12805, 18454, 0, 0),
+(12805, 18455, 0, 0),
+(12805, 18452, 0, 0),
+(12805, 18453, 0, 0),
+(12805, 18445, 0, 0),
+(12805, 18447, 0, 0),
+(12805, 18456, 0, 0),
+(12805, 18457, 0, 0),
+(12805, 18443, 0, 0),
+(12805, 18444, 0, 0),
+(12805, 18442, 0, 0),
+(12805, 16342, 0, 0),
+(12805, 18441, 0, 0),
+(12805, 18440, 0, 0),
+(12805, 18858, 0, 0),
+(12805, 18857, 0, 0),
+(12805, 18856, 0, 0),
+(12805, 18859, 0, 0),
+(12805, 18862, 0, 0),
+(12805, 29593, 0, 0),
+(12805, 18864, 0, 0),
+(12805, 18863, 0, 0),
+(12805, 18854, 0, 0),
+(12805, 15196, 0, 0);
+
 -- END OF SILVERPINE FIXES
 
 -- UPDATE Database Version
