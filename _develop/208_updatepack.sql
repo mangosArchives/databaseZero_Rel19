@@ -604,5 +604,44 @@ DELETE FROM `gossip_menu_option` WHERE `menu_id`=@GOSSIP_MENU_ID;
 INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`) VALUES
 (@GOSSIP_MENU_ID, 0, 1, 'I wish to make a purchase.', 3, 1);
 
+-- Add gossip to Miranda Breechlock (11536) and Hasana (10856)
+SET @GOSSIP_MENU_ID                                 = 3461;
+SET @SCRIPT_COMMAND_CREATE_ITEM                     = 17;
+
+SET @ITEM_ARGENT_DAWN_COMMISSION                    = 12846;
+
+SET @NPC_MIRANDA_BREECHLOCK_ENTRY                   = 11536;
+SET @NPC_MIRANDA_BREECHLOCK_GUID                    = 68499;
+
+SET @CONDITION_ENTRY                                = 724;
+SET @CONDITION_NOITEM_WITH_BANK                     = 24;
+
+UPDATE `creature_template` SET `gossip_menu_id`=@GOSSIP_MENU_ID WHERE `entry`=@NPC_MIRANDA_BREECHLOCK_ENTRY;
+
+DELETE FROM `npc_gossip` WHERE `npc_guid`=@NPC_MIRANDA_BREECHLOCK_GUID;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id`=@GOSSIP_MENU_ID;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`) VALUES
+(@GOSSIP_MENU_ID, 0, 0, 'I need another Argent Dawn Commission.', 1, 1, -1, 0, 3421, 0, 0, NULL, @CONDITION_ENTRY),
+(@GOSSIP_MENU_ID, 1, 1, 'I would like to buy from you.', 3, 1, 0, 0, 0, 0, 0, NULL, 0),
+(@GOSSIP_MENU_ID, 2, 0, 'Miranda, could you please tell me the insignia cost of items that you are offering for adventurers with other reputations?', 1, 1, 0, 0, 0, 0, 0, NULL, 0);
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id`=3421;
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `comments`) VALUES
+(3421, 0, 17, 12846, 1, 'Give item Argent Dawn Commission (12846)');
+
+DELETE FROM `conditions` WHERE `condition_entry`=@CONDITION_ENTRY;
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+(@CONDITION_ENTRY, @CONDITION_NOITEM_WITH_BANK, @ITEM_ARGENT_DAWN_COMMISSION, 1);
+
+SET @GOSSIP_MENU_ID_HASANA              = 3421;
+
+SET @NPC_HASANA_ENTRY                   = 10856;
+SET @NPC_HASANA_GUID                    = 28419;
+
+DELETE FROM `npc_gossip` WHERE `npc_guid`=@NPC_HASANA_GUID;
+UPDATE `creature_template` SET `gossip_menu_id`=@GOSSIP_MENU_ID_HASANA WHERE `entry`=@NPC_HASANA_ENTRY;
+UPDATE `gossip_menu_option` SET `action_menu_id`=-1, `action_script_id`=@GOSSIP_MENU_ID_HASANA, `condition_id`=@CONDITION_ENTRY WHERE `menu_id`=@GOSSIP_MENU_ID_HASANA AND `id`=0;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
