@@ -590,5 +590,19 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `maxcount`, `incrtime`) VALUES
 
 -- END OF SILVERPINE FIXES
 
+-- Add gossip option for creature Caretaker Alen (11038)
+SET @NPC_CARETAKER_ALEN_ENTRY                   = 11038;
+SET @NPC_CARETAKER_ALEN_GUID                    = 54749;
+
+SET @GOSSIP_MENU_ID                             = 3181;
+
+UPDATE `creature_template` SET `gossip_menu_id`=@GOSSIP_MENU_ID, `npcflag`=7 WHERE `entry`=@NPC_CARETAKER_ALEN_ENTRY;
+
+DELETE FROM `npc_gossip` WHERE `npc_guid`=@NPC_CARETAKER_ALEN_GUID;
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id`=@GOSSIP_MENU_ID;
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`) VALUES
+(@GOSSIP_MENU_ID, 0, 1, 'I wish to make a purchase.', 3, 1);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
