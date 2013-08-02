@@ -334,9 +334,11 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 (@GUID, 15351, 0, 15389, 0, -1231.51, -2510.64, 23.053, 4.4196, 300, 0, 0, 3857, 0, 0, 0);
 
 -- Add gossip_menu for object Tablet of Theka (142715). Thanks Ghurok.
+DELETE FROM `gossip_menu` WHERE `entry`=1053;
 INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES (1053, 1653);
 
 -- Add gossip_menu for object Catalogue of the Wayward (176192). Thanks Ghurok.
+DELETE FROM `gossip_menu` WHERE `entry`=3083;
 INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES (3083, 3815);
 
 -- Correct page_text for item The Collector's Schedule (2223). Thanks Ghurok.
