@@ -17,6 +17,16 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- scripted the quest end script for quest 771 Rite of vision
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 771;
+INSERT INTO `dbscripts_on_quest_end` VALUES (771,0,15,5026,0,0,0,0,0,0,0,0,0,0,0,0,'Cast Water of seers');
+INSERT INTO `dbscripts_on_quest_end` VALUES (771,0,0,2,0,0,0,0,2000000179,0,0,0,0,0,0,0,'Text emote');
+INSERT INTO `dbscripts_on_quest_end` VALUES (771,8,0,0,3,0,0,0,2000000180,0,0,0,0,0,0,0,'Zarlman Say');
+DELETE FROM `db_script_string` WHERE `entry` = 2000000179;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000180;
+INSERT INTO `db_script_string` VALUES (2000000179,"Zarlman Two-Moons begins chanting as he mixes the well stones and ambercom before the Tribal Fire.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000180,"The Water of the Seers is ready for your consumption, $N.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL);
+
 -- Fixing Quest 772 Rite of vision
 UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 772;
 UPDATE `quest_template` SET `CompleteScript` = 772 WHERE `entry` = 772;
