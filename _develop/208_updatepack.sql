@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 452 Pyrewood Ambush , Rewarded Money pre TBC and Rewarded XP pre TBC
+UPDATE `quest_template` SET `RewOrReqMoney` = 1400 WHERE `entry` = 452;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 780 WHERE `entry` = 452;
+
 -- fixing Quest 450 A Recipe for Death, Rewarded Money pre tbc
 UPDATE `quest_template` SET `RewOrReqMoney` = 1400 WHERE `entry` = 450;
 
