@@ -17,6 +17,20 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 99, 421, 422, 423, 424, 1014 Dalar Dawnweaver now using correct spell
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 99;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 421;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 422;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 423;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 424;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1014;
+INSERT INTO `dbscripts_on_quest_end` VALUES (99,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (421,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (422,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (423,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (424,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (1014,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+
 -- fixing Quest 452 Pyrewood Ambush , Rewarded Money pre TBC and Rewarded XP pre TBC
 UPDATE `quest_template` SET `RewOrReqMoney` = 1400 WHERE `entry` = 452;
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 780 WHERE `entry` = 452;
