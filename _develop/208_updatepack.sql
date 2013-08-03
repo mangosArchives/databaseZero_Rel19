@@ -794,5 +794,36 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (@AI_SCRIPT_ID+15, 5702, 1, 0, 100, 1, 180000, 180000, 300000, 300000, 1, -1321, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Jezelle Pruitt - OOC - Felsteed Say Line 2'),
 (@AI_SCRIPT_ID+16, 5702, 1, 0, 100, 1, 210000, 210000, 300000, 300000, 1, -1322, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Jezelle Pruitt - OOC - Event end Say Line');
 
+-- Add Points of Interest to Undercity Guardian (5624) gossip options. Fixes #86.
+UPDATE `gossip_menu_option` SET `action_poi_id`=283 WHERE `menu_id`=2849 AND `id`=0;
+UPDATE `gossip_menu_option` SET `action_poi_id`=281 WHERE `menu_id`=2849 AND `id`=1;
+UPDATE `gossip_menu_option` SET `action_poi_id`=279 WHERE `menu_id`=2849 AND `id`=2;
+UPDATE `gossip_menu_option` SET `action_poi_id`=278 WHERE `menu_id`=2849 AND `id`=3;
+UPDATE `gossip_menu_option` SET `action_poi_id`=276 WHERE `menu_id`=2849 AND `id`=4;
+UPDATE `gossip_menu_option` SET `action_poi_id`=284 WHERE `menu_id`=2849 AND `id`=5;
+UPDATE `gossip_menu_option` SET `action_poi_id`=273 WHERE `menu_id`=2849 AND `id`=6;
+UPDATE `gossip_menu_option` SET `action_poi_id`=274 WHERE `menu_id`=2849 AND `id`=7;
+UPDATE `gossip_menu_option` SET `action_poi_id`=275 WHERE `menu_id`=2849 AND `id`=8;
+UPDATE `gossip_menu_option` SET `action_poi_id`=280 WHERE `menu_id`=2849 AND `id`=9;
+
+UPDATE `gossip_menu_option` SET `action_poi_id`=272 WHERE `menu_id`=2848 AND `id`=0;
+UPDATE `gossip_menu_option` SET `action_poi_id`=270 WHERE `menu_id`=2848 AND `id`=2;
+UPDATE `gossip_menu_option` SET `action_poi_id`=269 WHERE `menu_id`=2848 AND `id`=3;
+UPDATE `gossip_menu_option` SET `action_poi_id`=268 WHERE `menu_id`=2848 AND `id`=4;
+UPDATE `gossip_menu_option` SET `action_poi_id`=267 WHERE `menu_id`=2848 AND `id`=5;
+
+UPDATE `gossip_menu_option` SET `action_poi_id`=266 WHERE `menu_id`=2847 AND `id`=0;
+UPDATE `gossip_menu_option` SET `action_poi_id`=265 WHERE `menu_id`=2847 AND `id`=1;
+UPDATE `gossip_menu_option` SET `action_poi_id`=264 WHERE `menu_id`=2847 AND `id`=2;
+UPDATE `gossip_menu_option` SET `action_poi_id`=263 WHERE `menu_id`=2847 AND `id`=3;
+UPDATE `gossip_menu_option` SET `action_poi_id`=262 WHERE `menu_id`=2847 AND `id`=4;
+UPDATE `gossip_menu_option` SET `action_poi_id`=261 WHERE `menu_id`=2847 AND `id`=5;
+UPDATE `gossip_menu_option` SET `action_poi_id`=260 WHERE `menu_id`=2847 AND `id`=6;
+UPDATE `gossip_menu_option` SET `action_poi_id`=259 WHERE `menu_id`=2847 AND `id`=7;
+UPDATE `gossip_menu_option` SET `action_poi_id`=257 WHERE `menu_id`=2847 AND `id`=8;
+UPDATE `gossip_menu_option` SET `action_poi_id`=256 WHERE `menu_id`=2847 AND `id`=9;
+UPDATE `gossip_menu_option` SET `action_poi_id`=255 WHERE `menu_id`=2847 AND `id`=10;
+UPDATE `gossip_menu_option` SET `action_poi_id`=254 WHERE `menu_id`=2847 AND `id`=11;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
