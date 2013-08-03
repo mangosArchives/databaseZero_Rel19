@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 450 A Recipe for Death, Rewarded Money pre tbc
+UPDATE `quest_template` SET `RewOrReqMoney` = 1400 WHERE `entry` = 450;
+
 -- correct all reputation values for Silverpine Forest to pre TBC
 UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 99;
 UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 421;
