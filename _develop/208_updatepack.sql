@@ -17,6 +17,42 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct all reputation values for Silverpine Forest to pre TBC
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 99;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 421;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 422;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 423;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 424;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 425;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 429;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 430;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 435;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 437;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 438;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 440;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 441;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 442;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 443;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 447;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 448;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 449;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 450;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 451;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 452;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 460;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 461;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 477;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 478;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 479;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 480;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 491;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 493;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 516;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 530;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 6323;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 6324;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1358;
+
 -- correct minLevel for Silverpine Forest
 UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 99;
 UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 421;
