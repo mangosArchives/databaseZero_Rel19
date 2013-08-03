@@ -17,6 +17,109 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 99, 421, 422, 423, 424, 1014 Dalar Dawnweaver now using correct spell
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 99;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 421;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 422;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 423;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 424;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1014;
+INSERT INTO `dbscripts_on_quest_end` VALUES (99,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (421,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (422,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (423,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (424,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES (1014,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+
+-- fixing Quest 452 Pyrewood Ambush , Rewarded Money pre TBC and Rewarded XP pre TBC
+UPDATE `quest_template` SET `RewOrReqMoney` = 1400 WHERE `entry` = 452;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 780 WHERE `entry` = 452;
+
+-- fixing Quest 450 A Recipe for Death, Rewarded Money pre tbc
+UPDATE `quest_template` SET `RewOrReqMoney` = 1400 WHERE `entry` = 450;
+
+-- correct all reputation values for Silverpine Forest to pre TBC
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 99;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 421;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 422;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 423;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 424;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 425;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 429;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 430;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 435;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 437;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 438;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 440;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 441;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 442;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 443;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 447;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 448;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 449;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 450;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 451;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 452;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 460;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 461;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 477;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 478;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 479;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 480;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 491;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 493;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 516;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 530;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 6323;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 6324;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1358;
+
+-- correct minLevel for Silverpine Forest
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 99;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 421;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 422;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 423;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 424;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 429;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 435;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 437;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 438;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 440;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 441;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 443;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 444;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 446;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 447;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 448;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 449;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 450;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 451;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 452;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 461;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 479;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 480;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 481;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 482;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 530;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 3221;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 1358;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 1359;
+
+-- correct Required Races for all Quests in Silverpine Forest and two in UC which are horde only. Quest 99, 421, 422, 423, 424, 425, 428, 429, 430, 435, 437, 438, 440,
+-- 441, 442, 443, 444, 446, 447, 448, 449, 450, 451, 452, 460, 461, 477, 478, 479, 480, 481, 482, 491, 493, 516, 530, 3221, 1358, 1359
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (99,421,422,423,424,425,428,429,430,435,437,438,440,441,442,443,444,446,447);
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (448,449,450,451,452,460,461,477,478,479,480,481,482,491,493,516,530,3221,1358,1359);
+
+-- scripted the quest end script for quest 771 Rite of vision
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 771;
+INSERT INTO `dbscripts_on_quest_end` VALUES (771,0,15,5026,0,0,0,0,0,0,0,0,0,0,0,0,'Cast Water of seers');
+INSERT INTO `dbscripts_on_quest_end` VALUES (771,0,0,2,0,0,0,0,2000000179,0,0,0,0,0,0,0,'Text emote');
+INSERT INTO `dbscripts_on_quest_end` VALUES (771,8,0,0,3,0,0,0,2000000180,0,0,0,0,0,0,0,'Zarlman Say');
+DELETE FROM `db_script_string` WHERE `entry` = 2000000179;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000180;
+INSERT INTO `db_script_string` VALUES (2000000179,"Zarlman Two-Moons begins chanting as he mixes the well stones and ambercom before the Tribal Fire.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000180,"The Water of the Seers is ready for your consumption, $N.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL);
+
 -- Fixing Quest 772 Rite of vision
 UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 772;
 UPDATE `quest_template` SET `CompleteScript` = 772 WHERE `entry` = 772;
