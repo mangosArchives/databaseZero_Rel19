@@ -17,6 +17,37 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel for Silverpine Forest
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 99;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 421;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 422;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 423;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 424;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 429;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 435;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 437;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 438;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 440;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 441;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 443;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 444;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 446;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 447;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 448;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 449;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 450;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 451;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 452;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 461;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 479;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 480;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 481;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 482;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 530;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 3221;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 1358;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 1359;
+
 -- correct Required Races for all Quests in Silverpine Forest and two in UC which are horde only. Quest 99, 421, 422, 423, 424, 425, 428, 429, 430, 435, 437, 438, 440,
 -- 441, 442, 443, 444, 446, 447, 448, 449, 450, 451, 452, 460, 461, 477, 478, 479, 480, 481, 482, 491, 493, 516, 530, 3221, 1358, 1359
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (99,421,422,423,424,425,428,429,430,435,437,438,440,441,442,443,444,446,447);
