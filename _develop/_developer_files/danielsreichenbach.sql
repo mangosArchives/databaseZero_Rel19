@@ -77,13 +77,13 @@ INSERT INTO `creature_movement_template` VALUES
 UPDATE `quest_template` SET `OfferRewardText` = 'Good day, $N. The Light is with you, I trust?$B$BWhat\'s that? You were sent by Duthorian!? My wife, how is she? I knew there was going to be trouble if I left.$B$BPlease tell me she\'s... oh, thank goodness. I\'m so glad that she\'s safe. The Defias were a threat long before these attacks, but now the King\'s advisors cannot deny it.$B$BWhat else did Duthorian have to say? You\'re the one that was sent to protect my wife? Then I thank you again, $N. I couldn\'t think of a better test of valor than that.' WHERE `entry` = 1653;
 
 -- Fiora Longears (4456) moved back to Theramore from Auberdine. Moved in 2.3.0 --
-UPDATE creature SET position_x = '-3613.427734', position_y = '-4463.895020', position_z = '13.622666', orientation = '2.975219' WHERE guid = '37087';
+UPDATE `creature` SET `position_x` = '-3613.427734', `position_y` = '-4463.895020', `position_z` = '13.622666', `orientation` = '2.975219' WHERE `guid` = '37087';
 
 -- Adds teleport location for The Stockades ".tele TheStockades"
-INSERT INTO game_tele (id,position_x,position_y,position_z,orientation,map,name) VALUES (418,-8787.390625,828.377075,97.648933,0.626312,0,'TheStockades');
+INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (418,-8787.390625,828.377075,97.648933,0.626312,0,'TheStockades');
 
 -- Updates the position of Barkeep Hann because his title was flickering in the wall
-UPDATE creature SET position_x = '-10509.634766', position_y = '-1155.536011', position_z = '28.099501', orientation = '3.218907' WHERE guid = '4191';
+UPDATE `creature` SET `position_x` = '-10509.634766', `position_y` = '-1155.536011', `position_z` = '28.099501', `orientation` = '3.218907' WHERE `guid` = '4191';
 
 -- This fixes the text for quest 388 - QG refers to you incorrectly in completion text instead of "Mac" --
 UPDATE `quest_template` SET `OfferRewardText`='So these bandanas -- filthy tokens of corruption -- are what my Mac had to die for? Such a waste. Such a tragic sacrifice. $b$bBut alas, I cannot return to the past. Just know, $N, that you have brought my family justice through your deeds.' WHERE `entry`='388';
@@ -139,12 +139,12 @@ UPDATE `creature` SET `position_x` = '-8159.728027', `position_y` = '2145.341309
 UPDATE `creature` SET `position_x` = '-8156.620605', `position_y` = '2119.613770', `position_z` = '129.114990', `orientation` = '3.174591' WHERE `guid` = '87571';
 
 -- Adds missing Obsidian Eradicator --
-INSERT INTO creature VALUES (590011,15262,531,0,0,-8277.51,2117.84,118.176,0.261538,25,0,0,170805,24340,0,0);
-UPDATE creature SET spawntimesecs=3600 WHERE guid=590011;
+INSERT INTO `creature` VALUES (590011, 15262, 531, 0, 0, -8277.51, 2117.84, 118.176, 0.261538, 25, 0, 0, 170805, 24340, 0, 0);
+UPDATE `creature` SET `spawntimesecs`=3600 WHERE `guid`=590011;
 
 -- Corrects 2 slanted Sentinels next to Skeram --
-UPDATE creature SET position_x = '-8317.698242', position_y = '2134.262451', position_z = '118.550896', orientation = '0.410774' WHERE guid = '87564';
-UPDATE creature SET position_x = '-8314.269531', position_y = '2114.679932', position_z = '118.272003', orientation = '0.204999' WHERE guid = '87565';
+UPDATE `creature` SET `position_x` = '-8317.698242', `position_y` = '2134.262451', `position_z` = '118.550896', `orientation` = '0.410774' WHERE `guid` = '87564';
+UPDATE `creature` SET `position_x` = '-8314.269531', `position_y` = '2114.679932', `position_z` = '118.272003', `orientation` = '0.204999' WHERE `guid` = '87565';
 
 -- Removes drop chance for quest item 1309 (Oslow Toolbox) from item "Small Barned Clam" (5523)
 -- as it should only be dropped by quest object Sunken Chest (GO 32)
