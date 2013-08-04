@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Spell script for spell 7669 Bethors potion
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 7669;
+INSERT INTO `dbscripts_on_spell` VALUES (7669,0,14,7656,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw');
+INSERT INTO `dbscripts_on_spell` VALUES (7669,0,14,7657,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw');
+
 -- fixing Quest 99, 421, 422, 423, 424, 1014 Dalar Dawnweaver now using correct spell
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 99;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 421;
