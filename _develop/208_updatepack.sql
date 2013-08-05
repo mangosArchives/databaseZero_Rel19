@@ -852,6 +852,7 @@ UPDATE `gossip_menu_option` SET `action_poi_id`=254 WHERE `menu_id`=2847 AND `id
 -- Add pathing to creature Seeker Thompson (14404) in Undercity. Fixes #94.
 UPDATE `creature` SET `position_x`=1727, `position_y`=203.614, `position_z`=-61.62, `orientation`=1.30443, `MovementType`=2 WHERE `id`=14404;
 
+DELETE FROM `creature_movement` WHERE `id`=32072;
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `wpguid`, `orientation`, `model1`, `model2`) VALUES
 (32072, 1, 1732.3, 222.523, -62.1776, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.3006, 0, 0),
 (32072, 2, 1731.57, 233.338, -62.1776, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.63832, 0, 0),
