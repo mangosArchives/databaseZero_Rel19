@@ -17,6 +17,18 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Quest 437 The Death Fields spawnscripts by ghurok
+DELETE FROM `areatrigger_involvedrelation` WHERE `id` = 173;
+INSERT INTO `areatrigger_involvedrelation` VALUES (173, 437);
+UPDATE `quest_template` SET `SpecialFlags` = 2 WHERE `entry` = 437;
+DELETE FROM `creature_ai_scripts` WHERE `id` = 177203;
+DELETE FROM `creature_ai_scripts` WHERE `id` = 177303;
+INSERT INTO `creature_ai_scripts` VALUES (177203, 1772, 6, 0, 10, 0, 0, 0, 0, 0, 47, 1983, 1, 17, 1, 0, 0, 0, 0, 0, 0, 0, 'Rot Hide Gladerunner - On Death Spawn Nightlash');
+INSERT INTO `creature_ai_scripts` VALUES (177303, 1773, 6, 0, 10, 0, 0, 0, 0, 0, 47, 1983, 1, 17, 1, 0, 0, 0, 0, 0, 0, 0, 'Rot Hide Mystic - On Death Spawn Nightlash');
+DELETE FROM `creature_ai_summons` WHERE `id` = 17;
+INSERT INTO `creature_ai_summons` VALUES (17, 1073.84, 1543.37, 28.6752, 0.174533, 300000, '1983');
+DELETE FROM `creature` WHERE `guid` = 28379;
+
 -- Spell script for spell 7669 Bethors potion
 DELETE FROM `dbscripts_on_spell` WHERE `id` = 7669;
 INSERT INTO `dbscripts_on_spell` VALUES (7669,0,14,7656,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw');
