@@ -943,5 +943,180 @@ UPDATE `gossip_menu_option` SET `action_poi_id`=315 WHERE `menu_id`=740 AND `id`
 UPDATE `gossip_menu_option` SET `action_poi_id`=314 WHERE `menu_id`=740 AND `id`=4;
 UPDATE `gossip_menu_option` SET `action_poi_id`=313 WHERE `menu_id`=740 AND `id`=5;
 
+-- Spawn all, except patrolling, Emissary NPCs and banners in Orgrimmar.
+SET @GUID1_OBJ = 100000;
+SET @GUID2_OBJ = 100001;
+SET @GUID3_OBJ = 100002;
+SET @GUID4_OBJ = 100003;
+SET @GUID5_OBJ = 31675;
+SET @GUID6_OBJ = 100004;
+SET @GUID7_OBJ = 100005;
+SET @GUID8_OBJ = 31676;
+SET @GUID9_OBJ = 100006;
+SET @GUID10_OBJ = 100007;
+SET @GUID11_OBJ = 100008;
+SET @GUID12_OBJ = 100009;
+
+SET @GUID1_NPC = 100000;
+SET @GUID2_NPC = 100001;
+SET @GUID3_NPC = 100002;
+SET @GUID4_NPC = 100003;
+SET @GUID5_NPC = 100004;
+SET @GUID6_NPC = 100005;
+SET @GUID7_NPC = 100006;
+SET @GUID8_NPC = 100007;
+SET @GUID9_NPC = 100008;
+SET @GUID10_NPC = 100009;
+SET @GUID11_NPC = 100010;
+SET @GUID12_NPC = 100011;
+SET @GUID13_NPC = 100012;
+SET @GUID14_NPC = 100013;
+SET @GUID15_NPC = 100014;
+SET @GUID16_NPC = 100015;
+SET @GUID17_NPC = 100016;
+SET @GUID18_NPC = 100017;
+SET @GUID19_NPC = 100018;
+SET @GUID20_NPC = 100019;
+SET @GUID21_NPC = 100020;
+SET @GUID22_NPC = 100021;
+SET @GUID23_NPC = 100022;
+SET @GUID24_NPC = 100023;
+
+DELETE FROM `game_event_gameobject` WHERE `guid` IN (@GUID1_OBJ, @GUID2_OBJ, @GUID3_OBJ, @GUID4_OBJ, @GUID5_OBJ, @GUID6_OBJ, @GUID7_OBJ, @GUID8_OBJ, @GUID9_OBJ, @GUID10_OBJ, @GUID11_OBJ, @GUID12_OBJ);
+DELETE FROM `gameobject` WHERE `guid` IN (@GUID1_OBJ, @GUID2_OBJ, @GUID3_OBJ, @GUID4_OBJ, @GUID5_OBJ, @GUID6_OBJ, @GUID7_OBJ, @GUID8_OBJ, @GUID9_OBJ, @GUID10_OBJ, @GUID11_OBJ, @GUID12_OBJ);
+DELETE FROM `game_event_creature` WHERE `guid` IN (@GUID1_NPC, @GUID2_NPC, @GUID3_NPC, @GUID4_NPC, @GUID5_NPC, @GUID6_NPC, @GUID7_NPC, @GUID8_NPC, @GUID9_NPC, @GUID10_NPC, @GUID11_NPC, @GUID12_NPC, @GUID13_NPC, @GUID14_NPC, @GUID15_NPC, @GUID16_NPC, @GUID17_NPC, @GUID18_NPC, @GUID19_NPC, @GUID20_NPC, @GUID21_NPC, @GUID22_NPC, @GUID23_NPC, @GUID24_NPC);
+DELETE FROM `creature` WHERE `guid` IN (@GUID1_NPC, @GUID2_NPC, @GUID3_NPC, @GUID4_NPC, @GUID5_NPC, @GUID6_NPC, @GUID7_NPC, @GUID8_NPC, @GUID9_NPC, @GUID10_NPC, @GUID11_NPC, @GUID12_NPC, @GUID13_NPC, @GUID14_NPC, @GUID15_NPC, @GUID16_NPC, @GUID17_NPC, @GUID18_NPC, @GUID19_NPC, @GUID20_NPC, @GUID21_NPC, @GUID22_NPC, @GUID23_NPC, @GUID24_NPC);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID1_OBJ, 20);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID1_OBJ, 180396, 1, 1933.43, -4708.58, 36.4638, 1.3304, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID1_NPC, 20),
+(@GUID2_NPC, 20);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID1_NPC, 14990, 1, 0, 0, 1936.4, -4710.2, 36.4882, 1.29584, 370, 0, 0, 2471, 0, 0, 0),
+(@GUID2_NPC, 14990, 1, 0, 0, 1937.07, -4707.49, 35.4933, 4.4123, 370, 0, 0, 2471, 0, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID2_OBJ, 19);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID2_OBJ, 180394, 1, 1933.43, -4708.58, 36.4638, 1.3304, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID3_NPC, 19),
+(@GUID4_NPC, 19);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID3_NPC, 15105, 1, 0, 0, 1937.07, -4707.49, 35.4933, 4.4123, 370, 0, 0, 1605, 852, 0, 0),
+(@GUID4_NPC, 15105, 1, 0, 0, 1936.4, -4710.2, 36.4882, 1.29584, 370, 0, 0, 1605, 852, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID3_OBJ, 18);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES 
+(@GUID3_OBJ, 180395, 1, 1933.43, -4708.58, 36.4638, 1.3304, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID5_NPC, 18),
+(@GUID6_NPC, 18);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID5_NPC, 15106, 1, 0, 0, 1937.07, -4707.49, 35.4933, 4.4123, 370, 0, 0, 4108, 0, 0, 0),
+(@GUID6_NPC, 15106, 1, 0, 0, 1936.4, -4710.2, 36.4882, 1.29584, 370, 0, 0, 4108, 0, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID4_OBJ, 20);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID4_OBJ, 180396, 1, 1657.46, -4385.4, 23.5797, 5.41287, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID7_NPC, 20),
+(@GUID8_NPC, 20);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID7_NPC, 14990, 1, 0, 0, 1660.82, -4385.81, 23.9178, 4.17041, 370, 0, 0, 2471, 0, 0, 0),
+(@GUID8_NPC, 14990, 1, 0, 0, 1658.83, -4388.91, 23.681, 1.01544, 370, 0, 0, 2471, 0, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID5_OBJ, 19);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID5_OBJ, 180394, 1, 1657.46, -4385.4, 23.5797, 5.41287, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID9_NPC, 19),
+(@GUID10_NPC, 19);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID9_NPC, 15105, 1, 0, 0, 1660.82, -4385.81, 23.9178, 4.17041, 370, 0, 0, 1605, 852, 0, 0),
+(@GUID10_NPC, 15105, 1, 0, 0, 1658.83, -4388.91, 23.681, 1.01544, 370, 0, 0, 1605, 852, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID6_OBJ, 18);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID6_OBJ, 180395, 1, 1657.46, -4385.4, 23.5797, 5.41287, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID11_NPC, 18),
+(@GUID12_NPC, 18);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID11_NPC, 15106, 1, 0, 0, 1660.82, -4385.81, 23.9178, 4.17041, 370, 0, 0, 4108, 0, 0, 0),
+(@GUID12_NPC, 15106, 1, 0, 0, 1658.83, -4388.91, 23.681, 1.01544, 370, 0, 0, 4108, 0, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES (@GUID7_OBJ, 20);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID7_OBJ, 180396, 1, 1663.59, -4343.19, 61.2462, 0.750492, 0, 0, 0.366501, 0.930418, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID13_NPC, 20),
+(@GUID14_NPC, 20);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID13_NPC, 14990, 1, 0, 0, 1665.79, -4344.94, 61.2469, 5.42626, 370, 0, 0, 2471, 0, 0, 0),
+(@GUID14_NPC, 14990, 1, 0, 0, 1667.51, -4347, 61.2465, 2.33336, 370, 0, 0, 2471, 0, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID8_OBJ, 19);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID8_OBJ, 180394, 1, 1663.59, -4343.19, 61.2462, 0.750492, 0, 0, 0.366501, 0.930418, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID15_NPC, 19),
+(@GUID16_NPC, 19);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID15_NPC, 15105, 1, 0, 0, 1665.79, -4344.94, 61.2469, 5.42626, 370, 0, 0, 1605, 852, 0, 0),
+(@GUID16_NPC, 15105, 1, 0, 0, 1667.51, -4347, 61.2465, 2.33336, 370, 0, 0, 1605, 852, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID9_OBJ, 18);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID9_OBJ, 180395, 1, 1663.59, -4343.19, 61.2462, 0.750492, 0, 0, 0.366501, 0.930418, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID17_NPC, 18),
+(@GUID18_NPC, 18);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID17_NPC, 15106, 1, 0, 0, 1665.79, -4344.94, 61.2469, 5.42626, 370, 0, 0, 4108, 0, 0, 0),
+(@GUID18_NPC, 15106, 1, 0, 0, 1667.51, -4347, 61.2465, 2.33336, 370, 0, 0, 4108, 0, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID10_OBJ, 20);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID10_OBJ, 180396, 1, 1749.75, -3963.67, 50.4844, 3.50363, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID19_NPC, 20),
+(@GUID20_NPC, 20);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID19_NPC, 14990, 1, 0, 0, 1743.72, -3967.15, 49.1537, 0.42906, 370, 0, 0, 2471, 0, 0, 0),
+(@GUID20_NPC, 14990, 1, 0, 0, 1747.21, -3965.75, 49.6639, 3.57536, 370, 0, 0, 2471, 0, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID11_OBJ, 19);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`)
+VALUES (@GUID11_OBJ, 180394, 1, 1749.75, -3963.67, 50.4844, 3.50363, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID21_NPC, 19),
+(@GUID22_NPC, 19);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID21_NPC, 15105, 1, 0, 0, 1743.72, -3967.15, 49.1537, 0.42906, 370, 0, 0, 1605, 852, 0, 0),
+(@GUID22_NPC, 15105, 1, 0, 0, 1747.21, -3965.75, 49.6639, 3.57536, 370, 0, 0, 1605, 852, 0, 0);
+
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID12_OBJ, 18);
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(@GUID12_OBJ, 180395, 1, 1749.75, -3963.67, 50.4844, 3.50363, 0, 0, 0, 0, 180, 100, 1);
+INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
+(@GUID23_NPC, 18),
+(@GUID24_NPC, 18);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(@GUID23_NPC, 15106, 1, 0, 0, 1743.72, -3967.15, 49.1537, 0.42906, 370, 0, 0, 4108, 0, 0, 0),
+(@GUID24_NPC, 15106, 1, 0, 0, 1747.21, -3965.75, 49.6639, 3.57536, 370, 0, 0, 4108, 0, 0, 0);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
