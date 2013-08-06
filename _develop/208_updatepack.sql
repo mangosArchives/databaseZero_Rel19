@@ -935,5 +935,246 @@ INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `pos
 (32072, 79, 1718.89, 186.261, -60.7598, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.04141, 0, 0),
 (32072, 80, 1724.63, 195.081, -62.1654, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.982504, 0, 0);
 
+-- Fixing creatures rank (Rare)
+-- source: old.wowhead.com, www.wowhead.com (mostly from comments), www.wowwiki.com, wowpedia.org
+
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6648; -- Antilos, found in: AZSHARA
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5347; -- Antilus the Soarer, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14222; -- Araga, found in: ALTERAC MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5349; -- Arash-ethis, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5834; -- Azzere the Skyblade, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1130; -- Bjarn, found in: DUN MOROGH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 616; -- Chatter, found in: REDRIDGE MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8301; -- Clack the Reaver, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6582; -- Clutchmother Zavas, found in: UN'GORO CRATER
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14223; -- Cranky Benj, found in: ALTERAC MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14279; -- Creepthess, found in: HILLSBRAD FOOTHILLS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 4380; -- Darkmist Widow, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14232; -- Dart, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5823; -- Death Flayer, found in: DUROTAR
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14339; -- Death Howl, found in: FELWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8302; -- Deatheye, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5865; -- Dishu, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14228; -- Giggler, found in: DESOLACE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 12431; -- Gorefang, found in: SILVERPINE FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8207; -- Greater Firebird, found in: TANARIS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14472; -- Gretheer, found in: SILITHUS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8303; -- Grunter, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8205; -- Haarka the Ravenous, found in: TANARIS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14234; -- Hayoc, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14227; -- Hissperak, found in: DESOLACE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8213; -- Ironback, found in: THE HINTERLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14476; -- Krellack, found in: SILITHUS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 12433; -- Krethis Shadowspinner, found in: SILVERPINE FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14491; -- Kurmokk, found in: STRANGLETHORN VALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2476; -- Large Loch Crocolisk, found in: LOCH MODAN
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1112; -- Leech Widow, found in: WETLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14268; -- Lord Condar, found in: LOCH MODAN
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 521; -- Lupos, found in: DUSKWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3068; -- Mazzranache, found in: MULGORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10644; -- Mist Howler, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14344; -- Mongress, found in: FELWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 471; -- Mother Fang, found in: ELWYNN FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8208; -- Murderous Blisterpaw, found in: TANARIS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 574; -- Naraxis, found in: DUSKWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8211; -- Old Cliff Jumper, found in: THE HINTERLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5352; -- Old Grizzlegut, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 12432; -- Old Vicejaw, found in: SILVERPINE FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14343; -- Olm the Wise, found in: FELWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14237; -- Oozeworm, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 4015; -- Pridewing Patriarch, found in: STONETALON MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10200; -- Rak'shiri, found in: WINTERSPRING
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8300; -- Ravage, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6581; -- Ravasaur Matriarch, found in: UN'GORO CRATER
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1140; -- Razormaw Matriarch, found in: WETLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8277; -- Rekk'tilac, found in: SEARING GORGE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10357; -- Ressan the Needler, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14490; -- Rippa, found in: STRANGLETHORN VALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14233; -- Ripscale, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1552; -- Scale Belly, found in: STRANGLETHORN VALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3581; -- Sewer Beast, found in: STORMWIND CITY
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2175; -- Shadowclaw, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14266; -- Shanda the Spinner, found in: LOCH MODAN
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 4132; -- Silithid Ravager, found in: THOUSAND NEEDLES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5356; -- Snarler, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5829; -- Snort the Heckler, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8204; -- Soriid the Devourer, found in: TANARIS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8299; -- Spiteflayer, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10359; -- Sri'skulk, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2172; -- Strider Clutchmother, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8660; -- The Evalcharr, found in: AZSHARA
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5807; -- The Rake, found in: MULGORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5832; -- Thunderstomp, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1132; -- Timber, found in: DUN MOROGH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6585; -- Uhk'loc, found in: UN'GORO CRATER
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 12037; -- Ursol'lok, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3773; -- Akkrilus, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14340; -- Alshirr Banebreath, found in: FELWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10356; -- Bayne, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14226; -- Kaskk, found in: DESOLACE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2191; -- Licillin, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14225; -- Prince Kellen, found in: DESOLACE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10647; -- Prince Raze, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3470; -- Rathorian, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8280; -- Shleipnarr, found in: SEARING GORGE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10078; -- Terrorspark, found in: BURNING STEPPES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1063; -- Jade, found in: TEMPLE OF ATAL'HAKKAR
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14272; -- Snarlflare, found in: REDRIDGE MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3535; -- Blackmoss the Fetid, found in: TELDRASSIL
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10641; -- Branch Snapper, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14231; -- Drogoth the Roamer, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10642; -- Eck'alom, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5354; -- Gnarl Leafbrother, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14478; -- Huricanian, found in: SILITHUS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8981; -- Malfunctioning Reaver, found in: BURNING STEPPES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14448; -- Molt Thorn, found in: SWAMP OF SORROWS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2752; -- Rumbler, found in: BADLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8281; -- Scald, found in: SEARING GORGE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14269; -- Seeker Aqualon, found in: REDRIDGE MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8278; -- Smoldar, found in: SEARING GORGE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2258; -- Stone Fury, found in: ALTERAC MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1851; -- The Husk, found in: WESTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 4030; -- Vengeful Ancient, found in: STONETALON MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2751; -- War Golem, found in: BADLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14273; -- Boulderheart, found in: REDRIDGE MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 596; -- Brainwashed Noble, found in: THE DEADMINES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 599; -- Marisa du'Paige, found in: THE DEADMINES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5399; -- Veyzhak the Cannibal, found in: TEMPLE OF ATAL'HAKKAR
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8298; -- Akubar the Seer, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3735; -- Apothecary Falthis, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5346; -- Bloodroar the Stalker, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3672; -- Boahn, found in: WAILING CAVERNS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1398; -- Boss Galgosh, found in: LOCH MODAN
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5838; -- Brokespear, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14230; -- Burgle Eye, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2186; -- Carnivous the Breaker, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 11688; -- Cursed Centaur, found in: MARAUDON
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8202; -- Cyclok the Mad, found in: TANARIS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1920; -- Dalaran Spellscribe, found in: SILVERPINE FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10827; -- Deathspeaker Selendre, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1911; -- Deeb, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5345; -- Diamond Head, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5849; -- Digger Flameforge, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1037; -- Dragonmaw Battlemaster, found in: WETLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8304; -- Dreadscorn, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10817; -- Duggan Wildhammer, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1137; -- Edan the Howler, found in: DUN MOROGH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5787; -- Enforcer Emilgund, found in: MULGORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5836; -- Engineer Whirleygig, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1936; -- Farmer Solliden, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 472; -- Fedfennel, found in: ELWYNN FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 507; -- Fenros, found in: DUSKWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14446; -- Fingat, found in: SWAMP OF SORROWS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2192; -- Firecaller Radison, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 7015; -- Flagglemurk the Cruel, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5835; -- Foreman Grills, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1844; -- Foreman Marcrid, found in: WESTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2108; -- Garneg Charskull, found in: WETLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6651; -- Gatekeeper Rageroar, found in: AZSHARA
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6650; -- General Fangferror, found in: AZSHARA
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5826; -- Geolord Mottle, found in: DUROTAR
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5863; -- Geopriest Gukk'rok, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8503; -- Gibblewilt, found in: DUN MOROGH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14447; -- Gilmorian, found in: SWAMP OF SORROWS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14487; -- Gluggle, found in: STRANGLETHORN VALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 9604; -- Gorgon'och, found in: BURNING STEPPES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14221; -- Gravis Slipknot, found in: ALTERAC MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1260; -- Great Father Arctikus, found in: DUN MOROGH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1425; -- Grizlak, found in: LOCH MODAN
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10199; -- Grizzle Snowpaw, found in: WINTERSPRING
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8979; -- Gruklash, found in: BURNING STEPPES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 9602; -- Hahk'Zor, found in: BURNING STEPPES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1119; -- Hammerspine, found in: DUN MOROGH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5847; -- Heggin Stonewhisker, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8214; -- Jalinde Summerdrake, found in: THE HINTERLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14281; -- Jimmy the Bleeder, found in: ALTERAC MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 584; -- Kazon, found in: REDRIDGE MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2603; -- Kovork, found in: ARATHI HIGHLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8203; -- Kregg Keelhaul, found in: TANARIS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6649; -- Lady Sesspira, found in: AZSHARA
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5343; -- Lady Szallah, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10559; -- Lady Vespia, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 7016; -- Lady Vespira, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14277; -- Lady Zephris, found in: HILLSBRAD FOOTHILLS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2453; -- Lo'Grosh, found in: ALTERAC MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14236; -- Lord Angler, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1848; -- Lord Maldazzar, found in: WESTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2541; -- Lord Sakrasis, found in: STRANGLETHORN VALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 7017; -- Lord Sinslayer, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 763; -- Lost One Chieftain, found in: SWAMP OF SORROWS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1106; -- Lost One Cook, found in: SWAMP OF SORROWS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6647; -- Magister Hawkhelm, found in: AZSHARA
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1399; -- Magosh, found in: LOCH MODAN
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8297; -- Magronos the Unyielding, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5848; -- Malgin Barleybrew, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2090; -- Ma'ruk Wyrmscale, found in: WETLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10197; -- Mezzir the Howler, found in: WINTERSPRING
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8296; -- Mojo the Twisted, found in: BLASTED LANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2604; -- Molok the Crusher, found in: ARATHI HIGHLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 99; -- Morgaine the Sly, found in: ELWYNN FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1910; -- Muad, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10643; -- Mugglefin, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 79; -- Narg the Taskmaster, found in: ELWYNN FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 534; -- Nefaru, found in: DUSKWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2606; -- Nimar the Slayer, found in: ARATHI HIGHLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10640; -- Oakpaw, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8201; -- Omgorn the Lost, found in: TANARIS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2779; -- Prince Nazjak, found in: ARATHI HIGHLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14342; -- Ragepaw, found in: FELWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10824; -- Ranger Lord Hawkspear, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8216; -- Retherokk the Berserker, found in: THE HINTERLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14271; -- Ribchaser, found in: REDRIDGE MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14278; -- Ro'Bark, found in: HILLSBRAD FOOTHILLS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14488; -- Roloch, found in: STRANGLETHORN VALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10639; -- Rorgish Jowl, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14276; -- Scargil, found in: HILLSBRAD FOOTHILLS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2744; -- Shadowforge Commander, found in: BADLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2600; -- Singer, found in: ARATHI HIGHLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2452; -- Skhowl, found in: ALTERAC MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8283; -- Slave Master Blackheart, found in: SEARING GORGE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5786; -- Snagglespear, found in: MULGORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14270; -- Squiddic, found in: REDRIDGE MOUNTAINS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5837; -- Stonearm, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3792; -- Terrowulf Packlord, found in: ASHENVALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8978; -- Thauris Balgarr, found in: BURNING STEPPES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 61; -- Thuros Lightfingers, found in: ELWYNN FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14479; -- Twilight Lord Everun, found in: SILITHUS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14492; -- Verifonix, found in: STRANGLETHORN VALE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5808; -- Warlord Kolkanis, found in: DUROTAR
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10822; -- Warlord Thresh'jin, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5809; -- Watch Commander Zalaphil, found in: DUROTAR
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8218; -- Witherheart the Stalker, found in: THE HINTERLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2605; -- Zalas Witherbark, found in: ARATHI HIGHLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8219; -- Zul'arek Hatefowler, found in: THE HINTERLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10823; -- Zul'Brin Warpbranch, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14224; -- 7:XT, found in: BADLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 573; -- Foe Reaper 4000, found in: WESTFALL
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3652; -- Trigore the Lasher, found in: WAILING CAVERNS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5350; -- Qirot, found in: FERALAS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3253; -- Silithid Harvester, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 3295; -- Sludge Beast, found in: THE BARRENS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14345; -- The Ongar, found in: FELWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8212; -- The Reak, found in: THE HINTERLANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 14235; -- The Rot, found in: DUSTWALLOW MARSH
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5400; -- Zekkis, found in: TEMPLE OF ATAL'HAKKAR
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 771; -- Commander Felstrom, found in: DUSKWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10358; -- Fellicent's Shade, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1847; -- Foulmane, found in: WESTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10825; -- Gish the Unmoving, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10821; -- Hed'mush the Rotting, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2184; -- Lady Moongazer, found in: DARKSHORE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 10826; -- Lord Darkscythe, found in: EASTERN PLAGUELANDS
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 503; -- Lord Malathrom, found in: DUSKWOOD
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1531; -- Lost Soul, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 2283; -- Ravenclaw Regent, found in: SILVERPINE FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1944; -- Rot Hide Bruiser, found in: SILVERPINE FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1948; -- Snarlmane, found in: SILVERPINE FOREST
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 1533; -- Tormented Spirit, found in: TIRISFAL GLADES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 6118; -- Varo'then's Ghost, found in: AZSHARA
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 9046; -- Scarshield Quartermaster, found in: BLACKROCK MOUNTAIN
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 8279; -- Faulty War Golem, found in: BADLANDS/SEARING GORGE
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5933; -- Achellios the Banished, found in: THOUSAND NEEDLES
+UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 7895; -- Ambassador Bloodrage, found in: THE BARRENS
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
