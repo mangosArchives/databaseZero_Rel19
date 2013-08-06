@@ -1118,5 +1118,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 (@GUID23_NPC, 15106, 1, 0, 0, 1743.72, -3967.15, 49.1537, 0.42906, 370, 0, 0, 4108, 0, 0, 0),
 (@GUID24_NPC, 15106, 1, 0, 0, 1747.21, -3965.75, 49.6639, 3.57536, 370, 0, 0, 4108, 0, 0, 0);
 
+-- Remove two non-classic items from the npc_vendor table
+DELETE FROM `npc_vendor` WHERE `item` IN (29592, 29593);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
