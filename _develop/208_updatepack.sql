@@ -1589,5 +1589,9 @@ INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `d
 (7029, 0, 0, 0, 0, 0, 0, 0, 2000005465, 0, 0, 0, 0, 0, 0, 0, 'Vark Battlescar - Talk'),
 (7041, 0, 0, 0, 0, 0, 0, 0, 2000005465, 0, 0, 0, 0, 0, 0, 0, 'Talendria - Talk');
 
+DELETE FROM `db_script_string` WHERE `entry`=2000005465;
+INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`, `sound`, `type`, `language`, `emote`, `comment`) VALUES
+(2000005465, '$N, please take a look at the sample of the Vylestem vine that I took from the caverns, so that you know what to look for...', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, NULL);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
