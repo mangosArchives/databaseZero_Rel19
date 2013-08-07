@@ -1,9 +1,5 @@
 -- danielsreichenbach
 
--- Embalming slime random movement add and decrease npc scale
-UPDATE `creature` SET `spawndist` = 8, `movementtype` = 1 WHERE `id` = 16024;
-UPDATE `creature_template` SET `scale` = 1.0 WHERE `entry` = 16024;
-
 -- Remove faerlinas surgical assistants and trash began again
 -- Used some anub placeholders to fill in the extra missing npcs of faerlinas trash
 -- Source http://imageshack.us/a/img10/126/u2zr.jpg
