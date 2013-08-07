@@ -1,17 +1,5 @@
 -- danielsreichenbach
 
--- Change Weapon on Dark Touched Warrior from axe to bucket.
--- Source:http://www.wowhead.com/npc=16156#screenshots:id=46064
-UPDATE `creature_template` SET `equipment_id` = 1139 WHERE `entry` = 16156;
-
--- Sewage slime placeholders near patchwerk are actually npc living poison. Level Updated.
--- http://www.wowhead.com/npc=16027#comments
--- http://www.wowwiki.com/Living_Poison
--- http://www.wowhead.com/spell=28433 - spell they use
-UPDATE  `creature`  SET `id` = 16027 WHERE `guid` IN (88697, 88696, 88695, 88694, 88693, 88692, 88691, 88690, 88689, 88688, 88687, 88686, 88685, 88684, 88683, 88682);
-Update `creature_template` SET `minlevel` = 61, `maxlevel` = 61 WHERE `entry` = 16027;
-
-
 -- Minor change death touched warrior to doom touched warrior
 -- http://www.youtube.com/watch?v=agWfYn0piY8&feature=related
 -- http://www.youtube.com/watch?v=7VcozSUZc9Y
