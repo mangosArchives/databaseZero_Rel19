@@ -1,14 +1,5 @@
 -- danielsreichenbach
 
--- Minor change death touched warrior to doom touched warrior
--- http://www.youtube.com/watch?v=agWfYn0piY8&feature=related
--- http://www.youtube.com/watch?v=7VcozSUZc9Y
-DELETE FROM `creature` WHERE `guid` = 88428;
-DELETE FROM `creature` WHERE `guid` = 88443;
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES (88428, 16157, 533, 16528, 0, 2879.88, -3198.33, 298.33, 4.04, 3520, 0, 0, 95847, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES (88443, 16156, 533, 16534, 0, 2799.42, -3159.93, 298.33, 3.85, 3520, 0, 0, 24372, 12000, 0, 0);
-
-
 -- Embalming slime random movement add and decrease npc scale
 UPDATE `creature` SET `spawndist` = 8, `movementtype` = 1 WHERE `id` = 16024;
 UPDATE `creature_template` SET `scale` = 1.0 WHERE `entry` = 16024;
