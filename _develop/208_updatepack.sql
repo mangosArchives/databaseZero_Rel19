@@ -1328,5 +1328,9 @@ UPDATE `creature_loot_template` SET `condition_id` = 4 WHERE `item` BETWEEN 1664
 -- For items looted from gameobjects
 UPDATE `gameobject_loot_template` SET `condition_id` = 4 WHERE `item` BETWEEN 16645 AND 16656;
 
+-- Change Weapon on Dark Touched Warrior from axe to bucket.
+-- Source:http://www.wowhead.com/npc=16156#screenshots:id=46064
+UPDATE `creature_template` SET `equipment_id` = 1139 WHERE `entry` = 16156;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
