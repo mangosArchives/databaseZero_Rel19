@@ -1218,6 +1218,7 @@ UPDATE `quest_template` SET `OfferRewardText` = 'Good day, $N. The Light is with
 UPDATE `creature` SET `position_x` = '-3613.427734', `position_y` = '-4463.895020', `position_z` = '13.622666', `orientation` = '2.975219' WHERE `guid` = '37087';
 
 -- Adds teleport location for The Stockades ".tele TheStockades"
+DELETE FROM `game_tele` WHERE `id`=418;
 INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (418,-8787.390625,828.377075,97.648933,0.626312,0,'TheStockades');
 
 -- Updates the position of Barkeep Hann because his title was flickering in the wall
@@ -1277,6 +1278,7 @@ UPDATE `creature` SET `position_x` = '-8159.728027', `position_y` = '2145.341309
 UPDATE `creature` SET `position_x` = '-8156.620605', `position_y` = '2119.613770', `position_z` = '129.114990', `orientation` = '3.174591' WHERE `guid` = '87571';
 
 -- Adds missing Obsidian Eradicator --
+DELETE FROM `creature` WHERE `guid`=590011;
 INSERT INTO `creature` VALUES (590011, 15262, 531, 0, 0, -8277.51, 2117.84, 118.176, 0.261538, 25, 0, 0, 170805, 24340, 0, 0);
 UPDATE `creature` SET `spawntimesecs`=3600 WHERE `guid`=590011;
 
@@ -1577,6 +1579,15 @@ UPDATE `creature_template` SET `faction_A` = 21, `faction_H` = 21, `rank` = 1 WH
 UPDATE `creature_template` SET `name` = 'Unrelenting Deathknight', `faction_A` = 21, `faction_H` = 21, `rank` = 1 WHERE `entry` = 16125;
 UPDATE `creature_template` SET `name` = 'Spectral Deathknight', `faction_A` = 21, `faction_H` = 21, `rank` = 1 WHERE `entry` = 16148;
 UPDATE `creature_template` SET `faction_A` = 21, `faction_H` = 21, `rank` = 1 WHERE `entry` = 16150;
+
+-- Add quest start script to Vyletongue Corruption (7029 & 7041)
+UPDATE `quest_template` SET `StartScript`=7029 WHERE `StartScript`=7029;
+UPDATE `quest_template` SET `StartScript`=7041 WHERE `StartScript`=7041;
+
+DELETE FROM `dbscripts_on_quest_start` WHERE `id` IN (7029, 7041);
+INSERT INTO `dbscripts_on_quest_start` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(7029, 0, 0, 0, 0, 0, 0, 0, 2000005465, 0, 0, 0, 0, 0, 0, 0, 'Vark Battlescar - Talk'),
+(7041, 0, 0, 0, 0, 0, 0, 0, 2000005465, 0, 0, 0, 0, 0, 0, 0, 'Talendria - Talk');
 
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
