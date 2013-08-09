@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct Required Races for Quests in the Barrens
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (860,1102);
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 1142;
+
 -- fixing Quest 437 The Death Fields spawnscripts by ghurok
 DELETE FROM `areatrigger_involvedrelation` WHERE `id` = 173;
 INSERT INTO `areatrigger_involvedrelation` VALUES (173, 437);
