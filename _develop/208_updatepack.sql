@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct all reputation values Darkspear Trolls for The Barrens
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 6384;
+UPDATE `quest_template` SET `RewRepValue2` = 150 WHERE `entry` = 6386;
+
 -- correct Experience for The Barrens
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 600 WHERE `entry` = 822;
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1980 WHERE `entry` = 1101;
