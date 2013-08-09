@@ -17,6 +17,60 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct minLevel and Questlevel for The Barrens
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 822;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 844;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 846;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 849;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 852;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 853;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 858;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 863;
+UPDATE `quest_template` SET `MinLevel` = 16 WHERE `entry` = 873;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 874;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 875;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 876;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 880;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 881;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 883;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 884;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 885;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 888;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 889;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 890;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 892;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 898;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 900;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 901;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 902;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 903;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 905;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 913;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 1060;
+UPDATE `quest_template` SET `MinLevel` = 29 WHERE `entry` = 1102;
+UPDATE `quest_template` SET `MinLevel` = 25 WHERE `entry` = 1142;
+UPDATE `quest_template` SET `MinLevel` = 22 WHERE `entry` = 1144;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 1492;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 3261;
+UPDATE `quest_template` SET `MinLevel` = 9 WHERE `entry` = 3281;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 3301;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 3369;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 3370;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 3514;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 3921;
+UPDATE `quest_template` SET `MinLevel` = 11 WHERE `entry` = 3922;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 4021;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 5042;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 5043;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 5044;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 5045;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 5046;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 5052;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 6361;
+UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` = 6385;
+UPDATE `quest_template` SET `MinLevel` = 60 WHERE `entry` = 9267;
+UPDATE `quest_template` SET `QuestLevel` = 60 WHERE `entry` = 9267;
+
 -- correct Required Races for Quests in the Barrens
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (860,1102);
 UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 1142;
