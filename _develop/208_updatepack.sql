@@ -17,6 +17,15 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct Experience for The Barrens
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 600 WHERE `entry` = 822;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1980 WHERE `entry` = 1101;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1980 WHERE `entry` = 1109;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1800 WHERE `entry` = 1142;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1800 WHERE `entry` = 1144;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 780 WHERE `entry` = 1145;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1260 WHERE `entry` = 1221;
+
 -- correct all reputation values for The Barrens
 UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 819;
 UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 821;
