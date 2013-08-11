@@ -17,6 +17,34 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Quest end script for quest 857 The Tear of the Moons and movement for feegly
+UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 3421;
+DELETE FROM `creature` WHERE `guid` = 14138;
+INSERT INTO `creature` VALUES (14138,3421,1,1406,0,-4217.42,-2342.11,91.73,2.13,275,0,0,860,0,0,2);
+DELETE FROM `creature_movement` WHERE `id` = 14138;
+INSERT INTO `creature_movement` VALUES (14138,1,-4217.83,-2341.47,91.7458,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
+INSERT INTO `creature_movement` VALUES (14138,2,-4219.46,-2336.15,91.8028,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
+UPDATE `quest_template` SET `CompleteScript` = 857 WHERE `entry` = 857;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 857;
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Stop movement');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,1,0,0,0,0,0,0,2000000240,0,0,0,0,0,0,0,'Say 1');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,3,0,0,0,0,0,0,2000000241,0,0,0,0,0,0,0,'Text emote 1');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,6,0,0,0,0,0,0,2000000242,0,0,0,0,0,0,0,'Say 2');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,9,0,0,0,0,0,0,2000000243,0,0,0,0,0,0,0,'Text emote 2');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,10,15,5142,0,0,0,0,0,0,0,0,0,0,0,0,'cast Troggform');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,16,15,5,0,0,0,4,0,0,0,0,0,0,0,0,'Kill feegly');
+DELETE FROM `db_script_string` WHERE `entry` = 2000000240;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000241;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000242;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000243;
+INSERT INTO `db_script_string` VALUES (2000000240,'The power of the Tear of the Moons is mine! Mine I say!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000241,'Feegly the Exiled begins to rub the Tear of the Moons.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000242,'Power! Glorious power!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000243,'Feegly the Exiled begins to make strange grunting noises. The Tear of the Moons drops to the ground and shatters.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+
+-- Verog the dervish gets now spawned with command 47 to prevent double spawns
+UPDATE `creature_ai_scripts` SET `action2_type` = 47 WHERE `action2_param1` = 3395;
+
 -- Fixed all Bubbly fissures
 DELETE FROM `gameobject_template` WHERE `entry` = 177524;
 INSERT INTO `gameobject_template` VALUES (177524,6,344,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
