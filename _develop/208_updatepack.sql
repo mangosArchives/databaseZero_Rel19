@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixed dropchance of item 11148 Manual Page and made them questdrop. Needed for quest 3924 Samophlange Manual
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -29 WHERE `entry` = 3283;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -27 WHERE `entry` = 3286;
+
 -- Quest end script for quest 857 The Tear of the Moons and movement for feegly
 UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 3421;
 DELETE FROM `creature` WHERE `guid` = 14138;
