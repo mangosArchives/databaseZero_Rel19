@@ -17,6 +17,38 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fixed all Bubbly fissures
+DELETE FROM `gameobject_template` WHERE `entry` = 177524;
+INSERT INTO `gameobject_template` VALUES (177524,6,344,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+UPDATE `gameobject` SET `id` = 177524 WHERE `guid` = 13380;
+DELETE FROM `gameobject_template` WHERE `entry` = 180057;
+INSERT INTO `gameobject_template` VALUES (180057,6,0,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+
+-- Fixed several problems with quest 877 The Stagnant Oasis
+UPDATE `gameobject_template` SET `flags` = 0 WHERE `entry` = 3743;
+UPDATE `quest_template` SET `ReqItemId2` = 5068 WHERE `entry` = 877;
+UPDATE `quest_template` SET `ReqItemCount2` = 1 WHERE `entry` = 877;
+DELETE FROM `gameobject` WHERE `id` = 3743;
+INSERT INTO `gameobject` VALUES (55531,3743,1,-1280.23,-3015.37,72.0094,0.630807,0,0,0.3102,0.950671,-60,100,1);
+INSERT INTO `gameobject` VALUES (55532,3743,1,-1276.09,-3017.25,72.9672,5.71077,0,0,0.282316,-0.959321,-60,100,1);
+INSERT INTO `gameobject` VALUES (55533,3743,1,-1271.2,-3012.87,71.8351,4.22637,0,0,0.856478,-0.516183,-60,100,1);
+INSERT INTO `gameobject` VALUES (55534,3743,1,-1273.34,-3007.69,71.6012,2.15527,0,0,0.880841,0.473411,-60,100,1);
+INSERT INTO `gameobject` VALUES (55535,3743,1,-1281.12,-3010.96,71.4162,4.1227,0,0,0.882072,-0.471114,-60,100,1);
+DELETE FROM `dbscripts_on_event` WHERE `id` = 525;
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55531,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55532,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55533,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55534,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55535,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 2603;
+INSERT INTO `gameobject_loot_template` VALUES (2603,5066,100,0,1,1,0);
+DELETE FROM `gameobject` WHERE `guid` = 55536;
+DELETE FROM `gameobject` WHERE `guid` = 55537;
+INSERT INTO `gameobject` VALUES (55536,180057,1,-1274.37,-3012.04,72.67,0,0,0,0,0,2,100,1);
+INSERT INTO `gameobject` VALUES (55537,180057,1,89.75,-1943.77,80.02,0,0,0,0,0,2,100,1);
+DELETE FROM `gameobject_template` WHERE `entry` = 211085;
+DELETE FROM `gameobject_template` WHERE `entry` = 211086;
+
 -- correct max Reputation value for quest 9267 Mending old wounds
 UPDATE `quest_template` SET `RequiredMaxRepValue` = 42000 WHERE `entry` = 9267;
 
