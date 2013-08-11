@@ -17,6 +17,77 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixed dropchance of item 11148 Manual Page and made them questdrop. Needed for quest 3924 Samophlange Manual
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -29 WHERE `entry` = 3283;
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -27 WHERE `entry` = 3286;
+
+-- Quest end script for quest 857 The Tear of the Moons and movement for feegly
+UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 3421;
+DELETE FROM `creature` WHERE `guid` = 14138;
+INSERT INTO `creature` VALUES (14138,3421,1,1406,0,-4217.42,-2342.11,91.73,2.13,275,0,0,860,0,0,2);
+DELETE FROM `creature_movement` WHERE `id` = 14138;
+INSERT INTO `creature_movement` VALUES (14138,1,-4217.83,-2341.47,91.7458,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
+INSERT INTO `creature_movement` VALUES (14138,2,-4219.46,-2336.15,91.8028,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
+UPDATE `quest_template` SET `CompleteScript` = 857 WHERE `entry` = 857;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 857;
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Stop movement');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,1,0,0,0,0,0,0,2000000240,0,0,0,0,0,0,0,'Say 1');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,3,0,0,0,0,0,0,2000000241,0,0,0,0,0,0,0,'Text emote 1');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,6,0,0,0,0,0,0,2000000242,0,0,0,0,0,0,0,'Say 2');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,9,0,0,0,0,0,0,2000000243,0,0,0,0,0,0,0,'Text emote 2');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,10,15,5142,0,0,0,0,0,0,0,0,0,0,0,0,'cast Troggform');
+INSERT INTO `dbscripts_on_quest_end` VALUES (857,16,15,5,0,0,0,4,0,0,0,0,0,0,0,0,'Kill feegly');
+DELETE FROM `db_script_string` WHERE `entry` = 2000000240;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000241;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000242;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000243;
+INSERT INTO `db_script_string` VALUES (2000000240,'The power of the Tear of the Moons is mine! Mine I say!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000241,'Feegly the Exiled begins to rub the Tear of the Moons.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000242,'Power! Glorious power!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000000243,'Feegly the Exiled begins to make strange grunting noises. The Tear of the Moons drops to the ground and shatters.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+
+-- Verog the dervish gets now spawned with command 47 to prevent double spawns
+UPDATE `creature_ai_scripts` SET `action2_type` = 47 WHERE `action2_param1` = 3395;
+
+-- Fixed all Bubbly fissures
+DELETE FROM `gameobject_template` WHERE `entry` = 177524;
+INSERT INTO `gameobject_template` VALUES (177524,6,344,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+UPDATE `gameobject` SET `id` = 177524 WHERE `guid` = 13380;
+DELETE FROM `gameobject_template` WHERE `entry` = 180057;
+INSERT INTO `gameobject_template` VALUES (180057,6,0,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+
+-- Fixed several problems with quest 877 The Stagnant Oasis
+UPDATE `gameobject_template` SET `flags` = 0 WHERE `entry` = 3743;
+UPDATE `quest_template` SET `ReqItemId2` = 5068 WHERE `entry` = 877;
+UPDATE `quest_template` SET `ReqItemCount2` = 1 WHERE `entry` = 877;
+DELETE FROM `gameobject` WHERE `id` = 3743;
+INSERT INTO `gameobject` VALUES (55531,3743,1,-1280.23,-3015.37,72.0094,0.630807,0,0,0.3102,0.950671,-60,100,1);
+INSERT INTO `gameobject` VALUES (55532,3743,1,-1276.09,-3017.25,72.9672,5.71077,0,0,0.282316,-0.959321,-60,100,1);
+INSERT INTO `gameobject` VALUES (55533,3743,1,-1271.2,-3012.87,71.8351,4.22637,0,0,0.856478,-0.516183,-60,100,1);
+INSERT INTO `gameobject` VALUES (55534,3743,1,-1273.34,-3007.69,71.6012,2.15527,0,0,0.880841,0.473411,-60,100,1);
+INSERT INTO `gameobject` VALUES (55535,3743,1,-1281.12,-3010.96,71.4162,4.1227,0,0,0.882072,-0.471114,-60,100,1);
+DELETE FROM `dbscripts_on_event` WHERE `id` = 525;
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55531,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55532,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55533,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55534,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55535,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 2603;
+INSERT INTO `gameobject_loot_template` VALUES (2603,5066,100,0,1,1,0);
+DELETE FROM `gameobject` WHERE `guid` = 55536;
+DELETE FROM `gameobject` WHERE `guid` = 55537;
+INSERT INTO `gameobject` VALUES (55536,180057,1,-1274.37,-3012.04,72.67,0,0,0,0,0,2,100,1);
+INSERT INTO `gameobject` VALUES (55537,180057,1,89.75,-1943.77,80.02,0,0,0,0,0,2,100,1);
+DELETE FROM `gameobject_template` WHERE `entry` = 211085;
+DELETE FROM `gameobject_template` WHERE `entry` = 211086;
+
+-- correct max Reputation value for quest 9267 Mending old wounds
+UPDATE `quest_template` SET `RequiredMaxRepValue` = 42000 WHERE `entry` = 9267;
+
+-- correct all reputation values Darkspear Trolls for The Barrens
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 6384;
+UPDATE `quest_template` SET `RewRepValue2` = 150 WHERE `entry` = 6386;
+
 -- correct Experience for The Barrens
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 600 WHERE `entry` = 822;
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1980 WHERE `entry` = 1101;
