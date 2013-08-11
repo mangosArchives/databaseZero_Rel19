@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct max Reputation value for quest 9267 Mending old wounds
+UPDATE `quest_template` SET `RequiredMaxRepValue` = 42000 WHERE `entry` = 9267;
+
 -- correct all reputation values Darkspear Trolls for The Barrens
 UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 6384;
 UPDATE `quest_template` SET `RewRepValue2` = 150 WHERE `entry` = 6386;
