@@ -120,7 +120,7 @@ reputation_reward_rate \
 reputation_spillover_template \
 reserved_name \
 scripted_areatrigger \
-scripted_event_id \
+scripted_event \
 skill_fishing_base_level \
 skinning_loot_template \
 spell_affect \
