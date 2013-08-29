@@ -3076,5 +3076,454 @@ UPDATE `creature` set `id` = 9216, `modelid` = 11582, `position_x` = -10.853, `p
 -- Enter Npc Warosh http://www.wowwiki.com/Warosh
 UPDATE `creature` set `id` = 10799, `modelid` = 763, `position_x` = 45.7163, `position_y` = -576.1502, `position_z` = 30.7533, `orientation` = 0.841, `curhealth` = 3857, `curmana` = 0  where `guid` = 45838;
 
+-- https://github.com/scriptdev2/scriptdev2/commit/bb69b8038b1e6f1219cb903a0c6a508953bd1c31
+--  Quest 995 remove db script
+DELETE FROM `dbscripts_on_quest_start` where `id` = 995;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000016;
+
+-- https://github.com/scriptdev2/scriptdev2/commit/a743ba78f9f568f6cc739a0afef673be8e3ae1d8
+-- Removes required spell cast from quests 6124/6129
+UPDATE `quest_template` SET `ReqSpellCast1` = 0 WHERE `entry` IN (6129,6124);
+
+-- https://github.com/scriptdev2/scriptdev2/commit/9d3df48298ba026065206282291748ac8bdfbb7e
+-- Quest 4322 Jail break
+
+SET @STRING_START := 2000000067;
+delete from `creature_movement_template` where `entry`=9679;
+INSERT INTO `creature_movement_template` (`entry`, `point`, `position_x`, `position_y`, `position_z`, `script_id`) values
+(9679,1,549.21,-281.07,-75.27,0),
+(9679,2,554.39,-267.39,-73.68,0),
+(9679,3,533.59,-249.38,-67.04,0),
+(9679,4,519.44,-217.02,-59.34,0),
+(9679,5,506.55,-153.49,-62.34,967901);
+delete from `creature_movement_template` where `entry`=9022;
+INSERT INTO `creature_movement_template` (`entry`, `point`, `position_x`, `position_y`, `position_z`, `script_id`) values
+(9022,1,280.42,-82.86,-77.12,0),
+(9022,2,287.64,-87.01,-76.79,0),
+(9022,3,354.63,-64.95,-67.53,902201);
+delete from `dbscripts_on_creature_movement` where `id` in (902201,967901);
+insert into `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `comments`) values
+(902201,0,18,0,'Despawn Dughal on last waypoint'),
+(967901,0,18,0,'Despawn Tobias on last waypoint');
+DELETE FROM `db_script_string` WHERE `entry` in (@STRING_START,@STRING_START+1,@STRING_START+2,@STRING_START+3);
+insert into `db_script_string` (`entry`, `content_default`) values
+(@STRING_START,'Get him out of there!'),
+(@STRING_START+1,'Perhaps Ograbisi will use your head as a tiny little hat when I\'m through with you.'),
+(@STRING_START+2,'Where I come from, you get shanked for opening another inmate\'s cell door!'),
+(@STRING_START+3,'Ograbisi needs new hat.');
+delete from `dbscripts_on_go_template_use` where `id` in (170562,170567,170568,170569);
+insert into `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `comments`) values
+-- dughal
+(170562, 1, 0, 0, 0, 9023, 20, 3, @STRING_START, 'Windsor - say on Dughal door open'),
+-- jaz
+(170568, 1, 0, 0, 0, 9677, 20, 3, @STRING_START+3 ,'Ograbisi - say on Jaz door open'),
+(170568, 2, 22, 54, 5, 9681, 20, 3, 0, 'Jaz - change faction to hostile'),
+(170568, 2, 22, 54, 5, 9677, 20, 3, 0, 'Ograbisi - change faction to hostile'),
+-- shill
+(170569, 1, 0, 0, 0, 9678, 20, 3, @STRING_START+1, 'Shill - say on Shill door open'),
+(170569, 1, 22, 54, 5, 9678, 20, 3, 0, 'Shill - change faction to hostile'),
+-- crest
+(170567, 1, 0, 0, 0, 9680, 20, 3, @STRING_START+2, 'Crest - say on Crest door open'),
+(170567, 1, 22, 54, 5, 9680, 20, 3, 0, 'Crest - change faction to hostile');
+
+-- https://github.com/scriptdev2/scriptdev2/commit/0d23d645c634403a4e177b16ba5cc01c1a80903f
+-- Emberseer update (from sniff)
+UPDATE `creature_template` SET `speed_run` = 1.42857146263123, `Unit_Flags` = 33554752, `faction_A` = 40, `faction_H` = 40, `MovementType` = 0 WHERE `entry` = 9816;
+
+-- https://github.com/scriptdev2/scriptdev2/commit/c39fb0c55b9f563a6fbf971bc84132efbf77e6d6
+-- Chromaggus door lever and chromaggus enter room
+delete from `dbscripts_on_go_use` where `id` = 66908; -- guid for 179148;
+insert into `dbscripts_on_go_use` values
+(66908,1,11,66900,0,0,0,0,0,0,0,0,0,0,0,0,'Open Chromaggus side door'), -- 66900 = guid of entry 179116
+(66908,2,25,1,0,14020,70,0,0,0,0,0,0,0,0,0,'Set Chromaggus run = true'),
+(66908,3,3,0,0,14020,70,0,0,0,0,0,-7484.91,-1072.98,476.55,2.18,'Move Chromaggus in the center of the room');
+
+-- https://github.com/scriptdev2/scriptdev2/commit/0c57d7d061fa73e47bb269cd0476bd58b815e6e6
+-- spell targets related to AQ20 Ossirian Weakness spells
+DELETE FROM `spell_script_target` WHERE `entry` IN (25183, 25177, 25178, 25180, 25181, 25183);
+INSERT INTO `spell_script_target` VALUES
+(25183, 1, 15339,0),
+(25177, 1, 15339,0),
+(25178, 1, 15339,0),
+(25180, 1, 15339,0),
+(25181, 1, 15339,0);
+-- A trigger npc (entry 15590) and go (entry 180619) must be spawned
+DELETE FROM `creature` WHERE `guid` = 95457;
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(95457, 15590, 509, 0, 0, -9407.718, 1960.211, 85.63906, 1.117011, 3520, 0, 0, 9062, 0, 0, 0);
+
+DELETE FROM `gameobject` WHERE `guid` = 40200;
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(40200, 180619, 509, -9407.718, 1960.211, 85.63906, 1.117011, 0, 0, 0.134851, 0.990866, 5400, 100, 1);
+
+-- https://github.com/scriptdev2/scriptdev2/commit/ce98ad5a138ee697cd8577108bc09a848f17c0c8
+-- Improvement for quest 9364 (set sheep to wander (polymorph clone)
+UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` = 16479;
+
+-- https://github.com/scriptdev2/scriptdev2/commit/d0030bb6426f9f551f89d73ae9a732b16d23ee31
+-- Additional improvements to Uldaman
+DELETE FROM `creature_linking_template` WHERE `entry` IN (7309,10120,7076,7077);
+INSERT INTO `creature_linking_template` (`entry`, `map`, `master_entry`, `flag`, `search_range`) VALUES
+(7309, 70, 2748, 20, 0),
+(10120, 70, 2748, 20, 0),
+(7076, 70, 2748, 20, 0),
+(7077, 70, 2748, 20, 0);
+DELETE FROM `spell_script_target` WHERE `entry` IN (10258,10252);
+INSERT INTO `spell_script_target` (`entry`, `type`, `targetEntry`) VALUES
+(10258, 1, 10120),
+(10252, 1, 7076);
+
+-- https://github.com/scriptdev2/scriptdev2/commit/cedc2f582ea8320f86b61119889cd729745548da
+-- Ouro
+-- update creature id to the spawner - boss is summoned by script
+update `creature` set `id` = 15957 where `id` = 15517;
+-- delete the bugs from the map - they are summoned
+delete from `creature` where `id` = 15718;
+-- Fix some flags and factions
+UPDATE `creature_template` SET `unit_flags` = 33554432 WHERE `entry` in (15957,15712,15717);
+UPDATE `creature_template` SET `faction_A` = 16, `faction_H` = 16 WHERE `entry` = 15712;
+
+-- https://github.com/scriptdev2/scriptdev2/commit/c85fe6696968a2df36f77821c45520e614cb6e89
+-- Ouro sandworm base script target
+delete from `spell_script_target` where `entry` = 26063;
+insert into `spell_script_target` values
+(26063,0,180795,0);
+
+
+-- https://github.com/scriptdev2/scriptdev2/commit/3503313f36e745182e0ff72cb7a55a2025f107f3
+-- Allow Sapphiron to be spawned using GO 181356
+UPDATE `gameobject_template` SET `ScriptName`='go_sapphiron_birth' WHERE `entry`=181356;
+
+-- Pyramid event for Zul'Farrak - SD2 update z2673
+-- https://github.com/scriptdev2/scriptdev2/commit/797d2126992288afa13e9a1b0c392d0ad714ae44
+
+-- ZF pyramid
+UPDATE `creature` SET `MovementType` = 2 WHERE `id` IN (7607, 7604, 7605, 7606, 7608);
+UPDATE `creature_template` SET `MovementType` = 0 WHERE `entry` IN (8877,8876,7275,7796);
+
+DELETE FROM `creature_movement_template` WHERE `entry` IN (7607, 7604, 7605, 7606, 7608);
+INSERT INTO `creature_movement_template` (`entry`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `orientation`) VALUES
+-- Weegli Blastfuse
+(7607,1,1881.05, 1297.36, 48.419, 1000, 760701, 5.41),          -- workaround in order to pause the default wp movement. This is needed to avoid evade complications
+(7607,2,1881.741, 1295.994, 48.323, 1000, 760702, 5.41),
+(7607,3,1881.001, 1293.345, 47.627, 0, 0, 0),
+(7607,4,1880.210, 1290.434, 45.970, 0, 0, 0),                   -- workaround in order to force move maps to do the right move path
+(7607,5,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7607,6,1891.080, 1284.610, 43.580, 1000, 760706, 4.71),
+(7607,7,1883.285, 1263.755, 41.576, 2000, 760707, 4.71),
+(7607,8,1889.486, 1271.971, 41.626, 1000, 760701, 4.71),
+(7607,9,1895.356, 1227.598, 9.521, 0, 0, 0),
+(7607,10,1893.277, 1206.289, 8.877, 1000, 760701, 4.61),
+-- blowing the door
+(7607,11,1891.670, 1181.687, 8.877, 0, 0, 0),
+(7607,12,1876.005, 1161.771, 9.653, 0, 0, 0),
+(7607,13,1857.490, 1145.531, 15.119, 1000, 760713, 3.86),
+-- run away
+(7607,14,1877.107, 1148.825, 10.316, 0, 0, 0),
+(7607,15,1886.306, 1137.952, 9.352, 0, 0, 0),
+(7607,16,1869.976, 1092.893, 8.876, 0, 1, 0),
+-- Sergeant Bly
+(7604,1,1882.89, 1299.27, 48.3843, 1000, 760401, 4.83),
+(7604,2,1883.395, 1297.178, 48.293, 1000, 760402, 4.83),
+(7604,3,1881.001, 1293.345, 47.627, 0, 0, 0),
+(7604,4,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7604,5,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7604,6,1886.896, 1264.077, 41.494, 1000, 760401, 4.71),
+(7604,7,1886.703, 1227.956, 9.9242, 0, 0, 0),
+(7604,8,1884.289, 1202.936, 8.8781, 60000, 0, 4.61),
+(7604,9,1884.289, 1202.936, 8.8781, 15000, 760409, 4.61),
+-- Raven
+(7605,1,1886.64, 1299.11, 48.3146, 1000, 760501, 4.36),
+(7605,2,1886.123, 1297.247, 48.241, 1000, 760502, 4.36),
+(7605,3,1881.001, 1293.345, 47.627, 0, 0, 0),
+(7605,4,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7605,5,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7605,6,1890.223, 1264.296, 41.420, 1000, 760501, 4.71),
+(7605,7,1895.356, 1227.598, 9.521, 0, 0, 0),
+(7605,8,1889.008, 1201.978, 8.878, 60000, 0, 4.54),
+(7605,9,1889.008, 1201.978, 8.878, 15000, 760509, 4.54),
+-- Oro Eyegouge
+(7606,1,1889.62, 1298.01, 48.2581, 1000, 760601, 3.94),
+(7606,2,1888.196, 1296.756, 48.203, 1000, 760602, 3.94),
+(7606,3,1881.001, 1293.345, 47.627, 0, 0, 0),
+(7606,4,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7606,5,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7606,6,1883.209, 1271.997, 41.850, 1000, 760601, 4.71),
+(7606,7,1879.247, 1227.145, 9.276, 0, 0, 0),
+(7606,8,1876.139, 1207.258, 8.877, 60000, 0, 4.64),
+(7606,9,1876.139, 1207.258, 8.877, 15000, 760609, 4.64),
+-- Murta Grimgut
+(7608,1,1891.07, 1294.78, 48.2347, 1000, 760801, 3.31),
+(7608,2,1889.018, 1294.428, 48.189, 1000, 760802, 3.31),
+(7608,3,1881.001, 1293.345, 47.627, 0, 0, 0),
+(7608,4,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7608,5,1880.210, 1290.434, 45.970, 0, 0, 0),
+(7608,6,1886.345, 1271.890, 41.735, 1000, 760801, 4.71),
+(7608,7,1886.703, 1227.956, 9.924, 0, 0, 0),
+(7608,8,1884.856, 1208.976, 8.878, 60000, 0, 4.61),
+(7608,9,1884.856, 1208.976, 8.878, 15000, 760809, 4.61);
+
+-- texts
+DELETE FROM `db_script_string` WHERE `entry` IN (2000005547,2000005548,2000005549,2000005550,2000005551,2000005552,2000005553);
+INSERT INTO `db_script_string` (`entry`, `content_default` , `sound`, `type`, `language`, `emote`, `comment`) VALUES
+(2000005547,'Oh no! Here they come!',0,0,0,0,'Weegli Blastfuse - say event start'),
+(2000005548,'Ok, here I go!',0,0,0,0,'Weegli Blastfuse - say blow door normal'),
+(2000005549,'What? How dare you say that to me?!?',0,0,0,6,'Sergeant Bly - say faction change 1'),
+(2000005550,'After all we\'ve been through? Well, I didn\'t like you anyway!!',0,0,0,5,'Sergeant Bly - say faction change 2'),
+(2000005551,'I\'m out of here!',0,0,0,0,'Weegli Blastfuse - say blow door forced'),
+(2000005552,'Who dares step into my domain! Come! Come, and be consumed!',0,6,0,0,'Ukorz Sandscalp - say after door blown'),
+(2000005553,'Let\'s move forward!',0,0,0,0,'Sergeant Bly - move downstairs');
+
+-- creature move scripts
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (760702,760402,760502,760602,760802,760706,760707,760701,760401,760501,760601,760801);
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, `command`, `datalong`, `dataint`, `comments`) VALUES
+(760701, 0, 32, 1, 0, 'Weegli Blastfuse - stop movement'),
+(760401, 0, 32, 1, 0, 'Sergeant Bly - stop movement'),
+(760501, 0, 32, 1, 0, 'Raven - stop movement'),
+(760601, 0, 32, 1, 0, 'Oro Eyegouge - stop movement'),
+(760801, 0, 32, 1, 0, 'Murta Grimgut - stop movement'),
+(760702, 0, 1, 71, 0, 'Sergeant Bly - emote cheer'),
+(760402, 0, 1, 71, 0, 'Raven - emote cheer'),
+(760502, 0, 1, 71, 0, 'Oro Eyegouge - emote cheer'),
+(760602, 0, 1, 71, 0, 'Weegli Blastfuse - emote cheer'),
+(760802, 0, 1, 71, 0, 'Murta Grimgut - emote cheer'),
+(760702, 0, 22, 495, 0, 'Weegli Blastfuse - update faction'),
+(760402, 0, 22, 495, 0, 'Sergeant Bly - update faction'),
+(760502, 0, 22, 495, 0, 'Raven - update faction'),
+(760602, 0, 22, 495, 0, 'Oro Eyegouge - update faction'),
+(760802, 0, 22, 495, 0, 'Murta Grimgut - update faction'),
+(760706, 0, 25, 1, 0, 'Weegli Blastfuse - set run on'),
+(760707, 0, 0, 0, 2000005547, 'Weegli Blastfuse - say event begin');
+
+-- despawn self
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 11365;
+INSERT INTO `dbscripts_on_spell` (`id`, `command`, `datalong`, `comments`) VALUES
+(11365, 18, 1000, 'despawn self');
+-- party escape and door is blown
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` IN (760713,760409,760809,760609,760509);
+INSERT INTO `dbscripts_on_creature_movement` (`id`, `delay`, command, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `comments`) VALUES
+(760713, 0, 15, 10772, 0, 0, 0, 0, 0, 'Weegli Blastfuse - cast Create Weegli\'s Barrel'),
+(760713, 2, 13, 0, 0, 141612, 20, 1, 0, 'Weegli Blastfuse - use Weegli\'s Barrel'),
+(760713, 5, 0, 6, 0, 7267, 200, 0, 2000005552, 'Ukorz Sandscalp - yell intro'),
+(760409, 0, 15, 11365, 0, 0, 0, 0, 0, 'Sergeant Bly - cast Bly\'s Band\'s Escape'),
+(760409, 0, 29, 1, 2, 0, 0, 0, 0, 'Sergeant Bly - remove gossip flag'),
+(760809, 0, 15, 11365, 0, 0, 0, 0, 0, 'Raven - cast Bly\'s Band\'s Escape'),
+(760609, 0, 15, 11365, 0, 0, 0, 0, 0, 'Oro Eyegouge - cast Bly\'s Band\'s Escape'),
+(760509, 0, 15, 11365, 0, 0, 0, 0, 0, 'Murta Grimgut - cast Bly\'s Band\'s Escape');
+
+-- gossip conditions
+DELETE FROM `conditions` WHERE `condition_entry` IN (383, 384, 385, 386, 387, 388, 389);
+INSERT INTO `conditions` VALUES
+(383, 33, 2, 1), -- wp >= 2
+(384, 33, 8, 0), -- wp == 8
+(385, 33, 8, 2), -- wp < 8
+(386, 33, 10, 2), -- wp < 10
+(387, -1, 383, 386), -- wp between 1 and 9
+(388, -1, 383, 385), -- wp between 1 and 7
+(389, 33, 1, 0); -- wp == 1
+
+UPDATE `creature_template` SET `gossip_menu_id`=941 WHERE `entry`=7604;
+UPDATE `creature_template` SET `gossip_menu_id`=940 WHERE `entry`=7607;
+
+DELETE FROM `gossip_menu` WHERE `entry` IN (940,941);
+INSERT INTO `gossip_menu` VALUES
+(940, 1511, 0, 389),
+(940, 1513, 0, 387),
+(940, 1514, 0, 721),
+(941, 1515, 0, 389),
+(941, 1516, 0, 388),
+(941, 1517, 0, 384);
+
+DELETE FROM `gossip_menu_option` WHERE `menu_id` IN (940, 941);
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_script_id`, `condition_id`) VALUES
+(940, 0, 0, 'Will you blow up that door now?', 1, 1, 94001, 721),
+(941, 0, 0, 'Hey Bly!  Bilgewizzle wants his divino-matic rod back!', 1, 1, 0, 384),  -- Note: we are not sure what should be the action of this one - maybe similar to the one below
+(941, 1, 0, 'That\'s it!  I\'m tired of helping you out.  It\'s time we settled things on the battlefield!', 1, 1, 94101, 384);
+
+
+DELETE FROM `dbscripts_on_gossip` WHERE `id` IN (94001,94101);
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `comments`) VALUES
+(94001, 0, 0, 0, 0, 0, 0, 0, 2000005548,'Weegli Blastfuse - say start door bombing'),
+(94001, 0, 29, 1, 2, 0, 0, 0, 0, 'Weegli Blastfuse - remove gossip flag'),
+(94001, 0, 22, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - update faction to default'),
+(94001, 0, 25, 1, 0, 0, 0, 0, 0, 'Weegli Blastfuse - set run on'),
+(94001, 0, 32, 0, 0, 0, 0, 0, 0,'Weegli Blastfuse - start WP movement'),
+(94101, 0, 29, 1, 2, 0, 0, 0, 0, 'Sergeant Bly - remove gossip flag'),
+(94101, 0, 0, 0, 0, 0, 0, 0, 2000005549, 'Sergeant Bly - say start combat 1'),
+(94101, 3, 0, 0, 0, 0, 0, 0, 2000005550, 'Sergeant Bly - say start combat 2'),
+(94101, 6, 22, 14, 0, 0, 0, 0, 0, 'Sergeant Bly - update faction to hostile'),
+(94101, 6, 22, 14, 0, 7608, 30, 4, 0, 'Murta Grimgut - update faction'),
+(94101, 6, 22, 14, 0, 7606, 30, 4, 0, 'Oro Eyegouge - update faction'),
+(94101, 6, 22, 14, 0, 7605, 30, 4, 0, 'Raven - update faction'),
+(94101, 6, 0, 0, 0, 7607, 30, 4, 2000005551,'Weegli Blastfuse - say start door bombing'),
+(94101, 6, 29, 1, 2, 7607, 30, 4, 0, 'Weegli Blastfuse - remove gossip flag'),
+(94101, 6, 22, 0, 0, 7607, 30, 4, 0, 'Weegli Blastfuse - update faction to default'),
+(94101, 0, 25, 1, 0, 7607, 30, 4, 0, 'Weegli Blastfuse - set run on'),
+(94101, 6, 32, 0, 0, 7607, 30, 4, 0,'Weegli Blastfuse - start WP movement');
+
+-- Summon event
+DELETE FROM `dbscripts_on_event` WHERE `id` = 2609;
+INSERT INTO `dbscripts_on_event` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+-- Open cages
+(2609, 0, 11, 27089, 9000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Open Troll Cage'),
+(2609, 0, 11, 27090, 9000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Open Troll Cage'),
+(2609, 0, 11, 27091, 9000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Open Troll Cage'),
+(2609, 0, 11, 27092, 9000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Open Troll Cage'),
+(2609, 0, 11, 27093, 9000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Open Troll Cage'),
+-- Start movement
+(2609, 2, 32, 0, 0, 7604, 30, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Sergeant Bly - Start WP movement'),
+(2609, 2, 32, 0, 0, 7605, 30, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Raven - Start WP movement'),
+(2609, 2, 32, 0, 0, 7606, 30, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Oro Eyegouge - Start WP movement'),
+(2609, 2, 32, 0, 0, 7607, 30, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Start WP movement'),
+(2609, 2, 32, 0, 0, 7608, 30, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Murta Grimgut - Start WP movement'),
+-- Spawn first troll wave; there are around 38 - 40 trolls per wave. (slave and drudge). Note: some coords are guessword
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1902.83, 1223.41, 8.96, 3.95, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1894.64, 1206.29, 8.87, 2.22, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1873.45, 1204.44, 8.87, 0.88, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1875.18, 1221.24, 9.21, 0.84, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1879.02, 1223.06, 9.12, 5.91, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1882.07, 1225.7, 9.32, 5.69, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1886.97, 1225.86, 9.85, 5.79, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1892.28, 1225.49, 9.57, 5.63, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1894.72, 1221.91, 8.87, 2.34, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1890.08, 1218.68, 8.87, 1.59, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1883.5, 1218.25, 8.9, 0.67, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1886.93, 1221.4, 8.94, 1.6, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1883.76, 1222.3, 9.11, 6.26, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1889.82, 1222.51, 9.03, 0.97, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1898.23, 1217.97, 8.87, 3.42, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1877.4, 1216.41, 8.97, 0.37, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1893.07, 1215.26, 8.87, 3.08, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1874.57, 1214.16, 8.87, 3.12, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1889.94, 1212.21, 8.87, 1.59, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1883.74, 1212.35, 8.87, 1.59, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1877, 1207.27, 8.87, 3.8, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1873.63, 1204.65, 8.87, 0.61, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1896.46, 1205.62, 8.87, 5.72, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1899.63, 1202.52, 8.87, 2.46, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1903.49, 1211.52, 8.88, 0.61, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1901.34, 1206.06, 8.87, 5.72, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1869.46, 1210.38, 9.15, 2.46, 'spawn Sandfury Slave'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1872.73, 1203.04, 8.87, 6.26, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1881.32, 1205.39, 8.87, 0.97, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1887.19, 1205.09, 8.87, 3.42, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1882.50, 1203.33, 8.87, 0.37, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1868.75, 1213.85, 9.47, 3.08, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1886.06, 1213.20, 8.87, 3.12, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1906.30, 1220.33, 9.03, 1.59, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1878.61, 1202.73, 8.87, 1.59, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1897.06, 1216.08, 8.87, 3.12, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1878.07, 1216.37, 8.93, 1.59, 'spawn Sandfury Drudge'),
+(2609, 10, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1891.60, 1209.43, 8.87, 1.59, 'spawn Sandfury Drudge'),
+-- Spawn second troll wave after 100 sec (slave, drudge and about 8 cretins)
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1902.83, 1223.41, 8.96, 3.95, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1894.64, 1206.29, 8.87, 2.22, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1873.45, 1204.44, 8.87, 0.88, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1875.18, 1221.24, 9.21, 0.84, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1879.02, 1223.06, 9.12, 5.91, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1882.07, 1225.7, 9.32, 5.69, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1886.97, 1225.86, 9.85, 5.79, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1892.28, 1225.49, 9.57, 5.63, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1894.72, 1221.91, 8.87, 2.34, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1890.08, 1218.68, 8.87, 1.59, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1883.5, 1218.25, 8.9, 0.67, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1886.93, 1221.4, 8.94, 1.6, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1883.76, 1222.3, 9.11, 6.26, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1889.82, 1222.51, 9.03, 0.97, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1898.23, 1217.97, 8.87, 3.42, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1877.4, 1216.41, 8.97, 0.37, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1893.07, 1215.26, 8.87, 3.08, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1874.57, 1214.16, 8.87, 3.12, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1889.94, 1212.21, 8.87, 1.59, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1883.74, 1212.35, 8.87, 1.59, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1877, 1207.27, 8.87, 3.8, 'spawn Sandfury Cretin'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1873.63, 1204.65, 8.87, 0.61, 'spawn Sandfury Cretin'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1896.46, 1205.62, 8.87, 5.72, 'spawn Sandfury Cretin'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1899.63, 1202.52, 8.87, 2.46, 'spawn Sandfury Cretin'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1903.49, 1211.52, 8.88, 0.61, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1901.34, 1206.06, 8.87, 5.72, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7787, 9000000, 0, 0, 0, 0, 0, 0, 0, 1869.46, 1210.38, 9.15, 2.46, 'spawn Sandfury Slave'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1872.73, 1203.04, 8.87, 6.26, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1881.32, 1205.39, 8.87, 0.97, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1887.19, 1205.09, 8.87, 3.42, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1882.50, 1203.33, 8.87, 0.37, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1868.75, 1213.85, 9.47, 3.08, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1886.06, 1213.20, 8.87, 3.12, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7788, 9000000, 0, 0, 0, 0, 0, 0, 0, 1906.30, 1220.33, 9.03, 1.59, 'spawn Sandfury Drudge'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1878.61, 1202.73, 8.87, 1.59, 'spawn Sandfury Cretin'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1897.06, 1216.08, 8.87, 3.12, 'spawn Sandfury Cretin'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1878.07, 1216.37, 8.93, 1.59, 'spawn Sandfury Cretin'),
+(2609, 100, 10, 7789, 9000000, 0, 0, 0, 0, 0, 0, 0, 1891.60, 1209.43, 8.87, 1.59, 'spawn Sandfury Cretin'),
+-- npcs start to move downstairs when boss spawn
+(2609, 250, 25, 0, 0, 7607, 150, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - set run off'),
+(2609, 250, 32, 0, 0, 7604, 150, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Sergeant Bly - Start WP movement'),
+(2609, 250, 0, 0, 0, 7604, 150, 4, 2000005553, 0, 0, 0, 0, 0, 0, 0, 'Sergeant Bly - yell at movement start'),
+(2609, 250, 32, 0, 0, 7605, 150, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Raven - Start WP movement'),
+(2609, 250, 32, 0, 0, 7606, 150, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Oro Eyegouge - Start WP movement'),
+(2609, 250, 32, 0, 0, 7607, 150, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Weegli Blastfuse - Start WP movement'),
+(2609, 250, 32, 0, 0, 7608, 150, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Murta Grimgut - Start WP movement'),
+-- boss spawns after 4 min and 10 sec after the first wave (250 sec) (acolytes and zealots + 2 bosses)
+(2609, 250, 10, 8876, 9000000, 0, 0, 0, 0, 0, 0, 0, 1890.552, 1199.941, 8.96, 4.46, 'spawn Sandfury Acolyte'),
+(2609, 250, 10, 8876, 9000000, 0, 0, 0, 0, 0, 0, 0, 1888.446, 1200.169, 8.96, 1.11, 'spawn Sandfury Acolyte'),
+(2609, 250, 10, 8876, 9000000, 0, 0, 0, 0, 0, 0, 0, 1876.983, 1199.938, 8.96, 2.19, 'spawn Sandfury Acolyte'),
+(2609, 250, 10, 8876, 9000000, 0, 0, 0, 0, 0, 0, 0, 1873.311, 1197.546, 8.96, 4.60, 'spawn Sandfury Acolyte'),
+(2609, 250, 10, 8877, 9000000, 0, 0, 0, 0, 0, 0, 0, 1895.159, 1198.047, 8.96, 1.51, 'spawn Sandfury Zealot'),
+(2609, 250, 10, 8877, 9000000, 0, 0, 0, 0, 0, 0, 0, 1878.941, 1200.573, 8.96, 2.60, 'spawn Sandfury Zealot'),
+(2609, 250, 10, 8877, 9000000, 0, 0, 0, 0, 0, 0, 0, 1874.741, 1199.029, 8.96, 2.53, 'spawn Sandfury Zealot'),
+(2609, 250, 10, 7275, 9000000, 0, 0, 0, 0, 0, 0, 0, 1883.983, 1201.655, 8.96, 1.71, 'spawn Shadowpriest Sezz\'ziz'),
+(2609, 250, 10, 7796, 9000000, 0, 0, 0, 0, 0, 0, 0, 1882.324, 1201.454, 8.96, 6.05, 'spawn Nekrum Gutchewer');
+
+-- https://github.com/scriptdev2/scriptdev2/commit/031473d2bce3bd7a8e841ccc6ef849b8393bad56
+-- Cleanup and improve script for the Bug Trio
+delete from `spell_script_target` where `targetentry` IN (15543,15511);
+insert into `spell_script_target` values
+(25790, 1, 15543, 0),
+(25790, 1, 15511, 0);
+
+-- https://github.com/scriptdev2/scriptdev2/commit/8dd714a8fa649a3ec3acced439479541d33fa055
+-- zg bats from cave behind high priestess jeklik
+delete from `spell_script_target` where `entry` = 23974;
+insert into `spell_script_target` values
+(23974, 1, 14758, 0);
+
+-- https://github.com/scriptdev2/scriptdev2/commit/1348124ea6b3f3e633cde82716568ed72630819e
+-- Implement support for Nefarian - combat phase 3
+DELETE FROM `dbscripts_on_go_template_use` WHERE `id` = 179804;
+INSERT INTO `dbscripts_on_go_template_use` VALUES
+(179804,1,10,14605,60000,0,0,2,0,0,0,0,0,0,0,0,'Drakonid Bones - Summon Bone Construct');
+
+-- https://github.com/scriptdev2/scriptdev2/commit/de021dca0caeaef8ccb5ab22d2fd602c4d9e40d0
+-- postbox parcels stratholme
+DELETE FROM `gameobject` WHERE `id` IN(176346,176349,176350,176351,176352,176353);
+INSERT INTO `gameobject` (`guid`,`id`,`map`,`position_x`,`position_y`,`position_z`,`orientation`,`rotation0`,`rotation1`,
+`rotation2`,`rotation3`,`spawntimesecs`,`animprogress`,`state`) VALUES
+(23607, 176346, 329, 3682.24, -3401.63, 132.84, 3.87243, 0, 0, 0.933973, -0.357343, 600, 255, 1),
+(23609, 176349, 329, 3651.64, -3165.24, 128.157, 2.17619, 0, 0, 0.885745, 0.464173, 600, 255, 1),
+(23610, 176350, 329, 3660.31, -3476.31, 138.379, 1.49442, 0, 0, 0.679596, 0.733586, 600, 255, 1),
+(23611, 176351, 329, 3662.84, -3629.71, 138.513, 5.47596, 0, 0, 0.392744, -0.919648, 600, 255, 1),
+(23612, 176352, 329, 3567.3, -3351.87, 130.696, 5.47596, 0, 0, 0.392744, -0.919648, 600, 255, 1),
+(23613, 176353, 329, 3500.43, -3295.64, 131.034, 1.57623, 0, 0, 0.709027, 0.705182, 600, 255, 1);
+
+-- postboxes
+DELETE FROM `gameobject` WHERE `id` = 176360;
+INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`,
+ `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
+(23620, 176360, 329, 3500.44, -3296.51, 132.178, 4.55695, 0, 0, -0.711057, -0.703135, -180, 255, 1),
+(23619, 176360, 329, 3566.72, -3351.26, 131.838, 2.31857, 0, 0, 0.916517, 0.399995, -180, 255, 1),
+(23618, 176360, 329, 3662.24, -3629.09, 139.66, 2.20469, 0, 0, -0.382585, 0.92392, -180, 255, 1),
+(23617, 176360, 329, 3660.25, -3477.18, 139.511, 4.82007, 0, 0, -0.685653, -0.727929, -180, 255, 1),
+(23616, 176360, 329, 3652.15, -3165.96, 129.285, 5.34443, 0, 0, 0.452331, -0.89185, -180, 255, 1),
+(23615, 176360, 329, 3682.91, -3401.05, 133.941, 0.670026, 0, 0, -0.929145, 0.369716, -180, 255, 1);
+
+-- parcels appear when box open
+DELETE FROM `dbscripts_on_go_use` WHERE `id` IN (23613,23607,23612,23609,23610,23611);
+INSERT INTO `dbscripts_on_go_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(23613, 0, 9, 23620, 600000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Fras Slabi Parcel'),
+(23607, 0, 9, 23615, 600000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Market Row Parcel'),
+(23612, 0, 9, 23619, 600000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Kings Square Parcel'),
+(23609, 0, 9, 23616, 600000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Crusaders Square Parcel'),
+(23610, 0, 9, 23617, 600000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Festival Lane Parcel'),
+(23611, 0, 9, 23618, 600000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Elders Square Parcel');
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
