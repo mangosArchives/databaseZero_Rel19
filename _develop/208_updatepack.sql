@@ -4056,5 +4056,13 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 VALUES
     (6001, 0, 0, '<Place my hand on the orb.>', 1, 1, -1, 0, 6001, 0, 0, NULL, 726);
 
+-- Fixes #112: assign proper gossio and conditions to Lothos Riftwaker
+UPDATE `creature_template` SET `gossip_menu_id` = 5750 WHERE `entry` = 14387;
+
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`)
+VALUES (727, 8, 7848, 0);
+
+UPDATE `gossip_menu_option` SET `option_text` = 'Transport me to the Molten Core, Lothos.', `condition_id` = 727 WHERE `menu_id` = 5750 AND `id` = 1;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
