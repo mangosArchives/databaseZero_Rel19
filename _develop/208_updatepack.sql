@@ -4091,5 +4091,9 @@ UPDATE `areatrigger_teleport` SET `target_map` = 0, `target_position_x` = -7524.
 UPDATE `areatrigger_teleport` SET `name`='Blackfathom Deeps Entrance' WHERE `id`=257;
 UPDATE `areatrigger_teleport` SET `name`='Blackfathom Deeps Instance Start' WHERE `id`=259;
 
+-- Quests available only after 9233 Omarions Handbook
+-- Source: http://www.wowwiki.com/Omarion%27s_Handbook
+UPDATE `quest_template` SET `prevquestid` = 9233 WHERE `entry` IN (9234,9235,9236,9237,9238,9239,9240,9241,9242,9243,9244,9245,9246);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
