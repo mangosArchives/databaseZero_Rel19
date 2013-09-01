@@ -4076,5 +4076,9 @@ INSERT INTO scripted_event VALUES
 UPDATE creature_template SET ScriptName='boss_zumrah' WHERE entry=7271;
 UPDATE creature_template SET ScriptName='npc_piznik' WHERE entry=4276;
 
+-- Database error fixes
+DELETE FROM `creature_addon` WHERE `guid` IN (28379, 45146, 45214, 45215);
+DELETE FROM `gossip_menu_option` WHERE `menu_id` = 1623 AND `id` = 1;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
