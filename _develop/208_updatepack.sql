@@ -3772,5 +3772,8 @@ UPDATE `quest_template` SET `RewMoneyMaxLevel` = 2280 WHERE `entry` = 4402;
 -- Fixes issue #14: correct experience rewarded for quest
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 37200 WHERE `entry` = 8464;
 
+-- Fixes issue #22 : correct experience rewarded for quest.
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 26400 WHERE `entry` = 8460;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
