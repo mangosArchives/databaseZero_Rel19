@@ -4080,5 +4080,8 @@ UPDATE creature_template SET ScriptName='npc_piznik' WHERE entry=4276;
 DELETE FROM `creature_addon` WHERE `guid` IN (28379, 45146, 45214, 45215);
 DELETE FROM `gossip_menu_option` WHERE `menu_id` = 1623 AND `id` = 1;
 
+-- Delete some TBC items from creature loot
+DELETE FROM `creature_loot_template` WHERE `item` IN (24060, 24062, 24070, 24075, 24076, 24077, 24078);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
