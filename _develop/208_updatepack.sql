@@ -4039,5 +4039,22 @@ SET
 WHERE
     `entry` = 9527;
 
+-- Fixes issue #113: assign proper gossip to Orb of Command
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`)
+VALUES (726, 8, 7761, 0);
+
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`)
+VALUES
+    (6001, 0, 15, 23460, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 'Teleport player to Blackwing Lair.');
+
+INSERT INTO `gossip_menu` (`entry`,`text_id`,`script_id`,`condition_id`)
+VALUES
+    (6001, 7154, 0, 0), -- displayed if player completed quest
+    (6001, 7155, 0, 726); -- displayed if player is not yet attuned
+
+INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `option_id`, `npc_option_npcflag`, `action_menu_id`, `action_poi_id`, `action_script_id`, `box_coded`, `box_money`, `box_text`, `condition_id`)
+VALUES
+    (6001, 0, 0, '<Place my hand on the orb.>', 1, 1, -1, 0, 6001, 0, 0, NULL, 726);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
