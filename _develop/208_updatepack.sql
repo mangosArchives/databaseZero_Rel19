@@ -4032,5 +4032,12 @@ VALUES
     (94746, 1),
     (94747, 1);
 
+-- Fixes issue #116: set correct faction for Enraged Hippogryph
+UPDATE `creature_template`
+SET
+    `faction_A` = 80, `faction_H` = 80
+WHERE
+    `entry` = 9527;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
