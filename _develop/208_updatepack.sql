@@ -3767,7 +3767,7 @@ UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 5933; -- Achellios the
 UPDATE `creature_template` SET `rank` = 4 WHERE `entry` = 7895; -- Ambassador Bloodrage, found in: THE BARRENS
 
 -- Fixes issue #3: correct experience rewarded for quest
-UPDATE `quest_template` SET `RewMoneyMaxLevel` = 228 WHERE `entry` = 4402;
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 240 WHERE `entry` = 4402;
 
 -- Fixes issue #14: correct experience rewarded for quest
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 3720 WHERE `entry` = 8464;
