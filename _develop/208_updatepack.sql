@@ -4080,5 +4080,9 @@ UPDATE creature_template SET ScriptName='npc_piznik' WHERE entry=4276;
 DELETE FROM `creature_addon` WHERE `guid` IN (28379, 45146, 45214, 45215);
 DELETE FROM `gossip_menu_option` WHERE `menu_id` = 1623 AND `id` = 1;
 
+-- Fix quest text for 1132
+-- Source http://www.wowpeek.com/quest.php?questid=1132
+UPDATE `quest_template` SET `Details` = 'Oh, to be at sea once again!  To feel the kiss of the wind, and to have the waves rock me like my blessed mother, long ago!$B$BOh, I wish I had your fortune, good $c, for I see the sea in your future!$B$BIt\'s my job to tell eager souls of the land of Kalimdor, the land of opportunity!  If you\'re willing to try your luck across the sea, then take a ship from here to the lovely port of Theramore.  Speak there with my partner, the elf, Fiora Longears.$B$BShe\'ll start you on your Kalimdor adventure!', `Objectives` = 'Speak with Fiora Longears in Theramore.' WHERE `entry` = 1132;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
