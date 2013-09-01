@@ -4069,5 +4069,12 @@ DELETE FROM `creature` WHERE `guid` = 42896;
 DELETE FROM `creature_addon` WHERE `guid` = 42896;
 DELETE FROM `creature_movement` WHERE `id` = 42896;
 
+-- Missing ScriptDev script assignments
+UPDATE `gameobject_template` SET `ScriptName` = 'go_fathom_stone' WHERE entry = 177964;
+INSERT INTO scripted_event VALUES
+(2609,'event_spell_unlocking');
+UPDATE creature_template SET ScriptName='boss_zumrah' WHERE entry=7271;
+UPDATE creature_template SET ScriptName='npc_piznik' WHERE entry=4276;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
