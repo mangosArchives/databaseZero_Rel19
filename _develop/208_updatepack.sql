@@ -4087,5 +4087,9 @@ UPDATE `quest_template` SET `Details` = 'Oh, to be at sea once again!  To feel t
 -- Blackwing lair exit to blackrock spire
 UPDATE `areatrigger_teleport` SET `target_map` = 0, `target_position_x` = -7524.19, `target_position_y` = -1230.13, `target_position_z` = 285.743, `target_orientation` = 2.09544 WHERE `id` = 3728;
 
+-- Typos
+UPDATE `areatrigger_teleport` SET `name`='Blackfathom Deeps Entrance' WHERE `id`=257;
+UPDATE `areatrigger_teleport` SET `name`='Blackfathom Deeps Instance Start' WHERE `id`=259;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
