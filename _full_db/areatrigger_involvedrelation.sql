@@ -75,7 +75,8 @@ INSERT INTO `areatrigger_involvedrelation` VALUES
 (2926,25),
 (2946,6421),
 (3367,6025),
-(3986,8286);
+(3986,8286),
+(173,437);
 /*!40000 ALTER TABLE `areatrigger_involvedrelation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

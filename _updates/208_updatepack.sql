@@ -24,60 +24,89 @@ UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -27 WHERE `entry` = 
 -- Quest end script for quest 857 The Tear of the Moons and movement for feegly
 UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 3421;
 DELETE FROM `creature` WHERE `guid` = 14138;
-INSERT INTO `creature` VALUES (14138,3421,1,1406,0,-4217.42,-2342.11,91.73,2.13,275,0,0,860,0,0,2);
+INSERT INTO `creature` VALUES
+(14138,3421,1,1406,0,-4217.42,-2342.11,91.73,2.13,275,0,0,860,0,0,2);
 DELETE FROM `creature_movement` WHERE `id` = 14138;
-INSERT INTO `creature_movement` VALUES (14138,1,-4217.83,-2341.47,91.7458,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
-INSERT INTO `creature_movement` VALUES (14138,2,-4219.46,-2336.15,91.8028,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
+INSERT INTO `creature_movement` VALUES
+(14138,1,-4217.83,-2341.47,91.7458,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
+INSERT INTO `creature_movement` VALUES
+(14138,2,-4219.46,-2336.15,91.8028,10000,0,0,0,0,0,0,0,0,0,2.13698,0,0);
 UPDATE `quest_template` SET `CompleteScript` = 857 WHERE `entry` = 857;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 857;
-INSERT INTO `dbscripts_on_quest_end` VALUES (857,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Stop movement');
-INSERT INTO `dbscripts_on_quest_end` VALUES (857,1,0,0,0,0,0,0,2000000240,0,0,0,0,0,0,0,'Say 1');
-INSERT INTO `dbscripts_on_quest_end` VALUES (857,3,0,0,0,0,0,0,2000000241,0,0,0,0,0,0,0,'Text emote 1');
-INSERT INTO `dbscripts_on_quest_end` VALUES (857,6,0,0,0,0,0,0,2000000242,0,0,0,0,0,0,0,'Say 2');
-INSERT INTO `dbscripts_on_quest_end` VALUES (857,9,0,0,0,0,0,0,2000000243,0,0,0,0,0,0,0,'Text emote 2');
-INSERT INTO `dbscripts_on_quest_end` VALUES (857,10,15,5142,0,0,0,0,0,0,0,0,0,0,0,0,'cast Troggform');
-INSERT INTO `dbscripts_on_quest_end` VALUES (857,16,15,5,0,0,0,4,0,0,0,0,0,0,0,0,'Kill feegly');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(857,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,'Stop movement');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(857,1,0,0,0,0,0,0,2000000240,0,0,0,0,0,0,0,'Say 1');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(857,3,0,0,0,0,0,0,2000000241,0,0,0,0,0,0,0,'Text emote 1');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(857,6,0,0,0,0,0,0,2000000242,0,0,0,0,0,0,0,'Say 2');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(857,9,0,0,0,0,0,0,2000000243,0,0,0,0,0,0,0,'Text emote 2');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(857,10,15,5142,0,0,0,0,0,0,0,0,0,0,0,0,'cast Troggform');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(857,16,15,5,0,0,0,4,0,0,0,0,0,0,0,0,'Kill feegly');
 DELETE FROM `db_script_string` WHERE `entry` = 2000000240;
 DELETE FROM `db_script_string` WHERE `entry` = 2000000241;
 DELETE FROM `db_script_string` WHERE `entry` = 2000000242;
 DELETE FROM `db_script_string` WHERE `entry` = 2000000243;
-INSERT INTO `db_script_string` VALUES (2000000240,'The power of the Tear of the Moons is mine! Mine I say!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
-INSERT INTO `db_script_string` VALUES (2000000241,'Feegly the Exiled begins to rub the Tear of the Moons.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
-INSERT INTO `db_script_string` VALUES (2000000242,'Power! Glorious power!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
-INSERT INTO `db_script_string` VALUES (2000000243,'Feegly the Exiled begins to make strange grunting noises. The Tear of the Moons drops to the ground and shatters.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+INSERT INTO `db_script_string` VALUES
+(2000000240,'The power of the Tear of the Moons is mine! Mine I say!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES
+(2000000241,'Feegly the Exiled begins to rub the Tear of the Moons.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+INSERT INTO `db_script_string` VALUES
+(2000000242,'Power! Glorious power!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES
+(2000000243,'Feegly the Exiled begins to make strange grunting noises. The Tear of the Moons drops to the ground and shatters.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
 
 -- Verog the dervish gets now spawned with command 47 to prevent double spawns
 UPDATE `creature_ai_scripts` SET `action2_type` = 47 WHERE `action2_param1` = 3395;
 
 -- Fixed all Bubbly fissures
 DELETE FROM `gameobject_template` WHERE `entry` = 177524;
-INSERT INTO `gameobject_template` VALUES (177524,6,344,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+INSERT INTO `gameobject_template` VALUES
+(177524,6,344,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 UPDATE `gameobject` SET `id` = 177524 WHERE `guid` = 13380;
 DELETE FROM `gameobject_template` WHERE `entry` = 180057;
-INSERT INTO `gameobject_template` VALUES (180057,6,0,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+INSERT INTO `gameobject_template` VALUES
+(180057,6,0,'Bubbly Fissure',0,0,0.1,0,0,8,17775,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
 
 -- Fixed several problems with quest 877 The Stagnant Oasis
 UPDATE `gameobject_template` SET `flags` = 0 WHERE `entry` = 3743;
 UPDATE `quest_template` SET `ReqItemId2` = 5068 WHERE `entry` = 877;
 UPDATE `quest_template` SET `ReqItemCount2` = 1 WHERE `entry` = 877;
 DELETE FROM `gameobject` WHERE `id` = 3743;
-INSERT INTO `gameobject` VALUES (55531,3743,1,-1280.23,-3015.37,72.0094,0.630807,0,0,0.3102,0.950671,-60,100,1);
-INSERT INTO `gameobject` VALUES (55532,3743,1,-1276.09,-3017.25,72.9672,5.71077,0,0,0.282316,-0.959321,-60,100,1);
-INSERT INTO `gameobject` VALUES (55533,3743,1,-1271.2,-3012.87,71.8351,4.22637,0,0,0.856478,-0.516183,-60,100,1);
-INSERT INTO `gameobject` VALUES (55534,3743,1,-1273.34,-3007.69,71.6012,2.15527,0,0,0.880841,0.473411,-60,100,1);
-INSERT INTO `gameobject` VALUES (55535,3743,1,-1281.12,-3010.96,71.4162,4.1227,0,0,0.882072,-0.471114,-60,100,1);
+INSERT INTO `gameobject` VALUES
+(55531,3743,1,-1280.23,-3015.37,72.0094,0.630807,0,0,0.3102,0.950671,-60,100,1);
+INSERT INTO `gameobject` VALUES
+(55532,3743,1,-1276.09,-3017.25,72.9672,5.71077,0,0,0.282316,-0.959321,-60,100,1);
+INSERT INTO `gameobject` VALUES
+(55533,3743,1,-1271.2,-3012.87,71.8351,4.22637,0,0,0.856478,-0.516183,-60,100,1);
+INSERT INTO `gameobject` VALUES
+(55534,3743,1,-1273.34,-3007.69,71.6012,2.15527,0,0,0.880841,0.473411,-60,100,1);
+INSERT INTO `gameobject` VALUES
+(55535,3743,1,-1281.12,-3010.96,71.4162,4.1227,0,0,0.882072,-0.471114,-60,100,1);
 DELETE FROM `dbscripts_on_event` WHERE `id` = 525;
-INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55531,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
-INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55532,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
-INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55533,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
-INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55534,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
-INSERT INTO `dbscripts_on_event` VALUES (525,2,9,55535,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES
+(525,2,9,55531,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES
+(525,2,9,55532,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES
+(525,2,9,55533,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES
+(525,2,9,55534,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
+INSERT INTO `dbscripts_on_event` VALUES
+(525,2,9,55535,60,0,0,0,0,0,0,0,0,0,0,0,'Spawn Fissure Plant');
 DELETE FROM `gameobject_loot_template` WHERE `entry` = 2603;
-INSERT INTO `gameobject_loot_template` VALUES (2603,5066,100,0,1,1,0);
+INSERT INTO `gameobject_loot_template` VALUES
+(2603,5066,100,0,1,1,0);
 DELETE FROM `gameobject` WHERE `guid` = 55536;
 DELETE FROM `gameobject` WHERE `guid` = 55537;
-INSERT INTO `gameobject` VALUES (55536,180057,1,-1274.37,-3012.04,72.67,0,0,0,0,0,2,100,1);
-INSERT INTO `gameobject` VALUES (55537,180057,1,89.75,-1943.77,80.02,0,0,0,0,0,2,100,1);
+INSERT INTO `gameobject` VALUES
+(55536,180057,1,-1274.37,-3012.04,72.67,0,0,0,0,0,2,100,1);
+INSERT INTO `gameobject` VALUES
+(55537,180057,1,89.75,-1943.77,80.02,0,0,0,0,0,2,100,1);
 DELETE FROM `gameobject_template` WHERE `entry` = 211085;
 DELETE FROM `gameobject_template` WHERE `entry` = 211086;
 
@@ -286,20 +315,26 @@ UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 1142;
 
 -- fixing Quest 437 The Death Fields spawnscripts by ghurok
 DELETE FROM `areatrigger_involvedrelation` WHERE `id` = 173;
-INSERT INTO `areatrigger_involvedrelation` VALUES (173, 437);
+INSERT INTO `areatrigger_involvedrelation` VALUES
+(173, 437);
 UPDATE `quest_template` SET `SpecialFlags` = 2 WHERE `entry` = 437;
 DELETE FROM `creature_ai_scripts` WHERE `id` = 177203;
 DELETE FROM `creature_ai_scripts` WHERE `id` = 177303;
-INSERT INTO `creature_ai_scripts` VALUES (177203, 1772, 6, 0, 10, 0, 0, 0, 0, 0, 47, 1983, 1, 17, 1, 0, 0, 0, 0, 0, 0, 0, 'Rot Hide Gladerunner - On Death Spawn Nightlash');
-INSERT INTO `creature_ai_scripts` VALUES (177303, 1773, 6, 0, 10, 0, 0, 0, 0, 0, 47, 1983, 1, 17, 1, 0, 0, 0, 0, 0, 0, 0, 'Rot Hide Mystic - On Death Spawn Nightlash');
+INSERT INTO `creature_ai_scripts` VALUES
+(177203, 1772, 6, 0, 10, 0, 0, 0, 0, 0, 47, 1983, 1, 17, 1, 0, 0, 0, 0, 0, 0, 0, 'Rot Hide Gladerunner - On Death Spawn Nightlash');
+INSERT INTO `creature_ai_scripts` VALUES
+(177303, 1773, 6, 0, 10, 0, 0, 0, 0, 0, 47, 1983, 1, 17, 1, 0, 0, 0, 0, 0, 0, 0, 'Rot Hide Mystic - On Death Spawn Nightlash');
 DELETE FROM `creature_ai_summons` WHERE `id` = 17;
-INSERT INTO `creature_ai_summons` VALUES (17, 1073.84, 1543.37, 28.6752, 0.174533, 300000, '1983');
+INSERT INTO `creature_ai_summons` VALUES
+(17, 1073.84, 1543.37, 28.6752, 0.174533, 300000, '1983');
 DELETE FROM `creature` WHERE `guid` = 28379;
 
 -- Spell script for spell 7669 Bethors potion
 DELETE FROM `dbscripts_on_spell` WHERE `id` = 7669;
-INSERT INTO `dbscripts_on_spell` VALUES (7669,0,14,7656,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw');
-INSERT INTO `dbscripts_on_spell` VALUES (7669,0,14,7657,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw');
+INSERT INTO `dbscripts_on_spell` VALUES
+(7669,0,14,7656,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw');
+INSERT INTO `dbscripts_on_spell` VALUES
+(7669,0,14,7657,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw');
 
 -- fixing Quest 99, 421, 422, 423, 424, 1014 Dalar Dawnweaver now using correct spell
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 99;
@@ -308,12 +343,18 @@ DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 422;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 423;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 424;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 1014;
-INSERT INTO `dbscripts_on_quest_end` VALUES (99,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
-INSERT INTO `dbscripts_on_quest_end` VALUES (421,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
-INSERT INTO `dbscripts_on_quest_end` VALUES (422,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
-INSERT INTO `dbscripts_on_quest_end` VALUES (423,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
-INSERT INTO `dbscripts_on_quest_end` VALUES (424,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
-INSERT INTO `dbscripts_on_quest_end` VALUES (1014,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(99,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(421,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(422,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(423,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(424,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(1014,0,15,1460,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Arcane Intellect on Player');
 
 -- fixing Quest 452 Pyrewood Ambush , Rewarded Money pre TBC and Rewarded XP pre TBC
 UPDATE `quest_template` SET `RewOrReqMoney` = 1400 WHERE `entry` = 452;
@@ -396,22 +437,29 @@ UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` IN (448,449,450,
 
 -- scripted the quest end script for quest 771 Rite of vision
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 771;
-INSERT INTO `dbscripts_on_quest_end` VALUES (771,0,15,5026,0,0,0,0,0,0,0,0,0,0,0,0,'Cast Water of seers');
-INSERT INTO `dbscripts_on_quest_end` VALUES (771,0,0,2,0,0,0,0,2000000179,0,0,0,0,0,0,0,'Text emote');
-INSERT INTO `dbscripts_on_quest_end` VALUES (771,8,0,0,3,0,0,0,2000000180,0,0,0,0,0,0,0,'Zarlman Say');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(771,0,15,5026,0,0,0,0,0,0,0,0,0,0,0,0,'Cast Water of seers');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(771,0,0,2,0,0,0,0,2000000179,0,0,0,0,0,0,0,'Text emote');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(771,8,0,0,3,0,0,0,2000000180,0,0,0,0,0,0,0,'Zarlman Say');
 DELETE FROM `db_script_string` WHERE `entry` = 2000000179;
 DELETE FROM `db_script_string` WHERE `entry` = 2000000180;
-INSERT INTO `db_script_string` VALUES (2000000179,"Zarlman Two-Moons begins chanting as he mixes the well stones and ambercom before the Tribal Fire.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
-INSERT INTO `db_script_string` VALUES (2000000180,"The Water of the Seers is ready for your consumption, $N.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL);
+INSERT INTO `db_script_string` VALUES
+(2000000179,"Zarlman Two-Moons begins chanting as he mixes the well stones and ambercom before the Tribal Fire.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+INSERT INTO `db_script_string` VALUES
+(2000000180,"The Water of the Seers is ready for your consumption, $N.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,3,0,NULL);
 
 -- Fixing Quest 772 Rite of vision
 UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 772;
 UPDATE `quest_template` SET `CompleteScript` = 772 WHERE `entry` = 772;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 772;
-INSERT INTO `dbscripts_on_quest_end` VALUES (772,0,15,1126,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Motw on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(772,0,15,1126,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Motw on Player');
 UPDATE `creature_template` SET `MovementType` = 2 WHERE `entry` = 2983;
 DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 298301;
-INSERT INTO `dbscripts_on_creature_movement` VALUES (298301,4,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'despawn self, with delay');
+INSERT INTO `dbscripts_on_creature_movement` VALUES
+(298301,4,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'despawn self, with delay');
 DELETE FROM `creature_movement_template` WHERE `entry` = 2983;
 INSERT INTO `creature_movement_template` VALUES
 (2983,1,-2226.32,-408.095,-9.36235,0,0,0,0,0,0,0,0,0,0,0,0,0),
@@ -469,7 +517,8 @@ INSERT INTO `creature_movement_template` VALUES
 UPDATE `quest_template` SET `RewSpellCast` = 0 WHERE `entry` = 755;
 UPDATE `quest_template` SET `CompleteScript` = 755 WHERE `entry` = 755;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 755;
-INSERT INTO `dbscripts_on_quest_end` VALUES (755,0,15,1126,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Motw on Player');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(755,0,15,1126,0,0,0,0,0,0,0,0,0,0,0,0,'Cast spell Motw on Player');
 
 -- Fixing Quest 750 The Hunt continues Questtext
 UPDATE `quest_template` SET `OfferRewardText` = "The tauren of Narache thank you for these provisions, $N. With your skill in the ways of the hunt you will surely be revered in Thunder Bluff someday." WHERE `entry` = 750;
@@ -540,19 +589,26 @@ UPDATE `quest_template` SET `StartScript` = 0 WHERE `entry` = 790;
 UPDATE `quest_template` SET `StartScript` = 804 WHERE `entry` = 804;
 DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 790;
 DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 804;
-INSERT INTO `dbscripts_on_quest_start` VALUES (804,2,28,8,0,0,0,0,0,0,0,0,0,0,0,0,'Hana zua Kneel');
-INSERT INTO `dbscripts_on_quest_start` VALUES (804,3,0,0,0,0,0,0,2000005017,0,0,0,0,0,0,0,'Hana zua say');
-INSERT INTO `dbscripts_on_quest_start` VALUES (804,7,28,7,0,0,0,0,0,0,0,0,0,0,0,0,'Hana zua death state');
+INSERT INTO `dbscripts_on_quest_start` VALUES
+(804,2,28,8,0,0,0,0,0,0,0,0,0,0,0,0,'Hana zua Kneel');
+INSERT INTO `dbscripts_on_quest_start` VALUES
+(804,3,0,0,0,0,0,0,2000005017,0,0,0,0,0,0,0,'Hana zua say');
+INSERT INTO `dbscripts_on_quest_start` VALUES
+(804,7,28,7,0,0,0,0,0,0,0,0,0,0,0,0,'Hana zua death state');
 
 -- scripted the quest end script for quest 808 Minshinas Skull
 UPDATE `creature_template` SET `MovementType` = 0 WHERE `entry` = 3289;
 UPDATE `quest_template` SET `CompleteScript` = 808 WHERE `entry` = 808;
 DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 808;
-INSERT INTO `dbscripts_on_quest_end` VALUES (808,0,10,3289,20000,0,0,0,0,0,0,0,-823.88,-4924.51,19.71,1.89,'Summon Minshinas Ghost');
-INSERT INTO `dbscripts_on_quest_end` VALUES (808,1,0,0,0,0,0,0,2000000808,0,0,0,0,0,0,0,'Gadrin Say');
-INSERT INTO `dbscripts_on_quest_end` VALUES (808,3,1,2,0,3289,20,0,0,0,0,0,0,0,0,0,'Minshina Bow');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(808,0,10,3289,20000,0,0,0,0,0,0,0,-823.88,-4924.51,19.71,1.89,'Summon Minshinas Ghost');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(808,1,0,0,0,0,0,0,2000000808,0,0,0,0,0,0,0,'Gadrin Say');
+INSERT INTO `dbscripts_on_quest_end` VALUES
+(808,3,1,2,0,3289,20,0,0,0,0,0,0,0,0,0,'Minshina Bow');
 DELETE FROM `db_script_string` WHERE `entry` = 2000000808;
-INSERT INTO `db_script_string` VALUES (2000000808,"I thank you. $n. And my brother thanks you.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES
+(2000000808,"I thank you. $n. And my brother thanks you.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
 
 -- Quest 842 Crossroads Conscription Offer Reward text fixed. removing $ sign
 UPDATE `quest_template` SET `OfferRewardText` = "Alright, $n. You want to earn your keep with the Horde? Well there's plenty to do here, so listen close and do what you're told.$B$B$GI see that look in your eyes, do not think I will tolerate any insolence. Thrall himself has declared the Hordes females to be on equal footing with you men. Disrespect me in the slightest, and you will know true pain.:I'm happy to have met you. Thrall will be glad to know that more females like you and I are taking the initiative to push forward in the Barrens.;" WHERE `entry` = 842;
@@ -722,11 +778,13 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 
 -- Add gossip_menu for object Tablet of Theka (142715). Thanks Ghurok.
 DELETE FROM `gossip_menu` WHERE `entry`=1053;
-INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES (1053, 1653);
+INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES
+(1053, 1653);
 
 -- Add gossip_menu for object Catalogue of the Wayward (176192). Thanks Ghurok.
 DELETE FROM `gossip_menu` WHERE `entry`=3083;
-INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES (3083, 3815);
+INSERT INTO `gossip_menu` (`entry`, `text_id`) VALUES
+(3083, 3815);
 
 -- Correct page_text for item The Collector's Schedule (2223). Thanks Ghurok.
 UPDATE `page_text` SET `text`='Below is the process and schedule of Defias gold collection from the mines of Elwynn to our headquarters in Westfall.$B$BCollection Schedule:$B$BSunday: 12:30pm$BWednesday: 12:30pm$B$BBy each specified day, gold gained from the Elwynn mines will be gathered at the Brackwell pumpkin patch.  The agent in charge of these gatherings, \"The Collector,\" will be known by the engraved ring he possesses.  A ring I gave him. ' WHERE `entry`=79;
@@ -1337,7 +1395,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 (@GUID11_NPC, 15106, 1, 0, 0, 1660.82, -4385.81, 23.9178, 4.17041, 370, 0, 0, 4108, 0, 0, 0),
 (@GUID12_NPC, 15106, 1, 0, 0, 1658.83, -4388.91, 23.681, 1.01544, 370, 0, 0, 4108, 0, 0, 0);
 
-INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES (@GUID7_OBJ, 20);
+INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
+(@GUID7_OBJ, 20);
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
 (@GUID7_OBJ, 180396, 1, 1663.59, -4343.19, 61.2462, 0.750492, 0, 0, 0.366501, 0.930418, 180, 100, 1);
 INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
@@ -1383,7 +1442,8 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `positio
 INSERT INTO `game_event_gameobject` (`guid`, `event`) VALUES
 (@GUID11_OBJ, 19);
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`)
-VALUES (@GUID11_OBJ, 180394, 1, 1749.75, -3963.67, 50.4844, 3.50363, 0, 0, 0, 0, 180, 100, 1);
+VALUES
+(@GUID11_OBJ, 180394, 1, 1749.75, -3963.67, 50.4844, 3.50363, 0, 0, 0, 0, 180, 100, 1);
 INSERT INTO `game_event_creature` (`guid`, `event`) VALUES
 (@GUID21_NPC, 19),
 (@GUID22_NPC, 19);
@@ -1486,7 +1546,8 @@ UPDATE `creature` SET `position_x` = '-3613.427734', `position_y` = '-4463.89502
 
 -- Adds teleport location for The Stockades ".tele TheStockades"
 DELETE FROM `game_tele` WHERE `id`=418;
-INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES (418,-8787.390625,828.377075,97.648933,0.626312,0,'TheStockades');
+INSERT INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES
+(418,-8787.390625,828.377075,97.648933,0.626312,0,'TheStockades');
 
 -- Updates the position of Barkeep Hann because his title was flickering in the wall
 UPDATE `creature` SET `position_x` = '-10509.634766', `position_y` = '-1155.536011', `position_z` = '28.099501', `orientation` = '3.218907' WHERE `guid` = '4191';
@@ -1546,7 +1607,8 @@ UPDATE `creature` SET `position_x` = '-8156.620605', `position_y` = '2119.613770
 
 -- Adds missing Obsidian Eradicator --
 DELETE FROM `creature` WHERE `guid`=590011;
-INSERT INTO `creature` VALUES (590011, 15262, 531, 0, 0, -8277.51, 2117.84, 118.176, 0.261538, 25, 0, 0, 170805, 24340, 0, 0);
+INSERT INTO `creature` VALUES
+(590011, 15262, 531, 0, 0, -8277.51, 2117.84, 118.176, 0.261538, 25, 0, 0, 170805, 24340, 0, 0);
 UPDATE `creature` SET `spawntimesecs`=3600 WHERE `guid`=590011;
 
 -- Corrects 2 slanted Sentinels next to Skeram --
@@ -1574,7 +1636,8 @@ UPDATE `gameobject` SET `position_z` = -8.4 WHERE `guid` = 5455;
 -- Source: http://www.wowhead.com/quest=2701#comments
 -- Adds the gameobject 141980 (Spectral Lockbox) as the quest completion GO
 DELETE FROM `gameobject_involvedrelation` WHERE `quest` = 2701;
-INSERT INTO `gameobject_involvedrelation` VALUES (141980, 2701);
+INSERT INTO `gameobject_involvedrelation` VALUES
+(141980, 2701);
 -- Updates gameobject 141980 which had the wrong quest number reference
 UPDATE `gameobject_template` SET `data1` = 2701 WHERE `entry` = 141980;
 -- Updates quest to remove completion emote as gameobject does not do emote
@@ -1613,8 +1676,10 @@ Update `creature_template` SET `minlevel` = 61, `maxlevel` = 61 WHERE `entry` = 
 -- http://www.youtube.com/watch?v=7VcozSUZc9Y
 DELETE FROM `creature` WHERE `guid` = 88428;
 DELETE FROM `creature` WHERE `guid` = 88443;
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES (88428, 16157, 533, 16528, 0, 2879.88, -3198.33, 298.33, 4.04, 3520, 0, 0, 95847, 0, 0, 0);
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES (88443, 16156, 533, 16534, 0, 2799.42, -3159.93, 298.33, 3.85, 3520, 0, 0, 24372, 12000, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(88428, 16157, 533, 16528, 0, 2879.88, -3198.33, 298.33, 4.04, 3520, 0, 0, 95847, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(88443, 16156, 533, 16534, 0, 2799.42, -3159.93, 298.33, 3.85, 3520, 0, 0, 24372, 12000, 0, 0);
 
 -- Embalming slime random movement add and decrease npc scale
 UPDATE `creature` SET `spawndist` = 8, `movementtype` = 1 WHERE `id` = 16024;
@@ -1793,9 +1858,11 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `posi
 
 -- Pooling of bijous belongings
 DELETE FROM `pool_template` WHERE `entry` = 1073;
-INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES (1073, 1, 'QUEST OBJECT - Bijous Belongings - 175334');
+INSERT INTO `pool_template` (`entry`, `max_limit`, `description`) VALUES
+(1073, 1, 'QUEST OBJECT - Bijous Belongings - 175334');
 DELETE FROM `pool_gameobject_template` WHERE `id` = 175334;
-INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES (175334, 1073, 0, 'Bijous Belongings');
+INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES
+(175334, 1073, 0, 'Bijous Belongings');
 
 -- Adjust runes in ubrs pyroguard emberseer room and delete extra rune (theres a duplicate)
 Update `gameobject` set `position_x` = 126.4257, `position_y` = -240.77, `position_z` = 91.4701 where `guid` = 82601;
@@ -1815,11 +1882,13 @@ update `gameobject` set `position_x` = -11.1345, `position_y` = -465.705, `posit
 
 -- Lower blackrock spire fall out teleport. currently if you fall out of lbrs you do not get teleported, therefore you can fall through the world
 DELETE FROM `areatrigger_teleport` where `id` = 2068;
-INSERT INTO `areatrigger_teleport` (`id`, `name`, `required_level`, `required_item`, `required_item2`, `required_quest_done`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`) VALUES (2068, 'Blackrock Spire - Fall out', 0, 0, 0, 0, 0, -7524.19, -1230.13, 285.743, 2.09544);
+INSERT INTO `areatrigger_teleport` (`id`, `name`, `required_level`, `required_item`, `required_item2`, `required_quest_done`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`) VALUES
+(2068, 'Blackrock Spire - Fall out', 0, 0, 0, 0, 0, -7524.19, -1230.13, 285.743, 2.09544);
 
 -- Add Bijou source http://www.lurkerlounge.com/forums/thread-6826.html
 DELETE FROM `creature` WHERE `guid` = 83030;
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES (83030, 10257, 229, 9553, 0, -5.93244, -553.565, 16.1868, 2.87606, 3520, 0, 0, 8774, 0, 0, 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES
+(83030, 10257, 229, 9553, 0, -5.93244, -553.565, 16.1868, 2.87606, 3520, 0, 0, 8774, 0, 0, 0);
 
 -- Added npc Naxxramas Military Sub-Boss Trigger For gothic fight
 -- Updated Naxxramas Military Sub-Boss Trigger level. 80 to 60, and unit flag from 130 to 2
@@ -1874,7 +1943,8 @@ UPDATE `creature_template` SET `scale` = 0 WHERE `entry` = 1895;
 -- http://www.wowdb.com/items/5422-brambleweed-leggings#dropped-by-npc
 -- http://wowd.org/items/5422.html
 DELETE FROM `creature_loot_template` WHERE `entry` = 3672 AND `item` = 5422;
-INSERT INTO `creature_loot_template` VALUES (3672, 5422, 51, 0, 1, 1, 0);
+INSERT INTO `creature_loot_template` VALUES
+(3672, 5422, 51, 0, 1, 1, 0);
 DELETE FROM `reference_loot_template` WHERE `item` = 5422;
 
 -- War Effort Commanders Now Have Their Correct Mounts
@@ -1903,7 +1973,8 @@ UPDATE `gameobject_template` SET `size` = 0.7 WHERE `entry` IN (1610, 1667);
 -- Thanks Stan84 for pointing and fixing
 -- Source: http://www.wowhead.com/npc=9237#screenshots
 DELETE FROM `creature_equip_template_raw` WHERE `entry` = 967;
-INSERT INTO `creature_equip_template_raw` VALUES (967, 22319, 22319, 0, 33488898, 33488898, 0, 781, 781, 0);
+INSERT INTO `creature_equip_template_raw` VALUES
+(967, 22319, 22319, 0, 33488898, 33488898, 0, 781, 781, 0);
 -- Link equipment to NPC 9237
 UPDATE `creature_template` SET `equipment_id` = 967 WHERE `entry` = 9237;
 
@@ -1924,7 +1995,8 @@ UPDATE `creature_template` SET `equipment_id` = 1082  WHERE `entry` = 10429;
 -- Source: http://www.wowhead.com/npc=11486#screenshots
 UPDATE `creature_template` SET `equipment_id` =  1203  WHERE `entry` = 11486;
 DELETE FROM `creature_equip_template_raw` WHERE `entry` = 1203;
-INSERT INTO `creature_equip_template_raw` VALUES (1203, 30638, 30638, 0, 33490690, 33490690, 0, 781, 781, 0);
+INSERT INTO `creature_equip_template_raw` VALUES
+(1203, 30638, 30638, 0, 33490690, 33490690, 0, 781, 781, 0);
 
 -- Adds conditions to t1 and t2 shaman/paladin
 -- http://wow.joystiq.com/2006/12/07/judgement-dropping-for-horde-working-as-intended/
@@ -2083,7 +2155,8 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 UPDATE `quest_template` SET `SpecialFlags`= 2 WHERE `entry`=5727;
 -- Condition so gossips don't show up if the player doesn't have the item 9 = (on quest active in log)
 DELETE FROM `conditions` where `condition_entry` = 107;
-INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES (107, 9, 5727, 0);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+(107, 9, 5727, 0);
 
 -- Adds dwarf priest quest 5647 (A Lack of Fear) from Night Elf priest trainers
 -- It is currently only existing in DB for Human and Dwarf priest trainers
@@ -2094,10 +2167,12 @@ INSERT INTO `quest_template` VALUES
 -- Link quest to creature 4092 (Lariia <Priest Trainer>) as she is the Night Elf priest trainer
 -- redirecting other races to their respective trainers for racial quests (like Desperate Prayer)
 DELETE FROM `creature_questrelation` WHERE `id` = 4092 AND `quest` = 5647;
-INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES (4092, 5647);
+INSERT INTO `creature_questrelation` (`id`, `quest`) VALUES
+(4092, 5647);
 -- Updates target creature 11406 (High Priest Rohan) to complete the quest
 DELETE FROM `creature_involvedrelation` WHERE `id` = 11406 AND `quest` = 5647;
-INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES (11406, 5647);
+INSERT INTO `creature_involvedrelation` (`id`, `quest`) VALUES
+(11406, 5647);
 
 -- Fixes required race for paladin quests 1641 (Tome of Divinity - Human) and 1645 (Tome of Divinity - Dwarf)
 -- as they were previously available for both races while next quests were not.
@@ -3777,7 +3852,8 @@ UPDATE `quest_template` SET `RewMoneyMaxLevel` = 2640 WHERE `entry` = 8460;
 
 -- Fixes issue #9: added missing loot condition for quest item loot.
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`)
-VALUES (725, 9, 5147, 0);
+VALUES
+(725, 9, 5147, 0);
 UPDATE `creature_loot_template` SET `condition_id` = 725 WHERE `entry` = 10896 AND `item` = 12884;
 
 -- Fixes issue #117: Midsummer creatures should only be visible during the event
@@ -4041,7 +4117,8 @@ WHERE
 
 -- Fixes issue #113: assign proper gossip to Orb of Command
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`)
-VALUES (726, 8, 7761, 0);
+VALUES
+(726, 8, 7761, 0);
 
 INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`)
 VALUES
@@ -4060,7 +4137,8 @@ VALUES
 UPDATE `creature_template` SET `gossip_menu_id` = 5750 WHERE `entry` = 14387;
 
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`)
-VALUES (727, 8, 7848, 0);
+VALUES
+(727, 8, 7848, 0);
 
 UPDATE `gossip_menu_option` SET `option_text` = 'Transport me to the Molten Core, Lothos.', `condition_id` = 727 WHERE `menu_id` = 5750 AND `id` = 1;
 
@@ -4134,10 +4212,12 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (27052, 25004, 0, 1790);
 
 DELETE FROM `conditions` WHERE `condition_entry` = 1790;
-INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES (1790, 8, 8555, 0);
+INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
+(1790, 8, 8555, 0);
 
 DELETE FROM `dbscripts_on_gossip` WHERE `id` = 27066;
-INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES (27066, 0, 17, 20949, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magical ledger add');
+INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
+(27066, 0, 17, 20949, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Magical ledger add');
 
 -- Omarion gossip npc text
 DELETE FROM `npc_text` WHERE `ID` IN (24400, 24401, 24402, 24403, 24404);
@@ -4356,5 +4436,80 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (8408, 8530, 0, 0),
 (8409, 8531, 0, 0);
 
+-- Correct script and AI names
+UPDATE `creature_template` SET `AIName` = NULL, `ScriptName` = NULL WHERE `entry` IN (1, 2, 6491);
+UPDATE `creature_template` SET `ScriptName` = 'npc_guardian' WHERE `entry` IN (5764);
+UPDATE `creature_template` SET `subname` = NULL WHERE `subname` = '';
+UPDATE `creature_template` SET `AIName` = NULL WHERE `AIName` = '';
+UPDATE `creature_template` SET `ScriptName` = NULL WHERE `ScriptName` = '';
+
+-- Remove loot from waypoints, spawnpoints
+UPDATE `creature_template` SET `lootid` = 0 WHERE `entry` IN (1,2);
+-- Set proper gossip_menu_id for spirit healer
+UPDATE `creature_template` SET `gossip_menu_id` = 83 WHERE `entry` IN (6491);
+
+-- Fix a few template names
+UPDATE `creature_template` SET `name` = 'Waypoint' WHERE `entry` IN (1);
+UPDATE `creature_template` SET `name` = 'Spawnpoint' WHERE `entry` IN (2);
+UPDATE `creature_template` SET `subname` = 'GM Visual' WHERE `entry` IN (1,2);
+UPDATE `creature_template` SET `name` = 'Rend on Drake', `subname` = 'Transformation Visual' WHERE `entry` = 10459;
+UPDATE `creature_template` SET `name` = 'Kirtonos the Herald', `subname` = 'Spell Visual' WHERE `entry` = 10579;
+UPDATE `creature_template` SET `name` = 'Wisp', `subname` = 'Ghost Visual' WHERE `entry` = 12861;
+UPDATE `creature_template` SET `name` = 'High Priest Venoxis', `subname` = 'Transformation Visual' WHERE `entry` = 14877;
+UPDATE `creature_template` SET `name` = 'High Priestess Jeklik', `subname` = 'Transformation Visual' WHERE `entry` = 14941;
+UPDATE `creature_template` SET `name` = 'High Priest Thekal', `subname` = 'Transformation Visual' WHERE `entry` = 14966;
+UPDATE `creature_template` SET `name` = 'High Priestess Mar''li', `subname` = 'Transformation Visual' WHERE `entry` = 14967;
+UPDATE `creature_template` SET `name` = 'High Priestess Arlokk', `subname` = 'Transformation Visual' WHERE `entry` = 14968;
+UPDATE `creature_template` SET `name` = 'Primal Blessing', `subname` = 'Transformation Visual' WHERE `entry` = 15109;
+UPDATE `creature_template` SET `name` = 'Buru the Gorger', `subname` = 'Transformation Visual' WHERE `entry` = 15507;
+UPDATE `creature_template` SET `name` = 'Mouth Tentacle', `subname` = 'Mount Visual' WHERE `entry` = 15778;
+UPDATE `creature_template` SET `name` = "C'Thun", `subname` = 'Transformation Visual' WHERE `entry` = 15809;
+UPDATE `creature_template` SET `name` = 'Mor Grayhoof', `subname` = 'Transformation Visual' WHERE `entry` = 16083;
+UPDATE `creature_template` SET `name` = 'Arei', `subname` = 'Transformation Visual' WHERE `entry` = 9599;
+UPDATE `creature_template` SET `name` = 'Eranikus', `subname` = 'Transformation Visual' WHERE `entry` = 15660;
+UPDATE `creature_template` SET `name` = 'High Inquisitor Fairbanks', `subname` = 'Transformation Visual' WHERE `entry` = 16439;
+UPDATE `creature_template` SET `name` = 'Highlord Mograine', `subname` = 'Transformation Visual' WHERE `entry` = 16440;
+UPDATE `creature_template` SET `name` = 'Scourge Invasion Minion', `subname` = 'Ghost/Ghoul spawner' WHERE `entry` = 16306;
+UPDATE `creature_template` SET `name` = 'Scourge Invasion Minion', `subname` = 'Ghost/Skeleton spawner' WHERE `entry` = 16336;
+UPDATE `creature_template` SET `name` = 'Scourge Invasion Minion', `subname` = 'Ghoul/Skeleton spawner' WHERE `entry` = 16338;
+UPDATE `creature_template` SET `name` = 'Scourge Invasion Minion', `subname` = 'finder' WHERE `entry` = 16356;
+UPDATE `creature_template` SET `name` = 'Skeletal Fiend', `subname` = 'Enraged Form' WHERE `entry` = 2454;
+UPDATE `creature_template` SET `name` = 'Bear Form', `subname` = 'Night Elf Druid' WHERE `entry` = 4253;
+UPDATE `creature_template` SET `name` = 'Bear Form', `subname` = 'Tauren Druid' WHERE `entry` = 4261;
+UPDATE `creature_template` SET `name` = 'Aquatic Form', `subname` = 'Night Elf Druid' WHERE `entry` = 4408;
+UPDATE `creature_template` SET `name` = 'Aquatic Form', `subname` = 'Tauren Druid' WHERE `entry` = 4410;
+UPDATE `creature_template` SET `name` = 'Cat Form', `subname` = 'Night Elf Druid' WHERE `entry` = 6571;
+UPDATE `creature_template` SET `name` = 'Cat Form', `subname` = 'Tauren Druid' WHERE `entry` = 6572;
+UPDATE `creature_template` SET `name` = 'Travel Form', `subname` = 'Druid' WHERE `entry` = 6573;
+UPDATE `creature_template` SET `name` = 'Curse of the Eye', `subname` = 'Male' WHERE `entry` = 7503;
+UPDATE `creature_template` SET `name` = 'Curse of the Eye', `subname` = 'Female' WHERE `entry` = 7504;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Orc Male' WHERE `entry` = 10783;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Orc Female' WHERE `entry` = 10784;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Tauren Male' WHERE `entry` = 10785;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Tauren Female' WHERE `entry` = 10786;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Troll Male' WHERE `entry` = 10787;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Troll Female' WHERE `entry` = 10788;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Undead Male' WHERE `entry` = 10789;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Undead Female' WHERE `entry` = 10790;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Dwarf Male' WHERE `entry` = 10791;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Dwarf Female' WHERE `entry` = 10792;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Gnome Male' WHERE `entry` = 10793;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Gnome Female' WHERE `entry` = 10794;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Human Male' WHERE `entry` = 10795;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Human Female' WHERE `entry` = 10796;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = 'Night Elf Male' WHERE `entry` = 10797;
+UPDATE `creature_template` SET `name` = 'Orb of Deception', `subname` = '(Night Elf Female)' WHERE `entry` = 10798;
+UPDATE `creature_template` SET `name` = 'Monster Generator (Blackwing)', `subname` = NULL WHERE `entry` = 12434;
+UPDATE `creature_template` SET `name` = 'World Invisible Trigger', `subname` = 'DO NOT DELETE' WHERE `entry` = 12999;
+UPDATE `creature_template` SET `name` = 'Warlock Mount Ritual Mob Type 3 (Infernal)', `subname` = 'DO NOT DELETE' WHERE `entry` = 14501;
+UPDATE `creature_template` SET `name` = 'Moonkin', `subname` = 'Night Elf Druid' WHERE `entry` = 15313;
+UPDATE `creature_template` SET `name` = 'Moonkin', `subname` = 'Tauren Druid' WHERE `entry` = 15314;
+UPDATE `creature_template` SET `name` = 'OLDWorld Trigger', `subname` = 'DO NOT DELETE' WHERE `entry` = 15384;
+
+-- Remove wrong model IDs
+UPDATE `creature_template` SET `modelid_2` = 0 WHERE `entry` = 17794;
+UPDATE `creature_template` SET `modelid_2` = 0 WHERE `entry` = 16995;
+UPDATE `creature_template` SET `modelid_2` = 0 WHERE `entry` = 17795;
+
 -- UPDATE Database Version
-UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
+UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero z2436+ and ScriptDevZero z2676+';

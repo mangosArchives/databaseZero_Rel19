@@ -49,7 +49,7 @@ CREATE TABLE `db_version` (
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT INTO `db_version` VALUES
-('ZeroDatabase 2.0.7 for MaNGOSZero z2426+ and ScriptDevZero z2676+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
+('ZeroDatabase 2.0.8 for MaNGOSZero z2436+ and ScriptDevZero z2676+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

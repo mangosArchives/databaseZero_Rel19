@@ -66,7 +66,8 @@ INSERT INTO `scripted_event` VALUES
 (5622,'event_spell_gandling_shadow_portal'),
 (5623,'event_spell_gandling_shadow_portal'),
 (8328,'npc_kroshius'),
-(8502,'event_avatar_of_hakkar');
+(8502,'event_avatar_of_hakkar'),
+(2609,'event_spell_unlocking');
 /*!40000 ALTER TABLE `scripted_event` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

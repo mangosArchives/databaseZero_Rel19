@@ -63,12 +63,15 @@ CREATE TABLE `dbscripts_on_spell` (
 LOCK TABLES `dbscripts_on_spell` WRITE;
 /*!40000 ALTER TABLE `dbscripts_on_spell` DISABLE KEYS */;
 INSERT INTO `dbscripts_on_spell` VALUES
-(21052,0,15,8329,0,0,0,6,0,0,0,0,0,0,0,0,'Enthralled Deeprun Rat - Cast Suicide'),
 (11885,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn treant corpse'),
 (11886,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn wildkin corpse'),
 (11887,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn hyppogryph corpse'),
 (11888,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn faerie dragon corpse'),
-(11889,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn mountain giant corpse');
+(11889,3,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'Despawn mountain giant corpse'),
+(21052,0,15,8329,0,0,0,6,0,0,0,0,0,0,0,0,'Enthralled Deeprun Rat - Cast Suicide'),
+(7669,0,14,7656,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw'),
+(7669,0,14,7657,1,0,0,0,0,0,0,0,0,0,0,0,'Remove Hex of Ravenclaw'),
+(11365,0,18,1000,0,0,0,0,0,0,0,0,0,0,0,0,'despawn self');
 /*!40000 ALTER TABLE `dbscripts_on_spell` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

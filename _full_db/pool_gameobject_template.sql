@@ -51,6 +51,8 @@ CREATE TABLE `pool_gameobject_template` (
 
 LOCK TABLES `pool_gameobject_template` WRITE;
 /*!40000 ALTER TABLE `pool_gameobject_template` DISABLE KEYS */;
+INSERT INTO `pool_gameobject_template` VALUES
+(175334,1073,0,'Bijous Belongings');
 /*!40000 ALTER TABLE `pool_gameobject_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

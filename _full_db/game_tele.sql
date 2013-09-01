@@ -44,7 +44,7 @@ CREATE TABLE `game_tele` (
   `map` smallint(5) unsigned NOT NULL DEFAULT '0',
   `name` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=418 DEFAULT CHARSET=utf8 COMMENT='Tele Command';
+) ENGINE=MyISAM AUTO_INCREMENT=419 DEFAULT CHARSET=utf8 COMMENT='Tele Command';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -272,7 +272,8 @@ INSERT INTO `game_tele` VALUES
 (412,16226.2,16257,13.2022,1.65007,1,'GMIsland'),
 (415,128.205,135.136,236.11,4.59132,37,'AzsharaCrater'),
 (416,-11052.9,-1568.93,27.233,4.64509,0,'Crypt'),
-(417,-956.664,-3754.71,5.33239,0.996637,1,'Ratchet');
+(417,-956.664,-3754.71,5.33239,0.996637,1,'Ratchet'),
+(418,-8787.39,828.377,97.6489,0.626312,0,'TheStockades');
 /*!40000 ALTER TABLE `game_tele` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

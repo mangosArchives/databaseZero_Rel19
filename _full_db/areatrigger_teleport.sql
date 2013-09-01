@@ -71,8 +71,8 @@ INSERT INTO `areatrigger_teleport` VALUES
 (228,'The Barrens - Wailing Caverns',15,0,0,0,43,-163.49,132.9,-73.66,5.83),
 (242,'Razorfen Kraul Instance Start',0,0,0,0,1,-4464.92,-1666.24,90,0),
 (244,'Razorfen Kraul Entrance',24,0,0,0,47,1943,1544.63,82,1.38),
-(257,'Blackphantom Deeps Entrance',20,0,0,0,48,-151.89,106.96,-39.87,4.53),
-(259,'Blackphantom Deeps Instance Start',0,0,0,0,1,4247.74,745.879,-24.5299,4.5828),
+(257,'Blackfathom Deeps Entrance',20,0,0,0,48,-151.89,106.96,-39.87,4.53),
+(259,'Blackfathom Deeps Instance Start',0,0,0,0,1,4247.74,745.879,-24.5299,4.5828),
 (286,'Uldaman Entrance',38,0,0,0,70,-226.8,49.09,-46.03,1.39),
 (288,'Uldaman Instance Start',0,0,0,0,0,-6066.73,-2955.63,209.776,3.20443),
 (322,'Gnomeregan Instance Start',0,0,0,0,0,-5163.33,927.623,257.188,0),
@@ -146,7 +146,7 @@ INSERT INTO `areatrigger_teleport` VALUES
 (3528,'The Molten Core Window Entrance',60,0,0,7487,409,1096,-467,-104.6,3.64),
 (3529,'The Molten Core Window(Lava) Entrance',60,0,0,7487,409,1096,-467,-104.6,3.64),
 (3726,'Blackwing Lair - Blackrock Mountain - Eastern Kingdoms',60,0,0,7761,469,-7666.23,-1102.79,399.68,0.601256),
-(3728,'Blackrock Spire, Unknown',55,0,0,0,229,174.74,-474.77,116.84,3.2),
+(3728,'Blackrock Spire, Unknown',55,0,0,0,0,-7524.19,-1230.13,285.743,2.09544),
 (3928,'Zul\'Gurub Entrance',60,0,0,0,309,-11916.1,-1230.53,92.5334,4.71867),
 (3930,'Zul\'Gurub Exit',0,0,0,0,0,-11916.3,-1208.37,92.2868,1.61792),
 (3948,'Arathi Basin Alliance Out',0,0,0,0,0,-1198,-2533,22,0),
@@ -156,7 +156,8 @@ INSERT INTO `areatrigger_teleport` VALUES
 (4010,'Ahn\'Qiraj Temple (Outside)',60,0,0,0,531,-8231.33,2010.6,129.861,0),
 (4012,'Ahn\'Qiraj Temple (Inside)',0,0,0,0,1,-8242.67,1992.06,129.072,0),
 (4055,'Naxxramas (Exit)',60,0,0,9122,533,3005.87,-3435.01,293.882,0),
-(4156,'Naxxramas (Entrance)',60,0,0,0,533,3498.28,-5349.9,144.968,1.31324);
+(4156,'Naxxramas (Entrance)',60,0,0,0,533,3498.28,-5349.9,144.968,1.31324),
+(2068,'Blackrock Spire - Fall out',0,0,0,0,0,-7524.19,-1230.13,285.743,2.09544);
 /*!40000 ALTER TABLE `areatrigger_teleport` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

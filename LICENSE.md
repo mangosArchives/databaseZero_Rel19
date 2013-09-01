@@ -1,7 +1,7 @@
 License
 =======
-**MaNGOSZero Database** is copyright of the respective authors, and is available under
-the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0][1] license,
+**mangos-zero database** is copyright of the respective authors, and is available
+under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0][1] license,
 except where explicitly stated otherwise.
 
 Our license
@@ -12,7 +12,7 @@ and you, too!
 
 Your rights
 -----------
-You may **share our code** with the world! This including copying, distribution,
+You may **share our work** with the world! This including copying, distribution,
 and transmission of our work. No hidden fees here, we want you to enjoy what
 we provide, and the more, the merrier.
 
@@ -28,7 +28,7 @@ Everyone wants to be appreciated, and so do we! If you make use of the
 rights we give to you, we expect **attribution** from you. This is pretty
 simple: you have to make clear, who authored the work we did for you. A
 suggestion is that if you use a copyright or licence header for every file,
-to include attribution there, e.g. "based upon the code of the-coppermine.com".
+to include attribution there, e.g. "based upon the work of getmangos.com".
 You may include further details, bot no less than that.
 
 Now here is an important rule: do not make money by using our work! We provide

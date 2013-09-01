@@ -431,7 +431,19 @@ INSERT INTO `creature_ai_texts` VALUES
 (-4,'Feel the power of the Brotherhood!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Common Defias Text'),
 (-3,'Ah, a chance to use this freshly sharpened blade.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Common Defias Text'),
 (-2,'The Brotherhood will not tolerate your actions.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Common Defias Text'),
-(-1,'I see those fools at the Abbey sent some fresh meat for us.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'103');
+(-1,'I see those fools at the Abbey sent some fresh meat for us.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'103'),
+(-1322,'There you have it. Our lesson on summoning has come to an end. A new class will begin shortly, so if you wish to brush up, feel free to stay around.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1321,'I doubt you have had much occasion to see such a creature. These demonic equines will make your travels much faster by acting as your mount as long as you control them. However, they are difficult to control, so be sure you are ready before attempting it.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1320,'When facing a spellcaster of any kind, this feral beast will be your best friend. Now, let us take a look at something a bit different. This next creature will aid your travels and make your future journeys much easier. Let\'s take a look at a felsteed.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1319,'What you see before you is a felhunter. This creature\'s natural talents include spell lock and other abilities which make it unequalled when facing a magically attuned opponent.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1318,'Study hard and you might one day be able to summon one on your own, but for now it\'s time to move on to the felhunter.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1317,'All right now. Aside from the obvious distractions a minion like this will provide against your more masculine foes, she is also capable of dealing out impressive amounts of damage. However, her fragile endurance makes her almost useless as a shield.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1316,'If you\'ve never seen one, it is a sight to behold. A very impressive creature both on and off the field of battle. Next, let us take a look at what I am sure all you male students have been waiting for. The succubus.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1315,'This demonic entity is known as the Voidwalker. Its strength and endurance are significant, making it ideal for defense. Send it to attack your enemy, then use it as a shield while you use your spells and abilities to drain away your opponent\'s life.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1314,'Now that you have had a chance to study imp, let us move on the next minion you will be able to summon, the voidwalker.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1313,'This foul little beast is the imp. It is small and weak, making it almost useless as a meatshield, and its damage output is mediocre at best. This creature is best used for support of a larger group.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1312,'The easiest creature for you to summon is the imp. You should already be able to bring forth this minion but for completeness\' sake I will start with him.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702'),
+(-1311,'If you\'re here, then it means you are prepared to begin the study of summoning demonic cohorts to do your bidding. We will start with the lowliest creatures you will be able to call and continue from there. Let us begin.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,33,0,'5702');
 /*!40000 ALTER TABLE `creature_ai_texts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
