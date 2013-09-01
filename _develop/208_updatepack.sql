@@ -4064,5 +4064,10 @@ VALUES (727, 8, 7848, 0);
 
 UPDATE `gossip_menu_option` SET `option_text` = 'Transport me to the Molten Core, Lothos.', `condition_id` = 727 WHERE `menu_id` = 5750 AND `id` = 1;
 
+-- Fixes #114: removed duplicate spawn of Cenarion Hold Infantry
+DELETE FROM `creature` WHERE `guid` = 42896;
+DELETE FROM `creature_addon` WHERE `guid` = 42896;
+DELETE FROM `creature_movement` WHERE `id` = 42896;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
