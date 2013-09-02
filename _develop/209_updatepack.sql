@@ -49,5 +49,12 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (14003, 1, 0, 'Those days are over, Eris.', 1, 1, 14004, 0, 0, 0, 0, ' ', 0),
 (14004, 1, 0, 'So what can I do to help?', 1, 1, 14005, 0, 0, 0, 0, ' ', 0);
 
+-- Update doors to close in 5 seconds and torch return state 5 seconds
+-- GAMEOBJECT_TYPE_DOOR = 0
+-- data0: startOpen (Boolean flag)
+-- data1: open (LockId from Lock.dbc)
+-- data2: autoClose (65536 * seconds) (e.g. open after 5min = 19660800)
+UPDATE `gameobject_template` SET `data2` = 327680 WHERE `entry` IN (177188,177189,177192,177198,179507,179508,179510,179513);
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
