@@ -102,6 +102,7 @@ SET @SPELL_TARGET_CREATURE_DEAD                 = 2;
 
 -- INSERT INTO `spell_script_target`
 --     (`entry`,   `type`,                         `targetEntry`, `inverseEffectMask`)
+-- VALUES
 
 -- Source:      http://wowpedia.org/Demetria
 -- Description: The Scarlet Oracle, Demetria, will ping her guarding creatures,
@@ -109,7 +110,18 @@ SET @SPELL_TARGET_CREATURE_DEAD                 = 2;
 -- Creatures:   - Demetria <The Scarlet Oracle>:    http://www.wowhead.com/npc=12339
 --              - Scarlet Trooper:                  http://www.wowhead.com/npc=12352
 -- Example:
--- VALUES
 --     (19721,     @SPELL_TARGET_CREATURE_DEAD,    12352,          0),         -- "Resurrect Trooper"
 --     (19749,     @SPELL_TARGET_CREATURE_ALIVE,   12352,          0)          -- "Trooper Ping"
 --     ;
+
+-- Research: the following spells require a target position.
+INSERT INTO `spell_target_position`
+    (`id`, `target_map`, `target_position_x`, `target_position_y`, `target_position_z`, `target_orientation`)
+VALUES
+-- Source:      http://www.wowwiki.com/Warosh_the_Redeemed
+--              http://www.wowhead.com/npc=10800/warosh-the-redeemed#screenshots
+-- Description: Warosh teleports when Urok is killed.
+-- Creatures:   - Warosh                            http://www.wowhead.com/npc=10800
+--              - Urok                              http://www.wowhead.com/npc=10584
+    (16787, 229, -20.469, -379.330, 48.981, 6.058)  -- 16787: Warosh's Teleport
+    ;
