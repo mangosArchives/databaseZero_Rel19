@@ -29,8 +29,6 @@
 -- 18997,"Tirion Message to Isillien 002"
 -- 19033,"Blighthound Call"
 -- 19515,"Enrage Trigger"
--- 19721,"Resurrect Trooper"
--- 19749,"Trooper Ping"
 -- 20001,"Mercutio Horse Dummy DND"
 -- 20482,"Firesworn Eruption Trigger"
 -- 21090,"Champion"
@@ -102,14 +100,16 @@ SET @SPELL_TARGET_GAME_OBJECT                   = 0;
 SET @SPELL_TARGET_CREATURE_ALIVE                = 1;
 SET @SPELL_TARGET_CREATURE_DEAD                 = 2;
 
+-- INSERT INTO `spell_script_target`
+--     (`entry`,   `type`,                         `targetEntry`, `inverseEffectMask`)
+
 -- Source:      http://wowpedia.org/Demetria
 -- Description: The Scarlet Oracle, Demetria, will ping her guarding creatures,
 --              and revive any dead guard.
 -- Creatures:   - Demetria <The Scarlet Oracle>:    http://www.wowhead.com/npc=12339
 --              - Scarlet Trooper:                  http://www.wowhead.com/npc=12352
-INSERT INTO `spell_script_target`
-    (`entry`,   `type`,                         `targetEntry`, `inverseEffectMask`)
-VALUES
-    (19721,     @SPELL_TARGET_CREATURE_DEAD,    12352,          0),         -- "Resurrect Trooper"
-    (19749,     @SPELL_TARGET_CREATURE_ALIVE,   12352,          0)          -- "Trooper Ping"
-    ;
+-- Example:
+-- VALUES
+--     (19721,     @SPELL_TARGET_CREATURE_DEAD,    12352,          0),         -- "Resurrect Trooper"
+--     (19749,     @SPELL_TARGET_CREATURE_ALIVE,   12352,          0)          -- "Trooper Ping"
+--     ;
