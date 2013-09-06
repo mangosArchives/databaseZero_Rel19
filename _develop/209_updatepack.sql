@@ -56,5 +56,19 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 -- data2: autoClose (65536 * seconds) (e.g. open after 5min = 19660800)
 UPDATE `gameobject_template` SET `data2` = 327680 WHERE `entry` IN (177188,177189,177192,177198,179507,179508,179510,179513);
 
+-- Update faction leaders and provide sane health values.
+--
+-- Description: The faction leaders currently have health points being too low.
+-- Creatures:
+--              - Highlord Bolvar Fordragon                     http://www.wowhead.com/npc=1748
+--              - King Magni Bronzebeard <Lord of Ironforge>    http://www.wowhead.com/npc=2784
+--              - Cairne Bloodhoof <High Chieftain>             http://www.wowhead.com/npc=3057
+--              - Thrall <Warchief>                             http://www.wowhead.com/npc=4949
+UPDATE `creature_template` SET `minhealth` = 633420, `maxhealth` = 633420 WHERE `entry` = 4949;
+--              - High Tinker Mekkatorque <King of Gnomes>      http://www.wowhead.com/npc=7937
+--              - Tyrand Whisperwind <High Priestess of Elune>  http://www.wowhead.com/npc=7999
+--              - Lady Sylvanas Windrunner <Banshee Queen>      http://www.wowhead.com/npc=10181
+--              - Vol'jin                                       http://www.wowhead.com/npc=10540
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
