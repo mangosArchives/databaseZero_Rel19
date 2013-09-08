@@ -125,3 +125,9 @@ VALUES
 --              - Urok                              http://www.wowhead.com/npc=10584
     (16787, 229, -20.469, -379.330, 48.981, 6.058)  -- 16787: Warosh's Teleport
     ;
+
+-- Pyrewoord village, Curse of the Worgen
+-- Description: During night's time, the human inhabitants of Pyrewood village will
+--              turn into Worgen, hostile to everyone.
+-- Source:      - http://wowpedia.org/Pyrewood_Village
+-- Source:      - http://wowpedia.org/Moonrage
