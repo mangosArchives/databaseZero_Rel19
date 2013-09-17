@@ -124,6 +124,11 @@ VALUES
 -- Creatures:   - Warosh                            http://www.wowhead.com/npc=10800
 --              - Urok                              http://www.wowhead.com/npc=10584
     (16787, 229, -20.469, -379.330, 48.981, 6.058)  -- 16787: Warosh's Teleport
+-- Description: Jaina Proumoore will teleport enemies out of town.
+-- Creatures:   - Jaina Proudmoore                  http://www.wowhead.com/npc=4968
+-- Spell:       - Teleport                          http://www.wowhead.com/spell=20682
+-- Video:       - Youtube                           http://www.youtube.com/watch?v=frxX10Jxbh4              
+   ,(20682, 1, -4015.323, -4517.579, 10.24, 5.485)  -- 20682: Teleport
     ;
 
 -- Pyrewoord village, Curse of the Worgen
