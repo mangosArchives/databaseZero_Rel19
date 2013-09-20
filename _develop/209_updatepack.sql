@@ -70,5 +70,8 @@ UPDATE `creature_template` SET `minhealth` = 633420, `maxhealth` = 633420 WHERE 
 --              - Lady Sylvanas Windrunner <Banshee Queen>      http://www.wowhead.com/npc=10181
 --              - Vol'jin                                       http://www.wowhead.com/npc=10540
 
+
+INSERT INTO `creature_template` (`entry`,`modelid_1`, `name`) VALUES (15118, 15234, 'Master Angler Form');
+--              - Hook of the Master Angler    http://www.wowhead.com/item=19979
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.8 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
