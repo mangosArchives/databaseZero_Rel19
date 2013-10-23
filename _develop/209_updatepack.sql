@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Added spawn and attack script for Echeyakee
+DELETE FROM `dbscripts_on_event` WHERE `id` = 2980;
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 12189;
+INSERT INTO `dbscripts_on_event` VALUES (2980,0,10,3475,180000,0,0,0,0,0,0,0,436.258,-3058,92.434,0.68,'Summon Echeyakee');
+INSERT INTO `dbscripts_on_spell` VALUES (12189,3,26,0,0,3475,50,0,0,0,0,0,0,0,0,0,'Start Attack');
+
 -- Fixes https://github.com/mangoszero/database/issues/102
 -- http://www.wowwiki.com/Quest:A_Warning
 
