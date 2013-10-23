@@ -17,6 +17,52 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct all reputation values for Stonetalon Mountains
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1057;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1058;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1059;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1062;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1068;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1071;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1072;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1073;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1074;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1075;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 1075;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1076;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 1076;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1077;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1078;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 1078;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1079;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1080;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue3` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue4` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue5` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1082;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1083;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1084;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1089;
+UPDATE `quest_template` SET `RewRepFaction1` = 76 WHERE `entry` = 1089;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1090;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 1092;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1093;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1094;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1095;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1096;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 5881;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6282;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6283;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6284;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 6301;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6381;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 6401;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6421;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6461;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6481;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6548;
+
 -- correct MinLevel and Level for Stonetalon Mountains
 UPDATE `quest_template` SET `QuestLevel` = 22 WHERE `entry` = 1082;
 UPDATE `quest_template` SET `MinLevel` = 21 WHERE `entry` = 1059;
