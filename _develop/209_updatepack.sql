@@ -17,6 +17,132 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct all reputation values for Stonetalon Mountains
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1057;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1058;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1059;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1062;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1068;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1071;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1072;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1073;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1074;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1075;
+UPDATE `quest_template` SET `RewRepValue2` = 50 WHERE `entry` = 1075;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1076;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 1076;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1077;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1078;
+UPDATE `quest_template` SET `RewRepValue2` = 100 WHERE `entry` = 1078;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1079;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1080;
+UPDATE `quest_template` SET `RewRepValue1` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue3` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue4` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue5` = 200 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1082;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1083;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1084;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1089;
+UPDATE `quest_template` SET `RewRepFaction1` = 76 WHERE `entry` = 1089;
+UPDATE `quest_template` SET `RewRepValue1` = 150 WHERE `entry` = 1090;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 1092;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1093;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1094;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 1095;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 1096;
+UPDATE `quest_template` SET `RewRepValue1` = 50 WHERE `entry` = 5881;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6282;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6283;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6284;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 6301;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6381;
+UPDATE `quest_template` SET `RewRepValue1` = 75 WHERE `entry` = 6401;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6421;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6461;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6481;
+UPDATE `quest_template` SET `RewRepValue1` = 100 WHERE `entry` = 6548;
+
+-- correct MinLevel and Level for Stonetalon Mountains
+UPDATE `quest_template` SET `QuestLevel` = 22 WHERE `entry` = 1082;
+UPDATE `quest_template` SET `MinLevel` = 21 WHERE `entry` = 1059;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 1068;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1072;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1073;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1074;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1075;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 1078;
+UPDATE `quest_template` SET `MinLevel` = 22 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `MinLevel` = 22 WHERE `entry` = 1082;
+UPDATE `quest_template` SET `MinLevel` = 20 WHERE `entry` = 1083;
+UPDATE `quest_template` SET `MinLevel` = 20 WHERE `entry` = 1088;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 1090;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 1092;
+UPDATE `quest_template` SET `MinLevel` = 16 WHERE `entry` = 1093;
+UPDATE `quest_template` SET `MinLevel` = 23 WHERE `entry` = 5881;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 6283;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 6284;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 6381;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 6401;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 6461;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 6481;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 6523;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 6629;
+
+-- correct faction for Quest 6421 Boulderslide Ravine
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 6421;
+
+-- correct XP for Quest 1089 The Den
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1800 WHERE `entry` = 1089;
+
+-- Adding the missing Blueleaf Tubers and Spellfocus. Credits for Tubers to classicdb and Cala
+DELETE FROM `gameobject` WHERE `id` = 20920;
+INSERT INTO `gameobject` VALUES (632448,20920,47,2082.74,1671.82,61.2396,3.66079,0,0,0.966493,-0.256693,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632449,20920,47,2159.43,1687.49,57.5433,3.66079,0,0,0.966493,-0.256693,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632450,20920,47,2080.89,1703.36,56.6447,0.553757,0,0,0.273354,0.961913,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632451,20920,47,2055.28,1767.7,58.4559,2.98378,0,0,0.996889,0.0788245,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632452,20920,47,2196.64,1827.96,61.4706,2.11277,0,0,0.870583,0.492022,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632453,20920,47,2030.32,1867.61,56.2866,5.6777,0,0,0.298139,-0.954522,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632454,20920,47,2091.33,1861.73,51.0341,1.25355,0,0,0.586536,0.809923,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632455,20920,47,2200.15,1897.64,71.3191,2.6492,0,0,0.969846,0.243717,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632456,20920,47,2075.75,1742.04,76.7184,1.33994,0,0,0.620962,0.78384,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632457,20920,47,2126,1661.15,82.4824,0.0220437,0,0,0.0110216,0.999939,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632458,20920,47,2207.92,1596.91,80.7375,3.60582,0,0,0.973182,-0.230035,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632459,20920,47,2156.98,1542.26,72.849,2.43086,0,0,0.937519,0.347934,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632460,20920,47,2179.95,1514.06,69.0709,0.778385,0,0,0.379441,0.925216,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632461,20920,47,2000.85,1533.93,80.3971,4.919,0,0,0.630419,-0.776255,-43200,100,1);
+INSERT INTO `gameobject` VALUES (632462,20920,47,1991.49,1608.53,81.1601,1.1004,0,0,0.522858,0.85242,-43200,100,1);
+DELETE FROM `gameobject` WHERE `id` = 300011;
+INSERT INTO `gameobject` VALUES (99868,300011,47,2072.84,1582.57,82.14,0,0,0,0,0,180,0,1);
+INSERT INTO `gameobject` VALUES (55538,300011,47,2064.12,1648.8,61.2081,1.30774,0,0,0.608264,0.793735,25,100,1);
+INSERT INTO `gameobject` VALUES (55539,300011,47,2105.7,1672.02,59.0945,6.13716,0,0,0.0729491,-0.997336,25,100,1);
+INSERT INTO `gameobject` VALUES (55540,300011,47,2146.11,1679.81,58.0822,0.403748,0,0,0.200506,0.979693,25,100,1);
+INSERT INTO `gameobject` VALUES (55541,300011,47,2137.09,1736.08,51.8058,2.91153,0,0,0.993391,0.114779,25,100,1);
+INSERT INTO `gameobject` VALUES (55542,300011,47,2082.86,1704.65,56.2846,3.38983,0,0,0.992307,-0.123803,25,100,1);
+INSERT INTO `gameobject` VALUES (55543,300011,47,2034.71,1730.53,60.9074,1.50488,0,0,0.683421,0.730024,25,100,1);
+INSERT INTO `gameobject` VALUES (55544,300011,47,2062.74,1773.09,57.918,0.548263,0,0,0.270711,0.962661,25,100,1);
+INSERT INTO `gameobject` VALUES (55545,300011,47,2133.34,1809.76,46.8661,1.08512,0,0,0.516328,0.856391,25,100,1);
+INSERT INTO `gameobject` VALUES (55546,300011,47,2125.36,1851.84,50.2691,3.16642,0,0,0.999923,-0.0124143,25,100,1);
+INSERT INTO `gameobject` VALUES (55547,300011,47,2067.48,1848.23,55.2606,3.16642,0,0,0.999923,-0.0124143,25,100,1);
+INSERT INTO `gameobject` VALUES (55548,300011,47,2038.78,1860.75,55.8016,2.18624,0,0,0.888067,0.459715,25,100,1);
+INSERT INTO `gameobject` VALUES (55549,300011,47,2165.94,1854.16,57.4779,5.94516,0,0,0.168208,-0.985752,25,100,1);
+INSERT INTO `gameobject` VALUES (55550,300011,47,2188.1,1819.3,62.0598,5.15976,0,0,0.532635,-0.846345,25,100,1);
+INSERT INTO `gameobject` VALUES (55551,300011,47,2014.35,1546.19,80.7209,5.08123,0,0,0.565448,-0.824784,25,100,1);
+INSERT INTO `gameobject` VALUES (55552,300011,47,2176.8,1526.98,71.5483,3.38084,0,0,0.992854,-0.119339,25,100,1);
+INSERT INTO `gameobject` VALUES (55553,300011,47,2197.64,1611.29,81.0498,0.404178,0,0,0.200716,0.979649,25,100,1);
+INSERT INTO `gameobject` VALUES (55554,300011,47,2141.6,1634.92,81.8847,5.69305,0,0,0.290805,-0.956782,25,100,1);
+INSERT INTO `gameobject` VALUES (55555,300011,47,2077.92,1740.42,77.0148,3.9102,0,0,0.92706,-0.374912,25,100,1);
+DELETE FROM `creature_loot_template` WHERE `item` = 5876;
+UPDATE `item_template` SET `spellcharges_1` = -5 WHERE `entry` = 5880;
+UPDATE `gameobject_template` SET `data1` = 30 WHERE `entry` = 300011;
+UPDATE `gameobject_template` SET `name` = 'Nearby Tubers' WHERE `entry` = 300011;
+
+-- Added spawn and attack script for Echeyakee
+DELETE FROM `dbscripts_on_event` WHERE `id` = 2980;
+DELETE FROM `dbscripts_on_spell` WHERE `id` = 12189;
+INSERT INTO `dbscripts_on_event` VALUES (2980,0,10,3475,180000,0,0,0,0,0,0,0,436.258,-3058,92.434,0.68,'Summon Echeyakee');
+INSERT INTO `dbscripts_on_spell` VALUES (12189,3,26,0,0,3475,50,0,0,0,0,0,0,0,0,0,'Start Attack');
+
 -- Fixes https://github.com/mangoszero/database/issues/102
 -- http://www.wowwiki.com/Quest:A_Warning
 
@@ -70,7 +196,7 @@ UPDATE `creature_template` SET `minhealth` = 633420, `maxhealth` = 633420 WHERE 
 --              - Lady Sylvanas Windrunner <Banshee Queen>      http://www.wowhead.com/npc=10181
 --              - Vol'jin                                       http://www.wowhead.com/npc=10540
 
-
+DELETE FROM `creature_template` WHERE `entry` = 15118;
 INSERT INTO `creature_template` (`entry`,`modelid_1`, `name`) VALUES (15118, 15234, 'Master Angler Form');
 --              - Hook of the Master Angler    http://www.wowhead.com/item=19979
 -- UPDATE Database Version
