@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct XP for Quest 1089 The Den
+UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1800 WHERE `entry` = 1089;
+
 -- Adding the missing Blueleaf Tubers and Spellfocus. Credits for Tubers to classicdb and Cala
 DELETE FROM `gameobject` WHERE `id` = 20920;
 INSERT INTO `gameobject` VALUES (632448,20920,47,2082.74,1671.82,61.2396,3.66079,0,0,0.966493,-0.256693,-43200,100,1);
