@@ -17,6 +17,32 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct MinLevel and Level for Stonetalon Mountains
+UPDATE `quest_template` SET `QuestLevel` = 22 WHERE `entry` = 1082;
+UPDATE `quest_template` SET `MinLevel` = 21 WHERE `entry` = 1059;
+UPDATE `quest_template` SET `MinLevel` = 15 WHERE `entry` = 1068;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1072;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1073;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1074;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 1075;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 1078;
+UPDATE `quest_template` SET `MinLevel` = 22 WHERE `entry` = 1081;
+UPDATE `quest_template` SET `MinLevel` = 22 WHERE `entry` = 1082;
+UPDATE `quest_template` SET `MinLevel` = 20 WHERE `entry` = 1083;
+UPDATE `quest_template` SET `MinLevel` = 20 WHERE `entry` = 1088;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 1090;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 1092;
+UPDATE `quest_template` SET `MinLevel` = 16 WHERE `entry` = 1093;
+UPDATE `quest_template` SET `MinLevel` = 23 WHERE `entry` = 5881;
+UPDATE `quest_template` SET `MinLevel` = 18 WHERE `entry` = 6283;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 6284;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 6381;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 6401;
+UPDATE `quest_template` SET `MinLevel` = 13 WHERE `entry` = 6461;
+UPDATE `quest_template` SET `MinLevel` = 17 WHERE `entry` = 6481;
+UPDATE `quest_template` SET `MinLevel` = 14 WHERE `entry` = 6523;
+UPDATE `quest_template` SET `MinLevel` = 12 WHERE `entry` = 6629;
+
 -- correct faction for Quest 6421 Boulderslide Ravine
 UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 6421;
 
