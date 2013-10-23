@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- correct faction for Quest 6421 Boulderslide Ravine
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 6421;
+
 -- correct XP for Quest 1089 The Den
 UPDATE `quest_template` SET `RewMoneyMaxLevel` = 1800 WHERE `entry` = 1089;
 
