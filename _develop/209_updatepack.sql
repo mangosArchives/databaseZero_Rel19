@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fix Questitem dropchance for quest 1093 Super reaper  6000
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -31 WHERE `item` = 5734;
+
 -- fixed error from earlier commit
 DELETE FROM `creature_loot_template` WHERE `entry` = 3283;
 DELETE FROM `creature_loot_template` WHERE `entry` = 3286;
