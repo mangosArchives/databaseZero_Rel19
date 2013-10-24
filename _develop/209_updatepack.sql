@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Made Quest startobject unavailable for alliance players Quest 6284 Arachnophobia
+UPDATE `gameobject_template` SET `faction` = 83 WHERE `entry` = 177904;
+
 -- Fix Questitem dropchance for quest 1093 Super reaper  6000
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = -31 WHERE `item` = 5734;
 
