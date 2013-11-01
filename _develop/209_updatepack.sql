@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- fixing Questtext for Quest 1004, 1018, 1019, 1047 A New Frontier
+UPDATE `quest_template` SET `OfferRewardText` = 'Greetings, $C.$B$BI am pleased to see the likes of you taking an interest in the well being of nature; tales of your mighty deeds precede you, and you are welcomed here. Seeing you before me instills the feeling of confidence that the Cenarion Circle will get the proper aid it needs.$B$BOur connection with the Cenarion Circle in Moonglade transcends racial and political divides. Remember this as you work on behalf of the Circle, and you will do well.' WHERE `entry` = 1004;
+UPDATE `quest_template` SET `OfferRewardText` = 'Greetings, $C.$B$BI am pleased to see the likes of you taking an interest in the well being of nature; tales of your mighty deeds precede you, and you are welcomed here. Seeing you before me instills the feeling of confidence that the Cenarion Circle will get the proper aid it needs.$B$BOur connection with the Cenarion Circle in Moonglade transcends racial and political divides. Remember this as you work on behalf of the Circle, and you will do well.' WHERE `entry` = 1018;
+UPDATE `quest_template` SET `OfferRewardText` = 'What makes you think I wish to be pestered by the likes of you, $C? Wait - let me stop the important duties I attend to on a daily basis so I can help you locate a doodad somewhere. By all means, the welfare of Darnassus - nay, all of Teldrassil - should come second to the acquisition of a bauble for your collection.$B$BThe fools in Moonglade waste my time with their call for assistance, and now I must endure this?' WHERE `entry` = 1019;
+UPDATE `quest_template` SET `OfferRewardText` = 'What makes you think I wish to be pestered by the likes of you, $C? Wait - let me stop the important duties I attend to on a daily basis so I can help you locate a doodad somewhere. By all means, the welfare of Darnassus - nay, all of Teldrassil - should come second to the acquisition of a bauble for your collection.$B$BThe fools in Moonglade waste my time with their call for assistance, and now I must endure this?' WHERE `entry` = 1047;
+
 -- Made Quest startobject unavailable for alliance players Quest 6284 Arachnophobia
 UPDATE `gameobject_template` SET `faction` = 83 WHERE `entry` = 177904;
 
