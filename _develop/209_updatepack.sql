@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Quest event script for Quest 75 The Legend Of Stalvan
+DELETE FROM `dbscripts_on_event` WHERE `id` = 264;
+INSERT INTO `dbscripts_on_event` VALUES (264,3,10,2044,300000,0,0,0,0,0,0,0,-9548.42,-1440.2,62.29,2.19,'Summon Forlorn Spirit');
+INSERT INTO `dbscripts_on_event` VALUES (264,6,26,0,0,2044,10,3,0,0,0,0,0,0,0,0,'Start Attack');
+
 -- Quest start script for Quest 74 The Legend Of Stalvan
 UPDATE `quest_template` SET `StartScript` = 74 WHERE `entry` = 74;
 DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 74;
