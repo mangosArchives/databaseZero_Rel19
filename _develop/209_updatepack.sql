@@ -17,6 +17,20 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Quest start script for Quest 74 The Legend Of Stalvan
+UPDATE `quest_template` SET `StartScript` = 74 WHERE `entry` = 74;
+DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 74;
+INSERT INTO `dbscripts_on_quest_start` VALUES (74,3,10,2044,300000,0,0,0,0,0,0,0,-8831.1,988.50,98.984,5.349,'Summon Forlorn Spirit');
+INSERT INTO `dbscripts_on_quest_start` VALUES (74,6,26,0,0,2044,10,0,0,0,0,0,0,0,0,0,'Start Attack');
+
+-- Quest start script for Quest 68 The Legend Of Stalvan
+UPDATE `quest_template` SET `CompleteScript` = 0 WHERE `entry` = 67;
+UPDATE `quest_template` SET `StartScript` = 68 WHERE `entry` = 68;
+DELETE FROM `dbscripts_on_quest_end` WHERE `id` = 67;
+DELETE FROM `dbscripts_on_quest_start` WHERE `id` = 68;
+INSERT INTO `dbscripts_on_quest_start` VALUES (68,0,10,2044,300000,0,0,0,0,0,0,0,-10953.3,1568.47,46.978,3.392,'Summon Forlorn Spirit');
+INSERT INTO `dbscripts_on_quest_start` VALUES (68,3,26,0,0,2044,30,0,0,0,0,0,0,0,0,0,'Start Attack');
+
 -- fixing Questtext for Quest 1004, 1018, 1019, 1047 A New Frontier
 UPDATE `quest_template` SET `OfferRewardText` = 'Greetings, $C.$B$BI am pleased to see the likes of you taking an interest in the well being of nature; tales of your mighty deeds precede you, and you are welcomed here. Seeing you before me instills the feeling of confidence that the Cenarion Circle will get the proper aid it needs.$B$BOur connection with the Cenarion Circle in Moonglade transcends racial and political divides. Remember this as you work on behalf of the Circle, and you will do well.' WHERE `entry` = 1004;
 UPDATE `quest_template` SET `OfferRewardText` = 'Greetings, $C.$B$BI am pleased to see the likes of you taking an interest in the well being of nature; tales of your mighty deeds precede you, and you are welcomed here. Seeing you before me instills the feeling of confidence that the Cenarion Circle will get the proper aid it needs.$B$BOur connection with the Cenarion Circle in Moonglade transcends racial and political divides. Remember this as you work on behalf of the Circle, and you will do well.' WHERE `entry` = 1018;
