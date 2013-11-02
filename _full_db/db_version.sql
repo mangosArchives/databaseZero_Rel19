@@ -36,9 +36,10 @@ DROP TABLE IF EXISTS `db_version`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `db_version` (
-  `version` varchar(120) DEFAULT NULL,
+  `version` varchar(120) NOT NULL DEFAULT '',
   `creature_ai_version` varchar(120) DEFAULT NULL,
-  `required_r2434_01_mangos_scripted_event` bit(1) DEFAULT NULL
+  `required_r2441_01_mangos_db_version` bit(1) DEFAULT NULL,
+  PRIMARY KEY (`version`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Used DB version notes';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -49,7 +50,7 @@ CREATE TABLE `db_version` (
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT INTO `db_version` VALUES
-('ZeroDatabase 2.0.8 for MaNGOSZero z2436+ and ScriptDevZero z2676+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
+('ZeroDatabase 2.0.9 for MaNGOSZero z2462+ and ScriptDevZero z2686+','MaNGOSZero Artificial Creature Intelligence Database',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

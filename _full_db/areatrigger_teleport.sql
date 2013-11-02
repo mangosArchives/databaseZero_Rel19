@@ -105,6 +105,7 @@ INSERT INTO `areatrigger_teleport` VALUES
 (1468,'Blackrock Spire - Searing Gorge Instance (Inside)',52,0,0,0,229,78.5083,-225.044,49.839,5.1),
 (1470,'Blackrock Spire - Searing Gorge Instance',0,0,0,0,0,-7524.19,-1230.13,285.743,2.09544),
 (1472,'Blackrock Dephts - Searing Gorge Instance',0,0,0,0,0,-7179.63,-923.667,166.416,1.84097),
+(2068,'Blackrock Spire - Fall out',0,0,0,0,0,-7524.19,-1230.13,285.743,2.09544),
 (2166,'Deeprun Tram - Ironforge Instance (Inside)',0,0,0,0,0,-4838.95,-1318.46,501.868,1.42372),
 (2171,'Deeprun Tram - Stormwind Instance (Inside)',0,0,0,0,0,-8364.57,535.981,91.7969,2.24619),
 (2173,'Deeprun Tram - Stormwind Instance',0,0,0,0,369,68.3006,2490.91,-4.29647,3.12192),
@@ -156,8 +157,7 @@ INSERT INTO `areatrigger_teleport` VALUES
 (4010,'Ahn\'Qiraj Temple (Outside)',60,0,0,0,531,-8231.33,2010.6,129.861,0),
 (4012,'Ahn\'Qiraj Temple (Inside)',0,0,0,0,1,-8242.67,1992.06,129.072,0),
 (4055,'Naxxramas (Exit)',60,0,0,9122,533,3005.87,-3435.01,293.882,0),
-(4156,'Naxxramas (Entrance)',60,0,0,0,533,3498.28,-5349.9,144.968,1.31324),
-(2068,'Blackrock Spire - Fall out',0,0,0,0,0,-7524.19,-1230.13,285.743,2.09544);
+(4156,'Naxxramas (Entrance)',60,0,0,0,533,3498.28,-5349.9,144.968,1.31324);
 /*!40000 ALTER TABLE `areatrigger_teleport` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
