@@ -17,6 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Fixing areatrigger teleport for Quest 7848 Attunement to the core, to 1.12 version of the quest
+UPDATE `areatrigger_teleport` SET `required_quest_done` = 7848 WHERE `entry` = 3528;
+UPDATE `areatrigger_teleport` SET `required_quest_done` = 7848 WHERE `entry` = 3529;
+
 -- DB Support for Quest 2987 Gordunni Cobalt
 UPDATE `gameobject_template` SET `type` = 5 WHERE `entry` = 144050;
 UPDATE `gameobject_template` SET `data4` = 0 WHERE `entry` = 144050;
