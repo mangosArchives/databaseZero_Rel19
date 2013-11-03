@@ -17,9 +17,15 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Tendriss Warpwood spawns Equine Spirit on Death, from old DB
+DELETE FROM `creature_ai_scripts` WHERE id = 1148906;
+INSERT INTO `creature_ai_scripts` VALUES (1148906,11489,6,0,100,0,0,0,0,0,32,14566,0,16,0,0,0,0,0,0,0,0,'Tendris Warpwood - Summon Ancient Equine Spirit on Death');
+DELETE FROM `creature_ai_summons` WHERE id = 16;
+INSERT INTO `creature_ai_summons` VALUES (16,33.7585,491.548,-23.2803,3.15989,120000,14566);
+
 -- Fixing areatrigger teleport for Quest 7848 Attunement to the core, to 1.12 version of the quest
-UPDATE `areatrigger_teleport` SET `required_quest_done` = 7848 WHERE `entry` = 3528;
-UPDATE `areatrigger_teleport` SET `required_quest_done` = 7848 WHERE `entry` = 3529;
+UPDATE `areatrigger_teleport` SET `required_quest_done` = 7848 WHERE `id` = 3528;
+UPDATE `areatrigger_teleport` SET `required_quest_done` = 7848 WHERE `id` = 3529;
 
 -- DB Support for Quest 2987 Gordunni Cobalt
 UPDATE `gameobject_template` SET `type` = 5 WHERE `entry` = 144050;
