@@ -17,5 +17,10 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- DB Support for Quest 2987 Gordunni Cobalt
+UPDATE `gameobject_template` SET `type` = 5 WHERE `entry` = 144050;
+UPDATE `gameobject_template` SET `data4` = 0 WHERE `entry` = 144050;
+UPDATE `gameobject_template` SET `data5` = 0 WHERE `entry` = 144050;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.10 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
