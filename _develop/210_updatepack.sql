@@ -1017,5 +1017,17 @@ UPDATE `gameobject_template` SET `type` = 5 WHERE `entry` = 144050;
 UPDATE `gameobject_template` SET `data4` = 0 WHERE `entry` = 144050;
 UPDATE `gameobject_template` SET `data5` = 0 WHERE `entry` = 144050;
 
+-- Arch Druid Fandral Staghelm, based on http://wowpedia.org/Fandral_Staghelm
+-- greeting text
+INSERT INTO `creature_ai_texts` VALUES
+(-1325,'Speak quickly, young one. I have urgent matters to attend.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Arch Druid Fandral Staghelm - 3516 - Greeting'),
+(-1324,'Tyrande has no idea how to lead our people.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Arch Druid Fandral Staghelm - 3516 - Greeting'),
+(-1323,'I have vision that she lacks.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Arch Druid Fandral Staghelm - 3516 - Greeting');
+
+-- spels
+INSERT INTO `creature_template_spells` VALUES
+(3516,20699,20701,20702,20698);
+
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.10 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
