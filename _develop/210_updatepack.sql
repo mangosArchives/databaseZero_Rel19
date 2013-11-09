@@ -17,6 +17,12 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Added missing text from defias messenger, need to be added to waypoints.
+DELETE FROM `db_script_string` WHERE `entry` = 2000005301;
+DELETE FROM `db_script_string` WHERE `entry` = 2000005302;
+INSERT INTO `db_script_string` VALUES (2000005301,"The boss wants all hands on high alert. The rusty anchor sinks tonight.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+INSERT INTO `db_script_string` VALUES (2000005302,"Stonemasons. . .errr. . Defias be warned:  The rusty anchor sinks tonight.",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,NULL);
+
 -- Corrected creatures
 UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 947;
 UPDATE `creature_template` SET `type` = 3 WHERE `entry` = 3772;
