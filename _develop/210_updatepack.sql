@@ -17,6 +17,19 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Corrected creatures
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 947;
+UPDATE `creature_template` SET `type` = 3 WHERE `entry` = 3772;
+UPDATE `creature_template` SET `speed_walk` = 0.01 WHERE `entry` = 3903;
+UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 5914;
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10077;
+UPDATE `creature_template` SET `speed_walk` = 0.52 WHERE `entry` = 12222;
+UPDATE `creature_template` SET `speed_run` = 0.64286 WHERE `entry` = 12222;
+UPDATE `creature_template` SET `type` = 1 WHERE `entry` = 14306;
+UPDATE `creature_template` SET `speed_walk` = 1.54 WHERE `entry` = 14461;
+DELETE FROM `creature_template_addon` WHERE `entry` = 17209;
+INSERT INTO `creature_template_addon` VALUES (17209,0,0,1,16,0,0,17327);
+
 -- reimport missing creature movements
 UPDATE `creature` SET `MovementType` = 2 WHERE `guid` = 56606;
 DELETE FROM `creature_movement` WHERE `id` = 56606;
