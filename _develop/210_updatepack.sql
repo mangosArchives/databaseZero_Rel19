@@ -17,6 +17,32 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- added mana tide totem rank 2 and 3 to trainers
+DELETE FROM `npc_trainer` WHERE `spell` = 17362;
+DELETE FROM `npc_trainer` WHERE `spell` = 17363;
+INSERT INTO `npc_trainer` VALUES (986,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (986,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (3030,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (3030,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (3031,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (3031,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (3032,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (3032,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (3066,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (3066,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (3173,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (3173,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (3344,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (3344,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (3403,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (3403,17363,80000,0,0,58);
+INSERT INTO `npc_trainer` VALUES (13417,17362,55000,0,0,48);
+INSERT INTO `npc_trainer` VALUES (13417,17363,80000,0,0,58);
+DELETE FROM `spell_chain` WHERE `first_spell` = 16190;
+INSERT INTO `spell_chain` VALUES (16190,0,16190,1,0);
+INSERT INTO `spell_chain` VALUES (17354,16190,16190,2,0);
+INSERT INTO `spell_chain` VALUES (17359,17354,16190,3,0);
+
 -- Corrected and added creature_ai_texts
 UPDATE `creature_ai_texts` SET `content_default` = 'VanCleef pay big for your heads!' WHERE `entry` = -22;
 DELETE FROM `creature_ai_texts` WHERE `entry` = -1145;
