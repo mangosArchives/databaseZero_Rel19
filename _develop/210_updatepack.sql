@@ -17,6 +17,11 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Added Fissure Plant loot
+UPDATE `gameobject_template` SET `data1` = 3743 WHERE `entry` = 3743;
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 3743;
+INSERT INTO `gameobject_loot_template` VALUES (3743,5066,100,0,1,1,0);
+
 -- reimport frozen Runes
 DELETE FROM `gameobject` WHERE `id` = 181287;
 INSERT INTO `gameobject` VALUES (21612,181287,533,2617.62,-2953.47,241.381,0.739406,0,0,0.361338,0.932435,6380,100,1);
