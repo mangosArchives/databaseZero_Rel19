@@ -17,6 +17,15 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- reimport last scripts and fixes
+DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 15471;
+INSERT INTO `creature_ai_scripts` VALUES (1547101,15471,0,0,100,3,1000,3000,30000,45000,11,25516,0,1,0,0,0,0,0,0,0,0,'Lieutenant General Andorov - Cast Aura of Command');
+INSERT INTO `creature_ai_scripts` VALUES (1547102,15471,9,0,100,3,0,5,4000,6000,11,22591,1,0,0,0,0,0,0,0,0,0,'Lieutenant General Andorov - Cast Strike');
+INSERT INTO `creature_ai_scripts` VALUES (1547103,15471,0,0,100,3,8000,11000,12000,15000,11,25515,4,1,0,0,0,0,0,0,0,0,'Lieutenant General Andorov - Cast Bash');
+
+UPDATE `creature_ai_scripts` SET `action1_param1` = 22678 WHERE `id` = 1050814;
+UPDATE `creature_ai_scripts` SET `action1_param1` = 8281 WHERE `id` = 1189701;
+
 -- corrected atal'alarion text on aggro
 UPDATE `creature_ai_texts` SET `content_default` = "I'll feast on your bones!" WHERE `entry` = -817;
 
