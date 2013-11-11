@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- Crag Coyote Fang stacks now 20
+UPDATE `item_template` SET `stackable` = 20 WHERE `entry` = 7846;
+
 -- Added Fissure Plant loot
 UPDATE `gameobject_template` SET `data1` = 3743 WHERE `entry` = 3743;
 DELETE FROM `gameobject_loot_template` WHERE `entry` = 3743;
