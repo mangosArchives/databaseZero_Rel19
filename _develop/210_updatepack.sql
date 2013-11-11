@@ -17,6 +17,9 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- corrected atal'alarion text on aggro
+UPDATE `creature_ai_texts` SET `content_default` = "I'll feast on your bones!" WHERE `entry` = -817;
+
 -- Crag Coyote Fang stacks now 20
 UPDATE `item_template` SET `stackable` = 20 WHERE `entry` = 7846;
 
