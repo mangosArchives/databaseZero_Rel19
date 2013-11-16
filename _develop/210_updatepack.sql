@@ -17,6 +17,25 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- reimport fixes
+DELETE FROM `creature` WHERE `guid` = 80057;
+
+DELETE FROM `creature_ai_scripts` WHERE `creature_id` = 424;
+INSERT INTO `creature_ai_scripts` VALUES (42401,424,4,0,10,0,0,0,0,0,1,-5,-6,0,0,0,0,0,0,0,0,0,'Redridge Poacher - Random Say on Aggro');
+INSERT INTO `creature_ai_scripts` VALUES (42402,424,9,5,100,1,5,30,3400,3700,11,6660,1,0,40,2,0,0,0,0,0,0,'Redridge Poacher - Cast Shoot and Set Ranged Weapon Model (Phase 1)');
+INSERT INTO `creature_ai_scripts` VALUES (42403,424,2,0,100,0,15,0,0,0,23,1,0,0,0,0,0,0,0,0,0,0,'Redridge Poacher - Set Phase 2 at 15% HP');
+INSERT INTO `creature_ai_scripts` VALUES (42404,424,2,3,100,0,15,0,0,0,21,1,0,0,25,0,0,0,1,-47,0,0,'Redridge Poacher - Start Combat Movement and Flee at 15% HP (Phase 2)');
+
+DELETE FROM `creature_ai_scripts` WHERE `id` = 1609602;
+INSERT INTO `creature_ai_scripts` VALUES (1609602,16096,9,5,100,1,5,45,2200,3800,11,23337,1,0,40,2,0,0,0,0,0,0,'Steamwheedle Bruiser - Cast Shoot and Set Ranged Weapon Model (Phase 1)');
+
+UPDATE `creature_template` SET `faction_A` = 31 WHERE `entry` = 10259;
+UPDATE `creature_template` SET `faction_H` = 31 WHERE `entry` = 10259;
+UPDATE `creature_template` SET `rank` = 1 WHERE `entry` = 16096;
+
+UPDATE `gameobject` SET `spawntimesecs` = 2 WHERE `guid` = 10644;
+UPDATE `gameobject` SET `spawntimesecs` = 2 WHERE `guid` = 10830;
+
 -- missing questrelations
 DELETE FROM `creature_involvedrelation` WHERE `quest` = 7221 OR 7222 OR 7364 OR 7365 OR 7660 OR 7661 OR 7662 OR 7663 OR 7664 OR 7665 OR 7671 OR 7672 OR 7673 OR 7674 OR 7675;
 DELETE FROM `creature_involvedrelation` WHERE `quest` = 7676 OR 7677 OR 7678 OR 8266 OR 8267 OR 8268 OR 8269 OR 8289 OR 8290 OR 8295 OR 8461 OR 8579 OR 8616 OR 8795 OR 8796;
