@@ -17,6 +17,121 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- reimport more fixes
+DELETE FROM `creature_battleground` WHERE `guid` = 150720 OR 150722 OR 150739 OR 150741 OR 150861 OR 150866 OR 150869 OR 150870 OR 150871 OR 150872 OR 150873 OR 150874 OR 150875 OR 150877 OR 150878;
+DELETE FROM `creature_battleground` WHERE `guid` = 150884 OR 150892 OR 150896 OR 150898 OR 150900 OR 150901 OR 150903 OR 150904 OR 150905 OR 150908 OR 150909;
+
+UPDATE `creature_template` SET `npcflag` = 2 WHERE `entry` = 15702 OR 16241 OR 16255 OR 16484 OR 16490 OR 16493 OR 16495 OR 16787;
+
+DELETE FROM `quest_template` WHERE `entry` = 8228;
+DELETE FROM `quest_template` WHERE `entry` = 8229;
+INSERT INTO `quest_template` VALUES (8228,0,-101,55,60,0,0,178,356,0,0,0,0,0,0,0,0,0,8,1,0,0,0,0,0,0,0,'Could I get a Fishing Flier?','','','There be a Fishin Contest in Booty Bay this Sunday! Here are the rules for ya!','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19978,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0);
+INSERT INTO `quest_template` VALUES (8229,0,-101,55,60,0,0,77,356,0,0,0,0,0,0,0,0,0,8,1,0,0,0,0,0,0,0,'Could I get a Fishing Flier?','','','There is a Fishing Contest in Booty Bay this Sunday! Here are the rules for you!','','','','','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19978,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0);
+
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 1271;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 1273;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3517;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3518;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3541;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3542;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3561;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3563;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3564;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3565;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 6570;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 7541;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 990;
+UPDATE `quest_template` SET `ZoneOrSort` = 361 WHERE `entry` = 2878;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 2939;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 2941;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 2942;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 2943;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 2975;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 2980;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3122;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3123;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3124;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3125;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3126;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3127;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 3129;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 6383;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 7731;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 7733;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 7734;
+
+DELETE FROM `creature` WHERE `guid` = 975;
+DELETE FROM `creature` WHERE `guid` = 1084;
+INSERT INTO `creature` VALUES (975,706,0,5606,0,-6500.97,480.333,388.613,3.51687,180,5,0,74,0,0,1);
+INSERT INTO `creature` VALUES (1084,706,0,5606,0,-6491,400.313,384.83,4.83242,180,5,0,74,0,0,1);
+
+UPDATE `creature` SET `MovementType` = 2 WHERE `guid` = 28706;
+DELETE FROM `creature_movement` WHERE `id` = 28706;
+INSERT INTO `creature_movement` VALUES (28706,1,1819.56,1590.7,95.917,0,0,0,0,0,0,0,0,0,0,3.13374,0,0),
+(28706,2,1798.88,1595.39,101.257,0,0,0,0,0,0,0,0,0,0,2.1421,0,0),
+(28706,3,1797.66,1600.84,102.917,0,0,0,0,0,0,0,0,0,0,1.21376,0,0),
+(28706,4,1804.48,1604.08,102.872,10000,0,0,0,0,0,0,0,0,0,0.49276,0,0),
+(28706,5,1797.25,1601.4,102.968,0,0,0,0,0,0,0,0,0,0,4.71899,0,0),
+(28706,6,1798.38,1595.07,101.349,0,0,0,0,0,0,0,0,0,0,0.099272,0,0),
+(28706,7,1820.85,1590.95,95.6439,0,0,0,0,0,0,0,0,0,0,0.77,0,0),
+(28706,8,1828.54,1611.1,95.7643,0,0,0,0,0,0,0,0,0,0,1.43916,0,0),
+(28706,9,1826.47,1644.35,95.6223,30000,0,0,0,0,0,0,0,0,0,1.56295,0,0),
+(28706,10,1827.58,1597.64,95.3776,0,0,0,0,0,0,0,0,0,0,4.66134,0,0),
+(28706,11,1827.58,1597.64,95.3776,40000,173701,0,0,0,0,0,0,0,0,4.66134,0,0);
+
+UPDATE `creature` SET `MovementType` = 2 WHERE `guid` = 8877;
+DELETE FROM `creature_movement` WHERE `id` = 8877;
+INSERT INTO `creature_movement` VALUES (8877,1,-5677.17,-3165.29,317.711,0,0,0,0,0,0,0,0,0,0,1.57789,0,0),
+(8877,2,-5683.2,-3147.19,313.037,0,0,0,0,0,0,0,0,0,0,2.30046,0,0),
+(8877,3,-5716.18,-3110.81,316.687,0,0,0,0,0,0,0,0,0,0,2.03425,0,0),
+(8877,4,-5716.19,-3093.08,325.601,0,0,0,0,0,0,0,0,0,0,1.55254,0,0),
+(8877,5,-5712.21,-3090.3,327.739,0,0,0,0,0,0,0,0,0,0,0.589117,0,0),
+(8877,6,-5705.48,-3092.52,329.362,0,0,0,0,0,0,0,0,0,0,5.92394,0,0),
+(8877,7,-5681.83,-3110.57,338.122,0,0,0,0,0,0,0,0,0,0,5.64294,0,0),
+(8877,8,-5659.5,-3122.22,344.336,0,0,0,0,0,0,0,0,0,0,5.78846,0,0),
+(8877,9,-5639.59,-3124.54,348.405,0,0,0,0,0,0,0,0,0,0,6.16981,0,0),
+(8877,10,-5618.11,-3110.91,360.618,0,0,0,0,0,0,0,0,0,0,0.664387,0,0),
+(8877,11,-5621.49,-3096.32,368.248,0,0,0,0,0,0,0,0,0,0,1.82939,0,0),
+(8877,12,-5632.21,-3078.61,374.991,0,0,0,0,0,0,0,0,0,0,2.11541,0,0),
+(8877,13,-5629.79,-3056.12,384.466,0,0,0,0,0,0,0,0,0,0,1.49821,0,0),
+(8877,14,-5642.28,-3036.87,385.472,0,0,0,0,0,0,0,0,0,0,2.15053,0,0),
+(8877,15,-5609.37,-3006.88,386.288,300000,0,0,0,0,0,0,0,0,0,3.90812,0,0),
+(8877,16,-5643.63,-3036.39,385.532,0,0,0,0,0,0,0,0,0,0,3.87666,0,0),
+(8877,17,-5630.17,-3057.02,384.386,0,0,0,0,0,0,0,0,0,0,5.2666,0,0),
+(8877,18,-5629.84,-3065.5,381.13,0,0,0,0,0,0,0,0,0,0,4.72468,0,0),
+(8877,19,-5634.87,-3078.45,374.489,0,0,0,0,0,0,0,0,0,0,4.41859,0,0),
+(8877,20,-5620.42,-3101.08,364.82,0,0,0,0,0,0,0,0,0,0,5.31678,0,0),
+(8877,21,-5624.63,-3117.04,354.494,0,0,0,0,0,0,0,0,0,0,4.12756,0,0),
+(8877,22,-5644.95,-3125.08,347.271,0,0,0,0,0,0,0,0,0,0,2.95841,0,0),
+(8877,23,-5660.74,-3121.58,343.976,0,0,0,0,0,0,0,0,0,0,2.90321,0,0),
+(8877,24,-5676.21,-3111.59,340.021,0,0,0,0,0,0,0,0,0,0,2.58207,0,0),
+(8877,25,-5691.9,-3102.99,333.647,0,0,0,0,0,0,0,0,0,0,2.61719,0,0),
+(8877,26,-5711.66,-3088.43,328.762,0,0,0,0,0,0,0,0,0,0,2.75769,0,0),
+(8877,27,-5717.66,-3099.03,321.687,0,0,0,0,0,0,0,0,0,0,4.14763,0,0),
+(8877,28,-5705.21,-3132.32,315.838,0,0,0,0,0,0,0,0,0,0,5.09097,0,0),
+(8877,29,-5683.2,-3147.19,313.037,0,0,0,0,0,0,0,0,0,0,2.30046,0,0),
+(8877,30,-5677.17,-3165.29,317.711,0,0,0,0,0,0,0,0,0,0,1.57789,0,0),
+(8877,31,-5679.01,-3185.05,319.508,0,0,0,0,0,0,0,0,0,0,5.1261,0,0);
+
+DELETE FROM `creature_movement_template` WHERE `entry` = 14241;
+INSERT INTO `creature_movement_template` VALUES (14241,1,-46.5029,-268.536,-57.4978,0,0,0,0,0,0,0,0,0,0,0,0,0),
+(14241,2,-10.6115,-281.676,-53.7415,0,0,0,0,0,0,0,0,0,0,0,0,0),
+(14241,3,17.2824,-286.947,-52.2818,0,0,0,0,0,0,0,0,0,0,0,0,0),
+(14241,4,74.1724,-272.765,-54.8267,0,0,0,0,0,0,0,0,0,0,0,0,0),
+(14241,5,117.401,-277.83,-55.8552,30000,14241,0,0,0,0,0,0,0,0,0,0,0);
+
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 4506;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 5801;
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 5124;
+UPDATE `quest_template` SET `RequiredRaces` = 77 WHERE `entry` = 5252;
+UPDATE `quest_template` SET `RequiredRaces` = 0 WHERE `entry` = 6606;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 9422;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 8913;
+UPDATE `quest_template` SET `RequiredRaces` = 178 WHERE `entry` = 8927;
+
+DELETE FROM `gameobject` WHERE `guid` = 632439;
+INSERT INTO `gameobject` VALUES (632439,176907,429,131.286,-278.89,-56.5211,3.14159,0,0,-1,0,180,255,1);
+
 -- reimport fixes
 DELETE FROM `creature` WHERE `guid` = 80057;
 
