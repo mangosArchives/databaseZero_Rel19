@@ -17,6 +17,72 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+--Startup fixes
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 765;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 765;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 785;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 785;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 2447;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 2447;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 2449;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 2449;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 2450;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 2450;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 2452;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 2452;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 2453;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 2453;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 2931;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 2931;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3355;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3355;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3356;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3356;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3357;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3357;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3358;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3358;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3369;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3369;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3818;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3818;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3819;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3819;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3820;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3820;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 3821;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 3821;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 4625;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 4625;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 8153;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 8153;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 8831;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 8831;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 8836;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 8836;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 8838;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 8838;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 8839;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 8839;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 8845;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 8845;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 8846;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 8846;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 13463;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13463;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 13464;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13464;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 13465;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13465;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 13466;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13466;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 13467;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13467;
+UPDATE `item_template` SET `class` = 7 WHERE `entry` = 13468;
+UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13468;
+UPDATE `creature` SET `curhealth` = 633420 WHERE `guid` = 4770;
+UPDATE `creature` SET `spawndist` = 2 WHERE `guid` = 49850;
+
 -- And even more old fixes
 
 UPDATE `gameobject_template` SET `type` = 10 WHERE `entry` = 179544;
