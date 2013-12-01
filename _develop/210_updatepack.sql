@@ -17,6 +17,60 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- various fixes
+UPDATE `creature_template` SET `gossip_menu_id` = 704 WHERE `entry` = 352;
+
+DELETE FROM `gossip_menu` WHERE `entry` = 4261;
+INSERT INTO `gossip_menu` VALUES (4261, 5413, 0, 0);
+UPDATE `creature_template` SET `gossip_menu_id` = 4261 WHERE `entry` = 1103;
+
+DELETE FROM `gossip_menu` WHERE `entry` = 6504;
+INSERT INTO `gossip_menu` VALUES (6504, 7699, 0, 253);
+DELETE FROM `conditions` WHERE `condition_entry` = 253;
+INSERT INTO `conditions` VALUES (253, 15, 19, 2);
+UPDATE `creature_template` SET `gossip_menu_id` = 6504, `npcflag` = 1048577 WHERE `entry` = 14991;
+
+UPDATE `creature_template` SET `unit_flags` = 256 WHERE `entry` = 5391;
+
+DELETE FROM `gameobject_loot_template` WHERE `entry` = 2117;
+INSERT INTO `gameobject_loot_template` VALUES (2117,4433,100,0,1,1,10);
+
+UPDATE `gameobject_template` SET `flags`= 0 WHERE `entry` = 19021;
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 11291;
+INSERT INTO `npc_gossip` VALUES (11291, 50015);
+DELETE FROM `npc_text` WHERE `ID` = 50015;
+INSERT INTO `npc_text` VALUES (50015,'Thanks to the Warchief, even here in the remains of our former prison, some hope remains, and the Horde rises anew.',NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0);
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 15301;
+INSERT INTO `npc_gossip` VALUES (15301,50014);
+DELETE FROM `npc_text` WHERE `ID` = 50014;
+INSERT INTO `npc_text` VALUES (50014,'We are but so close to developing the New Plague that our Dark Lady desires with such fervor.',NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0);
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 15542;
+INSERT INTO `npc_gossip` VALUES (15542, 50013);
+DELETE FROM `npc_text` WHERE `ID` = 50013;
+INSERT INTO `npc_text` VALUES (50013,'In order to serve the Dark Lady and Varimathras we need to advance the front on the Human Infestation.',NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0);
+
+UPDATE `gossip_menu_option` SET `npc_option_npcflag` = 257 WHERE `menu_id` = 1623;
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 6862;
+INSERT INTO `npc_gossip` VALUES (6862, 50010);
+DELETE FROM `npc_text` WHERE `ID` = 50010;
+INSERT INTO `npc_text` VALUES (50010,'You must be hard up to be wandering these Badlands, $c. Hard up like me.$B$BOr maybe you\'re here because you\'re crazy. Crazy, like me.',NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0,NULL,NULL,0,0,0,0,0,0,0,0);
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 641;
+INSERT INTO `npc_gossip` VALUES (641, 5454);
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 36098;
+INSERT INTO `npc_gossip` VALUES (36098, 6108);
+
+DELETE FROM `gossip_menu` WHERE `entry` = 50006;
+INSERT INTO `gossip_menu` VALUES (50006, 6336, 0, 0);
+UPDATE `creature_template` SET `gossip_menu_id` = 50006, `npcflag` = 3 WHERE `entry` = 12238;
+
+UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 100 WHERE `item` = 4951;
+
 --Startup fixes 2
 UPDATE `creature_template` SET `flags_extra` = 2050, `civilian` = 1, `MovementType` = 2 WHERE `entry` = 550;
 UPDATE `creature` SET `position_x` = -11017.7, `position_y` = 1438.34, `position_z` = 43.0221, `orientation` = 5.30596 WHERE `guid` = 45525;
