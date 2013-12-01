@@ -17,6 +17,190 @@
 -- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 --
 
+-- And even more old fixes
+
+UPDATE `gameobject_template` SET `type` = 10 WHERE `entry` = 179544;
+UPDATE `quest_template` SET `SpecialFlags` = 0 WHERE `entry` = 7481;
+UPDATE `quest_template` SET `ReqCreatureOrGOId1` = -179544 WHERE `entry` = 7481;
+UPDATE `quest_template` SET `ReqCreatureOrGOCount1` = 1 WHERE `entry` = 7481;
+UPDATE `quest_template` SET `SpecialFlags` = 0 WHERE `entry` = 7482;
+UPDATE `quest_template` SET `ReqCreatureOrGOId1` = -179544 WHERE `entry` = 7482;
+UPDATE `quest_template` SET `ReqCreatureOrGOCount1` = 1 WHERE `entry` = 7482;
+
+DELETE FROM `pool_template` WHERE `entry` = 1501;
+INSERT INTO `pool_template` VALUES (1501,1,'Q3741 hilarys necklace');
+DELETE FROM `pool_gameobject` WHERE `pool_entry` = 1501;
+INSERT INTO `pool_gameobject` VALUES (31121,1501,25,'Q3741-hilarys necklace'),
+(20836,1501,25,'Q3741-hilarys necklace'),
+(110001,1501,25,'Q3741-hilarys necklace'),
+(110002,1501,25,'Q3741-hilarys necklace');
+
+DELETE FROM `gameobject` WHERE `guid` = 20836;
+DELETE FROM `gameobject` WHERE `guid` = 31121;
+DELETE FROM `gameobject` WHERE `guid` = 632442;
+DELETE FROM `gameobject` WHERE `guid` = 632443;
+DELETE FROM `gameobject` WHERE `guid` = 110001;
+DELETE FROM `gameobject` WHERE `guid` = 110002;
+INSERT INTO `gameobject` VALUES (20836,154357,0,-9363.99,-2396.56,36.8816,-2.00713,0,0,0.843391,-0.5373,10,100,1),
+(31121,154357,0,-9324.1,-1986.69,43.5814,-0.331612,0,0,0.165048,-0.986286,10,100,1),
+(632442,180832,1,1619.83,-4092.43,34.5107,-2.58309,0,0,0.961262,-0.275637,10,100,1),
+(632443,180838,1,1683.11,-4134.35,39.5419,-2.56563,0,0,0.95882,-0.284015,10,100,1),
+(110001,154357,0,-9347.77,-2311.8,45.5503,0.209232,0,0,0.104425,0.994533,5,100,1),
+(110002,154357,0,-9352.8,-2211.7,45.9003,0.872893,0,0,0.422722,0.90626,5,100,1);
+
+DELETE FROM `creature` WHERE `guid` = 49850;
+INSERT INTO `creature` VALUES (49850,2038,1,1013,0,10129.1,1148.93,1314.48,2.35297,300,0,0,155,165,0,1);
+
+DELETE FROM `gameobject_template` WHERE `entry` = 186242;
+DELETE FROM `gameobject_template` WHERE `entry` = 186241;
+DELETE FROM `gameobject_template` WHERE `entry` = 182024;
+
+DELETE FROM `gameobject` WHERE `guid` = 7502;
+
+DELETE FROM `creature` WHERE `guid` = 266;
+DELETE FROM `creature` WHERE `guid` = 267;
+DELETE FROM `creature` WHERE `guid` = 268;
+DELETE FROM `creature` WHERE `guid` = 269;
+DELETE FROM `creature` WHERE `guid` = 272;
+INSERT INTO `creature` VALUES (266,10803,0,10111,0,-6009.32,-198.778,406.707,4.77316,180,0,0,372,0,0,0),
+(267,10611,0,9947,0,-6007.49,-200.84,406.842,3.15053,900,0,0,413,0,0,0),
+(268,10804,0,10110,0,-6011.38,-200.748,406.849,0.072544,180,0,0,372,0,0,0),
+(269,10610,0,9946,0,-6009.39,-202.844,406.995,1.51297,180,0,0,456,0,0,0),
+(272,10805,0,10109,0,-6063.66,-201.381,424.404,3.89743,180,0,0,196,0,0,0);
+
+UPDATE `creature_template` SET `resistance3` = 0 WHERE `entry` = 11664;
+UPDATE `creature_template` SET `resistance4` = 0 WHERE `entry` = 11664;
+UPDATE `creature_template` SET `resistance5` = 0 WHERE `entry` = 11664;
+UPDATE `creature_template` SET `resistance6` = 0 WHERE `entry` = 11664;
+UPDATE `creature_template` SET `resistance4` = 0 WHERE `entry` = 11666;
+UPDATE `creature_template` SET `resistance4` = 0 WHERE `entry` = 11667;
+UPDATE `creature_template` SET `resistance4` = 0 WHERE `entry` = 11668;
+UPDATE `creature_template` SET `resistance4` = 0 WHERE `entry` = 8909;
+
+UPDATE `creature_template` SET `MovementType` = 1 WHERE `entry` = 3843;
+
+DELETE FROM `dbscripts_on_event` WHERE `id` = 313;
+INSERT INTO `dbscripts_on_event` VALUES (313,1,0,0,0,2238,10,4,2000005078,0,0,0,0,0,0,0,'force 2238 to: say text'),
+(313,3,0,0,0,2238,10,4,2000005079,0,0,0,0,0,0,0,'force 2238 to: say text');
+
+DELETE FROM `creature_movement_template` WHERE `entry` = 2983;
+INSERT INTO `creature_movement_template` VALUES (2983,1,-2236.21,-410.89,-9.42601,2000,0,0,0,0,0,0,0,0,0,5.37218,0,0),
+(2983,2,-2236.21,-410.89,-9.42601,4000,0,2000000168,0,0,0,0,0,0,0,5.37218,0,0),
+(2983,3,-2214.34,-428.902,-7.86157,0,0,0,0,0,0,0,0,0,0,5.59602,0,0),
+(2983,4,-2191.05,-440.163,-4.52789,0,0,0,0,0,0,0,0,0,0,5.85127,0,0),
+(2983,5,-2163.19,-446.51,-5.92271,0,0,0,0,0,0,0,0,0,0,6.0751,0,0),
+(2983,6,-2130.84,-454.067,-9.34155,0,0,0,0,0,0,0,0,0,0,0.377826,0,0),
+(2983,7,-2102.93,-424.125,-5.38765,0,0,0,0,0,0,0,0,0,0,0.915038,0,0),
+(2983,8,-2078.06,-390.171,-10.3244,0,0,0,0,0,0,0,0,0,0,0.938601,0,0),
+(2983,9,-2051.67,-355.184,-5.34619,0,0,0,0,0,0,0,0,0,0,0.970017,0,0),
+(2983,10,-2036.28,-321.563,-8.99381,0,0,0,0,0,0,0,0,0,0,1.15459,0,0),
+(2983,11,-2019.59,-284.154,-10.7305,0,0,0,0,0,0,0,0,0,0,1.15066,0,0),
+(2983,12,-2000.31,-241.171,-10.7863,0,0,0,0,0,0,0,0,0,0,1.09961,0,0),
+(2983,13,-1974.52,-195.515,-10.6412,0,0,0,0,0,0,0,0,0,0,0.97787,0,0),
+(2983,14,-1950.36,-159.017,-11.1501,0,0,0,0,0,0,0,0,0,0,1.03678,0,0),
+(2983,15,-1921.89,-120.753,-11.7886,0,0,0,0,0,0,0,0,0,0,0.899332,0,0),
+(2983,16,-1887.6,-82.903,-11.547,0,0,0,0,0,0,0,0,0,0,0.767385,0,0),
+(2983,17,-1846.86,-42.2578,-12.0797,0,0,0,0,0,0,0,0,0,0,0.820791,0,0),
+(2983,18,-1798.2,-15.0264,-10.3671,0,0,0,0,0,0,0,0,0,0,1.35957,0,0),
+(2983,19,-1797.06,37.3591,-2.06555,0,0,0,0,0,0,0,0,0,0,1.07762,0,0),
+(2983,20,-1770.11,67.7142,2.08745,0,0,0,0,0,0,0,0,0,0,1.03992,0,0),
+(2983,21,-1752.72,114.745,-0.461769,0,0,0,0,0,0,0,0,0,0,0.821576,0,0),
+(2983,22,-1717.69,151.336,3.97792,0,0,0,0,0,0,0,0,0,0,0.777593,0,0),
+(2983,23,-1679.98,192.266,10.5913,0,0,0,0,0,0,0,0,0,0,0.860061,0,0),
+(2983,24,-1655.82,207.278,8.61911,0,0,0,0,0,0,0,0,0,0,0.604806,0,0),
+(2983,25,-1616.72,236.198,2.98487,0,0,0,0,0,0,0,0,0,0,0.428092,0,0),
+(2983,26,-1557.23,258.012,9.58834,0,0,0,0,0,0,0,0,0,0,0.831001,0,0),
+(2983,27,-1538.76,296.397,31.8461,0,0,0,0,0,0,0,0,0,0,1.21742,0,0),
+(2983,28,-1533.94,324.278,56.2612,0,0,0,0,0,0,0,0,0,0,1.00143,0,0),
+(2983,29,-1526.39,332.701,63.2045,0,0,0,0,0,0,0,0,0,0,1.08484,0,0),
+(2983,30,-1521.71,338.879,63.6666,5000,0,2000000169,0,0,0,0,0,0,0,0.96546,0,0),
+(2983,31,-1521.71,338.879,63.6666,0,1,0,0,0,0,0,0,0,0,0.96546,0,0);
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 298301;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000168;
+DELETE FROM `db_script_string` WHERE `entry` = 2000000169;
+INSERT INTO `db_script_string` VALUES (2000000168,'%s stares to the northwest and lets out a long, drawn out howl.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL),
+(2000000169,'%s lets forth a mighty howl.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,0,0,NULL);
+
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 14241;
+INSERT INTO `dbscripts_on_creature_movement` VALUES (14241,1,1,35,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark redeemed - emote'),
+(14241,6,1,35,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark redeemed - emote'),
+(14241,9,11,632439,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark redeemed - open door entry 176907'),
+(14241,14,28,7,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark redeemed - fake dead'),
+(14241,25,18,0,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark redeemed - despawn self'),
+(14241,25,21,0,0,0,0,0,0,0,0,0,0,0,0,0,'ironbark redeemed - set not active');
+
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 173701;
+INSERT INTO `dbscripts_on_creature_movement` VALUES (173701,0,20,1,1737,5,0,0,0,0,0,0,0,0,0,0,'Oliver movement changed to 1:random'),
+(173701,35,20,2,1737,5,0,0,0,0,0,0,0,0,0,0,'Oliver movement changed to 2:waypoint');
+
+DELETE FROM `creature_movement` WHERE `id` = 28705;
+INSERT INTO `creature_movement` VALUES (28705,1,1847.41,1562.06,94.9508,10000,0,0,0,0,0,0,0,0,0,4.77069,0,0),
+(28705,2,1850.83,1561.74,94.6875,0,0,0,0,0,0,0,0,0,0,1.53563,0,0),
+(28705,3,1853.08,1580.78,94.0011,0,0,0,0,0,0,0,0,0,0,0.87904,0,0),
+(28705,4,1862.66,1588.71,92.2148,0,0,0,0,0,0,0,0,0,0,5.92836,0,0),
+(28705,5,1879.29,1588.1,90.2351,15000,0,0,0,0,0,0,0,0,0,6.25509,0,0),
+(28705,6,1874.32,1590.82,90.8876,0,0,0,0,0,0,0,0,0,0,3.01925,0,0),
+(28705,7,1830.79,1592.76,94.3424,0,173901,0,0,0,0,0,0,0,0,3.98686,0,0),
+(28705,8,1817.14,1583.13,95.8498,0,173902,0,0,0,0,0,0,0,0,0.086576,0,0),
+(28705,9,1818.17,1582.8,95.7979,15000,0,0,0,0,0,0,0,0,0,0.084208,0,0),
+(28705,10,1817.71,1571.91,95.6719,0,0,0,0,0,0,0,0,0,0,5.1783,0,0),
+(28705,11,1820.69,1568.39,95.6401,0,0,0,0,0,0,0,0,0,0,5.6943,0,0),
+(28705,12,1828.08,1564.87,95.6222,8000,0,0,0,0,0,0,0,0,0,5.68566,0,0),
+(28705,13,1829.92,1577.48,95.6222,0,0,0,0,0,0,0,0,0,0,0.985835,0,0),
+(28705,14,1835.97,1584.46,94.2479,0,0,0,0,0,0,0,0,0,0,0.185514,0,0),
+(28705,15,1846.08,1583.83,93.7457,0,0,0,0,0,0,0,0,0,0,4.75496,0,0),
+(28705,16,1847.03,1571.37,95.0757,0,0,0,0,0,0,0,0,0,0,4.73926,0,0);
+
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 173701;
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 173702;
+INSERT INTO `dbscripts_on_creature_movement` VALUES (173901,0,25,1,1739,5,0,0,0,0,0,0,0,0,0,0,'Phillip RUN ON'),
+(173902,0,25,0,1739,5,0,0,0,0,0,0,0,0,0,0,'Phillip RUN OFF');
+
+UPDATE `creature_ai_scripts` SET `event_flags` = 2 WHERE `id` = 1214301;
+UPDATE `creature_ai_scripts` SET `event_flags` = 2 WHERE `id` = 1521501;
+
+UPDATE `creature` SET `modelid` = 3441 WHERE `guid` = 180;
+UPDATE `creature_model_info` SET `modelid_other_gender` = 0 WHERE `modelid` = 3441;
+
+DELETE FROM `gameobject` WHERE `guid` = 632440;
+INSERT INTO `gameobject` VALUES (632440,180055,43,-97.6,173.8,-79,2.08,0,0,0,0,600,100,1);
+
+DELETE FROM `gameobject_template` WHERE `entry` = 180055;
+INSERT INTO `gameobject_template` VALUES (180055,2,318,'Mysterious Wailing Caverns Chest',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'');
+
+DELETE FROM `gameobject_involvedrelation` WHERE `quest` = 7944;
+INSERT INTO `gameobject_involvedrelation` VALUES (180055,7944);
+
+DELETE FROM `gameobject` WHERE `guid` = 632440;
+DELETE FROM `gameobject` WHERE `guid` = 632441;
+DELETE FROM `gameobject` WHERE `guid` = 632442;
+DELETE FROM `gameobject` WHERE `guid` = 632443;
+DELETE FROM `gameobject` WHERE `guid` = 632444;
+DELETE FROM `gameobject` WHERE `guid` = 632445;
+INSERT INTO `gameobject` VALUES (632440,180055,43,-97.6,173.8,-79,2.08,0,0,0,0,600,100,1),
+(632441,180826,1,1579.35,-4109.25,34.5417,-2.53073,0,0,0.953717,-0.300706,180,100,1),
+(632442,180832,1,1619.83,-4092.43,34.5107,-2.58309,0,0,0.961262,-0.275637,180,100,1),
+(632443,180838,1,1683.11,-4134.35,39.5419,-2.56563,0,0,0.95882,-0.284015,180,100,1),
+(632444,180818,1,1637.11,-4147.21,36.0414,-2.54818,0,0,0.956305,-0.292372,180,100,1),
+(632445,180812,1,1590.82,-4155.33,36.2926,-2.58309,0,0,0.961262,-0.275637,180,100,1);
+DELETE FROM `game_event_gameobject` WHERE `guid` = 180598;
+DELETE FROM `game_event_gameobject` WHERE `guid` = 63240;
+DELETE FROM `game_event_gameobject` WHERE `guid` = 63241;
+DELETE FROM `game_event_gameobject` WHERE `guid` = 63242;
+DELETE FROM `game_event_gameobject` WHERE `guid` = 63243;
+DELETE FROM `game_event_gameobject` WHERE `guid` = 63244;
+DELETE FROM `game_event_gameobject` WHERE `guid` = 63245;
+INSERT INTO `game_event_gameobject` VALUES (180598,22),
+(63240,22),
+(63241,22),
+(63242,22),
+(63243,22),
+(63244,22),
+(63245,22);
+
+DELETE FROM `player_xp_for_level` WHERE `lvl` = 60;
+INSERT INTO `player_xp_for_level` VALUES (60,217400);
+
 -- reimport more fixes
 DELETE FROM `creature_battleground` WHERE `guid` = 150720;
 DELETE FROM `creature_battleground` WHERE `guid` = 150722;
