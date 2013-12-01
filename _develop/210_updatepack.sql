@@ -81,7 +81,6 @@ UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13467;
 UPDATE `item_template` SET `class` = 7 WHERE `entry` = 13468;
 UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 13468;
 UPDATE `creature` SET `curhealth` = 633420 WHERE `guid` = 4770;
-UPDATE `creature` SET `spawndist` = 2 WHERE `guid` = 49850;
 
 -- And even more old fixes
 
@@ -115,7 +114,7 @@ INSERT INTO `gameobject` VALUES (20836,154357,0,-9363.99,-2396.56,36.8816,-2.007
 (110002,154357,0,-9352.8,-2211.7,45.9003,0.872893,0,0,0.422722,0.90626,5,100,1);
 
 DELETE FROM `creature` WHERE `guid` = 49850;
-INSERT INTO `creature` VALUES (49850,2038,1,1013,0,10129.1,1148.93,1314.48,2.35297,300,0,0,155,165,0,1);
+INSERT INTO `creature` VALUES (49850,2038,1,1013,0,10129.1,1148.93,1314.48,2.35297,300,2,0,155,165,0,1);
 
 DELETE FROM `gameobject_template` WHERE `entry` = 186242;
 DELETE FROM `gameobject_template` WHERE `entry` = 186241;
@@ -217,8 +216,8 @@ INSERT INTO `creature_movement` VALUES (28705,1,1847.41,1562.06,94.9508,10000,0,
 (28705,15,1846.08,1583.83,93.7457,0,0,0,0,0,0,0,0,0,0,4.75496,0,0),
 (28705,16,1847.03,1571.37,95.0757,0,0,0,0,0,0,0,0,0,0,4.73926,0,0);
 
-DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 173701;
-DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 173702;
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 173901;
+DELETE FROM `dbscripts_on_creature_movement` WHERE `id` = 173902;
 INSERT INTO `dbscripts_on_creature_movement` VALUES (173901,0,25,1,1739,5,0,0,0,0,0,0,0,0,0,0,'Phillip RUN ON'),
 (173902,0,25,0,1739,5,0,0,0,0,0,0,0,0,0,0,'Phillip RUN OFF');
 
