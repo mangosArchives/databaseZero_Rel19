@@ -1,5 +1,7 @@
-#131224_gossip_fix
---Apply this after Big backport to fix duplicates in gossip menus and fix a lot of gossip texts
+
+-- How to apply these updates see Evildead666_Big_Backport.sql
+
+-- These fix the gossip menus after the backports deleting duplicates and sorting otion numbers
 
 --Text changes
 UPDATE `gossip_menu_option` SET `option_text` = "Guild Master" WHERE `option_text` = "The Guild Master.";

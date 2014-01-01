@@ -1,4 +1,6 @@
---Alters the npc_text column names to usefull ones
+-- Alters the npc_text column names to usefull ones
+-- How to apply these updates see Evildead666_Big_Backport.sql
+
 
 ALTER TABLE npc_text CHANGE COLUMN em0_0 em0_0_delay SMALLINT(5);
 ALTER TABLE npc_text CHANGE COLUMN em0_1 em0_0 SMALLINT(5);
