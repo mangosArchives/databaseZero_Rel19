@@ -95,8 +95,8 @@ UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15744;
 UPDATE `creature_template` SET `type` = 10 WHERE `entry` = 15818;
 
 --new entry for conditions
-UPDATE `conditions` SET condition_entry = 358 WHERE condition_entry = 1171;
-UPDATE `conditions` SET condition_entry = 359 WHERE condition_entry = 1174;
+UPDATE `conditions` SET condition_entry = 358 WHERE condition_entry = 1771;
+UPDATE `conditions` SET condition_entry = 359 WHERE condition_entry = 1774;
 DELETE FROM `conditions` WHERE condition_entry = 1777;
 DELETE FROM `conditions` WHERE condition_entry = 360;
 INSERT INTO `conditions` VALUES (360, -1, 358, 359);
@@ -225,7 +225,7 @@ UPDATE gameobject SET `state` = 1 WHERE guid = 65846;
 -- Spawns gameobject 181356 (Sapphiron Birth) from UDB-v406
 DELETE FROM `gameobject` WHERE `id` = 181356;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
-(144, 181356, 533, 3522.57, -5236.76, 137.63, -1.8, 0, 0, -0.783327, 0.62161, 604800, 100, 1);
+(10300, 181356, 533, 3522.57, -5236.76, 137.63, -1.8, 0, 0, -0.783327, 0.62161, 604800, 100, 1);
 
 -- TODO: updates equipement for these creatures as it currently wrong, especially for Unholy Staff
 DELETE FROM `creature_equip_template_raw` WHERE entry = 1003;
@@ -378,6 +378,7 @@ INSERT INTO `gossip_menu` VALUES (4124, 5095, 0, 363);                          
 UPDATE `creature_template` SET `gossip_menu_id` = 4124 WHERE `entry` = 4160; -- Adds gossip menu to Ainethil (Artisan Alchemist)
 -- Removes entries in npc_gossip for these trainers if existing
 DELETE FROM `npc_gossip` WHERE `npc_guid` IN (SELECT `guid` FROM `creature` WHERE `id` = 4160);
+
 
 -- Master (teaching Artisan)
 -- Kylanna Windwhisper (7948)
@@ -840,6 +841,7 @@ UPDATE creature SET position_x = '-9080.482422', position_y = '823.150574', posi
 UPDATE creature SET position_x = '-8759.895508', position_y = '388.538177', position_z = '101.056473', orientation = '0.648394' WHERE guid = '160018';
 -- Moved a Defias Blackguard that was way too far forward --
 UPDATE creature SET position_x = '-71.294533', position_y = '-823.506714', position_z = '40.528717', orientation = '0.028470' WHERE guid = '79383';
+
 
 -- Backport from classic db with some fixes
 
@@ -1508,6 +1510,7 @@ UPDATE `conditions` SET `value2` = 386 WHERE `condition_entry` = 387;
 UPDATE `conditions` SET `value1` = 383 WHERE `condition_entry` = 388;
 UPDATE `conditions` SET `value2` = 385 WHERE `condition_entry` = 388;
 
+
 -- sd2 fixes and backports
 
 -- SD2-classic revision s2539
@@ -1557,12 +1560,6 @@ INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id
 (941, 0, 0, 'Hey Bly! Bilgewizzle wants his divino-matic rod back!', 1, 1, 0, 384), -- Note: we are not sure what should be the action of this one - maybe similar to the one below
 (941, 1, 0, 'That\'s it! I\'m tired of helping you out. It\'s time we settled things on the battlefield!', 1, 1, 94101, 384);
 
--- SD2-classic revision s2643
--- https://github.com/scriptdev2/scriptdev2/commit/090e1a1556bc907e3cd0c1c67dc6f112f25e8014
-
-DELETE FROM dbscripts_on_quest_end WHERE id=6661;
-INSERT INTO dbscripts_on_quest_end (id, delay, command, datalong, comments) VALUES
-(6661,1,15, 21052,'Cast Monty Bashes Rats (DND)');
 
 -- SD2-classic revision s2568
 -- https://github.com/scriptdev2/scriptdev2/commit/8e51995ef86eed9768d5d09cdf6a3ef0cefb5afd
@@ -1574,9 +1571,6 @@ REPLACE INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong
 DELETE FROM `dbscripts_on_go_template_use` WHERE `id` in (175944);
 REPLACE INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
 (175944, 0, 10, 10882, 30000, 0, 0, 0, 0, 0, 0, 0, -5008.338, -2118.894, 83.657, 0.874, '');
-DELETE FROM `dbscripts_on_go_template_use` WHERE `id` in (181956);
-REPLACE INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong`, `datalong2`, `buddy_entry`, `search_radius`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES
-(181956, 0, 10, 17716, 30000, 0, 0, 0, 0, 0, 0, 0, 8094.632, -7542.740, 151.568, 0.287, '');
 
 -- SD2-classic revision s2497
 -- https://github.com/scriptdev2/scriptdev2/commit/3a6baa472c9c948c96926b85ba810d6ca921c65f
@@ -1584,6 +1578,10 @@ REPLACE INTO `dbscripts_on_go_template_use` (`id`, `delay`, `command`, `datalong
 DELETE FROM dbscripts_on_go_template_use WHERE id=179985;
 INSERT INTO dbscripts_on_go_template_use VALUES
 (179985,1,10,15041,60000,0,0,2,0,0,0,0,0,0,0,0,'Spider Egg - Summon Spawn of Mar\'li');
+
+-- fix startup error
+DELETE FROM `gameobject_template` WHERE `entry` = 181956;
+
 
 -- gameobject spawns
 -- BG buff object pools (Arathi Basin) by Cyberium
@@ -2095,6 +2093,20 @@ INSERT INTO creature_template_addon (entry, mount, bytes1, b2_0_sheath, b2_1_fla
 
 UPDATE creature_template SET npcflag=npcflag|2 WHERE entry = 12580;
 
+-- startup fix
+
+UPDATE `creature` SET `curhealth` = 15738 WHERE `id`= 15323;
+UPDATE `creature` SET `curhealth` = 31456 WHERE `id`= 15320;
+UPDATE `creature` SET `curhealth` = 438442 WHERE `id`= 15341;
+UPDATE `creature` SET `curhealth` = 71720 WHERE `id`= 15385;
+UPDATE `creature` SET `curhealth` = 57387 WHERE `id`= 15386;
+UPDATE `creature` SET `curhealth` = 70457 WHERE `id`= 15388;
+UPDATE `creature` SET `curhealth` = 69073 WHERE `id`= 15389;
+UPDATE `creature` SET `curhealth` = 80342 WHERE `id`= 15390;
+UPDATE `creature` SET `curhealth` = 82662 WHERE `id`= 15391;
+UPDATE `creature` SET `curhealth` = 69952 WHERE `id`= 15392;
+
+
 
 DELETE FROM `game_event_gameobject` WHERE `guid` = 84916;
 DELETE FROM `game_event_gameobject` WHERE `guid` = 84917;
@@ -2294,24 +2306,6 @@ DELETE FROM `game_event_gameobject` WHERE `guid` = 85110;
 DELETE FROM `game_event_gameobject` WHERE `guid` = 85111;
 DELETE FROM `game_event_gameobject` WHERE `guid` = 180598;
 
--- AQ40
-UPDATE creature_template SET gossip_menu_id = 6644 WHERE entry = 15502;
-DELETE FROM gossip_menu WHERE entry = 6644 AND text_id = 8702;
-INSERT INTO gossip_menu (entry, text_id, condition_id) VALUES
-(6644, 8702, 718);
-DELETE FROM gossip_menu_option WHERE menu_id = 6644;
-INSERT INTO gossip_menu_option (menu_id, id, option_icon, option_text, option_id, npc_option_npcflag, box_coded, box_money, box_text, condition_id, action_script_id) VALUES
-(6644, 0, 0, 'Teleport me to the lair of the Twin Emperors, please.', 1, 1, 0, 0, '', 717, 66441),
-(6644, 1, 0, 'Please teleport me to the final chamber.', 1, 1, 0, 0, '', 718, 66442);
-DELETE FROM dbscripts_on_gossip WHERE id IN (66441, 66442);
-INSERT INTO dbscripts_on_gossip (id, command, datalong, comments) VALUES
-(66441, 15, 29182, 'teleport - lair of the Twin Emperors'),
-(66442, 15, 29188, 'teleport - final chamber');
-DELETE FROM conditions WHERE condition_entry IN (717, 718);
-INSERT INTO conditions (condition_entry, type, value1, value2) VALUES
-(717, 31, 604, 0),
-(718, 31, 605, 0);
-
 UPDATE `quest_template` SET `MinLevel` = 1 WHERE `entry` IN (7881,7889,7894,7899);
 -- Despite being currently marked as lvl 6 on wowhead/wowwiki, quests 7905 and 7926 were indeed lvl 10 quests back in classic
 UPDATE `quest_template` SET `MinLevel` = 10 WHERE `entry` IN (7882,7890,7895,7900, 7905,7926);
@@ -2498,8 +2492,9 @@ DELETE FROM `gossip_menu` WHERE `entry` IN (646, 4748, 5853, 4746, 4749,4747);
 
 -- Journeyman/Expert (teaching Apprentice and Journeyman)
 -- Stephen Ryback (5482)
-INSERT INTO `gossip_menu` VALUES (646, 1207, 0, 0);                                                 -- Player does not have the right skill
-INSERT INTO `gossip_menu` VALUES (646, 7015, 0, 400);                                 -- Player is right level
+INSERT INTO `gossip_menu` VALUES (646, 1208, 0, 0);                                                 -- Player does not have the right skill
+INSERT INTO `gossip_menu` VALUES (646, 1207, 0, 400);                                 -- Player is right level
+INSERT INTO `gossip_menu` VALUES (646, 7015, 0, 401);
 INSERT INTO `gossip_menu` VALUES (646, 7016, 0, 402);                                 -- Player needs to learn expert level
 INSERT INTO `gossip_menu` VALUES (646, 7017, 0, 403);                                 -- Player needs to learn artisan level
 UPDATE `creature_template` SET `gossip_menu_id` = 646 WHERE `entry` = 5482; -- Adds gossip menu to trainers
@@ -2566,6 +2561,7 @@ DELETE FROM `npc_gossip` WHERE `npc_guid` IN (SELECT `guid` FROM `creature` WHER
 
 -- Master (teaching Artisan)
 -- Same as alliance
+
 
 -- ************************************************************
 -- Conditions
@@ -2674,6 +2670,7 @@ DELETE FROM `npc_gossip` WHERE `npc_guid` IN (SELECT `guid` FROM `creature` WHER
 
 UPDATE `creature_template` SET `InhabitType` = 3 WHERE `entry` = 7046;
 UPDATE `quest_template` SET `OfferRewardText` = 'Alright, $n. You want to earn your keep with the Horde? Well there\'s plenty to do here, so listen close and do what you\'re told.$B$B$GI see that look in your eyes, do not think I will tolerate any insolence. Thrall himself has declared the Hordes females to be on equal footing with you men. Disrespect me in the slightest, and you will know true pain.:I\'m happy to have met you. Thrall will be glad to know that more females like you and I are taking the initiative to push forward in the Barrens.' WHERE `entry` = 842;
+
 
 -- Added waypoint movement to creature 16061 (Instructor Razuvious)
 -- Script is currently missing (tbd)
@@ -2873,6 +2870,7 @@ UPDATE `gossip_menu` SET `condition_id` = 8 WHERE `condition_id` = 1719;
 UPDATE `gossip_menu_option` SET `condition_id` = 8 WHERE `condition_id` = 1719;
 UPDATE `npc_vendor` SET `condition_id` = 8 WHERE `condition_id` = 1719;
 
+
 -- Correct OfferRewardText for quest Nether-lace Garment (1946). Thanks Ghurok.
 UPDATE `quest_template` SET `OfferRewardText`='Here is your nether-lace, $N. It is both comfortable and durable, and holds the magic of the laughing sisters\' hair.$B$BEnjoy, and if you find it amenable, please mention so to Deino. She is a mage on whose good side I wish to stay...' WHERE `entry`=1946;
 
@@ -2911,6 +2909,7 @@ DELETE FROM `creature_template_addon` WHERE entry = 10740;
 INSERT INTO `creature_template_addon` VALUES (10740, 0, 7, 0, 0, 0, 0, '');
 
 UPDATE `quest_template` SET `Details` = 'Oh, to be at sea once again! To feel the kiss of the wind, and to have the waves rock me like my blessed mother, long ago!$B$BOh, I wish I had your fortune, good $c, for I see the sea in your future!$B$BIt\'s my job to tell eager souls of the land of Kalimdor, the land of opportunity! If you\'re willing to try your luck across the sea, then take a ship from here to the lovely port of Theramore. Speak there with my partner, the elf, Fiora Longears.$B$BShe\'ll start you on your Kalimdor adventure!', `Objectives` = 'Speak with Fiora Longears on the docks at Theramore in Dustwallow Marsh.' WHERE `entry` = 1132;
+
 
 -- Added gossip menus to the following creatures based on UDB data, also fixed npcflag when needed
 -- Gossips were checked to prevent linking to a TBC/WotLK gossip
@@ -3555,6 +3554,7 @@ UPDATE `creature_template` SET `npcflag`= `npcflag`|1, `gossip_menu_id` = 11393 
 UPDATE `creature_template` SET `npcflag`= `npcflag`|1, `gossip_menu_id` = 4783 WHERE `entry` IN (543, 3545, 3698, 4320); -- Nalesette Wildbringer, Claude Erksine, Bolyun, Caelyb
 UPDATE `creature_template` SET `npcflag`= `npcflag`|1, `gossip_menu_id` = 5304 WHERE `entry` = 12238; -- Zaetar
 UPDATE `creature_template` SET `npcflag`= `npcflag`|1, `gossip_menu_id` = 685 WHERE `entry` = 5494; -- Catherine Leland
+UPDATE `creature_template` SET `npcflag`= `npcflag`|1, `gossip_menu_id` = 8085 WHERE `entry` = 3230; -- Nazgrel
 
 -- This deletes all npc_gossips which are replaced by gossip_menu
 -- this does not delete a gossip which has not been replaced by the same npc_text
@@ -4537,6 +4537,100 @@ DELETE FROM `npc_gossip` WHERE `npc_guid` = 54340;
 DELETE FROM `npc_text` WHERE `ID` = 11482;
 
 UPDATE `creature` SET `MovementType` = 0 WHERE `id` = 2038;
+UPDATE `creature` SET `spawndist` = 0 WHERE `id` = 2038;
+
+-- Backport from UDB missing gossip_menu from previous update
+DELETE FROM `gossip_menu` WHERE `entry` IN (643, 3161, 3162, 4004, 4006);
+-- ,3161,3162,3861,3922,4004,4005,4006,4112,4821,4823,5304,6223,6525,7406,7577,8085,8453,8851,9821,10215,10775,50005,50006);
+INSERT INTO `gossip_menu` VALUES
+(643, 1202, 0, 0),
+(643, 1203, 0, 38),
+(3161, 5841, 0, 0),
+(3161, 3893, 0, 931),
+(3162, 5842, 0, 0),
+(3162, 3896, 0, 932),
+(3861, 4778, 3861, 39),
+(3922, 4777, 0, 39),
+(4004, 5855, 0, 0),
+(4004, 4859, 0, 933),
+(4005, 4869, 0, 851),
+(4006, 5843, 0, 0),
+(4006, 4862, 0, 934),
+(4821, 5874, 0, 18),
+(4823, 5878, 0, 18),
+(5304, 6336, 0, 0),
+(6223, 7394, 0, 939),
+(6525, 7820, 0, 3),
+(7406, 8875, 0, 0),
+(8085, 9995, 0, 0),
+(8453, 10560, 0, 0), -- TBC version, need to be reverted
+(8851, 11492, 0, 0),
+(9821, 13584, 0, 0),
+(9821, 13557, 0, 15),
+(10215, 14198, 0, 0); -- à tester
+
+-- Backport from UDB missing gossip_menu_options from previous update
+DELETE FROM `gossip_menu_option` WHERE `menu_id` IN (3161,3162,4004,4005,4006,9821);
+INSERT INTO `gossip_menu_option` VALUES
+(3161, 0, 1, 'I would like to buy from you.', 3, 4, 0, 0, 0, 0, 0, NULL, 845),
+(3162, 0, 1, 'I would like to buy from you.', 3, 4, 0, 0, 0, 0, 0, '', 849),
+(4004, 0, 1, 'I would like to buy from you.', 3, 4, 0, 0, 0, 0, 0, '', 846),
+(4005, 0, 1, 'I would like to buy from you.', 3, 4, 0, 0, 0, 0, 0, NULL, 851),
+(4006, 0, 1, 'I would like to buy from you.', 3, 4, 0, 0, 0, 0, 0, '', 847),
+(4821, 0, 3, 'Please teach me.', 5, 16, 0, 0, 0, 0, 0, NULL, 18),
+(4823, 0, 3, 'Please teach me.', 5, 16, 0, 0, 0, 0, 0, NULL, 18),
+(8453, 0, 9, 'I wish to join the battle!', 12, 1048576, 0, 0, 0, 0, 0, '', 0), -- TBC version, need to be revert
+(9821, 1, 0, 'I\'d like to stable my pet here', 14, 8192, 0, 0, 0, 0, 0, '', 0);
+
+-- Backport from UDB npc_text from previous update
+DELETE FROM `npc_text` WHERE `id` IN (11492, 13584, 13557, 14198);
+INSERT INTO `npc_text` VALUES
+(11492, 'Welcome to Theramore, $c.', 'Welcome to Theramore, $c.', 0, 1, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0),
+(13557, 'Greetings, $c. I can help stable your pets or assist you in recovering lost companions.', 'Greetings, $c. I can help stable your pets or assist you in recovering lost companions.', 0, 1, 0, 1, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0),
+(13584, 'Greetings, $c. I can assist you in recovering lost companions.', 'Greetings, $c. I can assist you in recovering lost companions.', 0, 1, 0, 1, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0),
+(14198, 'The Emerald Dream has become a dangerous place. I grow increasingly concerned for those who have sacrificed their waking life in Azeroth in hopes of saving it.', '', 0, 1, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 0, 0, 0, 0, 0, 0, 0);
+
+-- Backport from UDB missing DB scrpit from previous update
+DELETE FROM `dbscripts_on_gossip` WHERE `id` = 3861;
+INSERT INTO `dbscripts_on_gossip` VALUES (3861, 0, 8, 10936, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'give quest credit - The Battle of Darrowshire');
+
+-- Backport from UDB missing conditions used by gossip_menu and gossip_menu_options above
+DELETE FROM `conditions` WHERE `condition_entry` IN (38, 39, 851, 831, 812, 821, 839, 845, 825, 806, 815, 836, 849, 829, 810, 819, 842, 846, 826, 807, 816, 835, 847, 827, 808, 817, 840);
+INSERT INTO `conditions` VALUES
+(38, 7, 182, 1),
+(39, 9, 5721, 0),
+(851, -2, 831, 839),
+(831, -1, 812, 821),
+(812, 5, 68, 7),
+(821, 14, 674, 0),
+(839, 14, 16, 0),
+(845, -2, 825, 836),
+(825, -1, 806, 815),
+(806, 5, 76, 7),
+(815, 14, 688, 0),
+(836, 14, 2, 0),
+(849, -2, 829, 842),
+(829, -1, 810, 819),
+(810, 5, 530, 7),
+(819, 14, 562, 0),
+(842, 14, 128, 0),
+(846, -2, 826, 835),
+(826, -1, 807, 816),
+(807, 5, 72, 7),
+(816, 14, 1100, 0),
+(835, 14, 1, 0),
+(847, -2, 827, 840),
+(827, -1, 808, 817),
+(808, 5, 81, 7),
+(817, 14, 658, 0),
+(840, 14, 32, 0),
+(939, 5, 909, 5),
+(934, -2, 808, 840),
+(933, -2, 807, 835),
+(932, -2, 810, 842),
+(931, -2, 806, 836);
+
+DELETE FROM `npc_gossip` WHERE `npc_guid` = 79825;
 
 -- ***** Schmoozerd *****
 -- Zum'Rah Zombies
@@ -5299,9 +5393,6 @@ INSERT INTO `dbscripts_on_quest_end` (`id`, `delay`, `command`, `datalong`, `dat
 -- Fixes text emote for buddy 3843 (Anaya)
 UPDATE `db_script_string` SET `content_default` = '\'s soft voice trails away into the mists. "Know that I love you always..."' WHERE `entry` = 2000005344;
 
--- Updated health of creature 3529 (Moonrage Armorer) spawn to match template
-UPDATE `creature` SET `curhealth` = 981 WHERE `guid` = 178307;
-
 -- Added stealth auras for creatures that were missing it. Creature AI scripts were checked to ensure they do not
 -- have stealth applied by EventAI as applying the aura twice would cancel it.
 -- Source: TBC-DB
@@ -5767,6 +5858,12 @@ INSERT INTO dbscripts_on_gossip (id, delay, command, datalong, buddy_entry, sear
 (654303, 0, 15, 24792, 0, 0, 4, 'greater wind stone - earth'),
 (654304, 0, 15, 24791, 0, 0, 4, 'greater wind stone - air'),
 (654305, 0, 15, 24793, 0, 0, 4, 'greater wind stone - water');
+
+-- startup fix
+INSERT INTO `npc_text` VALUES (7775,"Missing US text.","Missing US text.",0,0,0,0,0,0,0,0,"","",0,0,0,0,0,0,0,0,"","",0,0,0,0,0,0,0,0,"","",0,0,0,0,0,0,0,0,"","",0,0,0,0,0,0,0,0,"","",0,0,0,0,0,0,0,0,"","",0,0,0,0,0,0,0,0,"","",0,0,0,0,0,0,0,0);
+-- Updated health of creature 3529 (Moonrage Armorer) spawn to match template
+UPDATE `creature` SET `curhealth` = 981 WHERE `id` = 3529;
+
 
 -- Added waypoints for creature 8976 (Hematos)
 -- Source: TBC-DB
@@ -6577,6 +6674,7 @@ INSERT INTO `creature_movement_template` VALUES
 (6228, 22, -700.726, 705.705, -330.783, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6.19398, 0, 0),
 (6228, 23, -687.432, 702.892, -330.788, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6.04476, 0, 0);
 
+
 -- Spawned missing creature 4842 (Earthcaller Halmgar) in Razorfen Kraul
 -- fixed faction, mana and armor
 -- source: http://www.wowhead.com/npc=4842#comments
@@ -7100,16 +7198,9 @@ UPDATE `creature_model_info` SET `gender` = 1 WHERE `modelid` IN (9872, 9885, 98
 -- Fixed alternate modelid_2 & normal modelid_2 boxing
 UPDATE `creature_model_info` SET `bounding_radius` = 0.4464, `combat_reach` = 1.8 WHERE `modelid` IN (9871, 9884, 9867, 9877, 9869, 9888, 9872, 9885, 9868, 9878, 9870, 9889);
 
-
-
-
-
-
-
-
-
-
-
+-- startup fix
+UPDATE `creature`SET `spawndist` = 0 WHERE `guid` = 58015;
+UPDATE `creature`SET `spawndist` = 0 WHERE `guid` = 58034;
 
 
 -- Added missing spawns for creatures in Blackrock Spire - upper part
@@ -7334,7 +7425,7 @@ UPDATE `creature` SET `curhealth` = 18116 WHERE `id` = 10366 AND `curhealth` = 1
 
 -- Removed some creatures 10742 (Blackhand Dragon Handler) used as placeholders in Blackrock Spire
 DELETE FROM `creature` WHERE `guid` IN (45830); -- Hall of Blackhand
-DELETE FROM `creature` WHERE `guid` IN (45829, 45828, 45826, 45827, 45823, 45824); -- Blackrock Stadium
+DELETE FROM `creature` WHERE `guid` IN (45829, 45826, 45827, 45823, 45824); -- Blackrock Stadium
 DELETE FROM `creature` WHERE `guid` IN (45825); -- The Furnace
 
 -- Removed some creatures 10371 (Rage Talon Captain) used as placeholders in Blackrock Spire
@@ -7351,7 +7442,7 @@ UPDATE `creature` SET `curhealth` = 19323 WHERE `id` = 10371 AND `curhealth` = 1
 
 -- Removed some creatures 10372 (Rage Talon Fire Tongue) used as placeholders in Blackrock Spire
 DELETE FROM `creature` WHERE `guid` IN (40504, 40456, 40455, 40457); -- The Rookery
-DELETE FROM `creature` WHERE `guid` IN (41811, 41823); -- Blackrock Stadium
+DELETE FROM `creature` WHERE `guid` = 41811; -- Blackrock Stadium
 DELETE FROM `creature` WHERE `guid` IN (42570, 42571, 42569); -- The Furnace
 -- Added missing creature 10372 (Rage Talon Fire Tongue) in Blackrock Spire
 DELETE FROM `creature` WHERE `guid` BETWEEN @GUID + 141 AND @GUID + 147;
@@ -7705,6 +7796,14 @@ INSERT INTO `pool_template` VALUES
 
 UPDATE `creature` SET `spawndist` = 0, `MovementType` = 0 WHERE `guid` IN (160072, 160081, 160044);
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 10 WHERE `item` = 9279;
+
+-- delete placeholder paths
+DELETE FROM `creature_movement` WHERE id = 40275;
+DELETE FROM `creature_movement` WHERE id = 45829;
+DELETE FROM `creature_movement` WHERE id = 45825;
+DELETE FROM `creature_movement` WHERE id = 45826;
+DELETE FROM `creature_movement` WHERE id = 40500;
+DELETE FROM `creature_movement` WHERE id = 40497;
 
 -- Added missing world drop to creature 7361 (Grubbis) in Gnomeregan
 -- Correct reference tables numbers were found on the basis of the ones
@@ -8529,7 +8628,7 @@ UPDATE `creature_model_info` SET `modelid_other_gender` = 0 WHERE `modelid` = 34
 -- Source: http://www.wowwiki.com/Tarsis_Kir-Moldir
 -- Text data already present in DB
 -- Thanks to Ela for adding the gossip menus and option
-UPDATE `creature_template` SET `gossip_menu_id`= 8400, `npcflag` = `npcflag` + 1 WHERE `entry` = 16381;
+UPDATE `creature_template` SET `gossip_menu_id`= 8400, `npcflag` = `npcflag` |1 WHERE `entry` = 16381;
 
 -- Added addon to creature 16381 (Archmage Tarsis) to make him lie on the ground
 DELETE FROM `creature_template_addon` WHERE `entry` = 16381;
@@ -8554,6 +8653,7 @@ INSERT INTO `gossip_menu` (`entry`, `text_id`, `script_id`, `condition_id`) VALU
 (8407, 8529, 0, 0),
 (8408, 8530, 0, 0),
 (8409, 8531, 0, 0);
+
 
 -- Added gossip menu options for creature 16381 (Archmage Tarsis)
 -- Thanks Ela
