@@ -2079,5 +2079,97 @@ UPDATE `gameobject_template` SET `type` = 5 WHERE `entry` = 144050;
 UPDATE `gameobject_template` SET `data4` = 0 WHERE `entry` = 144050;
 UPDATE `gameobject_template` SET `data5` = 0 WHERE `entry` = 144050;
 
+-- Set rank "Rare Elite"
+-- checked in old.wowhead.com
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 6490; -- Azshir the Sleepless, found in: Scarlet Monastery
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9596; -- Bannok Grimaxe, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 4425; -- Blind Hunter, found in: Razorfen Kraul
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 1720; -- Bruegal Ironknuckle, found in: The Stockade
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10263; -- Burning Felguard, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10376; -- Crystal Fang, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 6228; -- Dark Iron Ambassador, found in: Gnomeregan
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 3872; -- Deathsworn Captain, found in: Shadowfang Keep
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5912; -- Deviate Faerie Dragon, found in: Wailing Caverns
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 7057; -- Digmaster Shovelphlange, found in: Uldaman
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 4842; -- Earthcaller Halmgar, found in: Razorfen Kraul
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9718; -- Ghok Bashguud, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10558; -- Hearthsinger Forresten, found in: Stratholme
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10509; -- Jed Runewatcher, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 14506; -- Lord Hel'nurath, found in: Maraudon
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 12237; -- Meshlok the Harvester, found in: Maraudon
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 3586; -- Miner Johnson, found in: The Deadmines
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 11447; -- Mushgog, found in: Dire Maul
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 8923; -- Panzor the Invincible, found in: Blackrock Depths
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9024; -- Pyromancer Loregrain, found in: Blackrock Depths
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 11498; -- Skarr the Unbreakable, found in: Stratholme
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10393; -- Skul, found in: Stratholme
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9218; -- Spirestone Battle Lord, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9219; -- Spirestone Butcher, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9217; -- Spirestone Lord Magus, found in: Blackrock Spire
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10809; -- Stonespine, found in: Stratholme
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 11497; -- The Razza, found in: Feralas
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 11467; -- Tsu'zee, found in: Dire Maul
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9042; -- Verek, found in: Blackrock Depths
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 9041; -- Warder Stilgiss, found in: Blackrock Depths
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10082; -- Zerillis, found in: Zul'Farrak
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5797; -- Aean Swiftriver, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 2754; -- Anathemus, found in: Badlands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10202; -- Azurous, found in: Winterspring
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 4339; -- Brimgore, found in: Dustwallow Marsh
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5827; -- Brontus, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5915; -- Brother Ravenoak, found in: Stonetalon Mountains
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5824; -- Captain Flat Tusk, found in: Durotar
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5851; -- Captain Gerogg Hammertoe, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 2598; -- Darbel Montrose, found in: Arathi Highlands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 7104; -- Dessecus, found in: Felwood
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 3270; -- Elder Mystic Razorsnout, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 14267; -- Emogg the Crusher, found in: Loch Modan
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5822; -- Felweaver Scornn, found in: Durotar
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5931; -- Foreman Rigger, found in: Stonetalon Mountains
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 2601; -- Foulbelly, found in: Arathi Highlands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10196; -- General Colbatann, found in: Winterspring
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 3398; -- Gesharahan, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 8215; -- Grimungous, found in: The Hinterlands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 6583; -- Gruff, found in: Un'Goro Crater
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5859; -- Hagg Taurenbane, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5799; -- Hannah Bladeleaf, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5934; -- Heartrazor, found in: Thousand Needles
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 8976; -- Hematos, found in: Burning Steppes
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 11383; -- High Priestess Hai'watna, found in: Stranglethorn Vale
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 8282; -- Highlord Mastrogonde, found in: Searing Gorge
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 7137; -- Immolatus, found in: Felwood
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5935; -- Ironeye the Invincible, found in: Thousand Needles
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 8200; -- Jin'Zallah the Sandbringer, found in: Tanaris
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10198; -- Kashoch the Reaver, found in: Winterspring
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 6584; -- King Mosh, found in: Un'Goro Crater
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 14445; -- Lord Captain Wyrmak, found in: Swamp of Sorrows
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5800; -- Marcus Bel, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 8217; -- Mith'rethis the Enchanter, found in: The Hinterlands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 6646; -- Monnos the Elder, found in: Azshara
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 2447; -- Narillasanz, found in: Alterac Mountains
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 16184; -- Nerubian Overseer, found in: Eastern Plaguelands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 12116; -- Priestess of Elune, found in: Western Plaguelands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 4438; -- Razorfen Spearhide, found in: Razorfen Kraul
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 14475; -- Rex Ashil, found in: Silithus
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5841; -- Rocklance, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 2602; -- Ruul Onestone, found in: Arathi Highlands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 13896; -- Scalebeard, found in: Azshara
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 1841; -- Scarlet Executioner, found in: Western Plaguelands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 1839; -- Scarlet High Clerist, found in: Western Plaguelands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 2749; -- Siege Golem, found in: Badlands
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5785; -- Sister Hatelash, found in: Mulgore
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5830; -- Sister Rathtalon, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5930; -- Sister Riven, found in: Stonetalon Mountains
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5831; -- Swiftmane, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5864; -- Swinegart Spearhide, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5842; -- Takk the Leaper, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 14275; -- Tamra Stormpike, found in: Hillsbrad Foothills
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5932; -- Taskmaster Whipfang, found in: Stonetalon Mountains
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5798; -- Thora Feathermoon, found in: The Barrens
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5937; -- Vile Sting, found in: Thousand Needles
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 10119; -- Volchan, found in: Burning Steppes
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 8199; -- Warleader Krazzilak, found in: Tanaris
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 2931; -- Zaricotl, found in: Badlands
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.10 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
