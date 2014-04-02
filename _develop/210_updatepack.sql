@@ -2079,5 +2079,37 @@ UPDATE `gameobject_template` SET `type` = 5 WHERE `entry` = 144050;
 UPDATE `gameobject_template` SET `data4` = 0 WHERE `entry` = 144050;
 UPDATE `gameobject_template` SET `data5` = 0 WHERE `entry` = 144050;
 
+-- Revert changes done in d23e200bddaf4e69d1aaa12d61c24af19f828c73
+-- correct rank of creatures. source of informations - next to each update
+
+-- Jade
+-- http://web.archive.org/web/20050826042617/http://wow.allakhazam.com/db/mob.html?wmob=1063 
+-- http://old.wowhead.com/npc=1063#comments:id=242383
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 1063;
+
+-- Veyzhak the Cannibal 
+-- http://web.archive.org/web/20071009174309/http://www.wowhead.com/?npc=5399
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5399;
+
+-- Zekkis rare elite
+-- http://web.archive.org/web/20071010000210/http://www.wowhead.com/?npc=5400
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 5400;
+
+-- Brainwashed Noble
+-- http://web.archive.org/web/20071029202844/http://www.wowhead.com/?npc=596
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 596;
+
+-- Marisa du'Paige
+-- http://web.archive.org/web/20071029202849/http://www.wowhead.com/?npc=599
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 599;
+
+-- Boahn rare elite
+-- http://web.archive.org/web/20071016160825/http://wowhead.com/?npc=3672
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 3672;
+
+-- Trigore the Lasher
+-- http://web.archive.org/web/20071011063944/http://www.wowhead.com/?npc=3652
+UPDATE `creature_template` SET `rank` = 2 WHERE `entry` = 3652;
+
 -- UPDATE Database Version
 UPDATE `db_version` SET `version` = 'ZeroDatabase 2.0.10 for MaNGOSZero zXXXX+ and ScriptDevZero zXXXX+';
