@@ -28,7 +28,7 @@ Everyone wants to be appreciated, and so do we! If you make use of the
 rights we give to you, we expect **attribution** from you. This is pretty
 simple: you have to make clear, who authored the work we did for you. A
 suggestion is that if you use a copyright or licence header for every file,
-to include attribution there, e.g. "based upon the work of getmangos.com".
+to include attribution there, e.g. "based upon the work of getmangos.eu".
 You may include further details, bot no less than that.
 
 Now here is an important rule: do not make money by using our work! We provide
