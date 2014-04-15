@@ -71,7 +71,7 @@ UPDATE `creature_template` SET `gossip_menu_id` = 50006, `npcflag` = 3 WHERE `en
 
 UPDATE `creature_loot_template` SET `ChanceOrQuestChance` = 100 WHERE `item` = 4951;
 
---Startup fixes 2
+-- Startup fixes 2
 UPDATE `creature_template` SET `flags_extra` = 2050, `civilian` = 1, `MovementType` = 2 WHERE `entry` = 550;
 UPDATE `creature` SET `position_x` = -11017.7, `position_y` = 1438.34, `position_z` = 43.0221, `orientation` = 5.30596 WHERE `guid` = 45525;
 DELETE FROM `creature_movement` WHERE `id` = 45525;
@@ -295,7 +295,7 @@ DELETE FROM `creature_ai_texts` WHERE `entry` = -670;
 
 DELETE FROM `gameobject_loot_template` WHERE `entry` = 2603;
 
---Startup fixes
+-- Startup fixes
 UPDATE `item_template` SET `class` = 7 WHERE `entry` = 765;
 UPDATE `item_template` SET `subclass` = 0 WHERE `entry` = 765;
 UPDATE `item_template` SET `class` = 7 WHERE `entry` = 785;
