@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -48,31 +47,7 @@ CREATE TABLE `battlemaster_entry` (
 
 LOCK TABLES `battlemaster_entry` WRITE;
 /*!40000 ALTER TABLE `battlemaster_entry` DISABLE KEYS */;
-INSERT INTO `battlemaster_entry` VALUES
-(347,1),
-(857,3),
-(907,3),
-(2302,2),
-(2804,2),
-(3890,2),
-(5118,1),
-(7410,1),
-(7427,1),
-(10360,2),
-(12197,1),
-(12198,3),
-(14942,1),
-(14981,2),
-(14982,2),
-(14990,3),
-(14991,3),
-(15006,3),
-(15007,3),
-(15008,3),
-(15102,2),
-(15103,1),
-(15105,2),
-(15106,1);
+INSERT INTO `battlemaster_entry` (`entry`, `bg_template`) VALUES (347,1),(857,3),(907,3),(2302,2),(2804,2),(3890,2),(5118,1),(7410,1),(7427,1),(10360,2),(12197,1),(12198,3),(14942,1),(14981,2),(14982,2),(14990,3),(14991,3),(15006,3),(15007,3),(15008,3),(15102,2),(15103,1),(15105,2),(15106,1);
 /*!40000 ALTER TABLE `battlemaster_entry` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

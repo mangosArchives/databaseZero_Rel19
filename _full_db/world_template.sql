@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -48,9 +47,7 @@ CREATE TABLE `world_template` (
 
 LOCK TABLES `world_template` WRITE;
 /*!40000 ALTER TABLE `world_template` DISABLE KEYS */;
-INSERT INTO `world_template` VALUES
-(0,'world_map_eastern_kingdoms'),
-(1,'world_map_kalimdor');
+INSERT INTO `world_template` (`map`, `ScriptName`) VALUES (0,'world_map_eastern_kingdoms'),(1,'world_map_kalimdor');
 /*!40000 ALTER TABLE `world_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

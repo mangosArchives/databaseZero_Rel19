@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -53,17 +52,7 @@ CREATE TABLE `game_event_creature_data` (
 
 LOCK TABLES `game_event_creature_data` WRITE;
 /*!40000 ALTER TABLE `game_event_creature_data` DISABLE KEYS */;
-INSERT INTO `game_event_creature_data` VALUES
-(12088,0,0,504,0,0,27),
-(12093,0,0,504,0,0,27),
-(12095,0,0,504,0,0,27),
-(79670,0,0,504,0,0,27),
-(79675,0,0,504,0,0,27),
-(79676,0,0,504,0,0,27),
-(79690,0,0,504,0,0,27),
-(79792,0,0,504,0,0,27),
-(79807,0,0,504,0,0,27),
-(79814,0,0,504,0,0,27);
+INSERT INTO `game_event_creature_data` (`guid`, `entry_id`, `modelid`, `equipment_id`, `spell_start`, `spell_end`, `event`) VALUES (12088,0,0,504,0,0,27),(12093,0,0,504,0,0,27),(12095,0,0,504,0,0,27),(79670,0,0,504,0,0,27),(79675,0,0,504,0,0,27),(79676,0,0,504,0,0,27),(79690,0,0,504,0,0,27),(79792,0,0,504,0,0,27),(79807,0,0,504,0,0,27),(79814,0,0,504,0,0,27);
 /*!40000 ALTER TABLE `game_event_creature_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

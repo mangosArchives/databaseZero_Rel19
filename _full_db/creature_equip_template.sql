@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -40,7 +39,8 @@ CREATE TABLE `creature_equip_template` (
   `equipentry1` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `equipentry2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `equipentry3` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`)
+  PRIMARY KEY (`entry`),
+  UNIQUE KEY `unique_template` (`equipentry1`,`equipentry2`,`equipentry3`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Creature System (Equipment)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 

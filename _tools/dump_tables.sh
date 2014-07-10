@@ -32,6 +32,7 @@ creature_battleground \
 creature_equip_template \
 creature_equip_template_raw \
 creature_involvedrelation \
+creature_item_template \
 creature_linking \
 creature_linking_template \
 creature_loot_template \
@@ -42,7 +43,9 @@ creature_onkill_reputation \
 creature_questrelation \
 creature_template \
 creature_template_addon \
+creature_template_classlevelstats \
 creature_template_spells \
+custom_texts \
 db_script_string \
 db_version \
 dbscripts_on_creature_death \
@@ -119,8 +122,11 @@ reference_loot_template \
 reputation_reward_rate \
 reputation_spillover_template \
 reserved_name \
+script_texts \
+script_waypoint \
 scripted_areatrigger \
 scripted_event \
+sd2_db_version \
 skill_fishing_base_level \
 skinning_loot_template \
 spell_affect \

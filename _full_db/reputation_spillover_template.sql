@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -59,19 +58,7 @@ CREATE TABLE `reputation_spillover_template` (
 
 LOCK TABLES `reputation_spillover_template` WRITE;
 /*!40000 ALTER TABLE `reputation_spillover_template` DISABLE KEYS */;
-INSERT INTO `reputation_spillover_template` VALUES
-(21,369,0.5,7,470,0.5,7,577,0.5,7,0,0,0),
-(47,72,0.25,7,54,0.25,7,69,0.25,7,0,0,0),
-(54,47,0.25,7,72,0.25,7,69,0.25,7,0,0,0),
-(68,76,0.25,7,81,0.25,7,530,0.25,7,0,0,0),
-(69,47,0.25,7,54,0.25,7,72,0.25,7,0,0,0),
-(72,47,0.25,7,54,0.25,7,69,0.25,7,0,0,0),
-(76,68,0.25,7,81,0.25,7,530,0.25,7,0,0,0),
-(81,76,0.25,7,68,0.25,7,530,0.25,7,0,0,0),
-(369,21,0.5,7,470,0.5,7,577,0.5,7,0,0,0),
-(470,369,0.5,7,21,0.5,7,577,0.5,7,0,0,0),
-(530,76,0.25,7,81,0.25,7,68,0.25,7,0,0,0),
-(577,369,0.5,7,470,0.5,7,21,0.5,7,0,0,0);
+INSERT INTO `reputation_spillover_template` (`faction`, `faction1`, `rate_1`, `rank_1`, `faction2`, `rate_2`, `rank_2`, `faction3`, `rate_3`, `rank_3`, `faction4`, `rate_4`, `rank_4`) VALUES (21,369,0.5,7,470,0.5,7,577,0.5,7,0,0,0),(47,72,0.25,7,54,0.25,7,69,0.25,7,0,0,0),(54,47,0.25,7,72,0.25,7,69,0.25,7,0,0,0),(68,76,0.25,7,81,0.25,7,530,0.25,7,0,0,0),(69,47,0.25,7,54,0.25,7,72,0.25,7,0,0,0),(72,47,0.25,7,54,0.25,7,69,0.25,7,0,0,0),(76,68,0.25,7,81,0.25,7,530,0.25,7,0,0,0),(81,76,0.25,7,68,0.25,7,530,0.25,7,0,0,0),(369,21,0.5,7,470,0.5,7,577,0.5,7,0,0,0),(470,369,0.5,7,21,0.5,7,577,0.5,7,0,0,0),(530,76,0.25,7,81,0.25,7,68,0.25,7,0,0,0),(577,369,0.5,7,470,0.5,7,21,0.5,7,0,0,0);
 /*!40000 ALTER TABLE `reputation_spillover_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

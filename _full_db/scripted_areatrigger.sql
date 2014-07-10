@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -48,45 +47,7 @@ CREATE TABLE `scripted_areatrigger` (
 
 LOCK TABLES `scripted_areatrigger` WRITE;
 /*!40000 ALTER TABLE `scripted_areatrigger` DISABLE KEYS */;
-INSERT INTO `scripted_areatrigger` VALUES
-(522,'at_twiggy_flathead'),
-(1447,'at_zulfarrak'),
-(1526,'at_ring_of_law'),
-(1726,'at_scent_larkorwi'),
-(1727,'at_scent_larkorwi'),
-(1728,'at_scent_larkorwi'),
-(1729,'at_scent_larkorwi'),
-(1730,'at_scent_larkorwi'),
-(1731,'at_scent_larkorwi'),
-(1732,'at_scent_larkorwi'),
-(1733,'at_scent_larkorwi'),
-(1734,'at_scent_larkorwi'),
-(1735,'at_scent_larkorwi'),
-(1736,'at_scent_larkorwi'),
-(1737,'at_scent_larkorwi'),
-(1738,'at_scent_larkorwi'),
-(1739,'at_scent_larkorwi'),
-(1740,'at_scent_larkorwi'),
-(1966,'at_murkdeep'),
-(2026,'at_blackrock_spire'),
-(2046,'at_blackrock_spire'),
-(3066,'at_ravenholdt'),
-(3546,'at_childrens_week_spot'),
-(3547,'at_childrens_week_spot'),
-(3548,'at_childrens_week_spot'),
-(3549,'at_childrens_week_spot'),
-(3550,'at_childrens_week_spot'),
-(3552,'at_childrens_week_spot'),
-(3626,'at_vaelastrasz'),
-(3958,'at_zulgurub'),
-(3960,'at_zulgurub'),
-(4016,'at_shade_of_eranikus'),
-(4033,'at_stomach_cthun'),
-(4034,'at_stomach_cthun'),
-(4047,'at_temple_ahnqiraj'),
-(4112,'at_naxxramas'),
-(4113,'at_naxxramas'),
-(4156,'at_naxxramas');
+INSERT INTO `scripted_areatrigger` (`entry`, `ScriptName`) VALUES (522,'at_twiggy_flathead'),(1447,'at_zulfarrak'),(1526,'at_ring_of_law'),(1740,'at_scent_larkorwi'),(1739,'at_scent_larkorwi'),(1738,'at_scent_larkorwi'),(1737,'at_scent_larkorwi'),(1736,'at_scent_larkorwi'),(1735,'at_scent_larkorwi'),(1734,'at_scent_larkorwi'),(1733,'at_scent_larkorwi'),(1732,'at_scent_larkorwi'),(1731,'at_scent_larkorwi'),(1730,'at_scent_larkorwi'),(1729,'at_scent_larkorwi'),(1728,'at_scent_larkorwi'),(1727,'at_scent_larkorwi'),(1726,'at_scent_larkorwi'),(1966,'at_murkdeep'),(2046,'at_blackrock_spire'),(2026,'at_blackrock_spire'),(3066,'at_ravenholdt'),(3552,'at_childrens_week_spot'),(3550,'at_childrens_week_spot'),(3549,'at_childrens_week_spot'),(3548,'at_childrens_week_spot'),(3547,'at_childrens_week_spot'),(3546,'at_childrens_week_spot'),(3626,'at_vaelastrasz'),(3960,'at_zulgurub'),(3958,'at_zulgurub'),(4016,'at_shade_of_eranikus'),(4034,'at_stomach_cthun'),(4033,'at_stomach_cthun'),(4047,'at_temple_ahnqiraj'),(4156,'at_naxxramas'),(4113,'at_naxxramas'),(4112,'at_naxxramas');
 /*!40000 ALTER TABLE `scripted_areatrigger` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -50,10 +49,7 @@ CREATE TABLE `reputation_reward_rate` (
 
 LOCK TABLES `reputation_reward_rate` WRITE;
 /*!40000 ALTER TABLE `reputation_reward_rate` DISABLE KEYS */;
-INSERT INTO `reputation_reward_rate` VALUES
-(529,1,1,1),
-(576,1,1,1),
-(609,1,1,1);
+INSERT INTO `reputation_reward_rate` (`faction`, `quest_rate`, `creature_rate`, `spell_rate`) VALUES (529,1,1,1),(576,1,1,1),(609,1,1,1);
 /*!40000 ALTER TABLE `reputation_reward_rate` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

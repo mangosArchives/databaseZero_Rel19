@@ -1,6 +1,5 @@
 --
--- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
--- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+-- Copyright (C) 2005-2014 MaNGOS <http://getmangos.eu/>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -51,14 +50,7 @@ CREATE TABLE `petcreateinfo_spell` (
 
 LOCK TABLES `petcreateinfo_spell` WRITE;
 /*!40000 ALTER TABLE `petcreateinfo_spell` DISABLE KEYS */;
-INSERT INTO `petcreateinfo_spell` VALUES
-(416,3110,0,0,0),
-(417,19505,0,0,0),
-(510,6873,9672,0,0),
-(1860,3716,0,0,0),
-(1863,7814,0,0,0),
-(5807,17254,0,0,0),
-(15429,25163,0,0,0);
+INSERT INTO `petcreateinfo_spell` (`entry`, `Spell1`, `Spell2`, `Spell3`, `Spell4`) VALUES (416,3110,0,0,0),(417,19505,0,0,0),(510,6873,9672,0,0),(1860,3716,0,0,0),(1863,7814,0,0,0),(5807,17254,0,0,0),(15429,25163,0,0,0);
 /*!40000 ALTER TABLE `petcreateinfo_spell` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
