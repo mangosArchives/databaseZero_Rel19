@@ -65,6 +65,7 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% gameobject_ques
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% gameobject_template >  _full_db\gameobject_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% gossip_menu >  _full_db\gossip_menu.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% gossip_menu_option >  _full_db\gossip_menu_option.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% gossip_texts >  _full_db\gossip_texts.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% instance_template >  _full_db\instance_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% item_enchantment_template >  _full_db\item_enchantment_template.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% item_loot_template >  _full_db\item_loot_template.sql
