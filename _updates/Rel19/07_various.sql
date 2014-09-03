@@ -32,11 +32,12 @@ UPDATE creature_template SET maxlevel=63 WHERE maxlevel>63;
 
 -- Fix missing script
 INSERT  INTO `dbscripts_on_quest_end`(`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`) VALUES (808,1,0,0,0,0,0,0,2000000016,0,0,0,0,0,0,0,'Gadrin Say');
+
+DELETE FROM `creature_movement_template` WHERE entry=16061 AND POINT=1;
 INSERT  INTO `creature_movement_template`(`entry`,`point`,`position_x`,`position_y`,`position_z`,`waittime`,`script_id`,`textid1`,`textid2`,`textid3`,`textid4`,`textid5`,`emote`,`spell`,`wpguid`,`orientation`,`model1`,`model2`) VALUES (16061,1,2765.25,-3088.47,267.685,0,1606102,0,0,0,0,0,0,0,0,0.38872,0,0);
 
 -- Fix Loot Error 
-DELETE FROM creature_loot_template WHERE entry=1
+DELETE FROM creature_loot_template WHERE entry=1;
 
 -- Fix Lunar Invite Item Error
 UPDATE item_template SET subclass=0 WHERE entry=21711
-
