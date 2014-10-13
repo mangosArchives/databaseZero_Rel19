@@ -7,8 +7,9 @@ set createrealmDB=YES
 set loadcharDB=YES
 set loadworldDB=YES
 set loadrealmDB=YES
+set DBType=POPULATED
 rem -- Change the values below to match your server --
-set mysql=_tools\
+set mysql=Tools\
 set svr=localhost
 set user=mangos
 set pass=
@@ -29,9 +30,9 @@ echo  ^|_^|  ^|_\__,_^|_^|\_^|\___^|\___/^|___/
 echo.                                        
 echo  For help and support please visit:     
 echo  Website: https://getmangos.eu         
-echo     Wiki: http://github.com/mangoswiki 
+echo     Wiki: https://getmangos.eu/wiki 
 echo =======================================
-echo == Database Creator and Loader v0.01 ==
+echo == Database Creator and Loader v0.02 ==
 echo =======================================
 
 ECHO         Create Character Database : %createcharDB%
@@ -39,6 +40,7 @@ ECHO  Load SQL into Character Database : %loadcharDB%
 ECHO.
 ECHO             Create World Database : %createworldDB%
 ECHO      Load SQL into World Database : %loadworldDB%
+ECHO             World Database to load: %DBType%
 ECHO.
 ECHO             Create Realm Database : %createrealmDB%
 ECHO      Load SQL into Realm Database : %loadrealmDB%
@@ -47,6 +49,7 @@ ECHO.
 
 echo    V - Toggle Creating Character DB
 echo    E - Toggle Creating World DB 
+echo    D - Toggle World DB Type
 echo    T - Toggle Creating Realm DB
 echo.
 echo    C - Toggle Loading Character DB
@@ -56,11 +59,13 @@ echo.
 echo    N - Next Step
 echo    X - Exit
 echo.
-set /p activity=Please select an activity ? : 
+set /p activity= Please select an activity ? : 
 if %activity% == V goto ToggleCharDB:
 if %activity% == v goto ToggleCharDB:
 if %activity% == E goto ToggleWorldDB:
 if %activity% == e goto ToggleWorldDB:
+if %activity% == D goto ToggleWorldDBType:
+if %activity% == d goto ToggleWorldDBType:
 if %activity% == T goto ToggleRealmDB:
 if %activity% == t goto ToggleRealmDB:
 if %activity% == C goto LoadCharDB:
@@ -76,6 +81,19 @@ if %activity% == n goto Step1:
 if %activity% == X goto done:
 if %activity% == x goto done:
 goto main
+
+:ToggleWorldDBType
+if %DBType% == EMPTY goto ToggleWorldDBTypePopulated:
+if %DBType% == POPULATED goto ToggleWorldDBTypeEmpty:
+goto main:
+
+:ToggleWorldDBTypePopulated
+set DBType=POPULATED
+goto main:
+
+:ToggleWorldDBTypeEmpty
+set DBType=EMPTY
+goto main:
 
 :ToggleCharDB
 if %createcharDB% == NO goto ToggleCharDBNo:
@@ -215,9 +233,14 @@ echo Creating World Database %wdb%
 goto WorldDB2:
 
 :WorldDB3
+if %DBType% == POPULATED goto WorldDB4:
 echo  Loading world Database %wdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < mangos.sql
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < scripts/scriptdev2_create_structure_mysql.sql
+%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < World\Setup\mangosdLoadDB.sql
+goto CharDB:
+
+:WorldDB4
+echo  Importing World database %wdb%
+for %%i in (World\Setup\FullDB\*.sql) do echo %%i & %mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
 goto CharDB:
 
 :CharDB1
@@ -227,7 +250,7 @@ goto CharDB2:
 
 :CharDB3
 echo  Loading Character Database %cdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < characters.sql
+%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %cdb% < Character\Setup\characterLoadDB.sql
 goto RealmDB:
 
 :RealmDB1
@@ -237,7 +260,7 @@ goto RealmDB2:
 
 :RealmDB3
 echo  Loading Realm Database %rdb%
-%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < realmd.sql
+%mysql%mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %rdb% < Realm\Setup\realmdLoadDB.sql
 goto done:
 
 
