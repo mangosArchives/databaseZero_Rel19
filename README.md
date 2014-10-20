@@ -6,6 +6,10 @@
 
 MangosZero World Database
 ===
+DEVELOPMENT BRANCH
+===
+ **(Please be aware that this branch is a Work in Progress)**
+
 ### A World Database for Vanilla / Classic Wow
 ----
 A content database for [**MangosZero**][10], and [**World of Warcraft**][50] Client Patch
