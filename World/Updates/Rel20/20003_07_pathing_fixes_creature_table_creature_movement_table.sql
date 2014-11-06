@@ -6,7 +6,7 @@
 	With fix applied, the lumberjack is spawned in place, chopping away.
 	creature_movement table entry still needed, or otherwise he would not animate the chopping. 
 */
-UPDATE mangos.creature_movement SET model1 = 308 WHERE id = 80119; 
+UPDATE creature_movement SET model1 = 308 WHERE id = 80119; 
 UPDATE creature SET position_x = -8840.38, position_y = -271.402, position_z = 80.9516, orientation = 1.12229, modelid = 308 WHERE guid = 80119;
 
 /*
