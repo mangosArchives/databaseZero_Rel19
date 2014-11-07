@@ -5,7 +5,7 @@
 
 */
 
-ALTER TABLE db_version CHANGE COLUMN required_20003_03_mangos_spell_bonus_data.sql required_20003_17_Molten_Core_Portal_Fix  bit;
+ALTER TABLE db_version CHANGE COLUMN required_20003_16_Molten_Core_Creature_Cleanup required_20003_17_Molten_Core_Portal_Fix  BIT;
 
 UPDATE `areatrigger_teleport` SET 
 `target_map` = '0',
