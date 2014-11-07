@@ -6560,7 +6560,7 @@ UPDATE `quest_template` SET `MinLevel` = 47 WHERE `entry` = 3788;
 UPDATE `quest_template` SET `PrevQuestId` = 3785 WHERE `entry` IN (3787, 3788);
 -- Fixed template of many creatures:
 -- Baron Rivendare (10440): fixed min level, health, mana rare rank
-UPDATE `creature_template` SET `MinLevel` = 62, `Rank` = 1, `HealthMultiplier` = 17.7606, `MinLevelHealth` = 46000, `MaxLevelHealth` = 46000, `ManaMultiplier` = 5, `MinLevelMana` = 12840, `MaxLevelMana` = 12840 WHERE `Entry` = 10440;
+UPDATE `creature_template` SET `MinLevel` = 62, `Rank` = 1, `HealthMultiplier` = 17.7606, `MinLevelHealth` = 46000, `MaxLevelHealth` = 46000, `MinLevelMana` = 12840, `MaxLevelMana` = 12840 WHERE `Entry` = 10440;
 -- Removed spawns of creature 8477 (Skeletal Servant) as this is a summoned creature
 DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHERE `id` = 8477);
 DELETE FROM `creature` WHERE `id` = 8477;
@@ -6817,17 +6817,17 @@ UPDATE `creature` SET `curhealth`='8.4' WHERE `id`='15476';
 -- STATS
 -- -----------------------
 -- Kurinnaxx
-UPDATE `creature_template` SET `HealthMultiplier`='50', `ManaMultiplier`='10', `MinLevelHealth`='333100', `MaxLevelHealth`='333100', `MinMeleeDmg`='1757', `MaxMeleeDmg`='2330' WHERE `Entry`='15348';
+UPDATE `creature_template` SET `HealthMultiplier`='50', `MinLevelHealth`='333100', `MaxLevelHealth`='333100', `MinMeleeDmg`='1757', `MaxMeleeDmg`='2330' WHERE `Entry`='15348';
 -- General Rajaxx
 UPDATE `creature_template` SET `HealthMultiplier`='62.5', `MinLevelHealth`='416375', `MaxLevelHealth`='416375', `MinMeleeDmg`='1977', `MaxMeleeDmg`='2621' WHERE `Entry`='15341';
 -- Buru the Gorger
-UPDATE `creature_template` SET `HealthMultiplier`='125', `ManaMultiplier`='180', `MinLevelHealth`='666250', `MaxLevelHealth`='666250', `MinMeleeDmg`='767', `MaxMeleeDmg`='1015' WHERE `Entry`='15370';
+UPDATE `creature_template` SET `HealthMultiplier`='125', `MinLevelHealth`='666250', `MaxLevelHealth`='666250', `MinMeleeDmg`='767', `MaxMeleeDmg`='1015' WHERE `Entry`='15370';
 -- Ayamiss the Hunter
 UPDATE `creature_template` SET `HealthMultiplier`='50', `MinLevelHealth`='333100', `MaxLevelHealth`='333100', `MinMeleeDmg`='1318', `MaxMeleeDmg`='1747' WHERE `Entry`='15369';
 -- Moam
-UPDATE `creature_template` SET `HealthMultiplier`='65', `ManaMultiplier`='10', `MinLevelHealth`='346450', `MaxLevelHealth`='346450', `MinMeleeDmg`='1738', `MaxMeleeDmg`='2301' WHERE `Entry`='15340';
+UPDATE `creature_template` SET `HealthMultiplier`='65', `MinLevelHealth`='346450', `MaxLevelHealth`='346450', `MinMeleeDmg`='1738', `MaxMeleeDmg`='2301' WHERE `Entry`='15340';
 -- Ossirian the Unscarred
-UPDATE `creature_template` SET `HealthMultiplier`='75', `ManaMultiplier`='50', `MinLevelHealth`='499650', `MaxLevelHealth`='499650', `MinMeleeDmg`='2372', `MaxMeleeDmg`='3145' WHERE `Entry`='15339';
+UPDATE `creature_template` SET `HealthMultiplier`='75', `MinLevelHealth`='499650', `MaxLevelHealth`='499650', `MinMeleeDmg`='2372', `MaxMeleeDmg`='3145' WHERE `Entry`='15339';
 UPDATE `creature_template` SET `ResistanceHoly`='0', `ResistanceArcane`='1000' WHERE `Entry`='15339';
 -- Qiraji Warrior
 UPDATE `creature_template` SET `HealthMultiplier`='5', `MinLevelHealth`='31440', `MaxLevelHealth`='31440', `MinMeleeDmg`='635', `MaxMeleeDmg`='842', `Armor`='4091' WHERE `Entry`='15387';
@@ -6874,7 +6874,7 @@ UPDATE `creature_template` SET `HealthMultiplier`='4', `MinLevelHealth`='25152',
 -- Vile Scarab
 UPDATE `creature_template` SET `HealthMultiplier`='2', `MinLevelHealth`='5228', `MaxLevelHealth`='5228', `MinMeleeDmg`='141', `MaxMeleeDmg`='187' WHERE `Entry`='15168';
 -- Obsidian Destroyer
-UPDATE `creature_template` SET `HealthMultiplier`='10', `ManaMultiplier`='5', `MinLevelHealth`='50300', `MaxLevelHealth`='50300', `MinMeleeDmg`='1379', `MaxMeleeDmg`='1825' WHERE `Entry`='15338';
+UPDATE `creature_template` SET `HealthMultiplier`='10', `MinLevelHealth`='50300', `MaxLevelHealth`='50300', `MinMeleeDmg`='1379', `MaxMeleeDmg`='1825' WHERE `Entry`='15338';
 UPDATE `creature_template` SET `Rank`='1' WHERE `Entry`='15338';
 -- Shrieker Scarab
 UPDATE `creature_template` SET `HealthMultiplier`='2', `MinLevelHealth`='12208', `MaxLevelHealth`='12208', `MinMeleeDmg`='353', `MaxMeleeDmg`='469' WHERE `Entry`='15461';

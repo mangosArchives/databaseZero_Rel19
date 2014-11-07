@@ -1,3 +1,5 @@
+DELETE FROM `conditions` WHERE `condition_entry` IN (1718,1719,1720,1721,1722,1723,1724,1725,1726,1727,1728,1729,1730,1731,1732);
+
 INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES
 (1718, 8, 8700, 0),
 (1719, 24, 21408, 1),
