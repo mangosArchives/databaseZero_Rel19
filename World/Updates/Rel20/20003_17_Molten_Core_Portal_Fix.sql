@@ -5,10 +5,10 @@
 
 */
 
-ALTER TABLE db_version CHANGE COLUMN required_20003_16_Molten_Core_Creature_Cleanup required_20003_17_Molten_Core_Portal_Fix  bit;
+ALTER TABLE db_version CHANGE COLUMN required_20003_03_mangos_spell_bonus_data.sql required_20003_17_Molten_Core_Portal_Fix  bit;
 
 UPDATE `areatrigger_teleport` SET 
-`target_map` = `0`,
+`target_map` = '0',
 `target_position_x` = '-7506.95',
 `target_position_y` = '-1040.91',
 `target_position_z` = '180.91',
