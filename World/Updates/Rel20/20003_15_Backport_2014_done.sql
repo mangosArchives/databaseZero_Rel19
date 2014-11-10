@@ -135,9 +135,10 @@ INSERT INTO `gossip_menu_option` (`menu_id`,`id`,`option_icon`,`option_text`,`op
 -- Backported from TBC-DB missing entries for creature 14755 (Tiny Red Dragon) & 14756 (Tiny Green Dragon)
 -- Thanks Dmzll for pointing, this closes #229
 DELETE FROM `creature_template` WHERE `entry` IN (14755, 14756);
-INSERT INTO `creature_template` (`Entry`, `Name`, `SubName`, `MinLevel`, `MaxLevel`, `ModelId1`, `ModelId2`, `FactionAlliance`, `FactionHorde`, `Scale`, `Family`, `CreatureType`, `InhabitType`, `RegenerateHealth`, `RacialLeader`, `NpcFlags`, `UnitFlags`, `DynamicFlags`, `ExtraFlags`, `CreatureTypeFlags`, `SpeedWalk`, `SpeedRun`, `UnitClass`, `Rank`, `HealthMultiplier`, `ManaMultiplier`, `DamageMultiplier`, `DamageVariance`, `ArmorMultiplier`, `ExperienceMultiplier`, `MinLevelHealth`, `MaxLevelHealth`, `MinLevelMana`, `MaxLevelMana`, `MinMeleeDmg`, `MaxMeleeDmg`, `MinRangedDmg`, `MaxRangedDmg`, `Armor`, `MeleeAttackPower`, `RangedAttackPower`, `MeleeBaseAttackTime`, `RangedBaseAttackTime`, `DamageSchool`, `MinLootGold`, `MaxLootGold`, `LootId`, `PickpocketLootId`, `SkinningLootId`, `KillCredit1`, `KillCredit2`, `MechanicImmuneMask`, `ResistanceHoly`, `ResistanceFire`, `ResistanceNature`, `ResistanceFrost`, `ResistanceShadow`, `ResistanceArcane`, `PetSpellDataId`, `MovementType`, `TrainerType`, `TrainerSpell`, `TrainerClass`, `TrainerRace`, `TrainerTemplateId`, `VendorTemplateId`, `EquipmentTemplateId`, `GossipMenuId`, `AIName`, `ScriptName`) VALUES
-(14755, 'Tiny Green Dragon', '', 1, 1, 14778, 0, 35, 35, 1, 0, 12, 3, 1, 0, 0, 0, 0, 2, 0, 1, 1.14286, 0, 0, 1, 1, 1, 1, 1, 1, 42, 42, 0, 0, 2, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
-(14756, 'Tiny Red Dragon', '', 1, 1, 14779, 0, 35, 35, 1, 0, 12, 3, 1, 0, 0, 0, 0, 2, 0, 1, 1.14286, 0, 0, 1, 1, 1, 1, 1, 1, 42, 42, 0, 0, 2, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
+INSERT INTO `creature_template` (`Entry`, `Name`, `SubName`, `MinLevel`, `MaxLevel`, `ModelId1`, `ModelId2`, `FactionAlliance`, `FactionHorde`, `Scale`, `Family`, `CreatureType`, `InhabitType`, `RacialLeader`, `NpcFlags`, `UnitFlags`, `DynamicFlags`, `ExtraFlags`, `CreatureTypeFlags`, `SpeedWalk`, `SpeedRun`, `UnitClass`, `Rank`, `HealthMultiplier`, `DamageMultiplier`, `DamageVariance`, `ArmorMultiplier`, `ExperienceMultiplier`, `MinLevelHealth`, `MaxLevelHealth`, `MinLevelMana`, `MaxLevelMana`, `MinMeleeDmg`, `MaxMeleeDmg`, `MinRangedDmg`, `MaxRangedDmg`, `Armor`, `MeleeAttackPower`, `RangedAttackPower`, `MeleeBaseAttackTime`, `RangedBaseAttackTime`, `DamageSchool`, `MinLootGold`, `MaxLootGold`, `LootId`, `PickpocketLootId`, `SkinningLootId`, `KillCredit1`, `KillCredit2`, `MechanicImmuneMask`, `ResistanceHoly`, `ResistanceFire`, `ResistanceNature`, `ResistanceFrost`, `ResistanceShadow`, `ResistanceArcane`, `PetSpellDataId`, `MovementType`, `TrainerType`, `TrainerSpell`, `TrainerClass`, `TrainerRace`, `TrainerTemplateId`, `VendorTemplateId`, `EquipmentTemplateId`, `GossipMenuId`, `AIName`, `ScriptName`) VALUES
+(14755, 'Tiny Green Dragon', '', 1, 1, 14778, 0, 35, 35, 1, 0, 12, 3, 0, 0, 0, 0, 2, 0, 1, 1.14286, 0, 0, 1, 1, 1, 1, 1, 42, 42, 0, 0, 2, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
+(14756, 'Tiny Red Dragon', '', 1, 1, 14779, 0, 35, 35, 1, 0, 12, 3, 0, 0, 0, 0, 2, 0, 1, 1.14286, 0, 0, 1, 1, 1, 1, 1, 42, 42, 0, 0, 2, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
+
 -- Backported missing commercial items 19054 (Red Dragon Orb) and 19055 (Green Dragon Orb) to invoke pets creatures added above
 DELETE FROM `item_template` WHERE `entry` IN (19054, 19055);
 INSERT INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `Duration`, `ExtraFlags`) VALUES
@@ -6559,7 +6560,7 @@ UPDATE `quest_template` SET `MinLevel` = 47 WHERE `entry` = 3788;
 UPDATE `quest_template` SET `PrevQuestId` = 3785 WHERE `entry` IN (3787, 3788);
 -- Fixed template of many creatures:
 -- Baron Rivendare (10440): fixed min level, health, mana rare rank
-UPDATE `creature_template` SET `MinLevel` = 62, `Rank` = 1, `HealthMultiplier` = 17.7606, `MinLevelHealth` = 46000, `MaxLevelHealth` = 46000, `ManaMultiplier` = 5, `MinLevelMana` = 12840, `MaxLevelMana` = 12840 WHERE `Entry` = 10440;
+UPDATE `creature_template` SET `MinLevel` = 62, `Rank` = 1, `HealthMultiplier` = 17.7606, `MinLevelHealth` = 46000, `MaxLevelHealth` = 46000, `MinLevelMana` = 12840, `MaxLevelMana` = 12840 WHERE `Entry` = 10440;
 -- Removed spawns of creature 8477 (Skeletal Servant) as this is a summoned creature
 DELETE FROM `creature_addon` WHERE `guid` IN (SELECT `guid` FROM `creature` WHERE `id` = 8477);
 DELETE FROM `creature` WHERE `id` = 8477;
@@ -6816,17 +6817,17 @@ UPDATE `creature` SET `curhealth`='8.4' WHERE `id`='15476';
 -- STATS
 -- -----------------------
 -- Kurinnaxx
-UPDATE `creature_template` SET `HealthMultiplier`='50', `ManaMultiplier`='10', `MinLevelHealth`='333100', `MaxLevelHealth`='333100', `MinMeleeDmg`='1757', `MaxMeleeDmg`='2330' WHERE `Entry`='15348';
+UPDATE `creature_template` SET `HealthMultiplier`='50', `MinLevelHealth`='333100', `MaxLevelHealth`='333100', `MinMeleeDmg`='1757', `MaxMeleeDmg`='2330' WHERE `Entry`='15348';
 -- General Rajaxx
 UPDATE `creature_template` SET `HealthMultiplier`='62.5', `MinLevelHealth`='416375', `MaxLevelHealth`='416375', `MinMeleeDmg`='1977', `MaxMeleeDmg`='2621' WHERE `Entry`='15341';
 -- Buru the Gorger
-UPDATE `creature_template` SET `HealthMultiplier`='125', `ManaMultiplier`='180', `MinLevelHealth`='666250', `MaxLevelHealth`='666250', `MinMeleeDmg`='767', `MaxMeleeDmg`='1015' WHERE `Entry`='15370';
+UPDATE `creature_template` SET `HealthMultiplier`='125', `MinLevelHealth`='666250', `MaxLevelHealth`='666250', `MinMeleeDmg`='767', `MaxMeleeDmg`='1015' WHERE `Entry`='15370';
 -- Ayamiss the Hunter
 UPDATE `creature_template` SET `HealthMultiplier`='50', `MinLevelHealth`='333100', `MaxLevelHealth`='333100', `MinMeleeDmg`='1318', `MaxMeleeDmg`='1747' WHERE `Entry`='15369';
 -- Moam
-UPDATE `creature_template` SET `HealthMultiplier`='65', `ManaMultiplier`='10', `MinLevelHealth`='346450', `MaxLevelHealth`='346450', `MinMeleeDmg`='1738', `MaxMeleeDmg`='2301' WHERE `Entry`='15340';
+UPDATE `creature_template` SET `HealthMultiplier`='65', `MinLevelHealth`='346450', `MaxLevelHealth`='346450', `MinMeleeDmg`='1738', `MaxMeleeDmg`='2301' WHERE `Entry`='15340';
 -- Ossirian the Unscarred
-UPDATE `creature_template` SET `HealthMultiplier`='75', `ManaMultiplier`='50', `MinLevelHealth`='499650', `MaxLevelHealth`='499650', `MinMeleeDmg`='2372', `MaxMeleeDmg`='3145' WHERE `Entry`='15339';
+UPDATE `creature_template` SET `HealthMultiplier`='75', `MinLevelHealth`='499650', `MaxLevelHealth`='499650', `MinMeleeDmg`='2372', `MaxMeleeDmg`='3145' WHERE `Entry`='15339';
 UPDATE `creature_template` SET `ResistanceHoly`='0', `ResistanceArcane`='1000' WHERE `Entry`='15339';
 -- Qiraji Warrior
 UPDATE `creature_template` SET `HealthMultiplier`='5', `MinLevelHealth`='31440', `MaxLevelHealth`='31440', `MinMeleeDmg`='635', `MaxMeleeDmg`='842', `Armor`='4091' WHERE `Entry`='15387';
@@ -6873,7 +6874,7 @@ UPDATE `creature_template` SET `HealthMultiplier`='4', `MinLevelHealth`='25152',
 -- Vile Scarab
 UPDATE `creature_template` SET `HealthMultiplier`='2', `MinLevelHealth`='5228', `MaxLevelHealth`='5228', `MinMeleeDmg`='141', `MaxMeleeDmg`='187' WHERE `Entry`='15168';
 -- Obsidian Destroyer
-UPDATE `creature_template` SET `HealthMultiplier`='10', `ManaMultiplier`='5', `MinLevelHealth`='50300', `MaxLevelHealth`='50300', `MinMeleeDmg`='1379', `MaxMeleeDmg`='1825' WHERE `Entry`='15338';
+UPDATE `creature_template` SET `HealthMultiplier`='10', `MinLevelHealth`='50300', `MaxLevelHealth`='50300', `MinMeleeDmg`='1379', `MaxMeleeDmg`='1825' WHERE `Entry`='15338';
 UPDATE `creature_template` SET `Rank`='1' WHERE `Entry`='15338';
 -- Shrieker Scarab
 UPDATE `creature_template` SET `HealthMultiplier`='2', `MinLevelHealth`='12208', `MaxLevelHealth`='12208', `MinMeleeDmg`='353', `MaxMeleeDmg`='469' WHERE `Entry`='15461';
