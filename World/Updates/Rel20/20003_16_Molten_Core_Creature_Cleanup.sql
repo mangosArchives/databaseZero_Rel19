@@ -6,7 +6,7 @@
 
 */
 
-ALTER TABLE db_version CHANGE COLUMN `required_20003_03_mangos_spell_bonus_data` required_20003_16_Molten_Core_Creature_Cleanup bit;
+ALTER TABLE db_version CHANGE COLUMN `required_20003_04_mangos_spell_bonus_data` required_20003_16_Molten_Core_Creature_Cleanup bit;
 
 UPDATE `creature_template` SET `MechanicImmuneMask` = '1073594367' WHERE `creature_template`.`Entry` =11668;
 UPDATE `creature_template` SET `MechanicImmuneMask` = '1073594367' WHERE `creature_template`.`Entry` =11665;
