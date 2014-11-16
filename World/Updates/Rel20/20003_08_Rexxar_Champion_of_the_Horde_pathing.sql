@@ -7,6 +7,9 @@
 
 UPDATE creature SET `position_x`='449.797577', `position_y`='1771.622803', `position_z`='22.274551', `orientation`='3.024569', `spawntimesecs`='0', `MovementType`='2' WHERE `guid`='29113';
 
+-- make sure the new creature_ai_scripts record does not exist
+DELETE FROM `creature_ai_scripts` WHERE `id`='1018206' and`creature_id`='10182';
+
 -- activates a script for when Rexxar reaches the end of his patrol - respawn, then spawns back at the start
 INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inverse_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action1_type`, `action1_param1`, `action1_param2`, `action1_param3`, `action2_type`, `action2_param1`, `action2_param2`, `action2_param3`, `action3_type`, `action3_param1`, `action3_param2`, `action3_param3`, `comment`) VALUES ('1018206', '10182', '31', '0', '100', '1', '-3564.712646', '2095.848877', '41.744026', '0', '41', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Rexxar - (TBC Rokaro) Despawn at end of route');
 
@@ -16,6 +19,9 @@ UPDATE `creature_ai_scripts` SET `comment`='Rexxar - (TBC Rokaro) - Cast Cleave'
 UPDATE `creature_ai_scripts` SET `comment`='Rexxar - (TBC Rokaro) - Cast Sundering Cleave' WHERE `id`='1018203';
 UPDATE `creature_ai_scripts` SET `comment`='Rexxar - (TBC Rokaro) - Cast Knock Away' WHERE `id`='1018204';
 UPDATE `creature_ai_scripts` SET `comment`='Rexxar - (TBC Rokaro) - Cast Puncture' WHERE `id`='1018205';
+
+-- make sure the creature_movement records for Rexxar do not exist
+DELETE FROM `creature_movement` WHERE `id`='29113';
 
 -- These entries represent the route Rexxar takes on his very, very long patrol - Stonetalon - Desolace - Feralas
 INSERT INTO `creature_movement` (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `wpguid`, `orientation`, `model1`, `model2`) VALUES (29113, 1,  449.797577,  1771.622803,  22.274551, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
