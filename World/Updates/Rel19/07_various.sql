@@ -21,7 +21,7 @@ UPDATE creature_template SET unitclass=@ClassWarrior WHERE unitclass = 0 AND min
 UPDATE creature_template SET unitclass=@ClassPaladin WHERE unitclass = 0 AND armor>0;
 
 -- No UnitClass and Mana plus No Armour, make the entries mages
-UPDATE creature_template SET unitclass=@ClassPaladin WHERE unitclass = 0 AND armor=0;
+UPDATE creature_template SET unitclass=@ClassMage WHERE unitclass = 0 AND armor=0;
 
 -- Remove the entries that are invalid
 DELETE FROM creature_template_classlevelstats WHERE class=0;
