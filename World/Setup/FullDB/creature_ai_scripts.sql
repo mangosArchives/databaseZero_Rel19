@@ -13769,7 +13769,11 @@ INSERT INTO `creature_ai_scripts` (`id`, `creature_id`, `event_type`, `event_inv
 (1226504,12265,17,0,100,2,12265,0,0,0,11,19570,0,2,41,0,0,0,0,0,0,0,'Lava Spawn - Split2 + Despawn'),
 (1166703,11667,0,0,100,1,5000,8000,7000,11000,11,19631,0,0,0,0,0,0,0,0,0,0,'Flameguard - Cast Melt Armor'),
 (1207602,12076,0,0,100,1,6000,9000,9000,14000,11,19641,0,0,0,0,0,0,0,0,0,0,'Lava Elemental - Cast Pyroclast Barrage'),
-(1210003,12100,9,0,100,1,8000,11000,12000,15000,11,19642,4,1,0,0,0,0,0,0,0,0,'Lava Reaver - Cast Cleave');
+(1210003,12100,9,0,100,1,8000,11000,12000,15000,11,19642,4,1,0,0,0,0,0,0,0,0,'Lava Reaver - Cast Cleave'),
+(1438501,14385,9,0,100,31,0,30,30100,34900,11,89,1,32,0,0,0,0,0,0,0,0,'Doomguard Minion - Cast Cripple'),
+(1438502,14385,0,0,100,1,5000,8000,18000,24000,11,16005,4,0,0,0,0,0,0,0,0,0,'Doomguard Minion - Cast Rain of Fire'),
+(1438503,14385,0,0,100,1,7000,14000,17000,22000,11,15090,0,0,0,0,0,0,0,0,0,0,'Doomguard Minion - Cast Dispel Magic'),
+(1438504,14385,0,0,100,1,12000,15000,20000,25000,11,16727,0,1,0,0,0,0,0,0,0,0,'Doomguard Minion - Cast War Stomp');
 /*!40000 ALTER TABLE `creature_ai_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
