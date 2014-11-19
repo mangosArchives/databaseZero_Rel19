@@ -1,6 +1,6 @@
 SET Username=root
 SET Password=mangos
-SET DB=mangosdb
+SET DB=mangosd
 SET SERVER=localhost
 md _full_db
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% areatrigger_involvedrelation >  _full_db\areatrigger_involvedrelation.sql
@@ -36,6 +36,9 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% creature_templa
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% custom_texts >  _full_db\custom_texts.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% db_script_string >  _full_db\db_script_string.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% db_version >  _full_db\db_version.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocsfields >  _full_db\dbdocsfields.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocsprogressquestss >  _full_db\dbdocsprogressquestss.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocstable >  _full_db\dbdocstable.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbscripts_on_creature_death >  _full_db\dbscripts_on_creature_death.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbscripts_on_creature_movement >  _full_db\dbscripts_on_creature_movement.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbscripts_on_event >  _full_db\dbscripts_on_event.sql
