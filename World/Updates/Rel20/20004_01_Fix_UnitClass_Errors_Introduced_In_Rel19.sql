@@ -1,4 +1,4 @@
-ALTER TABLE db_version CHANGE COLUMN required_20003_17_Molten_Core_Portal_Fix 20004_01_Fix_UnitClass_Errors_Introduced_In_Rel19 BIT;
+ALTER TABLE db_version CHANGE COLUMN required_20003_17_Molten_Core_Portal_Fix required_20004_01_Fix_UnitClass_Errors_Introduced_In_Rel19 BIT;
 
 UPDATE db_version SET VERSION='ZeroDatabase 2.0.11 for MaNGOSZero / ScriptDev 20004+';
 
