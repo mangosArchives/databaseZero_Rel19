@@ -6,6 +6,9 @@
 	see: http://www.wowwiki.com/Doomguard_(warlock_minion)
  */
 
+-- Add the Revision update into the revision column
+INSERT INTO db_version SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 03';
+
 -- enable the use of AI scripts for the Doomguard Minion creatures
 UPDATE creature_template SET `AIName`='EventAI' WHERE `Entry`='14385';
 
