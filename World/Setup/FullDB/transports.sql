@@ -48,7 +48,14 @@ CREATE TABLE `transports` (
 
 LOCK TABLES `transports` WRITE;
 /*!40000 ALTER TABLE `transports` DISABLE KEYS */;
-INSERT INTO `transports` (`entry`, `name`, `period`) VALUES (20808,'Ratchet and Booty Bay',350818),(164871,'Orgrimmar and Undercity',356284),(175080,'Grom\'Gol Base Camp and Orgrimmar',303463),(176231,'Menethil Harbor and Theramore Isle',329313),(176244,'Teldrassil and Auberdine',316251),(176310,'Menethil Harbor and Auberdine',295579),(176495,'Grom\'Gol Base Camp and Undercity',333044),(177233,'Forgotton Coast and Feathermoon Stronghold',317038);
+INSERT INTO `transports` (`entry`, `name`, `period`) VALUES (20808,'Ratchet and Booty Bay',350818),
+(164871,'Orgrimmar and Undercity',356284),
+(175080,'Grom\'Gol Base Camp and Orgrimmar',303463),
+(176231,'Menethil Harbor and Theramore Isle',329313),
+(176244,'Teldrassil and Auberdine',316251),
+(176310,'Menethil Harbor and Auberdine',295579),
+(176495,'Grom\'Gol Base Camp and Undercity',333044),
+(177233,'Forgotton Coast and Feathermoon Stronghold',317038);
 /*!40000 ALTER TABLE `transports` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

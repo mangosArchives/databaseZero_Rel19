@@ -50,7 +50,10 @@ CREATE TABLE `pool_gameobject_template` (
 
 LOCK TABLES `pool_gameobject_template` WRITE;
 /*!40000 ALTER TABLE `pool_gameobject_template` DISABLE KEYS */;
-INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES (154357,1174,0,'Hilarys Necklace (154357)'),(175334,1668,0,'Bijous Belongings (175334)'),(180654,1801,0,'Hardpacked Snowdrift (180654)'),(161557,1669,0,'Milly\'s Harvest (161557)');
+INSERT INTO `pool_gameobject_template` (`id`, `pool_entry`, `chance`, `description`) VALUES (154357,1174,0,'Hilarys Necklace (154357)'),
+(175334,1668,0,'Bijous Belongings (175334)'),
+(180654,1801,0,'Hardpacked Snowdrift (180654)'),
+(161557,1669,0,'Milly\'s Harvest (161557)');
 /*!40000 ALTER TABLE `pool_gameobject_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

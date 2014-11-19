@@ -47,7 +47,25 @@ CREATE TABLE `scripted_event` (
 
 LOCK TABLES `scripted_event` WRITE;
 /*!40000 ALTER TABLE `scripted_event` DISABLE KEYS */;
-INSERT INTO `scripted_event` (`id`, `ScriptName`) VALUES (2268,'event_spell_altar_boss_aggro'),(2228,'event_spell_altar_boss_aggro'),(2609,'event_spell_unlocking'),(2488,'event_go_zulfarrak_gong'),(3100,'event_antalarion_statue_activation'),(3099,'event_antalarion_statue_activation'),(3098,'event_antalarion_statue_activation'),(3097,'event_antalarion_statue_activation'),(3095,'event_antalarion_statue_activation'),(3094,'event_antalarion_statue_activation'),(4884,'event_spell_altar_emberseer'),(5623,'event_spell_gandling_shadow_portal'),(5622,'event_spell_gandling_shadow_portal'),(5621,'event_spell_gandling_shadow_portal'),(5620,'event_spell_gandling_shadow_portal'),(5619,'event_spell_gandling_shadow_portal'),(5618,'event_spell_gandling_shadow_portal'),(8328,'npc_kroshius'),(8502,'event_avatar_of_hakkar');
+INSERT INTO `scripted_event` (`id`, `ScriptName`) VALUES (2268,'event_spell_altar_boss_aggro'),
+(2228,'event_spell_altar_boss_aggro'),
+(2609,'event_spell_unlocking'),
+(2488,'event_go_zulfarrak_gong'),
+(3100,'event_antalarion_statue_activation'),
+(3099,'event_antalarion_statue_activation'),
+(3098,'event_antalarion_statue_activation'),
+(3097,'event_antalarion_statue_activation'),
+(3095,'event_antalarion_statue_activation'),
+(3094,'event_antalarion_statue_activation'),
+(4884,'event_spell_altar_emberseer'),
+(5623,'event_spell_gandling_shadow_portal'),
+(5622,'event_spell_gandling_shadow_portal'),
+(5621,'event_spell_gandling_shadow_portal'),
+(5620,'event_spell_gandling_shadow_portal'),
+(5619,'event_spell_gandling_shadow_portal'),
+(5618,'event_spell_gandling_shadow_portal'),
+(8328,'npc_kroshius'),
+(8502,'event_avatar_of_hakkar');
 /*!40000 ALTER TABLE `scripted_event` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

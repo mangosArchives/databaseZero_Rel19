@@ -47,7 +47,8 @@ CREATE TABLE `world_template` (
 
 LOCK TABLES `world_template` WRITE;
 /*!40000 ALTER TABLE `world_template` DISABLE KEYS */;
-INSERT INTO `world_template` (`map`, `ScriptName`) VALUES (0,'world_map_eastern_kingdoms'),(1,'world_map_kalimdor');
+INSERT INTO `world_template` (`map`, `ScriptName`) VALUES (0,'world_map_eastern_kingdoms'),
+(1,'world_map_kalimdor');
 /*!40000 ALTER TABLE `world_template` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
