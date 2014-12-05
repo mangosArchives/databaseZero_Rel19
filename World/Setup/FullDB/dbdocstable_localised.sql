@@ -28,27 +28,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dbdocsprogressquests`
+-- Table structure for table `dbdocstable_localised`
 --
 
-DROP TABLE IF EXISTS `dbdocsprogressquests`;
+DROP TABLE IF EXISTS `dbdocstable_localised`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dbdocsprogressquests` (
-  `QuestID` int(11) NOT NULL COMMENT 'The Quest ID to link to',
-  `Progress` int(11) NOT NULL DEFAULT '0',
-  `QuestNotes` text,
-  PRIMARY KEY (`QuestID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `dbdocstable_localised` (
+  `tableId` int(11) NOT NULL COMMENT 'The dbdocsTableId to link to',
+  `languageId` int(11) NOT NULL DEFAULT '0' COMMENT 'The dbdocsLanguageId to link to. (Normally 0 for English)',
+  `tableNotes` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'The additional note to be added to the table',
+  PRIMARY KEY (`tableId`,`languageId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dbdocsprogressquests`
+-- Dumping data for table `dbdocstable_localised`
 --
 
-LOCK TABLES `dbdocsprogressquests` WRITE;
-/*!40000 ALTER TABLE `dbdocsprogressquests` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbdocsprogressquests` ENABLE KEYS */;
+LOCK TABLES `dbdocstable_localised` WRITE;
+/*!40000 ALTER TABLE `dbdocstable_localised` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbdocstable_localised` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed
+-- Dump completed on 2014-12-05 14:37:44

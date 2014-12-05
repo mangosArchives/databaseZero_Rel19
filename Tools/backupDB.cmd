@@ -37,8 +37,12 @@ mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% custom_texts > 
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% db_script_string >  _full_db\db_script_string.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% db_version >  _full_db\db_version.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocsfields >  _full_db\dbdocsfields.sql
-mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocsprogressquestss >  _full_db\dbdocsprogressquestss.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocsfields_localised >  _full_db\dbdocsfields_localised.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocsprogressquests >  _full_db\dbdocsprogressquests.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocstable >  _full_db\dbdocstable.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocstable_localised >  _full_db\dbdocstable_localised.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocssubtables >  _full_db\dbdocssubtables.sql
+mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbdocssubtables_localised >  _full_db\dbdocssubtables_localised.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbscripts_on_creature_death >  _full_db\dbscripts_on_creature_death.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbscripts_on_creature_movement >  _full_db\dbscripts_on_creature_movement.sql
 mysqldump -Q -c -e -q -u%Username% -p%Password% -h %SERVER% %DB% dbscripts_on_event >  _full_db\dbscripts_on_event.sql
