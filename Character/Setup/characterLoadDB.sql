@@ -1264,7 +1264,7 @@ insert  into `dbdocssubtables`(`subTableId`,`languageId`,`subTableName`,`subTabl
 
 --
 -- Table structure for table `dbdocssubtables_localised`
----
+--
 DROP TABLE IF EXISTS `dbdocssubtables_localised`;
 
 CREATE TABLE `dbdocssubtables_localised` (
