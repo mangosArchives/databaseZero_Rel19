@@ -97,7 +97,7 @@ UPDATE gameobject_template SET `ScriptName`= 'go_corrupted_plant' WHERE `entry`=
 UPDATE gameobject_template SET `ScriptName`= 'go_corrupted_plant' WHERE `entry`='174713';
 
 -- Delete the CompleteQuest script (set to 0) for the corrupted songflower quest (the above assigned script will now deal with this)
-UPDATE `mangosZero`.`quest_template` SET `CompleteScript`='0' WHERE `entry`='2523';
+UPDATE quest_template SET `CompleteScript`='0' WHERE `entry`='2523';
 
 -- Assign a script to the cleansed songflower gameobject_template record
 UPDATE gameobject_template SET `data2`='0', `data10`='0', `ScriptName`= 'go_cleansed_plant' WHERE `entry`='164882';

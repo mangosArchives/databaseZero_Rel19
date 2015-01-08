@@ -9,7 +9,7 @@ UPDATE creature_loot_template SET ChanceOrQuestChance=100 WHERE entry=7901 and i
 UPDATE creature_loot_template SET ChanceOrQuestChance=100 WHERE entry=7902 and item=9275;
 
 -- add script to the Inconspicuous Landmark game object
-UPDATE gameobject_template SET ScriptName=go_inconspicuous_landmark WHERE entry=142189;
+UPDATE gameobject_template SET ScriptName='go_inconspicuous_landmark' WHERE entry=142189;
 
 -- add script to the Pirate's Treasure game object
 UPDATE gameobject_template SET ScriptName='go_pirate_treasure' WHERE entry=142194;
