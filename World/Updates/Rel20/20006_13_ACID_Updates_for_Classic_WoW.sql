@@ -24,12 +24,6 @@ INSERT IGNORE INTO db_version SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 20
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
--- ===========================================
--- Set Mangos ACID Release Version Information
--- ===========================================
-UPDATE db_version SET `creature_ai_version` = 'ACID 1.12.x (Classic) for CMaNGOS-CLASSIC (1.12.X Client)';
-
-
 -- =======================
 -- |   EASTERN KINGDOM   |
 -- =======================
