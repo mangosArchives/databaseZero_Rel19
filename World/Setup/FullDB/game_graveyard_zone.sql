@@ -113,7 +113,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (229,17,0),
 (249,17,67),
 (249,215,469),
-(249,1638,469),
+(229,1638,469),
 (289,85,67),
 (309,357,469),
 (309,1477,0),
@@ -149,7 +149,7 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (609,16,0),
 (610,2597,67),
 (611,2597,469),
-(629,85,469),
+(429,85,469),
 (629,2057,0),
 (630,16,0),
 (631,15,67),
@@ -216,7 +216,11 @@ INSERT INTO `game_graveyard_zone` (`id`, `ghost_zone`, `faction`) VALUES (3,10,4
 (913,3478,0),
 (913,3428,0),
 (927,139,0),
-(913,3429,0);
+(913,3429,0),
+(852,1537,469),
+(853,1497,67),
+(101,1537,67),
+(429,1497,469);
 /*!40000 ALTER TABLE `game_graveyard_zone` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

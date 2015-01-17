@@ -39,7 +39,7 @@ CREATE TABLE `dbdocstable` (
   `languageId` int(11) NOT NULL DEFAULT '0' COMMENT 'The Language Id for the Notes (Normally 0 for English)',
   `tableName` varchar(80) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Name of the table to add additional notes to',
   `tableNotes` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'The additional note to be added to the table',
-  PRIMARY KEY (`tableName`,`tableId`,`languageId`),
+  PRIMARY KEY (`tableId`,`languageId`,`tableName`),
   KEY `tableId` (`tableId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

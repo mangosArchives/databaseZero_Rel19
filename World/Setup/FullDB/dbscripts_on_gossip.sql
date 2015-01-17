@@ -74,7 +74,6 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (2178,0,7,4287,0,0,0,0,0,0,0,0,0,0,0,0,'explore eastern pylon'),
 (2179,0,7,4288,0,0,0,0,0,0,0,0,0,0,0,0,'explore western pylon'),
 (2208,0,15,15120,0,0,0,0,0,0,0,0,0,0,0,0,'cast Cenarion Beacon'),
-(66441,0,15,29182,0,0,0,0,0,0,0,0,0,0,0,0,'teleport - lair of the Twin Emperors'),
 (2703,0,15,16351,0,0,0,0,0,0,0,0,0,0,0,0,'Create Cache of Mau\'ari'),
 (244011,0,15,28263,0,0,0,0,0,0,0,0,0,0,0,0,'cast glacial cloak'),
 (244012,0,15,28261,0,0,0,0,0,0,0,0,0,0,0,0,'cast glacial gloves'),
@@ -281,9 +280,7 @@ INSERT INTO `dbscripts_on_gossip` (`id`, `delay`, `command`, `datalong`, `datalo
 (6918,0,15,26375,0,0,0,0,0,0,0,0,0,0,0,0,'Create Lunar Festival Invitation'),
 (6561,0,17,20456,1,0,0,0,0,0,0,0,0,0,0,0,''),
 (6559,0,17,20454,1,0,0,0,0,0,0,0,0,0,0,0,''),
-(6560,0,17,20455,1,0,0,0,0,0,0,0,0,0,0,0,''),
-(66442,0,15,29188,0,0,0,0,0,0,0,0,0,0,0,0,'teleport - final chamber'),
-(2908,0,7,4941,5,0,0,0,0,0,0,0,0,0,0,0,'Eitrigg\'s wisdom completion');
+(6560,0,17,20455,1,0,0,0,0,0,0,0,0,0,0,0,'');
 /*!40000 ALTER TABLE `dbscripts_on_gossip` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

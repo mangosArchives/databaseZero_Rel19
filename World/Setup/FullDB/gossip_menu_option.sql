@@ -1681,8 +1681,6 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (10351,1,1,'Let me browse your goods.',3,4,0,0,0,0,0,'',0),
 (10359,0,3,'Train me.',5,16,0,0,0,0,0,'',0),
 (10359,1,1,'Let me browse your goods.',3,4,0,0,0,0,0,'',0),
-(10360,0,3,'Train me.',5,16,0,0,0,0,0,'',0),
-(10360,1,1,'Let me browse your goods.',3,4,0,0,0,0,0,'',0),
 (10361,0,3,'Train me.',5,16,0,0,0,0,0,'',0),
 (10361,1,1,'Let me browse your goods.',3,4,0,0,0,0,0,'',0),
 (10362,0,3,'Train me.',5,16,0,0,0,0,0,'',0),
@@ -2163,9 +2161,7 @@ INSERT INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`,
 (6880,5,0,'Where is Elder Starweave?',1,1,6879,0,0,0,0,NULL,1065),
 (6560,0,0,'<Use the transcription device to gather a rubbing.>',1,1,-1,0,6560,0,0,NULL,1367),
 (6559,0,0,'<Use the transcription device to gather a rubbing.>',1,1,-1,0,6559,0,0,NULL,1367),
-(6561,0,0,'<Use the transcription device to gather a rubbing.>',1,1,-1,0,6561,0,0,NULL,1367),
-(6644,0,0,'Teleport me to the lair of the Twin Emperors, please.',1,1,0,0,66441,0,0,'',717),
-(6644,1,0,'Please teleport me to the final chamber.',1,1,0,0,66442,0,0,'',718);
+(6561,0,0,'<Use the transcription device to gather a rubbing.>',1,1,-1,0,6561,0,0,NULL,1367);
 /*!40000 ALTER TABLE `gossip_menu_option` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

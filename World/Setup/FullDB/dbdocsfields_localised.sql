@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `dbdocsfields_localised`;
 CREATE TABLE `dbdocsfields_localised` (
   `fieldId` int(11) NOT NULL COMMENT 'dbdocsfields.fieldId to link to.',
   `languageId` int(11) NOT NULL DEFAULT '0' COMMENT 'dbdocsLanguageId to link to. (Normally 0 = English)',
-  `fieldComment` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Main field Note',
   `fieldNotes` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'Additional Field Notes',
+  `fieldComment` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Main field Note',
   PRIMARY KEY (`fieldId`,`languageId`),
   KEY `fieldId` (`fieldId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
