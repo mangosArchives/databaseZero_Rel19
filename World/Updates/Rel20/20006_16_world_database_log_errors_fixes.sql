@@ -1,5 +1,5 @@
 -- Add the Revision update into the revision column
-INSERT IGNORE INTO db_version SET Version = MaNGOSZero Database 2.0.11 Rev 20006_16;
+INSERT IGNORE INTO db_version SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 20006_16';
 
 -- ------------- this is part of the world-database.log error fixes
 
