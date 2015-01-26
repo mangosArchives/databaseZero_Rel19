@@ -53,7 +53,7 @@ UPDATE creature SET MovementType = 14 WHERE guid = 14515; -- should be set as fo
 
 UPDATE creature SET MovementType = 14 WHERE guid = 14517; -- should be set as follower (14)
 
-UPDATE creature SET MovementType = 0 WHERE guid = 11453;
+UPDATE creature SET spawndist = 0, MovementType = 0 WHERE guid = 11453;
 
 UPDATE creature SET MovementType = 0 WHERE guid = 79750;
 
