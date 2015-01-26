@@ -4,7 +4,7 @@
 [![](/icons/TOOLS.gif)](http://github.com/mangostools)
 [![](/icons/TRACKER.gif)](https://www.getmangos.eu/project.php)
 
-MangosZero World Database
+Vanilla World Database
 ===
 DEVELOPMENT BRANCH
 ===
@@ -12,7 +12,7 @@ DEVELOPMENT BRANCH
 
 ### A World Database for Vanilla / Classic Wow
 ----
-A content database for [**MangosZero**][10], and [**World of Warcraft**][50] Client Patch
+A content database for [**Vanilla**][10] MaNGOS Servers, and [**World of Warcraft**][50] Client Patch
 1.12 - [_Drums of War_][51].
 
 ### How to Install
