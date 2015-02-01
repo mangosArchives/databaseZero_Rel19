@@ -449,7 +449,7 @@ INSERT INTO `creature_ai_texts` (`entry`, `content_default`, `content_loc1`, `co
 (-1142,'I crush weaklings like you every day! Bring it on!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'16059'),
 (-1147,'%s \'s death cry has stirred the nearby silithid hive',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,2,0,'12178'),
 (-1159,'Is that the best you can do?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'High Overlord Saurfang - Say On Kill'),
-(-1160,'Ah ken see very well through this haze, but I\'d know tha\' smell anywhere! Die ye foul ogre!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'Duggan wildhammer - Say on Aggro'),
+(-1160,'Ah ken see very well through this haze, but I\'d know tha\' smell anywhere! Die ye foul ogre!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'10817'),
 (-142,'Get it while it\'s hot!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'3518'),
 (-143,'The Defias shall succeed! No meek adventurer will stop us!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'1755'),
 (-144,'What? How dare you!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'1754'),
@@ -471,7 +471,12 @@ INSERT INTO `creature_ai_texts` (`entry`, `content_default`, `content_loc1`, `co
 (-1210,'I PROMISE I WON\'T KILL YOUR CREW THIS TIME. HAH! BUT MY BROTHER MIGHT EAT THEM!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Mok\'Rash - Random Yell'),
 (-1211,'HAVE YOU RUN OUT OF SHIPS TO SEND? WHERE IS YOUR COURAGE?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Mok\'Rash - Random Yell'),
 (-1212,'YOU WERE SUCH GOOD SPORT THE LAST TIME...COME OUT!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Mok\'Rash - Random Yell'),
-(-1213,'I HAVE YOUR LITTLE BELT TIED AROUND MY FINGER, SMOTTS. DON\'T YOU WANT IT BACK?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Mok\'Rash - Random Yell');
+(-1213,'I HAVE YOUR LITTLE BELT TIED AROUND MY FINGER, SMOTTS. DON\'T YOU WANT IT BACK?',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,0,0,'Mok\'Rash - Random Yell'),
+(-1161,'Ooooooooh... $B To the plaguelands went old Duggan, ta\' send them Scourge back inta\' th\' groun\'. $B Where th\' scent of death is on th\' wind and everythin\' is mostly brown. $B An\' when he did arrive there, what\'d his dwarf eyes see? $B A hundred crates of barley there ta\' be makin\' inta\' mead! $B But tha\' mead was cursed with th\' plague o\' death, and now old Duggan, too. $B An\' surrounded by the Lich King\'s beasts, what could old Duggan do? $B But though I feel the plague within, my hopes \'ave not yet sunk. $B If\'n I\'m gonna be Scourge anyway, I might as well be drunk!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'10817'),
+(-1134,'Endudi Rifa!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'7999'),
+(-148,'[Kalimag] Ma reth bromo zoln kilagrin dra ma zoern tu ko fraht ko kadrom Ma krin drinor zoln drinor Ma krin kan aasrugel korsul',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'8666'),
+(-1136,'Anudora!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'7999'),
+(-1133,'For Kalimdor!',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,0,0,'7999');
 /*!40000 ALTER TABLE `creature_ai_texts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
