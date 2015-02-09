@@ -10,30 +10,30 @@ UPDATE creature SET position_x=1603.62, position_y=-5306.68, position_z=70.045, 
 
 -- Light's Hope Chapel
 
-DELETE FROM gossip_menu WHERE entry IN (260, 266, 267, 268, 269, 270); 
+DELETE FROM gossip_menu WHERE entry IN (96, 97, 98, 99, 100, 101); 
 
 -- no chit chat
 -- Korfax, Champion of the Light
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (260, 8415, 0, 0);
-UPDATE gossip_menu_option SET option_id=1, action_menu_id=260 WHERE menu_id=7099 and id=1;
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (96, 8415, 0, 0);
+UPDATE gossip_menu_option SET action_menu_id=96 WHERE menu_id=7099 and id=1;
 -- Rohan The Assassin
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (266, 8409, 0, 0);
-UPDATE gossip_menu_option SET action_menu_id=266 WHERE menu_id=7101 and id=1;
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (97, 8409, 0, 0);
+UPDATE gossip_menu_option SET action_menu_id= 97 WHERE menu_id=7101 and id=1;
 -- Huntsman Leopold
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (268, 8408, 0, 0);
-UPDATE gossip_menu_option SET action_menu_id=268 WHERE menu_id=7102 and id=1;
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (98, 8408, 0, 0);
+UPDATE gossip_menu_option SET action_menu_id= 98 WHERE menu_id=7102 and id=1;
 -- Archmage Angela Dosantos
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (267, 8349, 0, 0);
-UPDATE gossip_menu_option SET action_menu_id= 267 WHERE menu_id=7102 and id=1;
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (99, 8414, 0, 0);
+UPDATE gossip_menu_option SET action_menu_id= 99 WHERE menu_id=7096 and id=1;
 -- Miranda
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (269, 8499, 0, 0);
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (269, 8500, 0, 0);
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (269, 8502, 0, 0);
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (269, 8503, 0, 0);
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (100, 8499, 0, 0);
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (100, 8500, 0, 0);
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (100, 8502, 0, 0);
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (100, 8503, 0, 0);
 UPDATE gossip_menu_option SET action_menu_id=269 WHERE menu_id=3461 and id=2;
 -- Rayne
-INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (270, 8416, 0, 0);
-UPDATE gossip_menu_option SET action_menu_id=270 WHERE menu_id=7104 and id=1;
+INSERT INTO gossip_menu (entry, text_id, script_id, condition_id) VALUES (101, 8416, 0, 0);
+UPDATE gossip_menu_option SET action_menu_id= 101 WHERE menu_id=7104 and id=1; 
 
 -- Jackanory Time
 -- ==============
