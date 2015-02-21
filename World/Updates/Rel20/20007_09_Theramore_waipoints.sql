@@ -1,4 +1,7 @@
 -- [887] credits to: Arkadus
+-- Add the Revision update into the revision column
+INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 20007_09';
+
 -- correcting waypoints for the Theramore guard (I wonder why it all works with ignored orientation field)
 DELETE FROM `creature_movement` WHERE `id`=30639 AND `point` BETWEEN 8 AND 18;
 insert into `creature_movement`  values('30639','8','-3726.97','-4418.81','28.5435','0','0','0','0','0','0','0','0','0','0','3.961','0','0');
