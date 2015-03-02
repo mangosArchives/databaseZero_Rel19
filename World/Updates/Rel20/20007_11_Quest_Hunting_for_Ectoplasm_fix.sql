@@ -9,7 +9,7 @@ INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 
 -- conditions table
 -- Create new record for Ectoplasmic Distiller using the new condition (CONDITION_GAMEOBJECT_IN_RANGE)
 DELETE FROM conditions WHERE condition_entry = 1733 AND type = 38;
-INSERT INTO conditions (condition_entry, type, value1, value2) VALUES (1733, 38, 181054, 12);
+INSERT INTO conditions (condition_entry, type, value1, value2) VALUES (1733, 38, 181054, 13);
 
 -- creature_loot_template
 -- Tortured Sentinel (http://www.wowhead.com/?npc=12179)
