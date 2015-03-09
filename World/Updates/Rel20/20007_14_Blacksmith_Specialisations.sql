@@ -12,7 +12,7 @@ UPDATE creature_questrelation SET quest=5305 WHERE id=11191 and quest=8869;
 -- the script is not required in Vanilla (the entire profession is unlearnt
 -- STILL TO TEST: *** quests may need to be removed when profession is unlearnt, so that they can be acquired again ***
 -- remove scripts form Blacksmithing NPCs
-UPDATE creature_template SET ScriptName='' WHERE ScriptName='npc_prof_blacksmith' AND Entry IN (11191, 11192, 11193);
+UPDATE creature_template SET ScriptName='' WHERE ScriptName='npc_prof_blacksmith' AND Entry IN (11191, 11192, 11193, 5164, 11145, 11146, 11176, 11177, 11178);
 -- remove scripts form Leatherworking NPCs
 UPDATE creature_template SET ScriptName='' WHERE ScriptName='npc_prof_leather' AND Entry IN (7870, 7871, 7868, 7869, 7867, 7866);
 
