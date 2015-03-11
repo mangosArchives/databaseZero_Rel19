@@ -1,4 +1,4 @@
-INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 20007_10';
+INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 20007_11';
 
 -- IMPORTANT! THIS REQUIRES THE CURRENT VERSION OF THE SERVER CORE !!!!!!!!!!!!!
 -- ===============================================================
