@@ -614,7 +614,8 @@ INSERT INTO `conditions` (`condition_entry`, `type`, `value1`, `value2`) VALUES 
 (89,37,7172,80),
 (943,-1,942,941),
 (942,8,4921,0),
-(941,8,899,0);
+(941,8,899,0),
+(1733,38,181054,13);
 /*!40000 ALTER TABLE `conditions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

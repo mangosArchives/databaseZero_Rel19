@@ -49,7 +49,7 @@ CREATE TABLE `db_version` (
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT INTO `db_version` (`version`, `creature_ai_version`, `required_20007_01_Rel20_Release_Prep`) VALUES ('ZeroDatabase 2.0.11 for MaNGOSZero / ScriptDev 20004+','MaNGOSZero Artificial Creature Intelligence Database',NULL),
-('MaNGOSZero Database 2.0.11 Rev 20007_01','EventAI and Scripts available',NULL);
+('MaNGOSZero Database 2.0.11 Rev 20007_15','EventAI and Scripts available',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

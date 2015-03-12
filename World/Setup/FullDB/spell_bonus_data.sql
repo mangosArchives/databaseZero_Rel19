@@ -78,7 +78,6 @@ INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`
 (974,0.2857,0,0,0,0,0,0,0,0,0,0,0,'Shaman - Earth Shield'),
 (980,0,0,0,0,0,0,0,0,0,0.1,0,0,'Warlock - Curse of Agony'),
 (1120,0,0,0,0,0,0,0,0,0,0.4286,0,0,'Warlock - Drain Soul'),
-(1454,0.8,0,0,0,0,0,0,0,0,0,0,0,'Warlock - Life Tap'),
 (1463,0.8053,0,0,0,0,0,0,0,0,0,0,0,'Mage - Mana Shield'),
 (1949,0,0,0,0,0,0,0,0,0,0.0946,0,0,'Warlock - Hellfire'),
 (2060,1.2353,0,0,0,0,0,0,0,0,0,0,0,'Priest - Greater Heal'),
@@ -163,7 +162,8 @@ INSERT INTO `spell_bonus_data` (`entry`, `direct_bonus`, `one_hand_direct_bonus`
 (26573,0,0,0,0,0,0,0,0,0,0.04,0,0.04,'Paladin - Consecration'),
 (27803,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 4'),
 (27804,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 5'),
-(27805,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 6');
+(27805,0.3035,0,0,0,0,0,0,0,0,0,0,0,'Priest - Holy Nova Heal Rank 6'),
+(1454,0,0,0,0,0,0,0,0,0,0,0,0,'Life Tap - no scaling with SP');
 /*!40000 ALTER TABLE `spell_bonus_data` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
