@@ -3,6 +3,9 @@ INSERT IGNORE INTO `db_version` SET `Version` = 'MaNGOSZero Database 2.0.11 Rev 
 
 -- Add creature linking to Mr. Smite's adds (GUID = 79345 and 79346)
 -- This also starts the fight if you add or attack his adds at the bottom of the ramp (blizzlike)
+
+DELETE FROM `creature_linking` where `guid` IN (79345,79346) and master_guid = 79337;
+
 INSERT INTO `creature_linking` (`guid`, `master_guid`, `flag`)
 VALUES
 	(79345, 79337, 1167),
