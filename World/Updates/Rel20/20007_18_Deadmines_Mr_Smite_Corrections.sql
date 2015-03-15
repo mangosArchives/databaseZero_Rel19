@@ -11,3 +11,6 @@ VALUES
 -- Changed Mr. Smite's faction ID to another Defias Brotherhood faction ID where he wouldn't add the nearby pirates on combat start
 -- Reference: https://github.com/cmangos/issues/wiki/FactionTemplate.dbc
 UPDATE `creature_template` SET `FactionAlliance`='27', `FactionHorde`='27' WHERE `Entry`='646';
+
+-- Changed Mr. Smite's orientation and position
+UPDATE `creature_template` SET `position_x`='-24.733', `position_y`='-798.865', `position_z`='19.4144', `orientation`='0.750789' WHERE `guid`='79337';
