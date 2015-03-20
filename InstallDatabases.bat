@@ -57,8 +57,8 @@ if %locFR% == YES set LOCList=YES
 if %locDE% == YES set LOCList=YES 
 if %locES% == YES set LOCList=YES
 
-echo                         A - Add Localised Content (%LOCList%)
-REM echo                         N - Next Step
+REM echo                         A - Add Localised Content (%LOCList%)
+echo                         N - Next Step
 echo                         X - Exit
 echo.
 set /p activity=. Please select an activity ? : 
@@ -77,11 +77,11 @@ if %activity% == w goto LoadWorldDB:
 if %activity% == R goto LoadRealmDB:
 if %activity% == r goto LoadRealmDB:
 
-REM if %activity% == N goto Step1:
-REM if %activity% == n goto Step1:
+if %activity% == N goto Step1:
+if %activity% == n goto Step1:
 
-if %activity% == A goto StepLoc1:
-if %activity% == a goto StepLoc1:
+REM if %activity% == A goto StepLoc1:
+REM if %activity% == a goto StepLoc1:
 
 if %activity% == X goto done:
 if %activity% == x goto done:
