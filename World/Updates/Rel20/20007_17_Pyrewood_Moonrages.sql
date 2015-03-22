@@ -123,4 +123,4 @@ DELETE FROM `game_event_creature` WHERE `event`=3 AND `guid` BETWEEN @G AND @G+4
 INSERT INTO `game_event_creature` (`guid`, `event`) SELECT `guid`,3 FROM `creature` WHERE `guid` BETWEEN @G AND @G+46;
 
 -- cleanup
-DELETE FROM `game_event_creature_data` WHERE `entry` IN (1892,1893,1896,3529,3531,3533) AND `event`=3;
+DELETE FROM `game_event_creature_data` WHERE `entry_id` IN (1892,1893,1896,3529,3531,3533) AND `event`=3;
