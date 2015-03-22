@@ -37,7 +37,7 @@ CREATE TABLE `db_version` (
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT INTO `db_version` VALUES
-('MaNGOSZero Database 2.0.11 Rev 20007_01','No EventAI or Scripts available',NULL);
+('MaNGOSZero Database 2.0.11 Rev 20007_18','No EventAI or Scripts available',NULL);
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 
